@@ -1,0 +1,19 @@
+--liquibase formatted sql
+
+
+--changeSet DEV-149:1 stripComments:false
+INSERT INTO utl_config_parm(PARM_NAME, PARM_TYPE, PARM_VALUE, ENCRYPT_BOOL, PARM_DESC, CONFIG_TYPE, ALLOW_VALUE_DESC, DEFAULT_VALUE, MAND_CONFIG_BOOL, CATEGORY, MODIFIED_IN, UTL_ID)
+SELECT 'ACTION_CREATE_WEEKLY_EXTRACTION_RULE','SECURED_RESOURCE','true', 0,'Determines whether a user is allowed to create a weekly extraction rule.','USER', 'TRUE/FALSE', 'TRUE', 1, 'Ops - Extraction Rules', '7.5', 0
+FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM UTL_CONFIG_PARM WHERE PARM_NAME = 'ACTION_CREATE_WEEKLY_EXTRACTION_RULE' AND PARM_TYPE = 'SECURED_RESOURCE');
+
+--changeSet DEV-149:2 stripComments:false
+INSERT INTO
+   db_type_config_parm
+   (
+      PARM_NAME, DB_TYPE_CD, PARM_TYPE
+   )
+   SELECT 'ACTION_CREATE_WEEKLY_EXTRACTION_RULE', 'MASTER', 'SECURED_RESOURCE'
+   FROM
+      dual
+   WHERE
+      NOT EXISTS ( SELECT 1 FROM db_type_config_parm WHERE parm_name = 'ACTION_CREATE_WEEKLY_EXTRACTION_RULE' and db_type_cd = 'MASTER' );

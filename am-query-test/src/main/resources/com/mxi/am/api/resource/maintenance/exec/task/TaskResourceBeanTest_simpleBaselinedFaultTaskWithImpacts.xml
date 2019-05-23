@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	- Simple Task with minimal details
+	- Task is a Fault
+	- Task is baselined (i.e. has a reference to a task definition)
+	- Task has impacts which are associated to the Task via it's task definition
+-->
+<dataset>
+
+
+	<!-- Task under test -->
+	<sched_stask
+		sched_db_id ="4650"
+		sched_id = "888"
+		h_sched_db_id = "4650"
+		h_sched_id = "888"
+		task_class_db_id = "0"
+		task_class_cd = "CORR"
+		task_db_id = "4650"
+		task_id = "890"
+		main_inv_no_db_id = "4650"
+		main_inv_no_id = "8777"
+		alt_id = "A044FC32D41C4DDBBC37D76B3E6412F2"
+	/>
+
+	<task_task
+		task_db_id = "4650"
+		task_id = "890"
+		task_defn_db_id = "4650"
+		task_defn_id = "891"
+		alt_id = "B4D40E161B3A11E99DAE4E6F0000122A"
+	/>
+
+	<task_defn
+		task_defn_db_id = "4650"
+		task_defn_id = "891"
+		alt_id = "BC5876421A1511E985E44DCF8CA00E3B"
+	/>
+
+	<evt_event
+		event_db_id = "4650"
+		event_id = "888"
+		h_event_db_id = "4650"
+		h_event_id = "888"
+		hist_bool = "0"
+		event_type_db_id = "0"
+		event_type_cd = "CF"
+		event_dt = "2018-04-17 12:00:00"
+		event_status_db_id = "0"
+		event_status_cd = "ACTV"
+		rstat_cd = "0"
+		editor_hr_db_id = "4650"
+		editor_hr_id = "100"
+	/>
+
+	<evt_event_rel
+		event_db_id = "4650"
+		event_id = "889"
+		event_rel_id = "1"
+		rel_event_db_id = "4650"
+		rel_event_id = "888"
+		rel_type_cd = 'CORRECT'
+	/>
+
+	<sd_fault
+		fault_db_id = "4650"
+		fault_id = "889"
+		fail_sev_db_id = "0"
+		fail_sev_cd = "MINOR"
+		alt_id = "7703F844793F76CDE05301372D0AAEFD"
+	/>
+
+	<inv_inv
+		inv_no_db_id = "4650"
+		inv_no_id = "8777"
+		alt_id = "8CFBA066DA9011E587B1FB2D7B2472DF"
+        part_no_db_id = "4650"
+        part_no_id = "1777"
+        h_inv_no_db_id = "4650"
+        h_inv_no_id = "8777"
+        inv_class_db_id = "0"
+        inv_class_cd = "TRK"
+	/>
+
+	<task_impact
+		impact_db_id = "4650"
+		impact_cd = "IMPACT3"
+		task_db_id = "4650"
+		task_id = "890"
+		impact_ldesc = "This is impact 3"
+	/>
+
+	<ref_impact
+		impact_db_id = "4650"
+		impact_cd = "IMPACT3"
+		desc_sdesc = "Impact 3 long description"
+	/>
+
+	<task_impact
+		impact_db_id = "4650"
+		impact_cd = "IMPACT4"
+		task_db_id = "4650"
+		task_id = "890"
+		impact_ldesc = "This is impact 4"
+	/>
+
+	<ref_impact
+		impact_db_id = "4650"
+		impact_cd = "IMPACT4"
+		desc_sdesc = "Impact 4 long description"
+	/>
+
+</dataset>

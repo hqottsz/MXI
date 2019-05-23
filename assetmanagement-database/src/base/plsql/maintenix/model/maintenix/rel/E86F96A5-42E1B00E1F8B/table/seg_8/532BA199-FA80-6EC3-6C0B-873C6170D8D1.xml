@@ -1,0 +1,415 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_8" id="532BA199-FA80-6EC3-6C0B-873C6170D8D1" name="SHIP_SEGMENT">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table describes the segments that make up the routing information for a shipment. Each segment is a to-from leg of a larger shipment.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EE99FF1F-78D9-E9DF-6AA3-AC29FEDA158F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEGMENT_DB_ID" id="F1237FA1-90F6-5745-D895-4E0299F89CDD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FD4D9BEF-A982-09CE-9DCF-3081E51273C6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SEGMENT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEGMENT_ID" id="9B14575F-C86E-1B3F-57FD-0CD6DF8DA6E6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D54D47E6-314F-5A85-2B8D-04E25DAB5B36</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SEGMENT_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEGMENT_STATUS_DB_ID" id="E8842209-DFC9-2B66-D765-6A44028A09CE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the shipment segment status.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4E484B98-91A1-C908-3A85-B38940E1E3F5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SEGMENT_STATUS_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E69DAB0E-9AE2-7541-705D-8EB0C2422EF1" referredColumn="90DE7231-F46E-232F-66E6-A746EBE86CB4"/>
+</associations>
+</Column>
+<Column name="SEGMENT_STATUS_CD" id="D973DA3F-F9FB-980B-9093-C1A3DBD6ADCC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the shipment segment status.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2196CCF5-1DC6-4B3F-FA92-41506087EC1A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E69DAB0E-9AE2-7541-705D-8EB0C2422EF1" referredColumn="B5D556B1-66CB-D42B-380E-052C079D6BAE"/>
+</associations>
+</Column>
+<Column name="SHIP_FROM_DB_ID" id="BA13AFC3-9CF8-DF6B-DFED-E9E51969CD4A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the segment&apos;s ship from location.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D87A9310-7349-AF9B-E7E8-A22014ABEAFB</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SHIP_FROM_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="07F488EC-7886-D2F5-FA2F-B3CE7DE3A36F" referredColumn="C3496C77-33EB-F40A-B8DE-691CD0D63D76"/>
+</associations>
+</Column>
+<Column name="SHIP_FROM_ID" id="4E083C82-A589-8544-4909-E1897C83A557">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the segment&apos;s ship from location.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>83640299-F2ED-D472-A254-43907F656C83</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SHIP_FROM_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="07F488EC-7886-D2F5-FA2F-B3CE7DE3A36F" referredColumn="F9059C24-7BD8-276B-84DA-AAE2F9C3FF0F"/>
+</associations>
+</Column>
+<Column name="SHIP_TO_DB_ID" id="FC80848D-C1EE-B61C-43CB-B6AC30DBAE8E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the segment&apos;s ship to location.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5C73E47F-34CA-2CB1-46EC-5435D16319D0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SHIP_TO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="76008087-14A0-6300-F175-ADABF8213A8D" referredColumn="C3496C77-33EB-F40A-B8DE-691CD0D63D76"/>
+</associations>
+</Column>
+<Column name="SHIP_TO_ID" id="127E65F3-693B-9E4E-505D-252F54F787E1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the segment&apos;s ship to location.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>25931107-4D76-0346-E3B5-7851AF98DCDE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SHIP_TO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="76008087-14A0-6300-F175-ADABF8213A8D" referredColumn="F9059C24-7BD8-276B-84DA-AAE2F9C3FF0F"/>
+</associations>
+</Column>
+<Column name="COMPLETE_DT" id="76078F0B-8EDD-9C69-4E49-2FD6926D534F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the date that the segment was completed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0D268DF5-EEC3-FF85-5298-FDD9DDBFD6E5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMPLETE_HR_DB_ID" id="E585A253-9E07-07E1-B8A7-208C5569A8D3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the user that completed the segment.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>38E37C8D-A924-538C-7F07-CFC9CC4C2AF3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="COMPLETE_HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="83CB192B-9656-93F7-A8AA-F4441F0824E4" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="COMPLETE_HR_ID" id="F180CC48-4636-A167-16C1-02A2E4D3C6A9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the user that completed the segment.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3C8CD169-AAA7-2CC2-18D0-803641FA9A1A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="COMPLETE_HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="83CB192B-9656-93F7-A8AA-F4441F0824E4" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="CUSTOMS_SDESC" id="D462A8CD-72E6-AA7B-2C99-557AD00BAA5E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the customs number when the segment was completed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6D963C98-0C56-3121-94B2-634CC4F09E19</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WAYBILL_SDESC" id="F44356F6-C0E5-06C7-309A-6D29F66097B1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the waybill number when the segment was completed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E6E38D41-59F5-0296-187E-6C1A10728644</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="251DCD9B-EFBD-8791-7FA3-8F94080F282B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;/br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>44414E9E-2F8E-9C89-422D-E63D80323AD8</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="D6559831-4BE9-6419-CBC0-A47E4680C143">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B98A14C7-BD29-3D14-0954-BEDECB843949</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="230AF031-3A5C-D985-97F2-95D31352CB05">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>78240582-D77A-8C18-203C-A9F334F9E8F4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="8F0205C8-F00F-F521-8E2F-93209AD84957">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>51976B93-5E34-52A2-CC69-E9A85215741A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="9C71BA48-1F2C-A8DE-383B-8F7A7083C624">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7F736E39-E1F0-354B-6D44-246EB61EDACE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C8A5949C-A6E8-2C8D-CD51-4DF86AEEAAC2" name="PK_SHIP_SEGMENT">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5344A15E-5CEC-F406-A773-86D96601192D</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1237FA1-90F6-5745-D895-4E0299F89CDD"/>
+<colUsage columnID="9B14575F-C86E-1B3F-57FD-0CD6DF8DA6E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E829A837-0916-D2B0-564E-321C287BA84D" name="IX_INVLOC_SHIPSEGTO">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>30DF7A0E-470F-7D44-248B-08DCE29938EC</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC80848D-C1EE-B61C-43CB-B6AC30DBAE8E"/>
+<colUsage columnID="127E65F3-693B-9E4E-505D-252F54F787E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0F53AD4-E4B3-3174-951E-B52C432F6AEB" name="IX_INVLOC_SHIPSEGFROM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>29CC6D5A-04DF-2E86-2A3D-F22F4D711C78</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA13AFC3-9CF8-DF6B-DFED-E9E51969CD4A"/>
+<colUsage columnID="4E083C82-A589-8544-4909-E1897C83A557"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="70ACE5D6-9F71-A616-6603-92AB1A06DCB6" name="IX_ORGHR_SHIPSEG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>52703B9F-5AB3-D287-1313-7B78FF4DDB5B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E585A253-9E07-07E1-B8A7-208C5569A8D3"/>
+<colUsage columnID="F180CC48-4636-A167-16C1-02A2E4D3C6A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6BA691B1-0902-0DB8-5766-DEFAD5D6C355" name="FK_INVLOC_SHIPSEGFROM">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA13AFC3-9CF8-DF6B-DFED-E9E51969CD4A"/>
+<colUsage columnID="4E083C82-A589-8544-4909-E1897C83A557"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3EF650EB-21EE-B35D-16C7-9690ADD7FDF6" name="FK_INVLOC_SHIPSEGTO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC80848D-C1EE-B61C-43CB-B6AC30DBAE8E"/>
+<colUsage columnID="127E65F3-693B-9E4E-505D-252F54F787E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3BD815C9-6C8A-62EF-7106-5FB4031ABED5" name="FK_ORGHR_SHIPSEG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E585A253-9E07-07E1-B8A7-208C5569A8D3"/>
+<colUsage columnID="F180CC48-4636-A167-16C1-02A2E4D3C6A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9DE01744-CD6D-E2D8-8284-3480299DB75B" name="FK_REFSHIPSEG_SHIPSEG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8842209-DFC9-2B66-D765-6A44028A09CE"/>
+<colUsage columnID="D973DA3F-F9FB-980B-9093-C1A3DBD6ADCC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,469 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_1" id="4E08984F-4CE9-6B8D-5A0A-9B64A2BE8835" name="EQP_PART_VENDOR_ADVSRY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This table will associate the advisory with a vendor-part number relationship.  When the relationship is flagged as active, the vendor-part number relationship is flagged with the advisory.  To clear the flag, the ACTIVE_BOOL is set to zero.  The advisory remains associated with the vendor-part number relationship for historical record keeping.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C4058D65-B18D-5EC5-A94E-B19653509604</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PART_NO_DB_ID" id="1820E152-96EC-97E5-910B-DCF6784D895B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to eqp_part_no. The part no of the vendor-part being associated to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B1D85740-FEC6-96F3-D979-7269F71577CD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EAF9CEB3-6CA7-3C88-0AFC-B9ECF8708B73" referredColumn="68F06646-5424-0BC1-75C1-E36907D2896A"/>
+</associations>
+</Column>
+<Column name="PART_NO_ID" id="699C38FE-4E63-9791-12ED-041898BC2F32">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to eqp_part_no. The part no of the vendor-part being associated to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1E98D758-C29D-BD02-5AED-60F02DF6D560</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EAF9CEB3-6CA7-3C88-0AFC-B9ECF8708B73" referredColumn="42CF6CC5-F43F-2A82-5AD8-C3C2E11E194C"/>
+</associations>
+</Column>
+<Column name="VENDOR_DB_ID" id="F7F7FFD8-1D7A-2D6F-2095-79F69ED1638E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to one of EQP_PART_VENDOR, EQP_PART_VENDOR_REP, or EQP_PART_VENDOR_EXCHG.  Note the constraint will be enforced in the &quot;before insert&quot; trigger.  The vendor-part being associated to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7A1EFA38-ACBF-C47E-1406-D45882A21A98</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="VENDOR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VENDOR_ID" id="151D9AC8-B1D2-CECE-4636-5AF688D9AD00">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to one of EQP_PART_VENDOR, EQP_PART_VENDOR_REP, or EQP_PART_VENDOR_EXCHG.  Note the constraint will be enforced in the &quot;before insert&quot; trigger.  The vendor-part being associated to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9B9E96CE-A801-D2A1-9005-20B501A5CF36</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="VENDOR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PART_VENDOR_TYPE_DB_ID" id="C1DEC116-4DC1-E6F2-E5C7-24DC84FCD957">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to ref_part_vendor_type.  The type of vendor-part which may be used to determine which eqp_part_vendor* table this object is related (i.e. purchase, repair, exchange).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2712DADE-2071-2E10-6927-C3094E07E9B2</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_VENDOR_TYPE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2080D295-5B52-7D83-92D4-29FB27365DB3" referredColumn="DC1A975E-0DB4-D81E-ED74-F6F43A6FBDC2"/>
+</associations>
+</Column>
+<Column name="PART_VENDOR_TYPE_CD" id="D970DC4A-93E7-5C69-9B62-120AED6BD9DA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to ref_part_vendor_type.  The type of vendor-part which may be used to determine which eqp_part_vendor* table this object is related (i.e. purchase, repair, exchange).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1D56479B-DEA1-2139-6388-19D0B1145755</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2080D295-5B52-7D83-92D4-29FB27365DB3" referredColumn="349F508E-7D92-3A02-6B9A-D05DD9068CC4"/>
+</associations>
+</Column>
+<Column name="ADVSRY_DB_ID" id="55DB9A1E-C12F-0193-F015-6E154D4414C5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to eqp_advsry. The advisory being associated to the vendor-part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A8990260-CE2A-8442-0729-6496EAD74AD5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ADVSRY_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14A75364-9C2D-52B1-5481-FBEDE8D5B554" referredColumn="1C5A354A-1B62-2983-CD79-0554EFA9A5F0"/>
+</associations>
+</Column>
+<Column name="ADVSRY_ID" id="7CD79E09-5C56-3A1F-8A2C-911F2E6AEB70">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK to eqp_advsry. The advisory being associated to the vendor-part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5C3F98EA-08F8-1DAF-6C88-FBA8BEBB157F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ADVSRY_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14A75364-9C2D-52B1-5481-FBEDE8D5B554" referredColumn="9EB42848-B78E-6C7D-0F9F-BDE0F12CEED9"/>
+</associations>
+</Column>
+<Column name="ACTIVE_BOOL" id="D72F5BE8-26D6-4646-00A5-6CAE90D9D080">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Boolean flag to indicate if this advisory is currently active.  When the flag is set to true, the vendor-part number relationship is under investigation according to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>806A1D3F-CA92-71C7-9BF7-744E14CD2F2B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ACTIVE_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLEAR_NOTE" id="5D289003-3424-AB6C-0C48-0EA3382AA4B5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This note field contains any notes the user entered when clearing the advisory from the part number for the vendor.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>612F095A-FAD5-52C7-6A77-6DF04F209F16</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLEAR_DT" id="D24E2EB6-1964-D24E-F272-646370D39930">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Timestamp of advisory clear.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>81AF0CD4-47C4-37D6-16FD-142ACCB68B8D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLEAR_HR_DB_ID" id="C3FFAD3E-858F-1706-13E6-14A9D210EE2F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to org_hr.  The user who cleared the advisory from this vendor-part number relationship.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A1627563-AA8D-FD76-5DF6-780622A9D22C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CLEAR_HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="069D282E-589C-F25E-CBE4-2C958508AD6F" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="CLEAR_HR_ID" id="317CB436-24BA-6CF8-E4C9-3B0697454A59">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to org_hr.  The user who cleared the advisory from this vendor-part number relationship.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7D11A638-8526-6DA4-B2DE-0E78C89747B7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CLEAR_HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="069D282E-589C-F25E-CBE4-2C958508AD6F" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="SERIAL_NO_RANGE" id="4E67DFAA-2167-B0CD-D467-6B13312022BD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This field stores the advisory&apos;s serial number range.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5B7EC57F-0851-5604-6337-98FFA7924720</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOT_NO_RANGE" id="35705920-6FE4-E1B2-77C1-857C2B3B60A2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This field stores the advisory&apos;s lot number range.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4F4265B0-D969-78A2-6B0D-74783208F746</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="B043C928-4F6A-7AEF-EFCC-623B554810D0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CD675209-8BC8-3898-5C96-4FFB34F40A53</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F662BEC-0960-0A07-5BE8-87B39C1B2A3F" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="A8BEFA1E-6F46-D271-FBA2-21AF0E4656E5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EFDEFC59-D0AC-1B81-F7AC-1E4A10E8C6CA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="36F1C4C4-944E-ECE1-5FBA-9F91A5CCF7DE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>63F52287-8C4C-D5A5-4BEC-7CE3F0588F1D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="A7DBAD21-B24D-40B8-E67C-5F9A07089ED2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>64F97DFB-885A-4FB6-3302-55D91A78B38F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="04D29946-4E89-4732-4BF7-EAF8908A4AD8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>ACAEA07A-934F-33E2-CE38-2B24B89A3B4E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A9F1A60A-ED4F-678C-8181-3B522B6D6FA0" name="PK_EQP_PART_VENDOR_ADVSRY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>87331823-A9F5-A834-D66D-B930337AEE36</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1820E152-96EC-97E5-910B-DCF6784D895B"/>
+<colUsage columnID="699C38FE-4E63-9791-12ED-041898BC2F32"/>
+<colUsage columnID="F7F7FFD8-1D7A-2D6F-2095-79F69ED1638E"/>
+<colUsage columnID="151D9AC8-B1D2-CECE-4636-5AF688D9AD00"/>
+<colUsage columnID="C1DEC116-4DC1-E6F2-E5C7-24DC84FCD957"/>
+<colUsage columnID="D970DC4A-93E7-5C69-9B62-120AED6BD9DA"/>
+<colUsage columnID="55DB9A1E-C12F-0193-F015-6E154D4414C5"/>
+<colUsage columnID="7CD79E09-5C56-3A1F-8A2C-911F2E6AEB70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44481DE6-C5D3-4DF7-CA67-49D5441579C3" name="IX_EQPPARTNO_EQPPTVENADV">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AA0E5EDD-FF78-0761-E1A6-EBD1E7B5584B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1820E152-96EC-97E5-910B-DCF6784D895B"/>
+<colUsage columnID="699C38FE-4E63-9791-12ED-041898BC2F32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="32380FEF-6E11-67FB-C2D1-617E65D02744" name="IX_ORGHR_EQPPARTVENDORADV">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5E52B1CB-8AB8-4D6C-4956-5C1CEC18ECDC</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C3FFAD3E-858F-1706-13E6-14A9D210EE2F"/>
+<colUsage columnID="317CB436-24BA-6CF8-E4C9-3B0697454A59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E2A1688-6255-5194-D222-D3B7ABE12213" name="IX_EQP_ADVSRY_EQPPTVENADV">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7457798F-BB99-C941-B1ED-3A431399C483</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="55DB9A1E-C12F-0193-F015-6E154D4414C5"/>
+<colUsage columnID="7CD79E09-5C56-3A1F-8A2C-911F2E6AEB70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FCFCCF8-1BC3-530A-84DE-8D5CFBC07063" name="FK_EQPPARTNO_EQPPTVENADV">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1820E152-96EC-97E5-910B-DCF6784D895B"/>
+<colUsage columnID="699C38FE-4E63-9791-12ED-041898BC2F32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFBE5F62-57DC-8DA8-0BB5-C24472D8D5E1" name="FK_EQP_ADVSRY_EQPPTVENADV">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="55DB9A1E-C12F-0193-F015-6E154D4414C5"/>
+<colUsage columnID="7CD79E09-5C56-3A1F-8A2C-911F2E6AEB70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D2D2A0D1-EDD8-DDD6-2A88-39198C4A024C" name="FK_MIMRSTAT_EQPPARTVENDORADV">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B043C928-4F6A-7AEF-EFCC-623B554810D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2A4D00AC-7D8C-67C4-80AA-945D3D11F8EF" name="FK_ORGHR_EQPPARTVENDORADV">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:36 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C3FFAD3E-858F-1706-13E6-14A9D210EE2F"/>
+<colUsage columnID="317CB436-24BA-6CF8-E4C9-3B0697454A59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="404123D9-ED7F-514D-B123-975D6996FA1F" name="FK_REFPRTVNTYPE_EQPPRTVNADV">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1DEC116-4DC1-E6F2-E5C7-24DC84FCD957"/>
+<colUsage columnID="D970DC4A-93E7-5C69-9B62-120AED6BD9DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

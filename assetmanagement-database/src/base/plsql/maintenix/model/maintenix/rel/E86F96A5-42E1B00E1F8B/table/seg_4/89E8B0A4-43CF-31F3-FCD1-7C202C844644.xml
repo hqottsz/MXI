@@ -1,0 +1,1046 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_4" id="89E8B0A4-43CF-31F3-FCD1-7C202C844644" name="PO_LINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table is used to store the information for each line on a purchase order.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>43D7BBFA-EF26-EACA-FD84-4B08362E5005</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_DB_ID" id="AE4D476A-9C81-31A2-1B84-E4360290FCB2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK EVT_EVENT.  </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F56CB2ED-79F4-A4BD-59D8-E252CD55EAC3</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D851E04-2B05-8439-682D-D461A6F90356" referredColumn="9A21A48E-5D6E-8EEB-F0BD-DEA935BD5CA6"/>
+</associations>
+</Column>
+<Column name="PO_ID" id="8FB93D1B-D368-C513-CEFB-47CB96A754D6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK EVT_EVENT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3E158733-F4FB-15C5-4EF1-7EB588D50D41</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D851E04-2B05-8439-682D-D461A6F90356" referredColumn="D01E3AC5-B491-0B39-6011-7F5B23BC3FAB"/>
+</associations>
+</Column>
+<Column name="PO_LINE_ID" id="80D8ED4A-3F0D-33B7-93B9-F7247DC29D94">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A unique, user entered value that defines the PK.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C76E98A6-590D-8CED-CBDE-6C31826531B4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_LINE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LINE_NO_ORD" id="92E388CD-407E-AE6E-B0E0-0566A498404F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the &apos;line number&apos; for the purchase order line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>66D65357-6EA6-BA41-F108-C5DB74BFF6BD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>098F23FF-4DC2-8BAC-FBD8-20234B78AA9A</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LINE_LDESC" id="54692264-4441-18AF-E9E8-DB47338F59ED">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is a description of the purchase order line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8C724CC7-00F5-C1E4-6641-6DB8E93CA6EC</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PART_NO_DB_ID" id="87A6B590-D14C-3557-1705-9281F6666916">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK EQP_PART_NO.  This is the to-be-purchased part number for a part-based PO line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1FCCFFA7-929E-915F-8E21-28689CD6D5D4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18D1841B-76CD-D0E4-9E26-77FB84552FDC" referredColumn="68F06646-5424-0BC1-75C1-E36907D2896A"/>
+</associations>
+</Column>
+<Column name="PART_NO_ID" id="9C267BF3-9C45-0BCA-A8A0-267DE777B773">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK EQP_PART_NO.  This is the to-be-purchased part number for a part-based PO line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5C3DB876-8393-C10D-E9C5-FAB1B256BE14</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18D1841B-76CD-D0E4-9E26-77FB84552FDC" referredColumn="42CF6CC5-F43F-2A82-5AD8-C3C2E11E194C"/>
+</associations>
+</Column>
+<Column name="SCHED_DB_ID" id="D818607D-B8E5-150B-8454-8B9D7D561FD2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK SCHED_STASK.  This is a link to the work order for a repair purchase order.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>00FFA944-1D5D-FF98-B250-C47DDB4DF3BF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0760C45E-816C-D511-52E2-0FE9423E98A1" referredColumn="3CE58C05-954B-BC92-B4C2-886A85D7EE7D"/>
+</associations>
+</Column>
+<Column name="SCHED_ID" id="7A5A78B9-061B-2D6F-2E79-72F8FF4784B1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK SCHED_STASK.  This is a link to the work order for a repair purchase order.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EDD8A47F-C2E1-AB3D-CE64-423555F02B30</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0760C45E-816C-D511-52E2-0FE9423E98A1" referredColumn="9583F48B-ACAC-467C-F22F-F2F672CB100C"/>
+</associations>
+</Column>
+<Column name="ORDER_QT" id="B06AD969-18E7-D16E-A705-C2BFE834A799">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is quantity that is being ordered.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>31FE08F6-BB4D-51E9-9382-877E578A282C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECEIVED_QT" id="1071BB25-101E-750E-1D26-1C9036D65397">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Received quantity for a po line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B454E0BB-22B9-4AEC-E4A7-7E898BC3D92A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INVOICE_QT" id="BADA88EE-13A6-8A77-90F3-BF6D087A1A94">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Number items that have been marked for payment.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>876F550B-9000-F95E-05EE-41872975EE64</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QTY_UNIT_DB_ID" id="A88308F4-74C1-D69D-82CD-730A76CF2EE0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK REF_QTY_UNIT.  These are the units of measure for the quantity that is being ordered.  </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8FDCF05D-972B-BA14-51CD-5B513DDED54C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="QTY_UNIT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DFFB950C-D3E6-70AD-943A-ECC17928B019" referredColumn="23B22E93-6232-A314-4C1F-4B7D89BC1E46"/>
+</associations>
+</Column>
+<Column name="QTY_UNIT_CD" id="14651A90-3BBF-B376-37D8-6C19945045FE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK REF_QTY_UNIT.  These are the units of measure for the quantity that is being ordered.  </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>77D6F865-64E7-21FB-24BF-C31BCDE5360A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DFFB950C-D3E6-70AD-943A-ECC17928B019" referredColumn="2C619450-2757-FF09-71C4-A95A00D015B0"/>
+</associations>
+</Column>
+<Column name="UNIT_PRICE" id="4863E603-070A-F544-2097-F50439EFAB93">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the price of 1 unit of the purchased part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AFCA7AF9-16E6-6D37-316C-6EF4AE3F7CCC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LINE_PRICE" id="2F52AF1A-067D-0A99-7CE6-1C47B86A9EE1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the total price of the PO line.  It is the sum of the (Unit Price * Quantity) + Tax Price + Charge Price.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7DB77DB0-5F44-AE1B-AA0B-E4B93C0AE53F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCRUED_VALUE" id="0BEA660C-80FE-5967-CB84-80EF880BE4D2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Total current value of items financially received but not yet paid.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AE8EB710-57B9-BFAB-1514-3EFF6833DA39</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BASE_UNIT_PRICE" id="FDE0F4EE-357C-0245-3561-5A35A9A3A6F0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the base unit price for the part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FD06A263-1442-0754-EF3E-AD13C9CAF682</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROMISE_BY_DT" id="5BE10503-4026-BA4F-69B9-CC3638C4A497">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the date by which the vendor promises the ordered part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A6B46CD8-B698-6435-0BE2-E40F410D74F3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORIG_PROMISE_BY_DT" id="11538088-6D7B-9963-98A5-E23E0A483506">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the date by which the vendor promises the ordered part at the time that the contract was originally agreed upon.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5F371A0E-264D-C0F5-6FAE-F4F1AFA411BE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORIG_UNIT_PRICE" id="FBE7191E-549F-95EB-6336-C63E04108D2F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the price of 1 unit of the purchased part at the time that the contract was originally agreed upon.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E5CD19B3-99C6-DA81-8250-E52339F002A8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RETURN_BY_DT" id="3F313533-09D3-72DC-CFA3-611877328E09">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the date that the part is expected to be returned.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3F9A7EB7-07FB-D7D9-4014-128C9920B3A5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNT_DB_ID" id="064BBA0F-7F9A-695E-A918-811DEF6806B1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK FNC_ACCOUNT.  This is the financial account that will be billed for the purchase item or services.  This is used during the financial transaction that is recorded when the invoice is closed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C88975F7-DF06-517C-E40C-0E0970834F16</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ACCOUNT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C4227AE9-708B-2AE2-A22F-FB820A05DE11" referredColumn="02042941-C950-1242-F87B-5B102E60D090"/>
+</associations>
+</Column>
+<Column name="ACCOUNT_ID" id="C0B5CA40-B6CB-6FFF-CA01-DF4AE9D47628">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK FNC_ACCOUNT.  This is the financial account that will be billed for the purchase item or services.  This is used during the financial transaction that is recorded when the invoice is closed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CACD4D4B-524D-6D72-5560-95EB1B6B7FF3</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ACCOUNT_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C4227AE9-708B-2AE2-A22F-FB820A05DE11" referredColumn="F728227B-D966-8F6A-7E97-166AAF070531"/>
+</associations>
+</Column>
+<Column name="VENDOR_NOTE" id="05D6E626-90EF-5DEA-FD4F-D9177930D43E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is a note to the vendor that is attached to this particular line, rather than the general note for the purchase order.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>78727CAE-8B33-8201-2F39-B4D415A781B9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECEIVER_NOTE" id="4D2A218F-79E1-014D-A0F7-99042AC73720">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is note that will be sent to the receiver once the purchased items arrive.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9DD23E8B-0543-ED32-E930-19AAF18F1FA2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECEIVED_DT" id="88A252EE-ADF9-E533-AA43-F98556DD5C09">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>171E4938-6AA1-5C08-01B4-B9279EE19BB2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PO_LINE_EXT_SDESC" id="DFB5DCB6-923C-BB5A-EC71-8D337154DFB5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Reference to PO Line Number in External System</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5CBC6358-496D-6222-D9FB-8447FCF5456C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONFIRM_PROMISE_BY_BOOL" id="BBD8FB91-3163-F98F-7862-A4B4499D02BB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>ED70AE97-D7C1-5B18-B15C-6B0EF3603C19</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CONFIRM_PROMISE_BY_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPL_TASK_DB_ID" id="741BCF6E-58C2-2E8D-7B27-C82060E71E7F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to SCHED_STASK - this the replacement task for the borrowed/exchanged part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>63B91409-844C-2E02-794C-9AD56A91FB80</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REPL_TASK_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="93F23B16-6709-783F-0D05-A5CF1EA37224" referredColumn="3CE58C05-954B-BC92-B4C2-886A85D7EE7D"/>
+</associations>
+</Column>
+<Column name="REPL_TASK_ID" id="2AECB39E-1A89-BBDD-4E4E-2249560DB741">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to SCHED_STASK - this the replacement task for the borrowed/exchanged part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E5952431-340D-D338-293F-72F958CEB0F4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REPL_TASK_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="93F23B16-6709-783F-0D05-A5CF1EA37224" referredColumn="9583F48B-ACAC-467C-F22F-F2F672CB100C"/>
+</associations>
+</Column>
+<Column name="XCHG_SHIPMENT_DB_ID" id="B2EDFA87-55B2-D3E4-751A-580FE1622912">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to SHIP_SHIPMENT - This is the shipment used to return the item to the vendor.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A651106D-EFC8-332E-1F20-93A86030215E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="XCHG_SHIPMENT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BA571D68-B863-2365-7658-F22796A5751B" referredColumn="50EFC918-8DAC-0FD7-BC0F-4D0747E174C8"/>
+</associations>
+</Column>
+<Column name="XCHG_SHIPMENT_ID" id="AD4120D2-B324-2EA1-EFAE-F2F46E2B7CC7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to SHIP_SHIPMENT - This is the shipment used to return the item to the vendor.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1A2FA9C3-1F06-0D05-46D7-E23991486822</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="XCHG_SHIPMENT_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BA571D68-B863-2365-7658-F22796A5751B" referredColumn="EA863AE5-19D0-CCB2-FF46-CAB05F2958E5"/>
+</associations>
+</Column>
+<Column name="OWNER_DB_ID" id="046EBBFC-33B6-1315-20AA-62CC7564E4EA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to INV_OWNER - The owner for the to-be-purchased item.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>65005CAD-ABB1-AE22-ECF0-4109AEA8B40A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OWNER_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1508B658-202A-23D7-636F-AF4166E1CA2F" referredColumn="0F1D012C-395E-C5E3-7659-21C857B0C9FA"/>
+</associations>
+</Column>
+<Column name="OWNER_ID" id="F82FB3A9-8392-EA42-C042-AAA74436DB02">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to INV_OWNER - The owner for the to-be-purchased item.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BB739867-6CC3-FA30-81CD-9B729451CB9B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OWNER_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1508B658-202A-23D7-636F-AF4166E1CA2F" referredColumn="2E913FFF-3194-6001-FECD-D9DFD4721CE0"/>
+</associations>
+</Column>
+<Column name="MAINT_PICKUP_BOOL" id="BD545AA0-CF75-D40E-B8FB-29DDA8F05D7B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This flag indicates whether the part should be picked up by maintenance.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8CD09427-8288-92B7-8FA8-20A3A6993ED8</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MAINT_PICKUP_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PO_LINE_TYPE_DB_ID" id="3584DFD3-82B3-1031-434B-BC49FA58A823">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>21916CDA-0A7F-3887-E477-C57D1122B132</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_LINE_TYPE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CBD349A2-CAD9-9CDF-9FBE-E1160FCA4D21" referredColumn="16DA2AF7-66AF-A31E-E90E-069230699A2E"/>
+</associations>
+</Column>
+<Column name="PO_LINE_TYPE_CD" id="0D69A11C-1C37-FAA1-4B21-962146B80F2C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F251BEF9-A3EB-F4E5-7EF6-4B62D65B7821</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CBD349A2-CAD9-9CDF-9FBE-E1160FCA4D21" referredColumn="E0391774-ECD8-CCBA-6BB4-56A0F1BF1204"/>
+</associations>
+</Column>
+<Column name="PRE_INSP_QT" id="B5BC5E0F-D418-9187-3824-6BD720EB1101">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This field indicates the total inventory that has been received on the shipment.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3688F155-19F6-F5A0-BE82-8DC66341A513</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRICE_TYPE_DB_ID" id="7576E64F-051D-8CAA-985D-0CB6BF554C26">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the price type for the order line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DE480813-E07F-5AD0-7A05-AC9FE477203B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PRICE_TYPE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F3067F8F-1778-6F70-DED8-3484BD8804A3" referredColumn="DFDB057C-3DA8-83D7-D557-5A2F4DF41C99"/>
+</associations>
+</Column>
+<Column name="PRICE_TYPE_CD" id="5E978201-60F8-27CF-7DFB-C69E75796697">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the price type for the order line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>01FCA6D0-3A46-BCF7-D6E4-D18783E193EF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F3067F8F-1778-6F70-DED8-3484BD8804A3" referredColumn="3C3F37B7-53ED-B0EC-1193-707A8ED26B87"/>
+</associations>
+</Column>
+<Column name="WARRANTY_BOOL" id="83975E0B-D1FD-55F1-BEAC-DA3A0A36097E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Indicates whether the order line is covered under warranty or not.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>09BC9231-D0ED-BA83-0FC5-0757C3F0572D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="WARRANTY_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>1</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_BOOL" id="CD455C0F-7336-D9E8-D97F-86E32425C593">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>52800110-9C46-31BC-F0B6-15C0C505CEFF</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DELETED_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGE_REASON_CD" id="9889E4F7-DB25-0233-F2F4-CB6D470F2A47">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A foreign key to the REF_CHANGE_CODE table indicating the change that was done to the order line</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1907F0AD-D7F9-B0D8-7F93-DFF912ABA028</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9DB63DC6-9418-6C50-5473-4A9A84CDD3B3" referredColumn="6CC157BA-BC15-2765-3913-3677DA1F2F81"/>
+</associations>
+</Column>
+<Column name="ALT_ID" id="979808B6-969F-C645-D4E3-298C5A7CEB5F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9E558BCF-A9E2-7AEF-4E94-B859F7B4F6FF</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="10E0E155-AB7B-FFD1-95A8-B630234BF609">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>756351CD-48BF-F732-7AB3-AF03B2CABB23</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="73E2DD90-D69C-D0A9-6E7D-D4FB7FE36A8A" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="26AB4AF2-8350-21F7-D691-43CDC4B34D9F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A01BDC93-713A-BA12-5F8C-0266C9F9D6F5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="E1582464-C799-8BF3-B5A9-09923B2D5004">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1ABAC081-29C4-E30E-E918-D06752532D9E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="0E7B636A-87FC-2A18-E9A1-3A75872F91E2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>35A56F53-5BFF-12B8-6073-70AE56E926C5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="5644CD8C-C817-44B2-2792-68633EE9DA87">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CB8DC26F-EF5C-B112-270A-2EF125E87E97</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2CE0B9E8-84C4-C6A9-0174-A741255B7C26" name="pk_PO_LINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>1D2B3326-3406-6527-F94A-02FB2A0B788C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE4D476A-9C81-31A2-1B84-E4360290FCB2"/>
+<colUsage columnID="8FB93D1B-D368-C513-CEFB-47CB96A754D6"/>
+<colUsage columnID="80D8ED4A-3F0D-33B7-93B9-F7247DC29D94"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53D5980A-9905-6257-7199-00CA165E3719" name="IX_POLINEALTID_UNQ">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C32C6F33-0987-61F8-00F3-2D3D6B162E64</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="979808B6-969F-C645-D4E3-298C5A7CEB5F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1B5FA30E-C76F-F750-4E7E-2CED2D52DB85" name="IX_EQPPRTNO_POLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>568A253B-5FFD-74AF-43F0-676F1AE0254B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87A6B590-D14C-3557-1705-9281F6666916"/>
+<colUsage columnID="9C267BF3-9C45-0BCA-A8A0-267DE777B773"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D8FABB8-CF64-3467-804E-B09A06A2FD71" name="IX_INVOWNER_POLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>841FD158-9258-3592-B001-8FDAE1298E3B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="046EBBFC-33B6-1315-20AA-62CC7564E4EA"/>
+<colUsage columnID="F82FB3A9-8392-EA42-C042-AAA74436DB02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FBAAE82F-586D-0B39-C603-CCBA2BE5AE8C" name="IX_SCHEDSTASK_POLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6EC3F2C5-C619-F72B-0FED-AC5A596F1D2B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D818607D-B8E5-150B-8454-8B9D7D561FD2"/>
+<colUsage columnID="7A5A78B9-061B-2D6F-2E79-72F8FF4784B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA0AF83E-D0DF-471F-68CF-70F835F8AB0C" name="IX_REPLSCHEDSTASK_POLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1F06043C-44D7-F57D-AE90-172C72F5D694</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="741BCF6E-58C2-2E8D-7B27-C82060E71E7F"/>
+<colUsage columnID="2AECB39E-1A89-BBDD-4E4E-2249560DB741"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D5F3F94C-A9E2-F06A-4E2E-9831BC46A003" name="IX_SHIPSHIPMENT_POLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8353A1E5-D740-5BCC-98A9-1E4FEDDC3E59</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2EDFA87-55B2-D3E4-751A-580FE1622912"/>
+<colUsage columnID="AD4120D2-B324-2EA1-EFAE-F2F46E2B7CC7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AA387B2B-2677-20F0-A453-EEAE80A77B2D" name="IX_POHEADER_POLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D27BEC41-21B2-8954-F264-5DFBB86BD3E1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE4D476A-9C81-31A2-1B84-E4360290FCB2"/>
+<colUsage columnID="8FB93D1B-D368-C513-CEFB-47CB96A754D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BF26A3A9-846E-CA17-4555-067B81E73757" name="IX_FNCACCOUNT_POLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>112D45D0-C41E-0BE8-541F-B9475DF44ABE</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="064BBA0F-7F9A-695E-A918-811DEF6806B1"/>
+<colUsage columnID="C0B5CA40-B6CB-6FFF-CA01-DF4AE9D47628"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A91F9AD2-2C71-FC41-E497-A8F2D06BB06A" name="FK_EQPPRTNO_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87A6B590-D14C-3557-1705-9281F6666916"/>
+<colUsage columnID="9C267BF3-9C45-0BCA-A8A0-267DE777B773"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DCA719F1-EC93-7A68-E776-622AF195B5E7" name="FK_FNCACCOUNT_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="064BBA0F-7F9A-695E-A918-811DEF6806B1"/>
+<colUsage columnID="C0B5CA40-B6CB-6FFF-CA01-DF4AE9D47628"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="96F0FFAE-74E9-73D2-E861-84DCE27439F9" name="FK_INVOWNER_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="046EBBFC-33B6-1315-20AA-62CC7564E4EA"/>
+<colUsage columnID="F82FB3A9-8392-EA42-C042-AAA74436DB02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09981502-D932-44ED-131D-9A5D6A5D7B66" name="FK_MIMRSTAT_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:34 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10E0E155-AB7B-FFD1-95A8-B630234BF609"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="99F71799-6BBD-EF8E-F3AE-2E13CF91A5AF" name="FK_POHEADER_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE4D476A-9C81-31A2-1B84-E4360290FCB2"/>
+<colUsage columnID="8FB93D1B-D368-C513-CEFB-47CB96A754D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4FD27154-6D6E-3FBC-411C-FCB9FB9ACADC" name="FK_REFCHANGEREASON_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:39 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9889E4F7-DB25-0233-F2F4-CB6D470F2A47"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7DC7CF77-2B0E-9024-E578-BC094E233B02" name="FK_REFPOLINETYPE_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3584DFD3-82B3-1031-434B-BC49FA58A823"/>
+<colUsage columnID="0D69A11C-1C37-FAA1-4B21-962146B80F2C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3845A90A-EA74-46EE-8386-4F846D5F8556" name="FK_REFPRICETYPE_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7576E64F-051D-8CAA-985D-0CB6BF554C26"/>
+<colUsage columnID="5E978201-60F8-27CF-7DFB-C69E75796697"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4EC93E11-17FC-2526-6205-F89CBA1AA725" name="FK_REFQTYUNIT_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A88308F4-74C1-D69D-82CD-730A76CF2EE0"/>
+<colUsage columnID="14651A90-3BBF-B376-37D8-6C19945045FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6F513D3A-F72F-505F-68FF-4573968555D4" name="FK_REPLSCHEDSTASK_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:42 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="741BCF6E-58C2-2E8D-7B27-C82060E71E7F"/>
+<colUsage columnID="2AECB39E-1A89-BBDD-4E4E-2249560DB741"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3044B38F-69B6-E37A-3996-A23674FDC59F" name="FK_SCHEDSTASK_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D818607D-B8E5-150B-8454-8B9D7D561FD2"/>
+<colUsage columnID="7A5A78B9-061B-2D6F-2E79-72F8FF4784B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="52196353-C989-FBF2-3613-0D8037B2D6C3" name="FK_SHIPSHIPMENT_POLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2EDFA87-55B2-D3E4-751A-580FE1622912"/>
+<colUsage columnID="AD4120D2-B324-2EA1-EFAE-F2F46E2B7CC7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

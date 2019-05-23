@@ -1,0 +1,241 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="02CB18D1-C1A0-49A5-2EF5-3D3E17D5FE77" name="UTL_PURGE_POLICY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A700DB79-86E7-22A1-8362-9C022EFDD608</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PURGE_POLICY_CD" id="F199F6CD-6D8D-7302-8F12-860BED8593E3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The unique code identifying the policy</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E9102324-8ADA-6844-6B0F-3BA5530CC1C5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PURGE_GROUP_CD" id="AD3A3BCD-97F1-D945-B95C-98AC9454469C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the group to which this policy belongs</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>55EAF525-4458-52D4-6BF8-BC0E1E5F4F76</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8CDEB522-ACFC-A99B-7BB4-DBE56C910EB6" referredColumn="5386C750-FF05-5B00-F0B2-36273B20977F"/>
+</associations>
+</Column>
+<Column name="POLICY_NAME" id="181D200B-A4A3-DB60-D9DF-B90A7CD343A4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The name of the policy</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A392A63D-D47E-E28C-1BBE-C0E6CA97E217</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POLICY_LDESC" id="C8A2151B-FA94-213C-64A7-0AF2748E64AB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The description for the policy</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9C667565-E6DC-70DD-7C75-3C81835D5EFF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RETENTION_PERIOD" id="371AF708-6A55-515B-8B27-DB4BE5776A10">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The period of time in days after which records can be purged; this value will be provided to the dynamic DELETE statements as a bind variable.&lt;br&gt;&lt;/br&gt;This value is configurable by system administrators.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C66532D3-3FDA-496A-F3C3-A28820C491B9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>23BF44B5-3695-80E7-CC85-74E51E946488</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTIVE_BOOL" id="48366050-45CD-232E-5954-78C7EBB328F0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Indicates if the purging policy is enabled; when true, the background purging job will delete records according to the policy.&lt;br&gt;&lt;/br&gt;This value is configurable by system administrators.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>48218ED3-0CAE-06B3-613A-547139AD9190</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ACTIVE_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="641190FB-D2E4-BE7D-D740-EC328DD9CDAD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>837582B1-7C11-7C4D-5DC2-BEBCCCA0E9E6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="225F1129-81FF-5CB8-BFB3-558C01EF877F" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="17B84713-988F-1817-6834-CD6822D6F036">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B4957879-F6AD-A470-EFCA-EFF8F8A6B7BC</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3ABA98D3-400B-01F4-FA97-100815D77C62" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="64D98BC2-996B-6194-8DF6-2548AFFE5954">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A0E9F3B1-2EA3-8EE8-6DE2-8A6CDACCDCCB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="39001A24-66F1-5E25-F7BC-E0C80B813656">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6B1BAEF9-F926-98FC-4D65-55732817FBC4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="EB323549-391B-AF53-E346-2FCECD81C37A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>205A6D3A-5C67-2248-3BE8-43AF4E4FE1BF</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="065F0F13-A18D-6B42-9F47-4D15239F6DD0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B8B6C8C2-C6BD-4442-D974-41862F8A78AF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DFA0EB4D-6D9E-33C3-3118-449D5A614FC1" name="PK_UTL_PURGE_POLICY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>151A61C7-B892-47F2-DBD6-1488B405F9E5</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F199F6CD-6D8D-7302-8F12-860BED8593E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7367C084-61AF-2EA6-ABD1-5D5D53A7CF2D" name="FK_MIMDB_UTLPURGEPOL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="641190FB-D2E4-BE7D-D740-EC328DD9CDAD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B39210C1-A8F9-BE63-8F03-C2B5EDFCD51E" name="FK_MIMRSTAT_UTLPURGEPOL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:36 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="17B84713-988F-1817-6834-CD6822D6F036"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD14076A-E6DD-EAB2-B74F-40DAD669491A" name="FK_UTLPURGEGRP_UTLPURGEPOL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD3A3BCD-97F1-D945-B95C-98AC9454469C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

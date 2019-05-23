@@ -1,0 +1,542 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="6E3AE2F8-FF89-E8EF-31DE-872067D11A00" name="STOCK_DIST_REQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:13:25 UTC</createdTime>
+<comment>This table stores the stock distribution request data.</comment>
+<commentInRDBMS>This table stores the stock distribution request data.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_849</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="STOCK_DIST_REQ_ID" id="FCA5DA3A-3B85-F84D-2034-AEDA647894B9">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Unique idenifier assigned from Sequence STOCK_DIST_REQ_ID_SEQ. Primary key of the stock distribution request.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STOCK_DIST_REQ_DB_ID" id="0D40C636-A06B-0AC6-B6F2-93475BDE2F97">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record and forms part of the  primary key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REQUEST_ID" id="B755DD04-6E88-4D4F-342D-8CEDEC4D8D38">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Unique identifier for stock distribution request.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STOCK_NO_DB_ID" id="EED7A854-1560-F0D8-7692-82E29AE79429">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>The stock number for the stock distribution request. Foreign key reference to eqp_stock_no table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3646E7FB-BDDB-D251-CA49-7C2780D774A8" referredColumn="834BBB93-65A2-BC1D-A537-CAF5F6FF0542"/>
+</associations>
+</Column>
+<Column name="STOCK_NO_ID" id="EAAD6FD2-DB79-DB54-8884-53609210F1A5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>The stock number for the stock distribution request. Foreign key reference to eqp_stock_no table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3646E7FB-BDDB-D251-CA49-7C2780D774A8" referredColumn="2C1B198A-DC66-DDE8-299F-6D31BFBF3C18"/>
+</associations>
+</Column>
+<Column name="OWNER_ID" id="EC12CC41-57F9-B64A-FC6A-C4142D6CC740">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-09-13 13:50:35 UTC</createdTime>
+<commentInRDBMS>The inventory owner for the stock distribution request. Foreign key reference to inv_owner table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EC28540C-D959-3BD5-B3EA-7A3B57C0A6C5" referredColumn="2E913FFF-3194-6001-FECD-D9DFD4721CE0"/>
+</associations>
+</Column>
+<Column name="OWNER_DB_ID" id="B38E7565-E901-414F-70B2-7B323F8F9257">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-09-13 13:51:08 UTC</createdTime>
+<commentInRDBMS>The inventory owner for the stock distribution request. Foreign key reference to inv_owner table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EC28540C-D959-3BD5-B3EA-7A3B57C0A6C5" referredColumn="0F1D012C-395E-C5E3-7659-21C857B0C9FA"/>
+</associations>
+</Column>
+<Column name="STATUS_CD" id="0A6F3CC0-3CFF-B70C-3826-D8A0EE5DB238">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Current state of the distribution request such as OPEN/COMPLETED. Foreign key reference to REF_STOCK_DIST_REQ_STATUS.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FA138502-F05C-3303-C424-EF289A957061" referredColumn="EAFE0A12-0713-C7EB-DDCA-B73EA5440FE9"/>
+</associations>
+</Column>
+<Column name="STATUS_DB_ID" id="65DEB57E-AAF7-5A6D-7A35-7DB53D76FFA3">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Current state of the distribution request such as OPEN/COMPLETED. Foreign key reference to REF_STOCK_DIST_REQ_STATUS.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FA138502-F05C-3303-C424-EF289A957061" referredColumn="44A9759E-E190-7994-65ED-C3BAA09F91E1"/>
+</associations>
+</Column>
+<Column name="NEEDED_QTY" id="DBD04A62-0346-DE3A-68DD-5E2541ED3933">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Quantity to transfer for the distribution request.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NEEDED_LOC_DB_ID" id="BAD992B3-7EFE-0271-6E85-7853960CB37F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Requesting srvstore for the stock. foreign key reference to INV_LOC table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57E8281A-EB3D-18D4-FCDE-0B776AB7425E" referredColumn="C3496C77-33EB-F40A-B8DE-691CD0D63D76"/>
+</associations>
+</Column>
+<Column name="NEEDED_LOC_ID" id="4FAAE3C7-391C-1559-9850-CC9588A32433">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>Requesting srvstore for the stock. foreign key reference to INV_LOC table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57E8281A-EB3D-18D4-FCDE-0B776AB7425E" referredColumn="F9059C24-7BD8-276B-84DA-AAE2F9C3FF0F"/>
+</associations>
+</Column>
+<Column name="SUPPLIER_LOC_DB_ID" id="9F0BE4AD-9724-83B8-ABC1-F02B396A6AA3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>srvstore supplier location with in the same supply location. Foreign key reference to INV_LOC table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="33C79A54-B93A-A5A6-17A6-699BAA10A001" referredColumn="C3496C77-33EB-F40A-B8DE-691CD0D63D76"/>
+</associations>
+</Column>
+<Column name="SUPPLIER_LOC_ID" id="908AC858-6F62-264C-5293-EBCA7F959CCD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>srvstore supplier location with in the same supply location. Foreign key reference to INV_LOC table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="33C79A54-B93A-A5A6-17A6-699BAA10A001" referredColumn="F9059C24-7BD8-276B-84DA-AAE2F9C3FF0F"/>
+</associations>
+</Column>
+<Column name="ASSIGNED_HR_DB_ID" id="48684465-2D45-3F1B-F005-3BB50A48DB6D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>The user working on the stock distribution request.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2900D775-8DDC-2F8D-3043-39A96A9AFC04" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="ASSIGNED_HR_ID" id="FF441155-65E0-C8AE-C575-8C2053A5EC4B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 18:53:53 UTC</createdTime>
+<commentInRDBMS>The user working on the stock distribution request.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2900D775-8DDC-2F8D-3043-39A96A9AFC04" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="QTY_UNIT_DB_ID" id="E2C4D222-7806-A4EF-B186-E1E00CA4EEB4">
+<createdBy>suupca</createdBy>
+<createdTime>2018-09-25 16:06:25 UTC</createdTime>
+<commentInRDBMS>Units of measure are used whenever you need to describe stock quantities for movement. FK to REF_QTY_UNIT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="47E6D59A-8A05-7F2A-5A48-A21115E68455" referredColumn="23B22E93-6232-A314-4C1F-4B7D89BC1E46"/>
+</associations>
+</Column>
+<Column name="QTY_UNIT_CD" id="5E2DCB1D-D2AB-1CCE-725E-EE5FBFBDB3F0">
+<createdBy>suupca</createdBy>
+<createdTime>2018-09-25 16:06:25 UTC</createdTime>
+<commentInRDBMS>Units of measure are used whenever you need to describe stock quantities for movement. FK to REF_QTY_UNIT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="47E6D59A-8A05-7F2A-5A48-A21115E68455" referredColumn="2C619450-2757-FF09-71C4-A95A00D015B0"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="E9A91471-F5E7-0A50-EC16-800BC67A87E7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:05:47 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE42E783-21FE-BE16-6111-DCC6394B3742" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="10E7AC26-ED50-A54F-6290-AC79DD295368">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:05:47 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="838661DB-1854-43CF-B709-FD3E406F0AD5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:05:47 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record. The meaning of this column may be specific to the entity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8493EB48-0040-5D23-C43A-0BEF713D38ED" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="07750F97-67F4-A794-6BE4-A1AA1B851938">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:05:47 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="9ABD7F2F-AE05-1F6A-5A72-F62971CB9DF3">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:05:47 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="E1D86795-E640-5E60-DFE1-E7B556999AB4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:05:47 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BC2B95BB-8B1E-B18E-6753-08698D4919FA" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="995D269D-FB21-8D2B-9792-933CCB3D171E">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:05:47 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AE9DEAE6-0657-6FB9-45B4-30BA21169479" name="PK_STOCK_DIST_REQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 15:48:09 UTC</createdTime>
+<commentInRDBMS>Primary Key for the table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCA5DA3A-3B85-F84D-2034-AEDA647894B9"/>
+<colUsage columnID="0D40C636-A06B-0AC6-B6F2-93475BDE2F97"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93F4CF2F-9C27-54DE-349B-F10D9D68955C" name="IX_EQPSTKNO_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-28 18:18:07 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EED7A854-1560-F0D8-7692-82E29AE79429"/>
+<colUsage columnID="EAAD6FD2-DB79-DB54-8884-53609210F1A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB91D1AF-677C-82DE-8B6F-54FE69B3BD19" name="IX_STKDISTREQ_UNQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-28 18:18:07 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B755DD04-6E88-4D4F-342D-8CEDEC4D8D38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="670D047C-6E30-B582-B270-047EA6E35832" name="IX_INVLOCREQ_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-28 18:34:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FAAE3C7-391C-1559-9850-CC9588A32433"/>
+<colUsage columnID="BAD992B3-7EFE-0271-6E85-7853960CB37F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5F975AFE-61BD-1B77-1422-CE508B1067F8" name="IX_INVLOCSUP_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-28 18:34:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="908AC858-6F62-264C-5293-EBCA7F959CCD"/>
+<colUsage columnID="9F0BE4AD-9724-83B8-ABC1-F02B396A6AA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F26DD4E2-411B-AF46-6FAA-A7A187FE41D5" name="IX_ORGHR_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-29 19:05:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FF441155-65E0-C8AE-C575-8C2053A5EC4B"/>
+<colUsage columnID="48684465-2D45-3F1B-F005-3BB50A48DB6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1CAD50E8-88A9-F216-3936-719ABD74FC29" name="IX_INVOWNER_STKDISTREQ">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-09-13 13:53:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC12CC41-57F9-B64A-FC6A-C4142D6CC740"/>
+<colUsage columnID="B38E7565-E901-414F-70B2-7B323F8F9257"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39AC95D8-3C57-E9B0-EA63-1A5AE6033975" name="FK_INVLOCREQ_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:21:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BAD992B3-7EFE-0271-6E85-7853960CB37F"/>
+<colUsage columnID="4FAAE3C7-391C-1559-9850-CC9588A32433"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F395827C-125E-9C7B-B9A9-3998DC113BDF" name="FK_INVLOCSUP_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:26:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F0BE4AD-9724-83B8-ABC1-F02B396A6AA3"/>
+<colUsage columnID="908AC858-6F62-264C-5293-EBCA7F959CCD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E974BBDD-9B39-621E-6FBC-F9F0BC4F17EF" name="FK_EQPSTKNO_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:26:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EED7A854-1560-F0D8-7692-82E29AE79429"/>
+<colUsage columnID="EAAD6FD2-DB79-DB54-8884-53609210F1A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF174E02-5361-D328-1DD9-2C9218695696" name="FK_ORGHR_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:26:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48684465-2D45-3F1B-F005-3BB50A48DB6D"/>
+<colUsage columnID="FF441155-65E0-C8AE-C575-8C2053A5EC4B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B098A0C3-6AC8-B5A3-B8E3-0173376499BA" name="FK_MIMRSTAT_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:26:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9A91471-F5E7-0A50-EC16-800BC67A87E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="385C36A4-751B-5BBF-FA9C-2BCE3B2D60C7" name="FK_MIMDB_STKDISTREQ_CTRL">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:26:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="838661DB-1854-43CF-B709-FD3E406F0AD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7949A75-6078-EFD7-A321-A37FAAADC069" name="FK_MIMDB_STKDISTREQ_REV">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-24 19:26:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1D86795-E640-5E60-DFE1-E7B556999AB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D5755D28-2F69-7EC0-C560-34E9B7FE4165" name="FK_DISTREQSTATUS_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 20:42:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A6F3CC0-3CFF-B70C-3826-D8A0EE5DB238"/>
+<colUsage columnID="65DEB57E-AAF7-5A6D-7A35-7DB53D76FFA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="56603C18-F76F-772B-C1D0-6DE28415C2E9" name="FK_INVOWNER_STKDISTREQ">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-09-13 13:52:54 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B38E7565-E901-414F-70B2-7B323F8F9257"/>
+<colUsage columnID="EC12CC41-57F9-B64A-FC6A-C4142D6CC740"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0E06EBC-FEFF-E191-A0F2-F59045C8B020" name="FK_REFQTYUNIT_STKDISTREQ">
+<createdBy>suupca</createdBy>
+<createdTime>2018-09-25 16:06:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2C4D222-7806-A4EF-B186-E1E00CA4EEB4"/>
+<colUsage columnID="5E2DCB1D-D2AB-1CCE-725E-EE5FBFBDB3F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,89 @@
+<dataset>
+   <task_task
+      task_db_id="1"
+      task_id="1"
+      task_defn_db_id="1"
+      task_defn_id="1"
+      recurring_task_bool = "1"
+   />
+   <inv_inv
+      inv_no_db_id="1"
+      inv_no_id="1"
+      rstat_cd = "1"
+   />
+   <!-- Task instance #1 (Most recent instance task)
+   task_db_id  && sched_db_id (all xxx_db_id => customer id
+   -->
+   <sched_stask
+      task_db_id="1"
+      task_id="1"
+      orphan_frct_bool="0"
+      main_inv_no_db_id="1"
+      main_inv_no_id="1"
+      sched_db_id="1"
+      sched_id="2"
+      rstat_cd="0"
+   />
+
+   <!--  mapping:
+      - event_db_id maps to sched_stask.sched_db_id
+      - event_id maps to sched_stask.sched_id
+    -->
+   <evt_sched_dead
+      event_db_id="1"
+      event_id="2"
+      sched_driver_bool="1"
+      data_type_db_id="0"
+      data_type_id="10"
+      sched_dead_dt = "29-MAY-2006 19:00"
+   />
+   <evt_event
+      event_db_id="1"
+      event_id="2"
+      event_status_cd="FORECAST"
+      hist_bool="0"
+   />
+   <evt_inv
+      event_db_id="1"
+      event_id="2"
+      event_inv_id="2"
+      inv_no_db_id="1"
+      inv_no_id="1"
+      main_inv_bool = "1"
+   />
+
+   <!-- Task instance #2 (previous instance to task instance #1) -->
+   <sched_stask
+      task_db_id="1"
+      task_id="1"
+      orphan_frct_bool="0"
+      main_inv_no_db_id="1"
+      main_inv_no_id="1"
+      sched_db_id="1"
+      sched_id="1"
+      rstat_cd="0"
+   />
+   <evt_sched_dead
+      event_db_id="1"
+      event_id="1"
+      sched_driver_bool="1"
+      data_type_db_id="0"
+      data_type_id="10"
+      sched_dead_dt = "17-MAY-2006 19:00"
+   />
+   <evt_event
+      event_db_id="1"
+      event_id="1"
+      event_status_cd="ACTV"
+      hist_bool="0"
+   />
+   <evt_inv
+      event_db_id="1"
+      event_id="1"
+      event_inv_id="1"
+      inv_no_db_id="1"
+      inv_no_id="1"
+      main_inv_bool = "1"
+   />
+
+</dataset>

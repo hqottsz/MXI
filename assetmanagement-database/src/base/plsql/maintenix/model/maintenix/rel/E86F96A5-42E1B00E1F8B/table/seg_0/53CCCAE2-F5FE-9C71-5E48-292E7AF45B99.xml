@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="53CCCAE2-F5FE-9C71-5E48-292E7AF45B99" name="ASB_INBOUND_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F96A9404-D33C-C826-B825-79AAF4D825F7</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MSG_ID" id="47CD8345-D7E2-694D-C0EA-FC46C49CA26F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The unique message ID generated for this instance</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>40726948-6CE9-B824-FD8E-8CC61F891B20</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSACTION_ID" id="72938B2D-BED5-E034-02EB-DF4B1EE982B8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The transaction the inbound message applies to</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F92852AA-A98B-36D3-5497-377C88F3E4D8</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EXTERNAL_ID" id="1F916A40-2C68-3334-E146-21451270054B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The third-party client external id for identifying inbound messages by the external integration key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>37D6B777-6660-3D0B-62F4-6E248B93291F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MSG_DATE" id="B15ED158-9E7B-AE4E-713E-50DEB2173B12">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The date the message was received in the ASB.  This is stored as a 64-bit long based on the Java date format for millisecond precision.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3781C88E-9DFA-3989-D5AE-C4E27C6E756B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>5C9D4A6C-A9D8-31A3-9538-74B133E50BFA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MSG_SOURCE" id="E8D0F938-C624-D745-510F-B99722CCAAA7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The source of the message.  This is a logging of where the inbound message came from; the source system should be represented here.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E5BAA6A0-F2AB-A6FF-0E87-732EEB47A9FC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>69C5839D-71B7-EF1E-BEA4-301B9BB54532</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BODY_BLOB" id="9D435D5D-C541-560D-4308-C89F00AAEA3D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8488F5CA-E8F6-E1D5-DFCB-4BB565CE2C7B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<domain>5EEB8339-1396-B686-91E1-2C0EA2712452</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BINARY_BLOB" id="B9186CF0-DF92-03EA-1C24-08E662BC63EA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2B5C8720-7F2B-7380-F7C1-AB9838104AFE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<domain>5EEB8339-1396-B686-91E1-2C0EA2712452</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="2E800857-9D3D-0DD2-BD9D-30C4750136A5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>56490638-9BC6-B83F-DB95-038E34E163A6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B2CB6DB3-12FF-C954-AA4C-4013F84B9187" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="11B12CA2-526F-926A-BA46-7A49FE73B43B" name="PK_ASB_INBOUND_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A7F9085E-80C6-1BA9-8247-94093D3FB45E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47CD8345-D7E2-694D-C0EA-FC46C49CA26F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECD8E842-EEDC-8540-ACBF-A3FC5AD74AC7" name="IX_FK_MIMRSTAT_ASBINBOUNDLOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C376949C-3D6D-C4F5-AC17-2AED65F81E6A</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E800857-9D3D-0DD2-BD9D-30C4750136A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="67F9FABE-FF7A-CDB0-637F-0A712DFF2A1B" name="FK_MIMRSTAT_ASBINBOUNDLOG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E800857-9D3D-0DD2-BD9D-30C4750136A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,123 @@
+apply plugin: 'mxenvironment'
+
+configurations {
+   liquibase
+   database {
+      transitive = false;
+      extendsFrom liquibase
+   }
+   masterdmpx
+   buildinfoproperties
+}
+
+dependencies {
+   liquibaseDeployer "com.mxi.idk:database-deployer-cli:${idkVersion}"
+   liquibase "com.mxi.idk:dbtools-db:${idkVersion}"
+
+   database project(path: ":assetmanagement-database", configuration: 'database')
+   masterdmpx( group: 'maintenix', name: 'database', version: previousProductDeliverablesVersion, configuration: 'master' )
+   buildinfoproperties project( path: ':installers:buildinfo', configuration: 'buildinfoproperties' )
+}
+
+environments {
+   master {
+      database {
+         install {
+            datapump {
+               datapumpFile = configurations.masterdmpx
+            }
+            setupMaintenixAudit {
+            }
+
+            // Pre-upgrade hook - Run the pre-upgrade script (in the dev-master-database component) to
+            // clean up data issues that were imported that would cause the upgrade scripts to fail.
+            plsqlExec {
+               workingDirectory = file("${projectDir}\\src\\master\\plsql\\preUpgrade");
+               controlFile = file("${workingDirectory}\\preUpgradeCleanUp.sql");
+            }
+
+            liquibase {
+               configuration = configurations.database;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+         }
+         upgrade {
+            componentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(previousMajorVersion);
+               minor = Integer.valueOf(previousMinorVersion);
+               servicepack = Integer.valueOf(previousServicepackVersion);
+               update = Integer.valueOf(previousUpdateVersion);
+            }
+
+            // Pre-upgrade hook - Run the pre-upgrade script (in the dev-master-database component) to
+            // clean up data issues that were imported that would cause the upgrade scripts to fail.
+            plsqlExec {
+               workingDirectory = file("${projectDir}\\src\\master\\plsql\\preUpgrade");
+               controlFile = file("${workingDirectory}\\preUpgradeCleanUp.sql");
+            }
+
+            liquibase {
+               configuration = configurations.database;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+            plsqlExec {
+               workingDirectory = file("src\\master\\plsql");
+               controlFile = file("${workingDirectory}\\postMigration.sql");
+            }
+         }
+      }
+   }
+}
+
+createMasterDb.dependsOn configurations.masterdmpx
+archiveMasterDb.dependsOn configurations.masterdmpx
+
+// by default, exportMasterDb doesn't depend on createMasterDb; however, we don't neccesarily want to explicitly
+// depend on it either, as it's plausible a user might want to export manually, or following other changes.
+tasks.exportMasterDb {
+   mustRunAfter createMasterDb
+   exportFileName = 'MASTER.DMPX'
+   logFileName = 'MASTER-EXPORT-DP.LOG'
+}
+
+// On account of above, create a task which will implicitly create and export the Master DB
+task createMasterDbDmpx {
+   dependsOn createMasterDb, exportMasterDb
+   finalizedBy dropMasterDb
+
+   ext.datapumpFile = exportMasterDb.getDatapumpFile()
+   ext.datapumpLog = exportMasterDb.getLogFile()
+
+   // Use inputs from exportMasterDb, as well as the DMPX file as an output; copied log file is already an output
+   inputs.files( exportMasterDb.inputs.files )
+   outputs.file( datapumpFile )
+   outputs.file( datapumpLog )
+}
+tasks.createMasterDb.outputs.upToDateWhen { project.gradle.taskGraph.hasTask( createMasterDbDmpx ) && exportMasterDb.outputs.upToDateSpec.isSatisfiedBy( exportMasterDb ) }
+
+task zipMasterDb(type: Zip) {
+   dependsOn createMasterDbDmpx, configurations.buildinfoproperties
+   from( createMasterDbDmpx.datapumpFile )
+   from( configurations.buildinfoproperties )
+}
+tasks.dropMasterDb.shouldRunAfter zipMasterDb
+
+artifacts {
+   // The artifact below is used only when publishing deliverables - developer builds don't need to trigger this.
+   if ( isDeliverablesBuild ) {
+      'default'( zipMasterDb ) { builtBy zipMasterDb }
+   }
+}

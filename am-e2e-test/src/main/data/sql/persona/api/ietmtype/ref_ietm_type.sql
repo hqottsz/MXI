@@ -1,0 +1,74 @@
+/**************************************************
+******** INSERT SCRIPT FOR TABLE REF_IETM_TYPE *******
+***************************************************/
+-- Create a ref_ietm_type record.
+INSERT
+   INTO
+      ref_ietm_type
+         (
+            ietm_type_db_id,
+            ietm_type_cd,
+            desc_sdesc,
+            desc_ldesc,
+            rstat_cd,
+            bitmap_db_id,
+            bitmap_tag
+        )
+   SELECT
+      4650,
+      'PDF',
+      'PDF',
+      'pdf',
+      0,
+      0,
+      1
+   FROM
+      dual;
+
+-- Create a ref_ietm_type record.
+INSERT
+   INTO
+      ref_ietm_type
+         (
+            ietm_type_db_id,
+            ietm_type_cd,
+            desc_sdesc,
+            desc_ldesc,
+            rstat_cd,
+            bitmap_db_id,
+            bitmap_tag
+        )
+   SELECT
+      4650,
+      'AAA',
+      'AAA',
+      'aaa',
+      0,
+      0,
+      1
+   FROM
+      dual;
+
+-- Create a ref_ietm_type record.
+INSERT
+   INTO
+      ref_ietm_type
+         (
+            ietm_type_db_id,
+            ietm_type_cd,
+            desc_sdesc,
+            desc_ldesc,
+            rstat_cd,
+            bitmap_db_id,
+            bitmap_tag
+        )
+   SELECT
+      10,
+      'AAA',
+      'AAA',
+      'aaa',
+      0,
+      0,
+      1
+   FROM
+      dual;

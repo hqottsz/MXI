@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="1EC6EEF5-6444-189B-0691-C9625E6961B7" name="UTL_PB_DOC_LIB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table is used to list all of the InfoMaker libraries that contain reports for a particular &quot;report launching item&quot; (defined in the UTL_PB_ITEM_DOC table). InfoMaker libraries are stored as .exe files.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2380C3FA-3B56-A7B9-C77B-9A21E4D7F775</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="APP_CD" id="6D4A4082-6FF7-5BCC-FAD5-ACA47A0E73CB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B3B4D729-1D70-494D-570A-8BB3E9C6B52B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8D365A34-7F68-3A24-4DDA-01DCF80CF198" referredColumn="98D4CC9C-D97F-3257-6CE8-DC0080CE6DAF"/>
+</associations>
+</Column>
+<Column name="ITEM_TYPE_CD" id="7A3DED66-7BAE-BB3E-F1CD-851798BFE661">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4DFA8573-6AA5-4624-25F6-F9873771F638</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8D365A34-7F68-3A24-4DDA-01DCF80CF198" referredColumn="A00A5B1F-7AF9-0656-2BF1-A91109A49ADC"/>
+</associations>
+</Column>
+<Column name="LIB_ID" id="D20F879E-7F66-3099-CC74-3E9DD00FCB0B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0B1852D1-4C1A-A0D1-5153-8B9FE8C7A00C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LIB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIB_FILE_NAME" id="A73E8757-1274-9FF9-6445-22ABEE1031D7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>88192543-03B2-A89C-1DFF-82DCA3241DB6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FORM_BOOL" id="85887A95-59F6-21D6-BBBD-463B1D4FB946">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>79B65D86-E39E-2DAD-7BAE-371E9C8D4753</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FORM_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="C9710269-4351-5B5D-4AEF-E3A6A340CC16">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>50351574-500B-85B6-B956-B1FC570BE13C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E731B4CB-0ECE-0D8D-393B-E82FD93C93F0" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E4DCC4C3-7554-C58E-67D6-C2B8369EE3EF" name="PK_UTL_PB_DOC_LIB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EFFB8187-F182-551A-2D92-54EB3F282A27</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D4A4082-6FF7-5BCC-FAD5-ACA47A0E73CB"/>
+<colUsage columnID="7A3DED66-7BAE-BB3E-F1CD-851798BFE661"/>
+<colUsage columnID="D20F879E-7F66-3099-CC74-3E9DD00FCB0B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53B5654D-2F66-BCA8-A5EA-8CF85C3C65B5" name="FK_UTLPBDOCLIB_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9710269-4351-5B5D-4AEF-E3A6A340CC16"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FA6BD75-AEE4-A6DF-49B3-5BEB31C3E752" name="FK_UTLPBITEMDOC_UTLPBDOCLIB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D4A4082-6FF7-5BCC-FAD5-ACA47A0E73CB"/>
+<colUsage columnID="7A3DED66-7BAE-BB3E-F1CD-851798BFE661"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

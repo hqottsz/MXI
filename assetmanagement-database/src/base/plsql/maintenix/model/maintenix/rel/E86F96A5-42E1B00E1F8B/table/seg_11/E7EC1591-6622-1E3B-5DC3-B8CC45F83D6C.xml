@@ -1,0 +1,237 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="E7EC1591-6622-1E3B-5DC3-B8CC45F83D6C" name="PUBSUB_EVENT">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 17:38:18 UTC</createdTime>
+<comment>Strores events for channels</comment>
+<commentInRDBMS>Strores events for channels</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_793</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PUBSUB_EVENT_ID" id="676E0014-EBA1-77D2-FCB0-CC8D1ECE0F45">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 17:42:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PUBSUB_CHANNEL_ID" id="9424B247-C272-454A-C3A2-FD9D074AB83D">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 19:56:04 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="04563FCA-2D7A-584C-9A97-8CD15D4EA2B2" referredColumn="35B02BCF-BCDC-A3DD-DD2E-24811230BFE6"/>
+</associations>
+</Column>
+<Column name="PAYLOAD" id="A89AD42D-DE2A-3544-01A7-69DAD136CB04">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 17:42:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORIGIN" id="4AA698DC-9748-D11D-5B10-C8B7318AD381">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 17:42:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2048</dataTypeSize>
+<ownDataTypeParameters>2048,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="5BBCB9F6-29EB-EE09-9177-A107DDF3499F">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="F680E277-1441-C531-922C-0992735E6A49">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+<valueDef value="2" description=""/>
+<valueDef value="3" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="123C7576-38D1-7627-CD77-AC1CA09247E9" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="46612815-ABE1-E394-8D22-094C2318CDDD">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="18DD0B1E-5751-B324-1B7E-4113D597AA39">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="CREATION_DB_ID" id="C94280D3-7B59-9D09-8305-1E54A642F16F">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="3A3E3C8A-E19B-EB2D-8747-DCA2150C15CF" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_DT" id="61342711-3763-04F8-CD21-7D27C4983692">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="B603B39C-F286-22AF-D20F-5AED0DCCFDB0">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="F7A03261-15CD-832C-5E25-F9143F47B5BE" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="9A74F198-E404-D725-5E1C-97960BBF6C4E">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8ECC2F9D-CA75-2277-CF6B-5FC0452C3460" name="PK_PUBSUB_EVENT">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 19:23:52 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="676E0014-EBA1-77D2-FCB0-CC8D1ECE0F45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ACF9EB1B-B903-4771-17E7-C8A6D9CE85D9" name="IX_PUBSUB_EVENT">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 18:21:16 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9424B247-C272-454A-C3A2-FD9D074AB83D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0918E611-9C38-186E-856B-21C5E3358BA5" name="FK_PUBSUB_EVENT_PUBSUB_CHANNEL">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 19:56:04 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9424B247-C272-454A-C3A2-FD9D074AB83D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="92F3623E-A94F-F904-E32F-C3D634283F8A" name="FK_PUBSUB_EVENT_MIM_DB_CR">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 18:00:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C94280D3-7B59-9D09-8305-1E54A642F16F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="528C21ED-BB59-CEE0-8514-2B52D47D956D" name="FK_PUBSUB_EVENT_MIM_DB_RE">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 18:00:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B603B39C-F286-22AF-D20F-5AED0DCCFDB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CEA40D0D-749B-7F77-5823-5C315529FE97" name="FK_PUBSUB_EVENT_RSTAT">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 18:00:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F680E277-1441-C531-922C-0992735E6A49"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

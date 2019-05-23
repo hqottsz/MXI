@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetConditionChangeEventsForInventory</name>
+   <description>
+		This query used to obtain events of type AC (inventory condition change) for
+		a specified inventory.
+
+      Original Coder: Andrei Smolko
+      Recent Coder:
+      Recent Date:    Sept 25, 2018
+   </description >
+   <sql>
+      SELECT
+         inv_cnd_chg_event.event_db_id, inv_cnd_chg_event.event_id
+      FROM
+         inv_cnd_chg_inv
+         INNER JOIN inv_cnd_chg_event ON
+            inv_cnd_chg_event.event_db_id = inv_cnd_chg_inv.event_db_id AND
+            inv_cnd_chg_event.event_id = inv_cnd_chg_inv.event_id
+      WHERE
+         inv_cnd_chg_inv.inv_no_db_id = :aInvNoDbId AND
+         inv_cnd_chg_inv.inv_no_id = :aInvNoId
+
+   </sql>
+   <arguments>
+      <argument name="aInvNoDbId" type="INTEGER" />
+      <argument name="aInvNoId" type="INTEGER" />
+   </arguments>
+</sql-statement>

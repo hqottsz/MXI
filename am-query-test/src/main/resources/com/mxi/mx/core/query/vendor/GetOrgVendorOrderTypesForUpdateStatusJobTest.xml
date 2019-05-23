@@ -1,0 +1,227 @@
+<dataset>
+
+   <!-- CASE 1: Approval expiry date and certificate expiry date are both expired -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100001"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="APPROVED"
+      approval_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100001"
+      cert_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <!-- CASE 2: Approval expiry date and certificate expiry date are both valid -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100002"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="APPROVED"
+      approval_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100002"
+      cert_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <!-- CASE 3: Approval expiry date is still valid but certificate expiry date is expired -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100003"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="APPROVED"
+      approval_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100003"
+      cert_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <!-- CASE 4: Approval expiry date is expired but certificate expiry date is still valid -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100004"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="APPROVED"
+      approval_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100004"
+      cert_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <!-- CASE 5: Approval expiry date is expired and certificate expiry date is blank -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100005"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="APPROVED"
+      approval_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100005"
+   />
+
+   <!-- CASE 6: Approval expiry date is still valid and certificate expiry date is blank -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100006"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="APPROVED"
+      approval_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100006"
+   />
+
+   <!-- CASE 7: Approval expiry date is expired with WARNING status and certificate expiry date is blank -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100007"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="WARNING"
+      approval_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100007"
+   />
+
+   <!-- CASE 8: Approval expiry date is valid with WARNING status and certificate expiry date is blank -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100008"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="WARNING"
+      approval_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100008"
+   />
+
+   <!-- CASE 9: Approval expiry date is expired with WARNING status but certificate expiry date is still valid -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="100009"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="WARNING"
+      approval_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="100009"
+      cert_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <!-- CASE 10: Approval expiry date is expired with WARNING status and certificate expiry date is also expired -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="1000010"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="WARNING"
+      approval_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="1000010"
+      cert_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+   <!-- CASE 11: Approval expiry date is still valid with WARNING status and certificate expiry date is also valid -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="1000011"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="WARNING"
+      approval_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="1000011"
+      cert_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <!-- CASE 12: Approval expiry date is still valid with WARNING status but certificate expiry date is expired -->
+   <org_vendor_po_type
+      org_db_id="0"
+      org_id="1"
+      vendor_db_id="4650"
+      vendor_id="1000012"
+      po_type_db_id="0"
+      po_type_cd="PURCHASE"
+      vendor_status_db_id="0"
+      vendor_status_cd="WARNING"
+      approval_expiry_dt="2039-11-20 3:31:12 PM"
+   />
+
+   <org_vendor
+      vendor_db_id="4650"
+      vendor_id="1000012"
+      cert_expiry_dt="2009-11-20 3:31:12 PM"
+   />
+
+</dataset>

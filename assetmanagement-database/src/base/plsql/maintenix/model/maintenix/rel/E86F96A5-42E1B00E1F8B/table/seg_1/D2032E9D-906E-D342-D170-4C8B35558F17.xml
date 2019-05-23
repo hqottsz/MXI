@@ -1,0 +1,253 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_1" id="D2032E9D-906E-D342-D170-4C8B35558F17" name="ER_DATE_RANGE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EB9A9319-E11F-2A7B-7AF7-2DE0806673B5</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RULE_DB_ID" id="75894AFD-DD03-E3C3-6E32-3224C37760AA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK - extraction rule to which this range applies.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BB4BFAB7-1593-3297-0349-FB024875FEC6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RULE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BB73CBE6-7D32-0A99-1068-ED0068663735" referredColumn="3A707450-1772-90FA-CAEB-9B5FAB806068"/>
+</associations>
+</Column>
+<Column name="RULE_ID" id="E3435A93-3560-A603-A9D3-6AA10E3F20CE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PFK - extraction rule to which this range applies.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DAB6BBB4-2A29-3F30-E659-D9A303F39B40</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RULE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BB73CBE6-7D32-0A99-1068-ED0068663735" referredColumn="C3BA5E99-F3E7-606B-F81D-C164D508FF88"/>
+</associations>
+</Column>
+<Column name="RANGE_ID" id="320FA7AA-DC45-3648-6236-7C43231956A6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Primary key for this date range.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1479F88E-0623-2D59-EBAA-ED7D2E2C750C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RANGE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="START_MONTH" id="3B200DAB-3D3D-67C8-BAB0-25BE60016718">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Month number indicating the starting month for the range.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0A786776-DC33-340C-77E3-D9250BAA066C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="START_DAY" id="80DEF07B-4443-4F5A-C0A3-0286CF87B05E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Day number indicating the starting day for the range.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DCDB7E3F-5BA9-F8D2-C461-99D010FEC9A6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="START_HOUR" id="C49A53E2-8505-866B-5AF2-DEE8C0B0BDB1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Day number indicating the starting hour for the range.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D6936F29-DD20-340F-91B0-EDF3546694D9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAX_AIRCRAFT" id="0569A25B-4C07-185C-5AF7-D1E448848703">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Maximum number of aircraft that may be maintained during this date range.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C7DD918A-4D94-C402-9DAD-790FB8B41ED6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MAX_AIRCRAFT BETWEEN 0 AND 9999"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="F3FAB08D-4918-ABCF-5735-CFF6BB6541BB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4D55269A-9A96-520D-9F9C-1BD9779B5EC8</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF866A67-96AC-A35C-E682-94B9B426C211" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="687BFD58-4E59-94DB-F878-BAE797466A1A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>13C2E25C-C7ED-7B06-9C08-086E9D9C539B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="5E05DFAE-7B35-C3C6-F522-68C2708202C2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E793D5C1-923C-996F-D4CC-625E769D5988</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="0A851C2B-85CF-D9A3-460E-730E6C314B02">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E9C61CC1-00A4-0C0A-12E1-8DDAAF9F3437</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="229FE196-4508-601F-9D2C-EBB925B26F2E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>180B22AF-15E3-BE11-56F3-A790188C00E3</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="89480579-6C36-57AD-7279-C6FBA6C6E274" name="PK_ER_DATE_RANGE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>72D69132-9462-38A3-D20C-031336AAAC08</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75894AFD-DD03-E3C3-6E32-3224C37760AA"/>
+<colUsage columnID="E3435A93-3560-A603-A9D3-6AA10E3F20CE"/>
+<colUsage columnID="320FA7AA-DC45-3648-6236-7C43231956A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BBF7CEC-FE97-3507-98E5-A2FB065B05D2" name="IX_ERHEADER_ERDATERANGE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8E5F5378-FE49-9810-0542-CD5A8BE0DA9D</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75894AFD-DD03-E3C3-6E32-3224C37760AA"/>
+<colUsage columnID="E3435A93-3560-A603-A9D3-6AA10E3F20CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79B84361-72F3-5814-4D6D-8D7418871F75" name="FK_ERHEADER_ERDATERANGE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75894AFD-DD03-E3C3-6E32-3224C37760AA"/>
+<colUsage columnID="E3435A93-3560-A603-A9D3-6AA10E3F20CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6A912A98-D0A7-F66E-5284-0C7B30A9B294" name="FK_MIMRSTAT_ERDATERANGE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3FAB08D-4918-ABCF-5735-CFF6BB6541BB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

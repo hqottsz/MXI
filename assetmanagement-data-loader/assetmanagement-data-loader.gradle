@@ -1,0 +1,39 @@
+apply plugin: 'mxjava';
+
+configurations {
+   amDataLoader
+}
+
+dependencies {
+   compileOnly "org.jboss.weld.se:weld-se:2.1.2.Final";
+   compile "com.mxi.dataloader:dataloader-api:${dataloaderVersion}";
+   compile "com.mxi.dataloader:plsql-util:${dataloaderVersion}";
+
+   amDataLoader project(":am-data-loader");
+   compile files( weblogicOjdbcJar );
+}
+
+processResources {
+   dependsOn configurations.amDataLoader;
+   from(configurations.amDataLoader.files) {
+      into "com/mxi/dataloader/database";
+   }
+}
+
+
+// Publishing to Ivy - for use by CSI
+publishing {
+   publications {
+      ivy(IvyPublication) {
+         from components.java
+         configurations {
+            create "sources"
+         }
+
+         artifact(sourceJar) {
+            type "source"
+            conf "sources"
+         }
+      }
+   }
+}

@@ -1,0 +1,485 @@
+<!-- 
+
+Layout of test data:
+
+
+capacity pattern | cp skill     |  | cp day | cp day shift | cp day skill |
+- - - - - - - - - - - - - - - - |  |- - - - - - - - - - - - - - - - - - - |
+
+- - - - - - - - - - - - - - - - |  |- - - - - - - - - - - - - - - - - - - |
+4650 : 3         | 0 : ENG      |  | 1      | 4650 : 1000  | 0 : ENG      |
+(type = 0:DAILY) |- - - - - - - |  |        | (Day shift)  |              |
+                 | 0 : LBR      |  |        | - - - - - - - - - - - - - - |
+- - - - - - - - - - - - - - - - |  |        | 4650 : 1001  | 0 : LBR      |
+                                   |        | (Swing shift)|- - - - - - - |
+                                   |        |              | 10 : PAINT   |
+                                   |- - - - - - - - - - - - - - - - - - - |
+
+- - - - - - - - - - - - - - - - |  |- - - - - - - - - - - - - - - - - - - |
+4650 : 8         | 0  : ENG     |  | 1      | 4650 : 1000  | 0  : LBR     |
+(type = 0:WEEKLY)|- - - - - - - |  |        | (Day shift)  |- - - - - - - |
+                 | 10 : INSP    |  |        |              | 10 : INSP    |
+                 |- - - - - - - |  |        |- - - - - - - |- - - - - - - |
+                 | 10 : PAINT   |  |        | 4650 : 1001  | 10 : PAINT   |
+- - - - - - - - - - - - - - - - |  |        | (Swing Shift)|              |
+                                   |- - - - - - - - - - - - - - - - - - - |
+                                   
+                                   |- - - - - - - - - - - - - - - - - - - |
+                                   | 2      | 4650 : 1000  | 0  : LBR     |
+                                   |        | (Day shift)  |              |
+                                   |        |- - - - - - - - - - - - - - -|
+                                   |        | 4650 : 1002  | 10 : PAINT   |
+                                   |        | (Night shift)|              |
+                                   |- - - - - - - - - - - - - - - - - - - |
+                                                    :
+                                                    :
+                                   |- - - - - - - - - - - - - - - - - - - |
+                                   | 7      | 4650 : 1000  | 0  : LBR     |
+                                   |        | (Day shift)  |              |
+                                   |        |- - - - - - - - - - - - - - -|
+                                   |        | 4650 : 1002  | 10 : PAINT   |
+                                   |        | (Night shift)|              |
+                                   |- - - - - - - - - - - - - - - - - - - |
+                                   
+-->
+
+<dataset>
+   <shift_shift
+      shift_db_id = "4650"
+      shift_id = "1000"
+      shift_name = "Day Shift"
+      start_hour = "6.0"
+      duration_qt = "8"
+      work_hours_qt = "6"
+   />
+   <shift_shift
+      shift_db_id = "4650"
+      shift_id = "1001"
+      shift_name = "Swing Shift"
+      start_hour = "17.0"
+      duration_qt = "10"
+      work_hours_qt = "8"
+   />
+   <shift_shift
+      shift_db_id = "4650"
+      shift_id = "1002"
+      shift_name = "Graveyard Shift"
+      start_hour = "22.0"
+      duration_qt = "8"
+      work_hours_qt = "6.5"
+   />
+
+
+   <capacity_pattern
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      capacity_pattern_cd = "ABQ/LINE"
+      capacity_pattern_name = "Daily Pattern"
+      capacity_pattern_ldesc = "1 day pattern"
+      capacity_pattern_type_db_id = "0"
+      capacity_pattern_type_cd = "DAILY"
+   />
+   
+   <capacity_pattern_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "ENG"
+   />
+   <capacity_pattern_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+   />
+   
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      capacity_pattern_day_ord = "1"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "ENG"
+      lic_resource_qt = "101.1"
+      unlic_resource_qt = "102.2"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1001"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1001"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "103.3"
+      unlic_resource_qt = "104.4"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "3"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1001"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "105.5"
+      unlic_resource_qt = "106.6"
+   />
+
+
+   <capacity_pattern
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_cd = "CP001"
+      capacity_pattern_name = "Winter Pattern"
+      capacity_pattern_ldesc = "7 day pattern"
+      capacity_pattern_type_db_id = "0"
+      capacity_pattern_type_cd = "WEEKLY"
+   />
+   <capacity_pattern_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "ENG"
+   />
+   <capacity_pattern_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "INSP"
+   />
+   <capacity_pattern_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+   />
+
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "1"
+   />
+
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "12"
+      unlic_resource_qt = "14"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "INSP"
+      lic_resource_qt = "16"
+      unlic_resource_qt = "18"
+   />
+
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1001"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "1"
+      shift_db_id = "4650"
+      shift_id = "1001"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "11"
+      unlic_resource_qt = "15"
+   />
+
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "2"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "2"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "2"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "20"
+      unlic_resource_qt = "21"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "2"
+      shift_db_id = "4650"
+      shift_id = "1002"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "2"
+      shift_db_id = "4650"
+      shift_id = "1002"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "22"
+      unlic_resource_qt = "23"
+   />
+
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "3"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "3"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "3"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "30"
+      unlic_resource_qt = "31"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "3"
+      shift_db_id = "4650"
+      shift_id = "1002"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "3"
+      shift_db_id = "4650"
+      shift_id = "1002"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "32"
+      unlic_resource_qt = "33"
+   />
+
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "4"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "4"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "4"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "70"
+      unlic_resource_qt = "71"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "4"
+      shift_db_id = "4650"
+      shift_id = "1002"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "4"
+      shift_db_id = "4650"
+      shift_id = "1002"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "72"
+      unlic_resource_qt = "73"
+   />
+
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "5"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "5"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "5"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "50"
+      unlic_resource_qt = "51"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "5"
+      shift_db_id = "4650"
+      shift_id = "1002"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "5"
+      shift_db_id = "4650"
+      shift_id = "1002"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "52"
+      unlic_resource_qt = "53"
+   />
+
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "6"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "6"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "6"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "60"
+      unlic_resource_qt = "61"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "6"
+      shift_db_id = "4650"
+      shift_id = "1002"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "6"
+      shift_db_id = "4650"
+      shift_id = "1002"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "62"
+      unlic_resource_qt = "63"
+   />
+
+   <capacity_pattern_day
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "7"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "7"
+      shift_db_id = "4650"
+      shift_id = "1000"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "7"
+      shift_db_id = "4650"
+      shift_id = "1000"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      lic_resource_qt = "70"
+      unlic_resource_qt = "71"
+   />
+   <capacity_pattern_day_shift
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "7"
+      shift_db_id = "4650"
+      shift_id = "1002"
+   />
+   <capacity_pattern_day_skill
+      capacity_pattern_db_id = "4650"
+      capacity_pattern_id = "8"
+      capacity_pattern_day_ord = "7"
+      shift_db_id = "4650"
+      shift_id = "1002"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "PAINT"
+      lic_resource_qt = "72"
+      unlic_resource_qt = "73"
+   />
+
+</dataset>

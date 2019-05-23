@@ -1,0 +1,479 @@
+<dataset>
+
+   <!-- Common Test Data -->
+
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      assmbl_bom_cd = "TEST1"
+      />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      inv_class_cd = "ACFT"
+      rstat_cd = "0"
+      />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "2"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      carrier_db_id = "4650"
+      carrier_id = "2"
+      inv_class_cd = "ACFT"
+      rstat_cd = "0"
+      />
+
+   <!-- Unrelated Inventory -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      assmbl_bom_cd = "TEST3"
+      />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "3"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      inv_class_cd = "ACFT"
+      rstat_cd = "0"
+      />
+
+   <!--  Test Case 1: New Task, Only Carrier -->
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "1"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "11"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "11"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "0"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "1"
+      task_defn_db_id = "4650"
+      task_defn_id = "1"
+      revision_ord = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "11"
+      task_defn_db_id = "4650"
+      task_defn_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+      unassign_bool = "0"
+      />
+
+    <!--  Test Case 2: New Task, Other Carrier -->
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "2"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "21"
+      />
+
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "2"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "22"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "21"
+      carrier_db_id = "4650"
+      carrier_id = "2"
+      latest_revision_bool = "1"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "22"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "0"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "2"
+      task_defn_db_id = "4650"
+      task_defn_id = "2"
+      revision_ord = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "21"
+      task_defn_db_id = "4650"
+      task_defn_id = "2"
+      task_db_id = "4650"
+      task_id = "2"
+      unassign_bool = "0"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "22"
+      task_defn_db_id = "4650"
+      task_defn_id = "2"
+      task_db_id = "4650"
+      task_id = "2"
+      unassign_bool = "0"
+      />
+
+
+    <!--  Test Case 3: Update Task, Only Carrier -->
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "3"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "31"
+      />
+
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "3"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "32"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "31"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "1"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "32"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "0"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "31"
+      task_defn_db_id = "4650"
+      task_defn_id = "3"
+      revision_ord = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "21"
+      task_defn_db_id = "4650"
+      task_defn_id = "3"
+      task_db_id = "4650"
+      task_id = "31"
+      unassign_bool = "0"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "32"
+      task_defn_db_id = "4650"
+      task_defn_id = "3"
+      revision_ord = "2"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "32"
+      task_defn_db_id = "4650"
+      task_defn_id = "3"
+      task_db_id = "4650"
+      task_id = "32"
+      unassign_bool = "0"
+      />
+
+
+    <!--  Test Case 4: Update Task, Other Carrier -->
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "4"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "41"
+      />
+
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "4"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "42"
+      />
+
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "4"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "43"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "41"
+      task_defn_db_id = "4650"
+      task_defn_id = "4"
+      revision_ord = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "41"
+      carrier_db_id = "4650"
+      carrier_id = "2"
+      latest_revision_bool = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "41"
+      task_defn_db_id = "4650"
+      task_defn_id = "4"
+      task_db_id = "4650"
+      task_id = "41"
+      unassign_bool = "0"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "42"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "42"
+      task_defn_db_id = "4650"
+      task_defn_id = "4"
+      task_db_id = "4650"
+      task_id = "41"
+      unassign_bool = "0"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "42"
+      task_defn_db_id = "4650"
+      task_defn_id = "4"
+      revision_ord = "2"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "43"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "0"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "43"
+      task_defn_db_id = "4650"
+      task_defn_id = "4"
+      task_db_id = "4650"
+      task_id = "42"
+      unassign_bool = "0"
+      />
+
+
+
+    <!--  Test Case 5: Remove Task, Only Carrier -->
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "5"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "51"
+      />
+
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "5"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "52"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "51"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "1"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "52"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "0"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "51"
+      task_defn_db_id = "4650"
+      task_defn_id = "5"
+      revision_ord = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "51"
+      task_defn_db_id = "4650"
+      task_defn_id = "5"
+      task_db_id = "4650"
+      task_id = "51"
+      unassign_bool = "0"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "52"
+      task_defn_db_id = "4650"
+      task_defn_id = "5"
+      task_db_id = "4650"
+      task_id = "51"
+      unassign_bool = "1"
+      />
+
+
+    <!--  Test Case 6: Remove Task, Other Carrier -->
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "6"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "61"
+      />
+
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "6"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "62"
+      />
+
+   <maint_prgm
+      maint_prgm_defn_db_id = "4650"
+      maint_prgm_defn_id = "6"
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "63"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "61"
+      task_defn_db_id = "4650"
+      task_defn_id = "6"
+      revision_ord = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "61"
+      carrier_db_id = "4650"
+      carrier_id = "2"
+      latest_revision_bool = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "61"
+      task_defn_db_id = "4650"
+      task_defn_id = "6"
+      task_db_id = "4650"
+      task_id = "61"
+      unassign_bool = "0"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "62"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "1"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "62"
+      task_defn_db_id = "4650"
+      task_defn_id = "6"
+      task_db_id = "4650"
+      task_id = "61"
+      unassign_bool = "0"
+      />
+
+   <maint_prgm_carrier_map
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "63"
+      carrier_db_id = "4650"
+      carrier_id = "1"
+      latest_revision_bool = "0"
+      />
+
+   <maint_prgm_task
+      maint_prgm_db_id = "4650"
+      maint_prgm_id = "63"
+      task_defn_db_id = "4650"
+      task_defn_id = "6"
+      task_db_id = "4650"
+      task_id = "61"
+      unassign_bool = "1"
+      />
+
+
+</dataset>

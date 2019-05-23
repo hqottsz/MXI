@@ -1,0 +1,412 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="3C44C23E-FCC6-8D86-0876-CFD86BA94E07" name="INV_CND_CHG_INV_USAGE">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:42 UTC</createdTime>
+<commentInRDBMS>Event Usage: The usage values (TSN and TSO) at the time of the event are captured in this entity. This is required for historical auditing, scheduling and usage auditing.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>87FDC17F-45A7-A3C4-30F1-A2C79DB80552</importedID>
+<ordsAlias>inv_chg_inv_usage</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="event_db_id" id="A8799523-52B1-EF6A-CF5B-6E6D789AC6B3">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to EVT_INV.  Determines the event the log card was filed against.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8CBB20D4-84FC-330B-475D-209ABAB6498A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46636A68-6A3E-01C2-1636-FB749E2AF70C" referredColumn="AF02E23A-C0D3-34B9-C51C-168A865DE1A1"/>
+</associations>
+</Column>
+<Column name="event_id" id="85FCBCCC-B812-2E98-ADE7-3B25D56F4C75">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to EVT_INV.  Determines the event the log card was filed against.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DDED1A5F-F12D-A05A-01E6-6D3FC2551D25</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46636A68-6A3E-01C2-1636-FB749E2AF70C" referredColumn="9C17F9F3-343D-E08B-1A56-D5DF547E325C"/>
+</associations>
+</Column>
+<Column name="event_inv_id" id="35AF3E78-2E78-536F-4E53-D7F8547EB14E">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to EVT_INV.  Determines the event the log card was filed against.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D911E8ED-0087-13EF-F14B-125B9D7223B1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46636A68-6A3E-01C2-1636-FB749E2AF70C" referredColumn="E4012E83-452D-5DCB-3784-0B8993C1E6B6"/>
+</associations>
+</Column>
+<Column name="data_type_db_id" id="33FAC097-1972-0DF0-5AD5-8F0642D4C354">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to MIM_DATA_TYPE.  Identifies the main usage parameter for this event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C00A37B-1058-E2A6-7327-C0A496650414</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD632884-FBE5-0948-D2F4-7520FF524C59" referredColumn="FE33FCDA-9475-5E9E-5478-1A66B7E111AB"/>
+</associations>
+</Column>
+<Column name="data_type_id" id="F279E162-C3EC-C855-568B-A65FABF60A79">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to MIM_DATA_TYPE.  Identifies the main usage parameter for this event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9397C232-3A51-8795-42FB-85167A3EF1BA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD632884-FBE5-0948-D2F4-7520FF524C59" referredColumn="1E5E5D8F-31B0-56F0-AF78-BD79EDF5863B"/>
+</associations>
+</Column>
+<Column name="tsn_qt" id="6317427F-90FC-9D3C-42FB-8B2CF3895406">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since new on the item when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>15744ED7-63D7-DB14-5069-1D2B1DC6EA88</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tso_qt" id="29CCAB2D-44CA-A37B-4656-61285C118F6F">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since overhaul on the item when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CC2D9873-EC7A-629C-D4A5-1FA86D11FAE1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tsi_qt" id="3BD925D2-7F95-78B6-DD7E-3BC9D5669A5E">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Whenever a usage snapshot is taken on an event, we will record the TSI_QT as well as the TSN_QT and the TSO_QT. This value can be taken directly from the new INV_CURR_USAGE.TSI_QT column.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8CDFC023-E710-BB1F-60C9-F801E4FF3CA6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="assmbl_tsn_qt" id="8DB61C05-5B5C-379C-6D62-359B5312B538">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since new on the item&apos;s next most immediate parent assembly when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>53B7A16A-8276-11F4-634B-8AB9865AF1DB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="assmbl_tso_qt" id="2E2F410A-6C53-5A14-54F5-CDD1D4D8CE66">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since overhaul on the item&apos;s next most immediate parent assembly when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>78A7B810-2228-7FBA-6454-9BD0A29763BB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="h_tsn_qt" id="2364366C-2FC3-E7F7-0A9B-751B02983FB3">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since new on the item&apos;s highest parent when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C39398FC-4E62-2435-31CD-854B93D4F099</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="h_tso_qt" id="40D832E3-6295-4DC8-04D5-4DF240C407FE">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since overhaul on the item&apos;s highest parent when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>95264E90-5E96-2C7F-8A8D-79B3516B5D50</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nh_tsn_qt" id="55FC1B8A-B6A3-D8B1-92CF-28D30605F8CE">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since new on the item&apos;s next highest parent when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3BE30FC1-D168-3A96-8846-4F0869414A79</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nh_tso_qt" id="5151C851-2485-C3D0-1821-7DE6C60C560E">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The total usage since overhaul on the item&apos;s next highest parent when the event occurred</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>16CBA050-1514-E5C3-F12E-186EA6D9723C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="negated_bool" id="CC372231-110D-01D3-795F-827CFB4E30F5">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Indicates that the usage record was negated</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DE2C0C60-FA84-A5AE-9239-01E9C297A2AD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+</listOfValues>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rstat_cd" id="5EA0F3A7-44D8-B096-5D2A-C6E4A78D2598">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>64425776-86E5-A1D6-B5F1-85BCC44FCAA7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+<valueDef value="2" description=""/>
+<valueDef value="3" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1FCBC0AB-79E3-E0BB-B79E-56705CB022C1" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="revision_no" id="AC330497-3A7E-2D7A-BB94-7E5DA53AB06B">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-27 19:10:58 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ctrl_db_id" id="515DCE0C-5E44-D26E-35E1-9B4C009A5A60">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-27 19:12:07 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="creation_dt" id="9053D877-6D1D-DE8E-7917-9218567215E5">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1367A885-12F9-0230-08D7-5FF46CD4B749</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="revision_dt" id="8EADAE43-23E8-8B40-1835-5A92DC520EE2">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AEDBF83B-ED4A-96AF-C98C-3011B3075361</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="revision_db_id" id="C7A1986E-C476-A740-200D-DDA696131E6D">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D05D460F-2FB4-881A-7A7C-1A5278C938D2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="revision_user" id="2599A320-88F7-3FB9-34B6-A3DF96F9E90A">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>030A7333-348A-9A54-2EBC-6E984B709FA8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2FC9E76C-621E-D62A-D9BD-25C2E4434292" name="PK_INV_CND_CHG_INV_USAGE">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6BAB9CAC-3E6B-D880-3B68-FB607F05888F</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8799523-52B1-EF6A-CF5B-6E6D789AC6B3"/>
+<colUsage columnID="85FCBCCC-B812-2E98-ADE7-3B25D56F4C75"/>
+<colUsage columnID="35AF3E78-2E78-536F-4E53-D7F8547EB14E"/>
+<colUsage columnID="33FAC097-1972-0DF0-5AD5-8F0642D4C354"/>
+<colUsage columnID="F279E162-C3EC-C855-568B-A65FABF60A79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="859BDAB4-DC73-1266-D093-FCE7B42800CA" name="IX_EVTINV_INVCNDCHGUSAGE">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B3452E20-88FF-F2F3-49E8-F82FB2E70C5C</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8799523-52B1-EF6A-CF5B-6E6D789AC6B3"/>
+<colUsage columnID="85FCBCCC-B812-2E98-ADE7-3B25D56F4C75"/>
+<colUsage columnID="35AF3E78-2E78-536F-4E53-D7F8547EB14E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD875FC9-49D5-48B9-4BAE-F75D5CEC7498" name="IX_MDATATYPE_INVCNDCHGUSAGE">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>15669D07-2D84-1D80-2A4F-8EE78C4E9F2F</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33FAC097-1972-0DF0-5AD5-8F0642D4C354"/>
+<colUsage columnID="F279E162-C3EC-C855-568B-A65FABF60A79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0870EB73-ED5E-1B83-DFB4-D2AF38E3A904" name="FK_EVTINV_INVCNDCHGUSAGE">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8799523-52B1-EF6A-CF5B-6E6D789AC6B3"/>
+<colUsage columnID="85FCBCCC-B812-2E98-ADE7-3B25D56F4C75"/>
+<colUsage columnID="35AF3E78-2E78-536F-4E53-D7F8547EB14E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27CF7648-D6A7-2C15-7C8E-7DA8F88E8D01" name="FK_MIMDATATYPE_INVCNDCHUSAG">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33FAC097-1972-0DF0-5AD5-8F0642D4C354"/>
+<colUsage columnID="F279E162-C3EC-C855-568B-A65FABF60A79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C99E9C1-F6C3-8853-B514-550E7BBDD4F5" name="FK_MIMRSTAT_INVCNDCHGUSAGE">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EA0F3A7-44D8-B096-5D2A-C6E4A78D2598"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

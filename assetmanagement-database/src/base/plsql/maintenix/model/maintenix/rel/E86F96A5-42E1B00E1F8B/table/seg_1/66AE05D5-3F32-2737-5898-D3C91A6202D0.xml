@@ -1,0 +1,235 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_1" id="66AE05D5-3F32-2737-5898-D3C91A6202D0" name="EQP_KIT_PART_MAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Kit: A kit inventory is a container which holds inventory inside of it.&lt;br&gt;&lt;/br&gt;This table maps the specifc parts in a part group that can be applied to a kit.  While the kit contains a reference to a part group, the kit can be specified to contain only certain parts in the part group.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E79B5EAD-F251-6CE1-F152-ED7874221954</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EQP_KIT_PART_GROUP_DB_ID" id="B6EF1780-ECE6-9D0A-C112-11835E8F1431">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F118960D-D654-BF93-DFA7-C878CA07557D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EQP_KIT_PART_GROUP_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AB6DFFB7-2DD5-C3B8-9EB8-DE48F7EE580F" referredColumn="8EA5BB66-04C3-209F-E205-C5DEF8D3AB16"/>
+</associations>
+</Column>
+<Column name="EQP_KIT_PART_GROUP_ID" id="17FFAD6B-8250-659F-7479-1E25AF6852AF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>902C4CC5-E338-05CD-6C57-7E1F00335454</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EQP_KIT_PART_GROUP_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AB6DFFB7-2DD5-C3B8-9EB8-DE48F7EE580F" referredColumn="8F0053D6-F333-E1C0-BBDE-EA09EF099ACD"/>
+</associations>
+</Column>
+<Column name="PART_NO_DB_ID" id="9E11817A-5390-4ECF-8243-654841844854">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FAA7C947-02B5-8D22-5121-032FF45D0F5F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="00CED3F4-7413-94B9-6655-BF9C17B0941B" referredColumn="68F06646-5424-0BC1-75C1-E36907D2896A"/>
+</associations>
+</Column>
+<Column name="PART_NO_ID" id="1762421C-EA52-5C1C-7C4A-28A9FA98DBE3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3CD12CB0-48B6-0C46-2EEE-019695298130</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="00CED3F4-7413-94B9-6655-BF9C17B0941B" referredColumn="42CF6CC5-F43F-2A82-5AD8-C3C2E11E194C"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="317D6186-70EB-F002-81EB-C1F9AA91B42E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5DB19614-CE79-B4B8-912F-80A5906237F4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30ED4648-573A-39F7-38FD-3C53B154B4BE" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="BD3179BA-3DA0-5EB6-FBE1-994DE677B325">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EFF49066-6FA9-2CCC-7C73-1C45A792C5DF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="8F07E1DD-B40A-DDD3-ADAB-7B70A11550C0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>35E29ACC-9E4A-FD77-146E-9BB20AFD3B40</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="9B9A78FD-1F80-2CE0-9062-CA7A270D8920">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FAB6E70C-AB4D-4EB7-F480-0007A0589289</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="2E2381D5-0338-1978-91E0-271AD61FB603">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B7D95B09-E00E-1943-4078-25CDD207AC3B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="77ACAB45-3BBD-D720-A607-E6E13F19EC31" name="PK_EQP_KIT_PART_MAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F331B796-7A1B-41ED-499E-3894C02B0EDA</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6EF1780-ECE6-9D0A-C112-11835E8F1431"/>
+<colUsage columnID="17FFAD6B-8250-659F-7479-1E25AF6852AF"/>
+<colUsage columnID="9E11817A-5390-4ECF-8243-654841844854"/>
+<colUsage columnID="1762421C-EA52-5C1C-7C4A-28A9FA98DBE3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5A36E486-04A7-DDD0-B425-1F3ED0FC4215" name="IX_EQPPARTNO_EQPKITPARTMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>38C1C4E7-34AD-20F4-234F-97D29704C2EC</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E11817A-5390-4ECF-8243-654841844854"/>
+<colUsage columnID="1762421C-EA52-5C1C-7C4A-28A9FA98DBE3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="287E0E2C-5077-8835-6EC9-CA09FC998C46" name="IX_EQPKITPARTGROUPS_EQPKITPART">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BB0159D1-F7D7-9974-A66A-0ECF0CA5C937</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6EF1780-ECE6-9D0A-C112-11835E8F1431"/>
+<colUsage columnID="17FFAD6B-8250-659F-7479-1E25AF6852AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A04C89E9-3C5E-BD7C-B314-463B4D823774" name="FK_EQPKITPARTGROUPS_EQPKITPART">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6EF1780-ECE6-9D0A-C112-11835E8F1431"/>
+<colUsage columnID="17FFAD6B-8250-659F-7479-1E25AF6852AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1F23626B-5836-D7CB-2D54-4DA429EB95A7" name="FK_EQPPARTNO_EQPKITPARTMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E11817A-5390-4ECF-8243-654841844854"/>
+<colUsage columnID="1762421C-EA52-5C1C-7C4A-28A9FA98DBE3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E86C01D-F88C-6028-5EE2-2E388CF07EC6" name="FK_MIMRSTAT_EQP_KIT_PART_MAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="317D6186-70EB-F002-81EB-C1F9AA91B42E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

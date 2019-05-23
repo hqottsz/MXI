@@ -1,0 +1,170 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="3C2F3E96-A612-BB61-9DEA-AA6190DC2DB5" name="COR_BLOB_PRINT">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:39:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_857</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DOC_DB_ID" id="6369D6DC-E0A7-4D26-622A-E4C227F3DB51">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:42:07 UTC</createdTime>
+<commentInRDBMS>primary key to identify a printable document.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9367E33F-0398-B65D-26B7-EC53064A4882" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="DOC_ID" id="58B23FC4-B153-220B-27F7-679B855CA99C">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:42:07 UTC</createdTime>
+<commentInRDBMS>primary key to identify a printable document. Unique key generated from PRINT_DOC_ID_SEQ</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE_CD" id="D7678F6B-EB20-9FFB-56E8-B5699EA70BDB">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:42:07 UTC</createdTime>
+<commentInRDBMS>describes the type of document byte data found in the DATA column. ex: PDF</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FILENAME_DESC" id="B62D0ACA-2BAF-E401-4C86-38D187562DBB">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:42:07 UTC</createdTime>
+<commentInRDBMS>the complete filename of the document. This is useful if printing to a filesystem</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6596A964-F2B0-BE56-5055-2912E6793772</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PATH_DESC" id="87C56B9E-96E9-26FB-E44A-9397A85C7736">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:42:07 UTC</createdTime>
+<commentInRDBMS>an identifier to allow grouping and organization of print jobs. This is useful if printing to a filesystem</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6596A964-F2B0-BE56-5055-2912E6793772</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORD" id="2557D15F-480F-5617-44C7-26877F428D7A">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:42:07 UTC</createdTime>
+<commentInRDBMS>the order of this document in relation to other documents in the same print job</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA" id="A3EE2E8A-C153-019E-5BEB-030B21C33011">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:43:14 UTC</createdTime>
+<commentInRDBMS>the raw byte payload of the document</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<domain>5EEB8339-1396-B686-91E1-2C0EA2712452</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="1EC61AEE-F827-C224-901D-AD26E64412FE">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:43:14 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="0F03CF7D-CC13-1FF1-8142-B84BEABBED7C">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:43:14 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="AD2954A2-EBED-276F-3717-0968CBAD66F3">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:43:14 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="3FF9F3C6-B6F3-A3C2-F034-461FD5A22489">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:43:14 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="784ECD48-8CE4-118E-7675-DB25A6563B0D" name="PK_COR_BLOB_PRINT">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:42:07 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6369D6DC-E0A7-4D26-622A-E4C227F3DB51"/>
+<colUsage columnID="58B23FC4-B153-220B-27F7-679B855CA99C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8673DFC-5B13-952E-BF70-161D1E900E92" name="IX_CORBLOBPRINTORD">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-10 16:52:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6369D6DC-E0A7-4D26-622A-E4C227F3DB51"/>
+<colUsage columnID="58B23FC4-B153-220B-27F7-679B855CA99C"/>
+<colUsage columnID="2557D15F-480F-5617-44C7-26877F428D7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E72D7FD5-58B4-59D0-78C0-0D4B4E1CB4A3" name="FK_CORBLOBPRINT_MIMDB">
+<createdBy>madeca</createdBy>
+<createdTime>2018-10-12 16:45:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6369D6DC-E0A7-4D26-622A-E4C227F3DB51"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

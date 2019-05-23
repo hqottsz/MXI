@@ -1,0 +1,421 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_4" id="4225968A-8530-95A3-4B8B-80113535CBB6" name="PO_AUTH">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This table is used to store the list of authorizing signatures that are needed to approve this PO.  Once those signatures have been obtained, this table will record the HR that performed the signature.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CD0B4A0B-AB2F-34A3-5A4D-B8FF0CEF62A5</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_DB_ID" id="E6D21B40-9DF0-15A1-E2EE-C63F23FA1F25">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_HEADER.  This is the purchase order that is being authorized.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7B862597-91F5-3CFD-216E-9871023C2610</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D427AF62-F2E3-71C6-31F4-6B81EDAAF6A7" referredColumn="9A21A48E-5D6E-8EEB-F0BD-DEA935BD5CA6"/>
+</associations>
+</Column>
+<Column name="PO_ID" id="C85CF437-8467-65D6-8959-D9112117E641">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_HEADER.  This is the purchase order that is being authorized.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>69DB20EA-EED2-3729-C58D-6E8F660120C3</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D427AF62-F2E3-71C6-31F4-6B81EDAAF6A7" referredColumn="D01E3AC5-B491-0B39-6011-7F5B23BC3FAB"/>
+</associations>
+</Column>
+<Column name="PO_AUTH_ID" id="7A6CBCCF-7216-75B0-F18C-D59D3F75C415">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A unique, user entered value that defines the PK.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EFA8380E-A819-E1E4-FCE3-F17AAD7263C6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_AUTH_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PO_AUTH_LVL_DB_ID" id="A89ECF15-B38F-3F66-807B-04AF25B08FE1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK PO_AUTH_LVL.  Records the necessary authorization level.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BA3A1D38-73A7-3441-7709-396A77D80381</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_AUTH_LVL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9005D7B7-D035-2383-B8DC-6816D6074D62" referredColumn="2BF40492-7827-4EDD-6B3D-26E4D5E5A4D2"/>
+</associations>
+</Column>
+<Column name="PO_AUTH_LVL_CD" id="26AA7F0D-88E2-248E-0220-5596DFF5F18A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK PO_AUTH_LVL.  Records the necessary authorization level.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8F843E98-02C3-4159-5B86-4036E5C8C4B7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EC3B5B3F-6A34-8405-2855-C85E56C8EEFE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9005D7B7-D035-2383-B8DC-6816D6074D62" referredColumn="F57F00D1-B4E9-61BB-7365-7B77B3A2CFC2"/>
+</associations>
+</Column>
+<Column name="AUTH_HR_DB_ID" id="741848A4-4ECA-3C37-5E68-D16EB87C9FD0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK ORG_HR.  This is the HR that signed the authorization line for this PO.  </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>12BCAB87-3AC1-1164-4C7C-672AD68B597F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="AUTH_HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="05F662B9-4088-CB84-8147-146493427EBA" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="AUTH_HR_ID" id="1D08225A-D327-DB36-E7A6-1C8FD719556D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK ORG_HR.  This is the HR that signed the authorization line for this PO.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5A3D943B-AB40-3FBA-C447-8720F2F325D9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="AUTH_HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="05F662B9-4088-CB84-8147-146493427EBA" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="AUTH_DT" id="A766FC53-0D98-55B9-27C7-1967DB07DC1F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the date when the HR signed the authorization.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>35204E46-CB86-EF40-2C5B-E540F151DFED</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTH_NOTE" id="BABA2477-CE7C-EB47-20BC-39F4208130C9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is a note that the HR provided when he signed the authorization.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>92B2BA3F-FFDF-01A4-4F5F-2D922B7FB3A7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AOG_OVERRIDE_BOOL" id="369AE01E-66DF-0EFA-F157-FE77259F82E1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This indicates that the user performed an AOG authorization override.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8D12C63D-0A63-0C5D-A325-A1D5C4AFC675</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="AOG_OVERRIDE_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIST_BOOL" id="99A619CA-B1E1-A71E-E7DD-7662AEDA13DA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Indicates that this authorization was historic.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B0FE567A-B984-4926-B9B0-EDFEF8044E75</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="HIST_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTH_LVL_STATUS_DB_ID" id="00835266-5548-7930-58FA-DE69D5754774">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B2C086AC-C3C0-EDA0-979D-794781834D18</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="AUTH_LVL_STATUS_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="509E49E6-1B66-A427-DE88-0B16CA4865F9" referredColumn="34290B83-68FD-E67E-F802-1BD300D6202E"/>
+</associations>
+</Column>
+<Column name="AUTH_LVL_STATUS_CD" id="BEED0CEB-BE92-65B0-065F-B5F54CE1B71A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>593FC71A-697B-F54C-5204-356E766571BF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EC3B5B3F-6A34-8405-2855-C85E56C8EEFE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="509E49E6-1B66-A427-DE88-0B16CA4865F9" referredColumn="F2BE1439-DD7F-4369-8CF9-DAC28153E63C"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="E509DEF6-52DF-A768-EECC-9DFA4D0C6315">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>58EC7110-9716-D1B2-8E51-37A6CEFF3465</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4AAF3688-42B0-4ECA-E0CA-AFE2CF46E0B9" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="C8467CC0-EB49-CDB6-206F-AB5A62E00C1D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CAF0C18B-F272-C9DE-E64C-084F8B1F959F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="A21A80BC-927C-D424-22BD-D26193CCB0D5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.&lt;/br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>18339080-9958-0601-FC83-6DA6CA2B1B62</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="D82AC385-C9DE-71D7-3F91-2B33CFCA4C5B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.&lt;/br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7985BD9A-1B50-884C-A8D4-FE1E54F682D0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="19D03BA8-A67F-FE3F-4EC8-B11486FBA74F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0569CBBA-7121-D89F-BA5B-D618F0BF69C7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D38628D6-3637-2F31-998B-DB90DFF42082" name="pk_PO_AUTH">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>F789C345-9225-BD18-D938-9779C09B4559</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6D21B40-9DF0-15A1-E2EE-C63F23FA1F25"/>
+<colUsage columnID="C85CF437-8467-65D6-8959-D9112117E641"/>
+<colUsage columnID="7A6CBCCF-7216-75B0-F18C-D59D3F75C415"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C24165DD-03DB-525A-094C-EB8DADA44831" name="IX_ORGHR_POAUTH">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>594E6A0D-DC6B-58E9-462B-420E290A19DF</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="741848A4-4ECA-3C37-5E68-D16EB87C9FD0"/>
+<colUsage columnID="1D08225A-D327-DB36-E7A6-1C8FD719556D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB25C731-A4F8-95DB-456F-9759DC64D64D" name="IX_POHEADER_POAUTH">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>34AF520B-8C8F-1464-0457-4DBFB5206BCC</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6D21B40-9DF0-15A1-E2EE-C63F23FA1F25"/>
+<colUsage columnID="C85CF437-8467-65D6-8959-D9112117E641"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ACAF1AF1-99C4-70AA-A839-AE83B6A944D8" name="FK_MIMRSTAT_POAUTH">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:34 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E509DEF6-52DF-A768-EECC-9DFA4D0C6315"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91E7B22A-5A2A-90D1-C3E7-BCAC2B4A8007" name="FK_ORGHR_POAUTH">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="741848A4-4ECA-3C37-5E68-D16EB87C9FD0"/>
+<colUsage columnID="1D08225A-D327-DB36-E7A6-1C8FD719556D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="492A6A67-F7D3-8663-9EB0-88A063A3DBC5" name="FK_POHEADER_POAUTH">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6D21B40-9DF0-15A1-E2EE-C63F23FA1F25"/>
+<colUsage columnID="C85CF437-8467-65D6-8959-D9112117E641"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="72D90544-AAC6-AE81-153D-61AB7FB278A2" name="FK_REFPOAUTHLVLSTATUS_POAUTH">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00835266-5548-7930-58FA-DE69D5754774"/>
+<colUsage columnID="BEED0CEB-BE92-65B0-065F-B5F54CE1B71A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5BEF7485-AA8C-D695-CE74-632A9406F7C0" name="FK__POAUTHLVL_POAUTH">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:46 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A89ECF15-B38F-3F66-807B-04AF25B08FE1"/>
+<colUsage columnID="26AA7F0D-88E2-248E-0220-5596DFF5F18A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,84 @@
+<dataset>
+<!-- Setup the inventory -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "200001" 
+   />
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "200002" 
+   />
+<!-- This should be returned -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100001"
+      event_status_db_id = "0"
+      event_status_cd = "IN WORK"
+      rstat_cd = "0"
+   />
+<!-- This task has status IN WORK, but it is REQ task -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100002"
+      event_status_db_id = "0"
+      event_status_cd = "IN WORK"
+      rstat_cd = "0"
+   />
+<!-- This task has status ACTV -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100003"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      rstat_cd = "0"
+   />
+<!-- This task does not belong to the inventory 4650:200001 -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100004"
+      event_status_db_id = "0"
+      event_status_cd = "IN WORK"
+      rstat_cd = "0"
+   />
+<!-- This should be returned -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100001"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200001"
+      task_class_db_id = "0"
+      task_class_cd = "CHECK"
+      rstat_cd = "0"
+   />
+<!-- This task has status IN WORK, but it is REQ task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100002"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200001"
+      task_class_db_id = "0"
+      task_class_cd = "REQ"
+      rstat_cd = "0"
+   />
+<!-- This task has status ACTV -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100003"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200001"
+      task_class_db_id = "0"
+      task_class_cd = "CHECK"
+      rstat_cd = "0"
+   />
+<!-- This task does not belong to the inventory 4650:200001 -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100004"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200002"
+      task_class_db_id = "0"
+      task_class_cd = "CHECK"
+      rstat_cd = "0"
+   />
+
+</dataset>

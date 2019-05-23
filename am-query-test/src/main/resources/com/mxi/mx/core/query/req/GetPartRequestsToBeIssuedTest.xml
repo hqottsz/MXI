@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+   <!-- part request that will be included -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1000"
+      req_type_cd="TASK"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1000"
+      event_status_db_id="0"
+      event_status_cd="PRAVAIL"
+      />
+
+   <!--
+      part request that is not needed until later
+      note that the req_by_date is updated in the test case
+    -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1001"
+      req_type_cd="TASK"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1001"
+      event_status_db_id="0"
+      event_status_cd="PRAVAIL"
+      />
+
+   <!-- part request that will not be included because it hsa type STOCK -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1002"
+      req_type_cd="STOCK"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1002"
+      event_status_db_id="0"
+      event_status_cd="PRAVAIL"
+      />
+
+   <!-- part request that will not be included because it hsa type CSNSTOCK -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1003"
+      req_type_cd="CSNSTOCK"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1003"
+      event_status_db_id="0"
+      event_status_cd="PRAVAIL"
+      />
+
+   <!-- part request that will not be included because it is not PRAVAIL -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1004"
+      req_type_cd="TASK"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1004"
+      event_status_db_id="0"
+      event_status_cd="PROPEN"
+      />
+
+   <!-- part request that will not be included since it has an existing issue xfer -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1005"
+      req_type_cd="TASK"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1005"
+      event_status_db_id="0"
+      event_status_cd="PRAVAIL"
+      />
+
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="2005"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="1005"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="2005"
+      event_type_db_id="0"
+      event_type_cd="LX"
+      event_status_db_id="0"
+      event_status_cd="LXPEND"
+      />
+
+</dataset>

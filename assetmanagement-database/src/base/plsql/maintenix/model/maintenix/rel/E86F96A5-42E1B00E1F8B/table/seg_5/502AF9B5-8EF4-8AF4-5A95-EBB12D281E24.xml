@@ -1,0 +1,212 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_5" id="502AF9B5-8EF4-8AF4-5A95-EBB12D281E24" name="REF_FAIL_SEV_DEFER">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>[EXTENDABLE] The list of fault deferral classes that are available when a fault severity that allows deferral is selected.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF604116-2870-CCDE-DA37-9B870580F622</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FAIL_SEV_DB_ID" id="41F0254F-5B40-9971-E126-BE40BE30F084">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_SEV</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8D0761C1-B9C3-D9EF-091F-6EF3FE3AB591</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FAIL_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE8B4E27-BED9-67D4-EF49-6B038232EA55" referredColumn="C79DF6D4-C92D-3E92-A8E1-5CB931F40B59"/>
+</associations>
+</Column>
+<Column name="FAIL_SEV_CD" id="C545EF36-89C4-276D-C996-BE23297BA947">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_SEV</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D1969CB7-079B-A1C1-1D7A-5FBAC6EC77DC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE8B4E27-BED9-67D4-EF49-6B038232EA55" referredColumn="D1800540-4B11-02A9-D8C4-733143014DFC"/>
+</associations>
+</Column>
+<Column name="FAIL_DEFER_DB_ID" id="D0097CFD-CC24-33C9-6398-008A29FDBDE4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_DEFER</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A2893F80-6103-617A-FF62-03374065ABA2</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FAIL_DEFER_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2769BE82-162D-5F6B-1CE0-B7206971ED37" referredColumn="A80FE3D9-CD12-F922-C6E8-A0E653B587C6"/>
+</associations>
+</Column>
+<Column name="FAIL_DEFER_CD" id="876432F6-809A-4293-F219-3C36C32017C6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_DEFER</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B394DCDC-EAA4-FDA3-EE40-D3F6749761C9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2769BE82-162D-5F6B-1CE0-B7206971ED37" referredColumn="A43F8F99-E08B-CA26-657B-7D658304E3E6"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="FE0AB599-AE4E-C03E-30D4-03998C1DC64A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2DDAC935-638E-72FC-40C8-93ACCCFEEECC</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14C8D9D4-47FF-D66F-6988-518C6C1022F2" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="14D56EC2-83C7-B957-FE5B-A121FDE4B0B2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5C8E6FC3-FE94-89FF-A7EA-A0B718F025DA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="1D64ACF0-4083-A0D4-A053-E85277869ADF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>00AF5F87-7DA2-9C42-B9AF-FC8A122A8005</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="68273134-2CB1-FDF4-46CA-97D3F0271DCC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1460AF71-AF07-3A9C-7B0A-EB85F6060EC7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="09485F3F-8A28-479F-BF50-A36863A59BBE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F0632E0B-D00B-6145-377F-2BC98A255AC5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A64A36FE-5734-1BA6-322A-FE050669F5AF" name="PK_REF_FAIL_SEV_DEFER">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>486FF978-E086-78B7-A5AC-A679E3217612</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41F0254F-5B40-9971-E126-BE40BE30F084"/>
+<colUsage columnID="C545EF36-89C4-276D-C996-BE23297BA947"/>
+<colUsage columnID="D0097CFD-CC24-33C9-6398-008A29FDBDE4"/>
+<colUsage columnID="876432F6-809A-4293-F219-3C36C32017C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6AB5C1F7-13C5-D735-1227-9DF1AFE3C71E" name="FK_MIMRSTAT_REFFAILSEVDFR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:35 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FE0AB599-AE4E-C03E-30D4-03998C1DC64A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F6D515A-6C41-CA2C-859D-1FF0B64AB568" name="FK_REFFAILDEFER_REFFAILSEVDFR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:39 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0097CFD-CC24-33C9-6398-008A29FDBDE4"/>
+<colUsage columnID="876432F6-809A-4293-F219-3C36C32017C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="436AF98C-D5BB-2151-81F1-FD7FED0169D9" name="FK_REFFAILSEV_REFFAILSEVDFR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41F0254F-5B40-9971-E126-BE40BE30F084"/>
+<colUsage columnID="C545EF36-89C4-276D-C996-BE23297BA947"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

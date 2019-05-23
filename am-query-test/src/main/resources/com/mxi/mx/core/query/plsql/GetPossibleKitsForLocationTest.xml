@@ -1,0 +1,806 @@
+<dataset>
+<!--
+   <EQP_PART_NO
+      part_no_db_id=""
+      part_no_id=""
+      bom_part_db_id=""
+      bom_part_id=""
+      inv_class_db_id=""
+      inv_class_cd =""
+      />
+   <EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id=""
+      eqp_kit_part_group_id=""
+      part_no_db_id=""
+      part_no_id=""
+      />
+   <EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id=""
+      eqp_kit_part_group_id=""
+      bom_part_db_id=""
+      bom_part_id=""
+      kit_qt=""
+      value_pct=""
+      />
+   <EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id=""
+      eqp_kit_part_group_id=""
+      part_no_db_id=""
+      part_no_id=""
+      />
+   <INV_INV
+      inv_no_db_id=""
+      inv_no_id=""
+      part_no_db_id=""
+      part_no_id=""
+      loc_db_id=""
+      loc_id=""
+      inv_cond_db_id=""
+      inv_cond_id=""
+      inv_class_db_id=""
+      inv_class_cd=""
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+   <INV_LOC
+      loc_db_id=""
+      loc_id=""
+      supply_loc_db_id=""
+      supply_loc_id=""
+      />
+   <INV_KIT_MAP
+      kit_inv_no_db_id=""
+      kit_inv_no_id=""
+      inv_no_db_id=""
+      inv_no_id=""
+      />
+ -->
+<!-- Creating a Kit and 3 parts assigned to it -->
+<EQP_PART_NO
+      part_no_db_id="1"
+      part_no_id="1"
+      inv_class_db_id="0"
+      inv_class_cd ="KIT"
+      />
+<EQP_PART_NO
+      part_no_db_id="1"
+      part_no_id="2"
+      inv_class_db_id="0"
+      inv_class_cd ="SER"
+      />
+<EQP_PART_NO
+      part_no_db_id="1"
+      part_no_id="3"
+      inv_class_db_id="0"
+      inv_class_cd ="SER"
+      />
+<EQP_PART_NO
+      part_no_db_id="1"
+      part_no_id="4"
+      inv_class_db_id="0"
+      inv_class_cd ="BATCH"
+      />
+<!-- Mapping the part groups kit quantities -->
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="1"
+      bom_part_db_id="1"
+      bom_part_id="2"
+      kit_qt="1"
+      value_pct="0.5"
+      />
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="2"
+      bom_part_db_id="1"
+      bom_part_id="3"
+      kit_qt="1"
+      value_pct="0.4"
+      />
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="3"
+      bom_part_db_id="1"
+      bom_part_id="4"
+      kit_qt="5"
+      value_pct="0.1"
+      />
+<!-- Associating the part groups to the kit -->
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="1"
+      kit_part_no_db_id="1"
+      kit_part_no_id="1"
+      />
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="2"
+      kit_part_no_db_id="1"
+      kit_part_no_id="1"
+      />
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="3"
+      kit_part_no_db_id="1"
+      kit_part_no_id="1"
+      />
+<!-- Mapping the specific alternate parts to the part groups -->
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="1"
+      part_no_db_id="1"
+      part_no_id="2"
+      />
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="2"
+      part_no_db_id="1"
+      part_no_id="3"
+      />
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="1"
+      eqp_kit_part_group_id="3"
+      part_no_db_id="1"
+      part_no_id="4"
+      />
+<!-- creating locations for the unit tests -->
+<INV_LOC
+      loc_db_id="1"
+      loc_id="2"
+      supply_loc_db_id="2"
+      supply_loc_id="2"
+      />
+<INV_LOC
+      loc_db_id="2"
+      loc_id="2"
+      supply_loc_db_id="2"
+      supply_loc_id="2"
+      />
+<INV_LOC
+      loc_db_id="1"
+      loc_id="3"
+      supply_loc_db_id="2"
+      supply_loc_id="3"
+      />
+<INV_LOC
+      loc_db_id="2"
+      loc_id="3"
+      supply_loc_db_id="2"
+      supply_loc_id="3"
+      />
+<INV_LOC
+      loc_db_id="1"
+      loc_id="4"
+      supply_loc_db_id="2"
+      supply_loc_id="4"
+      />
+<INV_LOC
+      loc_db_id="2"
+      loc_id="4"
+      supply_loc_db_id="2"
+      supply_loc_id="4"
+      />
+<INV_LOC
+      loc_db_id="1"
+      loc_id="5"
+      supply_loc_db_id="2"
+      supply_loc_id="5"
+      />
+<INV_LOC
+      loc_db_id="2"
+      loc_id="5"
+      supply_loc_db_id="2"
+      supply_loc_id="5"
+      />
+<INV_LOC
+      loc_db_id="1"
+      loc_id="6"
+      supply_loc_db_id="2"
+      supply_loc_id="6"
+      />
+<INV_LOC
+      loc_db_id="2"
+      loc_id="6"
+      supply_loc_db_id="2"
+      supply_loc_id="6"
+      />
+<INV_LOC
+      loc_db_id="1"
+      loc_id="7"
+      supply_loc_db_id="2"
+      supply_loc_id="7"
+      />
+<INV_LOC
+      loc_db_id="2"
+      loc_id="7"
+      supply_loc_db_id="2"
+      supply_loc_id="7"
+      />
+<!-- Creating inventory at location 1:2 (supply location 2:2) -->
+<!-- This inventory will test that only serviceable inventory will be taken into account by the query -->
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="1"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="2"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="2"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="2"
+      inv_cond_db_id="0"
+      inv_cond_cd="INSPREQ"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="3"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="2"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="4"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="2"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="5"
+      part_no_db_id="1"
+      part_no_id="4"
+      loc_db_id="2"
+      loc_id="2"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="BATCH"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt="10"
+      />
+<!-- Creating inventory at location 1:3 (supply location 2:3) -->
+<!-- This inventory is for testing that only non-kitted inventory is taken into account -->
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="14"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="3"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_KIT_MAP
+      kit_inv_no_db_id="0"
+      kit_inv_no_id="0"
+      inv_no_db_id="1"
+      inv_no_id="14"
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="15"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="3"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="16"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="3"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="17"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="3"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="18"
+      part_no_db_id="1"
+      part_no_id="4"
+      loc_db_id="2"
+      loc_id="3"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="BATCH"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt="10"
+      />
+<!-- Creating inventory at location 1:4 (supply location 2:4) -->
+<!-- This inventory is for testing that installed inventory will not be counted -->
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="19"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="4"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="20"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="4"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="21"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="4"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="22"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="4"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id="0"
+      nh_inv_no_id="0"
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="23"
+      part_no_db_id="1"
+      part_no_id="4"
+      loc_db_id="2"
+      loc_id="4"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="BATCH"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt="10"
+      />
+<!-- Creating inventory at location 1:5 (supply location 2:5) -->
+<!-- This inventory is for testing that batch inventory quantities are properly rounded down -->
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="24"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="5"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="25"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="5"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="26"
+      part_no_db_id="1"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="5"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="27"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="5"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="28"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="5"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="29"
+      part_no_db_id="1"
+      part_no_id="3"
+      loc_db_id="2"
+      loc_id="5"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="30"
+      part_no_db_id="1"
+      part_no_id="4"
+      loc_db_id="2"
+      loc_id="5"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="BATCH"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt="13"
+      />
+<!-- This data is creating a new kit definition with a single piece of inventory in it.  The kit_qt is set to be 0. -->
+<!-- The point of this data is to test the exception handling to ensure that divide by 0 error is properly handled. -->
+<EQP_PART_NO
+      part_no_db_id="2"
+      part_no_id="1"
+      inv_class_db_id="0"
+      inv_class_cd ="KIT"
+      />
+<EQP_PART_NO
+      part_no_db_id="2"
+      part_no_id="2"
+      inv_class_db_id="0"
+      inv_class_cd ="SER"
+      />
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="2"
+      eqp_kit_part_group_id="1"
+      bom_part_db_id="2"
+      bom_part_id="2"
+      kit_qt="0"
+      value_pct="1"
+      />
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="2"
+      eqp_kit_part_group_id="1"
+      kit_part_no_db_id="2"
+      kit_part_no_id="1"
+      />
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="2"
+      eqp_kit_part_group_id="1"
+      part_no_db_id="2"
+      part_no_id="2"
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="31"
+      part_no_db_id="2"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="6"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<!-- This data is for creating 3 different kits, and the inventory at the same location -->
+<!-- This tests that inventory can be counted in different kits, and  -->
+   <!-- Kits -->
+<EQP_PART_NO
+      part_no_db_id="3"
+      part_no_id="1"
+      inv_class_db_id="0"
+      inv_class_cd ="KIT"
+      />
+<EQP_PART_NO
+      part_no_db_id="3"
+      part_no_id="2"
+      inv_class_db_id="0"
+      inv_class_cd ="KIT"
+      />
+<EQP_PART_NO
+      part_no_db_id="3"
+      part_no_id="3"
+      inv_class_db_id="0"
+      inv_class_cd ="KIT"
+      />
+   <!-- Parts -->
+<EQP_PART_NO
+      part_no_db_id="4"
+      part_no_id="1"
+      inv_class_db_id="0"
+      inv_class_cd ="SER"
+      />
+<EQP_PART_NO
+      part_no_db_id="4"
+      part_no_id="2"
+      inv_class_db_id="0"
+      inv_class_cd ="BATCH"
+      />
+   <!-- Kit 1 -->
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="3"
+      eqp_kit_part_group_id="1"
+      bom_part_db_id="2"
+      bom_part_id="2"
+      kit_qt="1"
+      value_pct="1"
+      />
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="3"
+      eqp_kit_part_group_id="1"
+      kit_part_no_db_id="3"
+      kit_part_no_id="1"
+      />
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="3"
+      eqp_kit_part_group_id="1"
+      part_no_db_id="4"
+      part_no_id="1"
+      />
+   <!-- Kit 2 -->
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="4"
+      eqp_kit_part_group_id="1"
+      bom_part_db_id="2"
+      bom_part_id="2"
+      kit_qt="1"
+      value_pct="1"
+      />
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="4"
+      eqp_kit_part_group_id="2"
+      bom_part_db_id="2"
+      bom_part_id="2"
+      kit_qt="5"
+      value_pct="1"
+      />
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="4"
+      eqp_kit_part_group_id="1"
+      kit_part_no_db_id="3"
+      kit_part_no_id="2"
+      />
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="4"
+      eqp_kit_part_group_id="2"
+      kit_part_no_db_id="3"
+      kit_part_no_id="2"
+      />
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="4"
+      eqp_kit_part_group_id="1"
+      part_no_db_id="4"
+      part_no_id="1"
+      />
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="4"
+      eqp_kit_part_group_id="2"
+      part_no_db_id="4"
+      part_no_id="2"
+      />
+   <!-- Kit 3 -->
+<EQP_KIT_PART_GROUPS
+      eqp_kit_part_group_db_id="5"
+      eqp_kit_part_group_id="1"
+      bom_part_db_id="2"
+      bom_part_id="2"
+      kit_qt="15"
+      value_pct="1"
+      />
+<EQP_KIT_PART_GROUP_MAP
+      eqp_kit_part_group_db_id="5"
+      eqp_kit_part_group_id="1"
+      kit_part_no_db_id="3"
+      kit_part_no_id="3"
+      />
+<EQP_KIT_PART_MAP
+      eqp_kit_part_group_db_id="5"
+      eqp_kit_part_group_id="1"
+      part_no_db_id="4"
+      part_no_id="2"
+      />
+   <!-- inventory at location -->
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="32"
+      part_no_db_id="4"
+      part_no_id="1"
+      loc_db_id="2"
+      loc_id="7"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="33"
+      part_no_db_id="4"
+      part_no_id="1"
+      loc_db_id="2"
+      loc_id="7"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="34"
+      part_no_db_id="4"
+      part_no_id="1"
+      loc_db_id="2"
+      loc_id="7"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="35"
+      part_no_db_id="4"
+      part_no_id="1"
+      loc_db_id="2"
+      loc_id="7"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="SER"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt=""
+      />
+<INV_INV
+      inv_no_db_id="1"
+      inv_no_id="36"
+      part_no_db_id="4"
+      part_no_id="2"
+      loc_db_id="2"
+      loc_id="7"
+      inv_cond_db_id="0"
+      inv_cond_cd="RFI"
+      inv_class_db_id="0"
+      inv_class_cd="BATCH"
+      nh_inv_no_db_id=""
+      nh_inv_no_id=""
+      bin_qt="15"
+      />
+</dataset>

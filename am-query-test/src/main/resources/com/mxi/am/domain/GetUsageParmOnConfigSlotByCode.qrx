@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetUsageParmOnConfigSlotByCode</name>
+   <description />
+   <sql>
+      SELECT
+         mim_data_type.data_type_db_id,
+         mim_data_type.data_type_id
+      FROM
+         mim_data_type
+      INNER JOIN
+         mim_part_numdata
+         ON
+            mim_part_numdata.data_type_db_id = mim_data_type.data_type_db_id AND
+            mim_part_numdata.data_type_id = mim_data_type.data_type_id
+      WHERE
+         mim_data_type.data_type_cd = :aDataTypeCd AND
+         mim_part_numdata.assmbl_db_id = :aAssmblDbId AND
+         mim_part_numdata.assmbl_cd = :aAssmblCd AND
+         mim_part_numdata.assmbl_bom_id = :aAssmblBomId
+   </sql>
+   <arguments>
+      <argument name="aAssmblDbId" type="INTEGER"/>
+      <argument name="aAssmblCd" type="STRING" />
+      <argument name="aAssmblBomId" type="INTEGER" />
+      <argument name="aDataTypeCd" type="STRING" />
+   </arguments>
+</sql-statement>

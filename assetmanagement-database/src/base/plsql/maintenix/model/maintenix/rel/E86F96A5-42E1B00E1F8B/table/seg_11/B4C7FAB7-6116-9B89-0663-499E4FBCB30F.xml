@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="B4C7FAB7-6116-9B89-0663-499E4FBCB30F" name="MT_ENH_APPLICABILITY">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<commentInRDBMS>Table that is secondary filtering (applicability) source for enhanced part search queries. Created and maintained from source tables via trigger as part of MX_CORE_GENERATE_PART_SEARCH_INDEX job. This aggregates changes made to the applicability of parts and then maps to inventory. In the query it uses inverse logic. That is, given an inventory, if I have a row returned then it is not applicable. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9035BAA5-092C-7806-F837-E37254E2428A</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_NO_DB_ID" id="C4EBB93F-427B-7EF6-256C-19C74EA170ED">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1561464F-AA07-38BB-CF84-09F49B5F68AE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INV_NO_ID" id="76D9E5F0-110F-2893-9B17-989490C208B5">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4DFE5470-3D92-1F74-D0E6-0B18FDC36E6F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BOM_PART_DB_ID" id="4DDA7C71-3BDB-054B-5F36-9E80F92FEB04">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<commentInRDBMS>FK to eqp_part_baseline</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6FE639CB-91BA-681D-1D44-DCBC69D50036</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BOM_PART_ID" id="9A977F60-2796-3216-AF46-C0C8BFA67A91">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<commentInRDBMS>FK to eqp_part_baseline</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>27E5BAF7-B2EC-8AD0-EBB5-0343FF2840AF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PART_NO_DB_ID" id="E4D6250D-B054-E65C-1A52-3D9335364F29">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<commentInRDBMS>FK to eqp_part_no</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D65005A4-4F85-FF86-E820-D49442038B69</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PART_NO_ID" id="86ADA937-0C74-135F-0A72-038101482A85">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<commentInRDBMS>FK to eqp_part_no</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>36C28263-60EE-42AF-0F9E-A6A484E1E2A4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DAC570E7-7200-3EEA-EE55-0CCAFCEEEC03" name="IX_MT_APPL_BOM">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-04 13:48:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BF959631-BC99-A872-BF80-73E377B5E56E</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4EBB93F-427B-7EF6-256C-19C74EA170ED"/>
+<colUsage columnID="76D9E5F0-110F-2893-9B17-989490C208B5"/>
+<colUsage columnID="4DDA7C71-3BDB-054B-5F36-9E80F92FEB04"/>
+<colUsage columnID="9A977F60-2796-3216-AF46-C0C8BFA67A91"/>
+<colUsage columnID="E4D6250D-B054-E65C-1A52-3D9335364F29"/>
+<colUsage columnID="86ADA937-0C74-135F-0A72-038101482A85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

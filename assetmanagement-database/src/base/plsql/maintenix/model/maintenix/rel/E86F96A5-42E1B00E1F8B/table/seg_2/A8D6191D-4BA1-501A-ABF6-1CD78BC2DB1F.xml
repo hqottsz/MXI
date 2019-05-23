@@ -1,0 +1,356 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_2" id="A8D6191D-4BA1-501A-ABF6-1CD78BC2DB1F" name="INV_ADVSRY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This table will associate the advisory with a serial/batch number.  When the relationship is flagged as active, the serial/batch number is flagged with the advisory.  To clear the flag, the ACTIVE_BOOL is set to zero.  The advisory remains associated with the serial/batch number for historical record keeping.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E36997BB-E12A-C4D0-F221-50D7CFFE8ED8</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_NO_DB_ID" id="30050065-44B5-5550-8DB7-4158FBF10850">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PFK to inv_inv. The inventory being associated to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7736BB7C-F0C4-908E-F365-38B7B4D7D350</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AFE47FF5-200E-2B35-8F55-53C1CC920ED3" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="INV_NO_ID" id="A11DF309-330F-E818-06C2-25DD03EEA8C2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PFK to inv_inv. The inventory being associated to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>08770D73-37D6-5B7C-633C-352724325C69</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AFE47FF5-200E-2B35-8F55-53C1CC920ED3" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="ADVSRY_DB_ID" id="EAA2C4CB-0BFA-7E72-0C46-F18F1C0AA803">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PFK to eqp_advsry. The advisory being associated to the inventory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B20129F9-FA48-5433-E417-89BB3A88AA47</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ADVSRY_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3009C744-F250-B6E9-0587-146A0EE44D70" referredColumn="1C5A354A-1B62-2983-CD79-0554EFA9A5F0"/>
+</associations>
+</Column>
+<Column name="ADVSRY_ID" id="DE3D3681-F9E9-9135-073F-6A0514B08D03">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PFK to eqp_advsry. The advisory being associated to the inventory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C7740487-6ACB-983D-9691-683E531D25B5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ADVSRY_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3009C744-F250-B6E9-0587-146A0EE44D70" referredColumn="9EB42848-B78E-6C7D-0F9F-BDE0F12CEED9"/>
+</associations>
+</Column>
+<Column name="ACTIVE_BOOL" id="9709F978-CC8E-6CCF-7039-D283ED35DEE8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Boolean flag to indicate if this advisory is currently active.  When the flag is set to true, the serial/batch number is under investigation according to the advisory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7D6F8B53-562D-305F-56E3-FF94CF996004</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ACTIVE_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLEAR_NOTE" id="6DA31C5E-8BB2-7E9B-B029-DF518321D109">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This note field contains any notes the user entered when clearing the advisory from the inventory record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EC4364B7-F76C-7DC6-8C7B-A03AB554BC34</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLEAR_DT" id="36B9AA0D-EF73-7CAC-3DBD-9720D06DD875">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Timestamp of advisory clear.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7682C98C-9283-CE25-796E-105E2ECAFB6C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLEAR_HR_DB_ID" id="9BE43F0A-7D61-74FC-22BF-91A2D8FF3574">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to org_hr.  The user who cleared the advisory from this inventory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AD3F1B3C-0C26-1479-9F5C-8C2B1B8026B4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CLEAR_HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="17222FE2-FC57-3F98-CFB5-55E4DE421D63" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="CLEAR_HR_ID" id="5CDA184F-E620-AC0C-C376-688FD0802BA2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to org_hr.  The user who cleared the advisory from this inventory.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>66730A53-7DB1-B9FB-BB8A-6480CDE80CAD</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CLEAR_HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="17222FE2-FC57-3F98-CFB5-55E4DE421D63" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="14E3879B-562F-22F8-CDAB-85F88A882BF7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to MIM_RSTAT</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F551C151-0350-1D6C-A73D-1BC2C682B763</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="37ED02AC-F97E-4217-F79D-118F0E60BDCC" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="B56727B7-023D-0F05-67E4-1AAD37FED18F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9310BF7B-A0B3-F9DE-54FF-81B2265A0DDF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="0B81184C-7614-5F11-7C17-E2AA34B118C0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C6958BE4-D75A-2F23-295F-7495E869FD55</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="AF54D8F0-BEC0-0905-094B-4E9E97C11260">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D48636AF-6AD5-4A2D-E3ED-F2AF15B35002</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="C2FDC2DD-4926-C6FC-A58D-42E2BD6AB69B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>82ED8AC4-AA8B-1029-2F26-3914929C56BE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CC8B6171-4CCC-C501-E482-9E7B60DD7565" name="PK_INV_ADVSRY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0C97B301-DB2A-8999-3055-08041DA01E12</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30050065-44B5-5550-8DB7-4158FBF10850"/>
+<colUsage columnID="A11DF309-330F-E818-06C2-25DD03EEA8C2"/>
+<colUsage columnID="EAA2C4CB-0BFA-7E72-0C46-F18F1C0AA803"/>
+<colUsage columnID="DE3D3681-F9E9-9135-073F-6A0514B08D03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="62364890-E345-1578-A554-D686C086488F" name="IX_INVINV_INVADVSRY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D58AA945-570B-770C-4221-851B1ADFE8CA</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30050065-44B5-5550-8DB7-4158FBF10850"/>
+<colUsage columnID="A11DF309-330F-E818-06C2-25DD03EEA8C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F14815D3-4BD6-5B10-05A9-4B8B7CC19C1A" name="IX_ORGHR_INVADVSRY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D1EDAB84-7F04-C6D5-FA79-8654A529120A</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BE43F0A-7D61-74FC-22BF-91A2D8FF3574"/>
+<colUsage columnID="5CDA184F-E620-AC0C-C376-688FD0802BA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="181DF264-78DC-C8F3-471E-A850F8338159" name="IX_EQPADVSRY_INVADVSRY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C63E831-40E4-E833-8E7F-79002D7422B4</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAA2C4CB-0BFA-7E72-0C46-F18F1C0AA803"/>
+<colUsage columnID="DE3D3681-F9E9-9135-073F-6A0514B08D03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F766A996-37B8-8AF2-EAB6-6A043B62E0E7" name="FK_EQPADVSRY_INVADVSRY">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAA2C4CB-0BFA-7E72-0C46-F18F1C0AA803"/>
+<colUsage columnID="DE3D3681-F9E9-9135-073F-6A0514B08D03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="31E50698-6360-0A04-7CB3-57CF7DB05807" name="FK_INVINV_INVADVSRY">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30050065-44B5-5550-8DB7-4158FBF10850"/>
+<colUsage columnID="A11DF309-330F-E818-06C2-25DD03EEA8C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5421BBDD-95EC-F475-8666-CE9266A30E24" name="FK_MIMRSTAT_INVADVSRY">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="14E3879B-562F-22F8-CDAB-85F88A882BF7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="986FCCB7-6F83-4C31-0E15-4BEA9C4A3F9B" name="FK_ORGHR_INVADVSRY">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BE43F0A-7D61-74FC-22BF-91A2D8FF3574"/>
+<colUsage columnID="5CDA184F-E620-AC0C-C376-688FD0802BA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

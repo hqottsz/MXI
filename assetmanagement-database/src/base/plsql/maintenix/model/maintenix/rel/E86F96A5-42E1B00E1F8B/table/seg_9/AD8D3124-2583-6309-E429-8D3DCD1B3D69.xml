@@ -1,0 +1,235 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="AD8D3124-2583-6309-E429-8D3DCD1B3D69" name="UTL_CONFIG_PARM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table allows storage of configuration parameters (name=value) in the database with sub-division by code and optional encrypted values. It can be used to configure the system for different users and roles through the referentially linked UTL_USER_PARM and UTL_ROLE_PARM tables.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8EB8637B-4D22-86BB-2CDE-5A44F61BAEAA</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PARM_NAME" id="332A1F93-7715-D8B6-7585-F94F6244F14E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Configuration parameter name.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>44924075-9316-731B-6A44-A0FDD342B3FC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARM_TYPE" id="89F8C30F-650E-014D-4164-27616A4B19DE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Configuration parameter type code used to sub-divide configuration parameter into functional groups.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E97A5018-EA22-9C37-9E76-781DE0027D6A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARM_VALUE" id="BF44609C-50E2-FEC6-ED23-B8B95E116795">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Configuration parameter value.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CCAD8115-FA55-E6CB-D7EC-CC8820AFB4E6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENCRYPT_BOOL" id="8EE83725-21B7-F85E-90B7-DB3FE2C88CC9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Specified whether the parameter value is stored in an encrypted format.  Encrypted values take the form &quot;{3DES}kja//adfj&quot; where the value to the right of the {3DES} tag is Base64 encoded.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D1108658-CA33-3E9B-E7B7-D63BDF86C221</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ENCRYPT_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARM_DESC" id="75B8CFB6-A487-BFD0-1325-00B75E44C9B6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Configuration parameter long description.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8769A6AF-3C3B-A765-E9E3-77ED9BD19FAB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONFIG_TYPE" id="E37824A0-A232-AA74-44FE-717AD1938360">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>At what level the Parameter will be configured.  SYSTEM - system-level only, ROLE - system or Role-level, ROLE/USER - system, Role.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>75FE2F97-6075-0279-D6CA-ECD07AE97073</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEFAULT_VALUE" id="DBA126C7-42B5-F051-C450-A7DDB4D15FE4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The default value for mandatory Parameters.  PARM_VALUE will be set to this value by default.  If no default exists &quot;&lt;none&gt;&quot; will appear in this field.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>69DFF3C0-EDE1-1922-4363-80723D8BB65C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALLOW_VALUE_DESC" id="1B1F2C0A-A4C7-1EF1-9DB2-7AC72A007DF0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>A description of the allowable values (including format) that may be set in PARM_VALUE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>03EA9F49-AA07-CF92-0193-C9513A047969</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAND_CONFIG_BOOL" id="91710B49-93F7-A804-C557-B11BFFCD95EF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>If the Configuration Parameter must be defined in the system (I.e. a PARM_VALUE specified). Note that if a DEFAULT_VALUE exists, it will be set in the PARM_VALUE field.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>87306FF9-BD8C-8776-E608-922CB7BDC2E5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MAND_CONFIG_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGORY" id="48D439C2-6E17-60AD-8C07-553855A92229">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E7C07FBE-F7CD-8FCC-2A7B-D921524DDCF5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MODIFIED_IN" id="2103D8A5-CD4B-9813-8F27-26441DE1B988">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DC4C4EA7-603C-B010-3883-8F3C4E1FEF9A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPL_APPROVED" id="37030204-12CC-D1DB-31EF-2534A7B686EA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8C1F159C-F9C5-312E-E755-DD5619D151A9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REPL_APPROVED IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="47453DB6-2DE1-7376-0C0E-9D2D39ACAF9C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>736D69D8-76CE-AB2E-C9AA-6A726566DCC9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="240938F0-4A9F-05B4-D8AA-4E3377098E6A" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3E8D4B4F-6B61-DF40-2916-BE0A47E721B1" name="PK_UTL_CONFIG_PARM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>624D6F61-58EA-E393-93A1-1D87E6402783</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="332A1F93-7715-D8B6-7585-F94F6244F14E"/>
+<colUsage columnID="89F8C30F-650E-014D-4164-27616A4B19DE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="98C3854B-218F-C88A-27D5-3FE4DD5929E5" name="FK_UTLCONFPRM_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47453DB6-2DE1-7376-0C0E-9D2D39ACAF9C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

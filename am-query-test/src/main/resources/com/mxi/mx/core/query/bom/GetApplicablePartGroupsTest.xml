@@ -1,0 +1,157 @@
+<dataset>
+   <!-- Assembly Setup (with associated parts)
+     ASSY_A (P_A_STANDARD)
+     -> ASSY_B (P_B_STANDARD, P_B_PART_APPL, P_B_PART_GROUP_APPL)
+
+     COMHW (P_COMHW)
+   -->
+
+   <!-- Assembly Setup -->
+   <eqp_assmbl
+      assmbl_db_id = "4650"
+      assmbl_cd = "A"
+      assmbl_class_db_id = "0"
+      assmbl_class_cd = "ASSY"
+      />
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "A"
+      assmbl_bom_id = "1"
+      />
+   <eqp_assmbl
+      assmbl_db_id = "4650"
+      assmbl_cd = "B"
+      assmbl_class_db_id = "0"
+      assmbl_class_cd = "ASSY"
+      />
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "B"
+      assmbl_bom_id = "1"
+      />
+
+   <eqp_assmbl
+      assmbl_db_id = "4650"
+      assmbl_cd = "COMHW"
+      assmbl_class_db_id = "0"
+      assmbl_class_cd = "COMHW"
+      />
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "COMHW"
+      assmbl_bom_id = "1"
+      />
+
+   <!-- Part Group TEST_A (P_A_STANDARD) -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      bom_part_cd = "A"
+      bom_part_name = "A"
+      assmbl_db_id = "4650"
+      assmbl_cd = "A"
+      assmbl_bom_id = "1"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      />
+
+   <!-- Part Group TEST_B (P_B_STANDARD, PART_B_PART_APPL) -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "2"
+      bom_part_cd = "B"
+      bom_part_name = "B"
+      assmbl_db_id = "4650"
+      assmbl_cd = "B"
+      assmbl_bom_id = "1"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "2"
+      part_no_db_id = "4650"
+      part_no_id = "2"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "2"
+      part_no_db_id = "4650"
+      part_no_id = "3"
+      appl_eff_ldesc = "002"
+      />
+   <!-- Part Group TEST_B (P_B_PART_GROUP_APPL) -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "3"
+      bom_part_cd = "B_PART_GROUP_APPL"
+      bom_part_name = "B_PART_GROUP_APPL"
+      assmbl_db_id = "4650"
+      assmbl_cd = "B"
+      assmbl_bom_id = "1"
+      appl_eff_ldesc = "002"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "3"
+      part_no_db_id = "4650"
+      part_no_id = "4"
+      />
+
+   <!-- Part Group TEST_COMHW (P_COMHW_STANDARD) -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "4"
+      bom_part_cd = "COMHW"
+      bom_part_name = "COMHW"
+      assmbl_db_id = "4650"
+      assmbl_cd = "COMHW"
+      assmbl_bom_id = "1"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "4"
+      part_no_db_id = "4650"
+      part_no_id = "5"
+      />
+
+   <!-- Inventory Setup: With applicability -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+      orig_assmbl_db_id = "4650"
+      orig_assmbl_cd = "A"
+      appl_eff_cd = "001"
+      h_inv_no_db_id = "4650"
+      h_inv_no_id = "1"
+      />
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "2"
+      orig_assmbl_db_id = "4650"
+      orig_assmbl_cd = "B"
+      h_inv_no_db_id = "4650"
+      h_inv_no_id = "1"
+      />
+
+   <!-- Inventory Setup: No applicability -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "3"
+      orig_assmbl_db_id = "4650"
+      orig_assmbl_cd = "A"
+      appl_eff_cd = ""
+      h_inv_no_db_id = "4650"
+      h_inv_no_id = "3"
+      />
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "4"
+      orig_assmbl_db_id = "4650"
+      orig_assmbl_cd = "B"
+      h_inv_no_db_id = "4650"
+      h_inv_no_id = "3"
+      />
+</dataset>

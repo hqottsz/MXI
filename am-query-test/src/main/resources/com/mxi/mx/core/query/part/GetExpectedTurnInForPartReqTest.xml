@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+   <!-- normal part request -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1000"
+      sched_db_id="4650"
+      sched_id="2000"
+      sched_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"/>
+
+   <!-- issue transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="3000"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="1000"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <!-- turn in transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="4000"
+      xfer_type_db_id="0"
+      xfer_type_cd="TURNIN"
+      init_event_db_id="4650"
+      init_event_id="3000"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <!-- turn in transfer event -->
+   <evt_event
+      event_db_id="4650"
+      event_id="4000"
+      event_status_db_id="0"
+      event_status_cd="LXPEND"
+      hist_bool="0" />
+
+   <!-- deployed part request -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1001"
+      sched_db_id="4650"
+      sched_id="2001"
+      sched_part_id="1"
+      rstat_cd="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <!-- un-issued part request -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1002"
+      sched_db_id="4650"
+      sched_id="2002"
+      sched_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA" />
+
+   <!-- issued part request with no turn-in -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1003"
+      sched_db_id="4650"
+      sched_id="2003"
+      sched_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA" />
+
+   <!-- issue transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="3003"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="1003"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <!-- part request with turn in which has associated inventory -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1004"
+      sched_db_id="4650"
+      sched_id="2004"
+      sched_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA" />
+
+   <!-- issue transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="3004"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="1004"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <!-- turn in transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="4004"
+      xfer_type_db_id="0"
+      xfer_type_cd="TURNIN"
+      init_event_db_id="4650"
+      init_event_id="3004"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <!-- turn in transfer event -->
+   <evt_event
+      event_db_id="4650"
+      event_id="4004"
+      event_status_db_id="0"
+      event_status_cd="LXPEND"
+      hist_bool="0" />
+
+   <!-- inventory associated to turn in -->
+   <evt_inv
+      event_db_id="4650"
+      event_id="4004"
+      event_inv_id="1"
+      main_inv_bool="1"
+      inv_no_db_id="4650"
+      inv_no_id="5004" />
+
+   <!-- part request with complete turn in -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1005"
+      sched_db_id="4650"
+      sched_id="2005"
+      sched_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA" />
+
+   <!-- issue transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="3005"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="1005"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <!-- turn in transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="4005"
+      xfer_type_db_id="0"
+      xfer_type_cd="TURNIN"
+      init_event_db_id="4650"
+      init_event_id="3005"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <!-- turn in transfer event -->
+   <evt_event
+      event_db_id="4650"
+      event_id="4005"
+      event_status_db_id="0"
+      event_status_cd="LXCMPLT"
+      hist_bool="1" />
+
+</dataset>

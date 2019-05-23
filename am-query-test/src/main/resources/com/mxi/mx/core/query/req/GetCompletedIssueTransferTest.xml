@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+   <!-- Note: We are using the same init event for all the transfers to simplify the testing.
+              This is not normally how the data would be structured. -->
+
+   <!-- 0: completed issue transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="1000"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="2000"
+      xfer_qt="5.0"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1000"
+      event_status_db_id="0"
+      event_status_cd="LXCMPLT" />
+
+   <!-- 1: completed non-ISSUE transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="1001"
+      xfer_type_db_id="4650"
+      xfer_type_cd="TEST"
+      init_event_db_id="4650"
+      init_event_id="2000"
+      xfer_qt="5.0"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1001"
+      event_status_db_id="0"
+      event_status_cd="LXCMPLT" />
+
+   <!-- 2: pending ISSUE transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="1002"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="2000"
+      xfer_qt="5.0"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1002"
+      event_status_db_id="0"
+      event_status_cd="LXPEND" />
+
+   <!-- 3: deployed ISSUE transfer -->
+   <inv_xfer
+      xfer_db_id="4650"
+      xfer_id="1003"
+      rstat_cd="1"
+      xfer_type_db_id="0"
+      xfer_type_cd="ISSUE"
+      init_event_db_id="4650"
+      init_event_id="2000"
+      xfer_qt="5.0"
+      qty_unit_db_id="0"
+      qty_unit_cd="EA" />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1003"
+      rstat_cd="1"
+      event_status_db_id="0"
+      event_status_cd="LXPEND" />
+
+
+
+</dataset>

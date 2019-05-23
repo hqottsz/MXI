@@ -1,0 +1,509 @@
+<dataset>
+
+   <!-- common data for all purchase orders -->
+
+   <!--
+   This location points to a VENDOR
+   location inferring this is an inbound
+   shipment
+   -->
+   <inv_loc
+      loc_db_id = "0"
+      loc_id = "1"
+      loc_type_cd = "VENDOR"
+   />
+
+   <!--
+   This location points to a DOCK
+   location inferring this is an outbound
+   shipment
+   -->
+   <inv_loc
+      loc_db_id = "0"
+      loc_id = "2"
+      loc_type_cd = "DOCK"
+   />
+
+   <!--
+   Purchase Order 1 ( PO1 )
+   Has Inbound and Outbound shipments that are complete( ie the order qt and received qt are equal.
+   -->
+
+   <po_header
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      po_db_id = "0"
+      po_id = "1"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "1"
+      po_line_id = "1"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <inv_inv
+      inv_no_db_id = "0"
+      inv_no_id = "1"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "INSPREQ"
+   />
+
+   <ship_shipment_line
+      shipment_line_db_id = "0"
+      shipment_line_id = "1"
+      shipment_db_id = "0"
+      shipment_id = "1"
+      po_db_id = "0"
+      po_id = "1"
+      po_line_id = "1"
+      receive_qt = "1"
+      inv_no_db_id = "0"
+      inv_no_id = "1"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+
+   />
+
+   <inv_inv
+      inv_no_db_id = "0"
+      inv_no_id = "2"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "INSPREQ"
+   />
+
+   <ship_shipment_line
+      shipment_line_db_id = "0"
+      shipment_line_id = "2"
+      shipment_db_id = "0"
+      shipment_id = "2"
+      po_db_id = "0"
+      po_id = "1"
+      po_line_id = "1"
+      receive_qt = "1"
+      inv_no_db_id = "0"
+      inv_no_id = "2"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+   />
+
+   <!--
+   Inbound
+   -->
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "1"
+      shipment_db_id = "0"
+      shipment_id = "1"
+   />
+
+   <ship_segment_map
+      shipment_db_id = "0"
+      shipment_id = "1"
+      segment_ord = "1"
+      segment_db_id = "0"
+      segment_id = "1"
+   />
+
+   <ship_segment
+      segment_db_id = "0"
+      segment_id = "1"
+      ship_from_db_id = "0"
+      ship_from_id = "1"
+   />
+
+   <!--
+   Outbound
+   -->
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "1"
+      shipment_db_id = "0"
+      shipment_id = "2"
+   />
+
+   <ship_segment_map
+      shipment_db_id = "0"
+      shipment_id = "2"
+      segment_ord = "1"
+      segment_db_id = "0"
+      segment_id = "2"
+   />
+
+   <ship_segment
+      segment_db_id = "0"
+      segment_id = "2"
+      ship_from_db_id = "0"
+      ship_from_id = "2"
+   />
+
+   <!-- Purchase Order 2 ( PO2 ) -->
+
+   <po_header
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      po_db_id = "0"
+      po_id = "2"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "2"
+      po_line_id = "1"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <inv_inv
+      inv_no_db_id = "0"
+      inv_no_id = "3"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "INSPREQ"
+   />
+
+   <ship_shipment_line
+      shipment_line_db_id = "0"
+      shipment_line_id = "3"
+      shipment_db_id = "0"
+      shipment_id = "3"
+      po_db_id = "0"
+      po_id = "2"
+      po_line_id = "1"
+      receive_qt = "1"
+      inv_no_db_id = "0"
+      inv_no_id = "3"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+   />
+
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "2"
+      shipment_db_id = "0"
+      shipment_id = "3"
+   />
+
+   <ship_segment_map
+      shipment_db_id = "0"
+      shipment_id = "3"
+      segment_ord = "1"
+      segment_db_id = "0"
+      segment_id = "3"
+   />
+
+   <ship_segment
+      segment_db_id = "0"
+      segment_id = "3"
+      ship_from_db_id = "0"
+      ship_from_id = "1"
+   />
+
+   <!-- Purchase Order 3 ( PO3 ) -->
+
+   <po_header
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      po_db_id = "0"
+      po_id = "3"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "3"
+      po_line_id = "1"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <inv_inv
+      inv_no_db_id = "0"
+      inv_no_id = "4"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "INSPREQ"
+   />
+
+   <ship_shipment_line
+      shipment_line_db_id = "0"
+      shipment_line_id = "4"
+      shipment_db_id = "0"
+      shipment_id = "4"
+      po_db_id = "0"
+      po_id = "3"
+      po_line_id = "1"
+      receive_qt = "1"
+      inv_no_db_id = "0"
+      inv_no_id = "4"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+   />
+
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "3"
+      shipment_db_id = "0"
+      shipment_id = "4"
+   />
+
+   <ship_segment_map
+      shipment_db_id = "0"
+      shipment_id = "4"
+      segment_ord = "1"
+      segment_db_id = "0"
+      segment_id = "4"
+   />
+
+   <ship_segment
+      segment_db_id = "0"
+      segment_id = "4"
+      ship_from_db_id = "0"
+      ship_from_id = "2"
+   />
+
+   <!-- Purchase Order 4 ( PO4 ) -->
+
+   <po_header
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      po_db_id = "0"
+      po_id = "4"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "4"
+      po_line_id = "1"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "4"
+      shipment_db_id = "0"
+      shipment_id = "5"
+   />
+
+   <!-- Purchase Order 5 ( PO5 ) Has Incomplete Shipment -->
+
+   <po_header
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      po_db_id = "0"
+      po_id = "5"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "5"
+      po_line_id = "1"
+      order_qt = "5"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <inv_inv
+      inv_no_db_id = "0"
+      inv_no_id = "5"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "INSPREQ"
+   />
+
+   <ship_shipment_line
+      shipment_line_db_id = "0"
+      shipment_line_id = "5"
+      shipment_db_id = "0"
+      shipment_id = "6"
+      po_db_id = "0"
+      po_id = "5"
+      po_line_id = "1"
+      receive_qt = "3"
+      inv_no_db_id = "0"
+      inv_no_id = "5"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+   />
+
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "5"
+      shipment_db_id = "0"
+      shipment_id = "6"
+   />
+
+   <ship_segment_map
+      shipment_db_id = "0"
+      shipment_id = "6"
+      segment_ord = "1"
+      segment_db_id = "0"
+      segment_id = "5"
+   />
+
+   <ship_segment
+      segment_db_id = "0"
+      segment_id = "5"
+      ship_from_db_id = "0"
+      ship_from_id = "1"
+   />
+
+   <!-- Purchase Order 6 ( PO6 ) Has Multiple Lines -->
+
+   <po_header
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      po_db_id = "0"
+      po_id = "6"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "6"
+      po_line_id = "1"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "6"
+      po_line_id = "2"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "6"
+      po_line_id = "3"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "6"
+      po_line_id = "4"
+      order_qt = "1"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <!-- Purchase Order 7 ( PO7 ) Has Inbound Shipment with ARCHIVE Inventory -->
+
+   <po_header
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      po_db_id = "0"
+      po_id = "7"
+   />
+
+   <po_line
+      po_db_id = "0"
+      po_id = "7"
+      po_line_id = "1"
+      order_qt = "5"
+      po_line_type_db_id = "0"
+      po_line_type_cd = "PURCHASE"
+   />
+
+   <inv_inv
+      inv_no_db_id = "0"
+      inv_no_id = "6"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "ARCHIVE"
+   />
+
+   <!-- Shipment 1 with archive inventory -->
+
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "7"
+      shipment_db_id = "0"
+      shipment_id = "7"
+   />
+
+   <ship_shipment_line
+      shipment_line_db_id = "0"
+      shipment_line_id = "7"
+      shipment_db_id = "0"
+      shipment_id = "7"
+      po_db_id = "0"
+      po_id = "7"
+      po_line_id = "1"
+      receive_qt = "5"
+      inv_no_db_id = "0"
+      inv_no_id = "6"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+   />
+
+   <ship_segment
+      segment_db_id = "0"
+      segment_id = "7"
+      ship_from_db_id = "0"
+      ship_from_id = "1"
+   />
+
+   <ship_segment_map
+      shipment_db_id = "0"
+      shipment_id = "7"
+      segment_ord = "1"
+      segment_db_id = "0"
+      segment_id = "7"
+   />
+
+   <!-- Shipment 2 with inspreq inventory -->
+
+   <inv_inv
+      inv_no_db_id = "0"
+      inv_no_id = "7"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "INSPREQ"
+   />
+
+   <ship_shipment
+      po_db_id = "0"
+      po_id = "7"
+      shipment_db_id = "0"
+      shipment_id = "8"
+   />
+
+   <ship_shipment_line
+      shipment_line_db_id = "0"
+      shipment_line_id = "8"
+      shipment_db_id = "0"
+      shipment_id = "8"
+      po_db_id = "0"
+      po_id = "7"
+      po_line_id = "1"
+      receive_qt = "5"
+      inv_no_db_id = "0"
+      inv_no_id = "7"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+   />
+
+   <ship_segment
+      segment_db_id = "0"
+      segment_id = "8"
+      ship_from_db_id = "0"
+      ship_from_id = "1"
+   />
+
+   <ship_segment_map
+      shipment_db_id = "0"
+      shipment_id = "8"
+      segment_ord = "1"
+      segment_db_id = "0"
+      segment_id = "8"
+   />
+
+</dataset>

@@ -1,0 +1,121 @@
+<dataset>
+   <!-- Some Forecast Enabled Usage Types that are not in use by the model -->
+   <mim_data_type
+         data_type_db_id = "99"
+         data_type_id = "1"
+         domain_type_db_id = "0"
+         domain_type_cd = "US"
+         data_type_cd = "XCODE1"
+         eng_unit_cd = "XUNIT1"
+         entry_prec_qt = "1"
+         forecast_bool = "1"
+         rstat_cd = "0" />
+   <mim_data_type
+         data_type_db_id = "99"
+         data_type_id = "2"
+         domain_type_db_id = "0"
+         domain_type_cd = "US"
+         data_type_cd = "XCODE2"
+         eng_unit_cd = "XUNIT2"
+         entry_prec_qt = "2"
+         forecast_bool = "1"
+         rstat_cd = "0" />
+   <mim_data_type
+         data_type_db_id = "99"
+         data_type_id = "3"
+         domain_type_db_id = "0"
+         domain_type_cd = "US"
+         data_type_cd = "XCODE3"
+         eng_unit_cd = "XUNIT3"
+         entry_prec_qt = "3"
+         forecast_bool = "1"
+         rstat_cd = "0" />
+
+   <!-- Create a Model that has two Ranges and five Rates -->
+   <fc_model
+         model_db_id = "1"
+         model_id = "1"
+         desc_sdesc = "A Model"
+         default_bool = "0" />
+
+   <!-- Create a Range that has two Rates -->
+   <fc_range
+         model_db_id = "1"
+         model_id = "1"
+         range_id = "1"
+         start_month = "12"
+         start_day = "29" />
+   <fc_rate
+         model_db_id = "1"
+         model_id = "1"
+         range_id = "1"
+         data_type_db_id = "1"
+         data_type_id = "2"
+         forecast_rate_qt = "0.05" />
+   <fc_rate
+         model_db_id = "1"
+         model_id = "1"
+         range_id = "1"
+         data_type_db_id = "3"
+         data_type_id = "4"
+         forecast_rate_qt = "0.0005" />
+
+   <!-- Create a Range that has three Rates -->
+   <fc_range
+         model_db_id = "1"
+         model_id = "1"
+         range_id = "2"
+         start_month = "7"
+         start_day = "16" />
+   <fc_rate
+         model_db_id = "1"
+         model_id = "1"
+         range_id = "2"
+         data_type_db_id = "1"
+         data_type_id = "2"
+         forecast_rate_qt = "3.1415926535" />
+   <fc_rate
+         model_db_id = "1"
+         model_id = "1"
+         range_id = "2"
+         data_type_db_id = "3"
+         data_type_id = "4"
+         forecast_rate_qt = "42" />
+   <fc_rate
+         model_db_id = "1"
+         model_id = "1"
+         range_id = "2"
+         data_type_db_id = "5"
+         data_type_id = "6"
+         forecast_rate_qt = "88.056" />
+
+   <!-- Create the Usage Data Types (3)-->
+   <mim_data_type
+         data_type_db_id = "1"
+         data_type_id = "2"
+         domain_type_db_id = "0"
+         domain_type_cd = "US"
+         data_type_cd = "CODE1"
+         eng_unit_cd = "UNIT1"
+         entry_prec_qt = "0"
+         forecast_bool = "1" />
+   <mim_data_type
+         data_type_db_id = "3"
+         data_type_id = "4"
+         domain_type_db_id = "0"
+         domain_type_cd = "US"
+         data_type_cd = "CODE2"
+         eng_unit_cd = "UNIT2"
+         entry_prec_qt = "1"
+         forecast_bool = "1" />
+   <mim_data_type
+         data_type_db_id = "5"
+         data_type_id = "6"
+         domain_type_db_id = "0"
+         domain_type_cd = "US"
+         data_type_cd = "CODE3"
+         eng_unit_cd = "UNIT3"
+         entry_prec_qt = "2"
+         forecast_bool = "1" />
+
+</dataset>

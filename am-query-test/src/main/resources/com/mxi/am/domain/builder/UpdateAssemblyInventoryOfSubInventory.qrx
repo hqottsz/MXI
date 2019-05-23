@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>UpdateAssemblyInventoryOfSubInventory</name>
+   <description>
+      Updates the assembly inventory value for the sub-inventory under the provided root inventory.
+      But only down to and including any assemblies (not children under the assemblies).
+   </description>
+   <sql>
+      UPDATE
+         inv_inv
+      SET
+         inv_inv.assmbl_inv_no_db_id = :aAssemblyInvNoDbId,
+         inv_inv.assmbl_inv_no_id    = :aAssemblyInvNoId
+      WHERE
+         (inv_inv.inv_no_db_id, inv_inv.inv_no_id) IN
+         (
+            SELECT
+               inv_inv.inv_no_db_id,
+               inv_inv.inv_no_id
+            FROM
+               inv_inv
+            WHERE
+               NOT
+               (
+                  inv_inv.inv_no_db_id = :aRootInvNoDbId AND
+                  inv_inv.inv_no_id    = :aRootInvNoId
+               )
+            START WITH
+               inv_inv.inv_no_db_id = :aRootInvNoDbId AND
+               inv_inv.inv_no_id    = :aRootInvNoId
+            CONNECT BY
+               PRIOR inv_inv.inv_no_db_id = inv_inv.nh_inv_no_db_id AND
+               PRIOR inv_inv.inv_no_id    = inv_inv.nh_inv_no_id
+               AND
+               -- Stop the recursion when we read a sub-inv whose parent is an assembly.
+               -- This allows the assembly to be returned but not any of its children.
+               NOT (
+                  PRIOR inv_inv.inv_class_db_id = 0 AND
+                  PRIOR inv_inv.inv_class_cd    = 'ASSY'
+               )
+         )
+   </sql>
+   <arguments>
+      <argument name="aRootInvNoDbId" type="INTEGER" />
+      <argument name="aRootInvNoId" type="INTEGER" />
+      <argument name="aAssemblyInvNoDbId" type="INTEGER" />
+      <argument name="aAssemblyInvNoId" type="INTEGER" />
+   </arguments>
+</sql-statement>

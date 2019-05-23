@@ -1,0 +1,28 @@
+version: "3.6"
+services:
+  selenium-hub-smokeTest:
+    image: docker-local.rdsrvartifactory/selenium/hub/2.53.1:1
+    container_name: selenium-hub-smokeTest
+    ports:
+      - "4444:4444"
+  firefox1:
+    image: docker-local.rdsrvartifactory/selenium/node-firefox/2.53.1:1
+    container_name: selenium-firefox1
+    depends_on:
+      - selenium-hub-smokeTest
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub-smokeTest
+  firefox2:
+      image: docker-local.rdsrvartifactory/selenium/node-firefox/2.53.1:1
+      container_name: selenium-firefox2
+      depends_on:
+      - selenium-hub-smokeTest
+      environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub-smokeTest
+  firefox3:
+      image: docker-local.rdsrvartifactory/selenium/node-firefox/2.53.1:1
+      container_name: selenium-firefox3
+      depends_on:
+      - selenium-hub-smokeTest
+      environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub-smokeTest

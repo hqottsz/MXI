@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <!--requirement definition 1-->
+    <task_task
+       alt_id = "E7D8E0A97EF242449FDABD84ACC4A0A8"
+       task_db_id= "4650"
+       task_id = "12345"
+       task_cd = "27-306-JIC1"
+       assmbl_cd = "F-2000"
+       task_name = "Task 1"
+       task_sched_from_cd = "MANUFACT_DT"
+       task_def_status_cd = "ACTV"
+       on_condition_bool = "0"
+       task_appl_eff_ldesc = "Testing 1"
+       task_class_db_id = "4650"
+       task_class_cd = "JIC"
+    />
+
+    <!--requirement definition 2-->
+    <task_task
+       alt_id = "F7D8E0A97EF242449FDABD84ACC4A0A5"
+       task_db_id= "4650"
+       task_id = "12346"
+       task_cd = "27-306-JIC2"
+       assmbl_cd = "F-2000"
+       task_name = "Task 2"
+       task_sched_from_cd = "MANUFACT_DT"
+       task_def_status_cd = "ACTV"
+       on_condition_bool = "0"
+       task_appl_eff_ldesc = "Testing 2"
+       task_class_db_id = "4650"
+       task_class_cd = "JIC"
+    />
+
+    <!--requirement definition 3-->
+    <task_task
+       alt_id = "A7D8E0A97EF242449FDABD84ACC4A0A0"
+       task_db_id= "4650"
+       task_id = "12347"
+       task_cd = "27-306-JIC3"
+       assmbl_cd = "F-2000"
+       task_name = "Task 3"
+       task_sched_from_cd = "MANUFACT_DT"
+       task_def_status_cd = "ACTV"
+       on_condition_bool = "0"
+       task_appl_eff_ldesc = "Testing 3"
+       task_class_db_id = "4650"
+       task_class_cd = "JIC"
+       task_defn_db_id = "300000"
+       task_defn_id = "112233"
+       task_def_status_db_id = "0"
+    />
+
+    <!--task class-->
+    <ref_task_class
+       task_class_db_id = "4650"
+       task_class_cd = "JIC"
+       class_mode_cd = "REQ"
+    />
+
+    <!--task work type-->
+    <task_work_type
+       task_db_id = "4650"
+       task_id = "12345"
+       work_type_db_id = "0"
+       work_type_cd = "SERVICE"
+    />
+
+    <!--task scheduling-->
+    <task_sched_rule
+       task_db_id = "4650"
+       task_id = "12346"
+       data_type_db_id = "100"
+       data_type_id = "24"
+    />
+
+    <!--other-->
+    <mim_data_type
+       data_type_db_id = "100"
+       data_type_id = "24"
+       data_type_cd = "2000"
+    />
+
+    <task_part_map
+       task_db_id = "4650"
+       task_id = "12347"
+       part_no_db_id = "4650"
+       part_no_id = "54321"
+    />
+
+    <eqp_part_no
+       part_no_db_id = "4650"
+       part_no_id = "54321"
+       part_no_oem = "15861"
+    />
+
+    <task_defn
+       task_defn_db_id = "300000"
+       task_defn_id = "112233"
+    />
+
+	<!--organization-->
+	<org_org
+		ORG_DB_ID = "4650"
+		ORG_ID = "100006"
+		ALT_ID = "F49D9445729911E7B349CF53298AE07C"
+		ORG_CD = "MXI"
+		CODE_MDESC = "MXI"
+		ORG_SDESC = "Mxi Technologies"
+		ORG_TYPE_CD = "ADMIN"
+	/>
+
+	<!--unauthorized user-->
+	<org_hr
+		ALT_ID = "4AF698E4E6E6455C88AFE97B391DC58D"
+		HR_DB_ID = "4650"
+		HR_ID = "100"
+		USER_ID = "1"
+	/>
+
+	<org_org_hr
+		ORG_DB_ID = "4650"
+		ORG_ID = "100006"
+		HR_DB_ID = "4650"
+		HR_ID = "100"
+	/>
+
+	<utl_user
+		USER_ID = "1"
+		USERNAME = "unauthorized"
+		FIRST_NAME = "unauthorized"
+		ALT_ID = "A054FC32D41C4DDBBC37D76B3E6412F1"
+	/>
+
+	<utl_role
+		ROLE_ID = "101"
+	/>
+
+	<utl_user_role
+		ROLE_ID = "101"
+		USER_ID = "1"
+	/>
+
+	<utl_action_role_parm
+		PARM_NAME = "API_TASK_PARM"
+		PARM_VALUE = "FALSE"
+		ROLE_ID="101"
+	/>
+
+	<!--authorized user-->
+	<org_hr
+		ALT_ID = "4AF698E4E6E6455C88AFE97B391DC58F"
+		HR_DB_ID = "4650"
+		HR_ID = "101"
+		USER_ID = "2"
+	/>
+
+    <org_org_hr
+		ORG_DB_ID = "4650"
+		ORG_ID = "100006"
+		HR_DB_ID = "4650"
+		HR_ID = "101"
+	/>
+
+	<utl_user
+		USER_ID = "2"
+		USERNAME = "authorized"
+		FIRST_NAME = "authorized"
+		ALT_ID = "A054FC32D41C4DDBBC37D76B3E6412F2"
+	/>
+
+	<utl_role
+		ROLE_ID = "102"
+	/>
+
+	<utl_user_role
+		ROLE_ID = "102"
+		USER_ID = "2"
+	/>
+
+	<utl_action_role_parm
+		PARM_NAME = "API_REQUIREMENTDEFINITION_PARM"
+		PARM_VALUE = "TRUE"
+		ROLE_ID="102"
+	/>
+
+</dataset>

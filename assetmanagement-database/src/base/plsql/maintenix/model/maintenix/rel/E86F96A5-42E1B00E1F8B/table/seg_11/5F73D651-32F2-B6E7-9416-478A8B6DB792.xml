@@ -1,0 +1,299 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="5F73D651-32F2-B6E7-9416-478A8B6DB792" name="REF_ACFT_CAP_LEVEL">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:33:01 UTC</createdTime>
+<commentInRDBMS>[EXTENDABLE] Contains the various LEVELS of aircraft capabilities, which can be set as the configured or current level for a specific aircraft, and upgraded or downgraded based on modifications, maintenance, or deferred faults. IFS provides suggested level 10 data via script, but this is completely customizable by the operator.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACFT_CAP_LEVEL_DB_ID" id="02BB8E18-09E3-D140-EA8D-25DA0AEFA044">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:33:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACFT_CAP_LEVEL_CD" id="D073A75A-461F-2E5E-37A7-95E10DF09508">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:33:44 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESC_SDESC" id="986C811A-F1B8-9444-A7AD-72D55D92AD6E">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:34:01 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACFT_CAP_DB_ID" id="36E7014A-09F3-F9F5-D5AE-7342356A84B5">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:34:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E175D5EF-2C2E-490D-0D05-9942C2195505" referredColumn="44484F05-5CA4-E7CF-903B-462C5E2A5BC3"/>
+</associations>
+</Column>
+<Column name="ACFT_CAP_CD" id="E04586FF-3C19-F0BD-EA2A-BF587B9C0560">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:34:42 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E175D5EF-2C2E-490D-0D05-9942C2195505" referredColumn="68E58A58-71D3-8AD3-AFCE-1CE806998C91"/>
+</associations>
+</Column>
+<Column name="LEVEL_ORDER" id="431CE5D2-08EF-EF22-262E-DE51A36702F3">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:34:54 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>433519BE-4281-7E6A-50FA-2FE8FA7AACCF</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SENSITIVITY_CD" id="84FAE89E-29E0-7E0B-9CCA-072CF13C39C9">
+<createdBy>bfreitas</createdBy>
+<createdTime>2018-01-10 20:28:59 UTC</createdTime>
+<commentInRDBMS>FK to ref_sensitivity table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="40162A85-3B16-D2A7-108F-6BA0D2DF146C" referredColumn="1E947E79-C686-1D5B-3425-2F74DEB7E76E"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="D3D67F50-C4FF-AA55-29F2-8A44A0FBCD7B">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:35:10 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AB2937A8-2DEC-B1B2-F6B7-F4139D3DE0E1" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="18C2854F-A5AE-87E8-DA6B-02A15C53FC27">
+<createdBy>slevert</createdBy>
+<createdTime>2016-11-19 00:52:46 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="6EAD12F0-F37E-04E3-D18F-A0A7B1A481D2">
+<createdBy>slevert</createdBy>
+<createdTime>2016-11-19 00:53:21 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="62483411-7182-D095-D5C9-7AFEE5982CD5" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="AA2EEDF1-F1F0-1D38-8CB0-479A97FCDE8B">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:35:19 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="278B14BD-8A23-6CF7-5BCB-6D109FF7CD70">
+<createdBy>slevert</createdBy>
+<createdTime>2016-11-19 00:53:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="B3E277FA-8470-A29B-77ED-3A4F451E6CA8" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_DT" id="EC68A04B-A40B-0D04-A33D-91E0D1566510">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:35:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="BEAAF96C-3FE4-3E91-DAA3-844A45CA9061">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:35:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="C39B137F-C30A-241C-9D01-439060E6FFBE" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="8B7B47AD-F6D2-E107-2EA1-8E57D273053F">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:36:00 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B4D4F3D4-B059-B7DD-E059-C2E2602C0AF3" name="PK_REF_ACFT_CAP_LEVEL">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:36:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02BB8E18-09E3-D140-EA8D-25DA0AEFA044"/>
+<colUsage columnID="D073A75A-461F-2E5E-37A7-95E10DF09508"/>
+<colUsage columnID="36E7014A-09F3-F9F5-D5AE-7342356A84B5"/>
+<colUsage columnID="E04586FF-3C19-F0BD-EA2A-BF587B9C0560"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CF11CB14-C031-E734-F011-65A1DA27DCA3" name="IX_REFSENS_SENSCD">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-01-11 20:50:42 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84FAE89E-29E0-7E0B-9CCA-072CF13C39C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="71D71506-4BC8-CA0A-7965-F71F0F269CE3" name="FK_REFACFTCAPLEV_REFACFTCAP">
+<createdBy>slevert</createdBy>
+<createdTime>2016-08-10 17:43:20 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36E7014A-09F3-F9F5-D5AE-7342356A84B5"/>
+<colUsage columnID="E04586FF-3C19-F0BD-EA2A-BF587B9C0560"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F2EE4870-323F-7FD1-4A8D-9A01CA42D054" name="FK_MIMDB_REFACFTCAPLEVEL_CR">
+<createdBy>hzheng</createdBy>
+<createdTime>2016-12-08 19:18:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="278B14BD-8A23-6CF7-5BCB-6D109FF7CD70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1BC753C1-3895-41EC-BB1D-3B7092A996C3" name="FK_MIMDB_REFACFTCAPLEVEL_CT">
+<createdBy>hzheng</createdBy>
+<createdTime>2016-12-08 19:21:15 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6EAD12F0-F37E-04E3-D18F-A0A7B1A481D2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CE72667A-3E6A-A231-D1D8-3DCFA9D17A30" name="FK_MIMDB_REFACFTCAPLEVEL">
+<createdBy>hzheng</createdBy>
+<createdTime>2016-12-08 19:21:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BEAAF96C-3FE4-3E91-DAA3-844A45CA9061"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9F85ABE7-7944-8536-EBF7-EEAE21C87F55" name="FK_MIMRSTAT_REFACFTCAPLEVEL">
+<createdBy>hzheng</createdBy>
+<createdTime>2016-12-08 19:23:09 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3D67F50-C4FF-AA55-29F2-8A44A0FBCD7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B75DC80B-566B-2DA0-0165-E1C31A3FD905" name="FK_REFSENS_REFACFTCAPLEV">
+<createdBy>bfreitas</createdBy>
+<createdTime>2018-01-10 20:29:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84FAE89E-29E0-7E0B-9CCA-072CF13C39C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,217 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="D9761FAB-3B65-7CEF-3D1D-17F74E1A9045" name="REF_USG_SNAPSHOT_SRC_TYPE">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:05:19 UTC</createdTime>
+<commentInRDBMS>Usage Snapshot Source Type: This table identifies the two sources of usage snapshots: automatically calculated by IFS Maintenix or manually entered by a user.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_869</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SOURCE_DB_ID" id="B2111286-E114-E6E7-C06F-7A2ABC4343A9">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>PK to the REF_USG_SNAPSHOT_SRC_TYPE table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SOURCE_CD" id="29852A1C-EE74-6969-6DD3-34012E596352">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>PK to the REF_USG_SNAPSHOT_SRC_TYPE table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SOURCE_SDESC" id="E303F037-AEEB-9EC3-51B8-BA19F7633FC5">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>A short description of the usage snapshot source.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SOURCE_LDESC" id="462A7B59-C24D-89CA-AF6B-4AA0B103E672">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>A long description of the usage snapshot source.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="0926E0DF-DD34-F14A-C94A-FFFADF2F205B">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>The physical attribute that defines the read and write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F2074655-692F-0698-B19C-8271F57A0C6A" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="D1826178-ED1D-0166-BA70-7CE7C8D44A31">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="5EF45E4B-2BE5-B124-F0A5-CB8FD7C3785B">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E7DD13A8-6A2B-20C8-7B85-5E9F07D5A5ED" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DB_ID" id="5B922696-0328-24CE-C14A-B945C619E5CA">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="50436CAF-83EF-4CB3-E5C5-110944154D19" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="75D303F2-94A2-03FA-A8C9-328D7B30F4D5">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>The database server timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="FCBFCB82-63DC-6415-5647-4593962BF1DB">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="2BFEAF45-1E90-A284-A686-D6B59E74E0CD">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="171B31AA-9659-6E95-34A3-C5255C5A9206" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="6DEB6AE5-97CF-3959-341C-C5B5652D00DF">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="341CF06D-EF02-AC44-72F2-D26C0AFFF933" name="PK_REF_USG_SNAPSHOT_SRC_TYPE">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-15 17:11:56 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2111286-E114-E6E7-C06F-7A2ABC4343A9"/>
+<colUsage columnID="29852A1C-EE74-6969-6DD3-34012E596352"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3E820FCB-5BB4-A3CB-2F55-FC654ED01F58" name="FK_USGSNAPSHOTSRC_MIMDB">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-22 16:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2BFEAF45-1E90-A284-A686-D6B59E74E0CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5BAF8C4D-4BE7-250A-4589-64AB4EFDBF72" name="FK_USGSNAPSHOTSRC_MIMDBCR">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-22 16:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B922696-0328-24CE-C14A-B945C619E5CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8BCAC4A-FD06-EA29-E526-FA1978E5C17C" name="FK_USGSNAPSHOTSRC_MIMRSTAT">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-22 16:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0926E0DF-DD34-F14A-C94A-FFFADF2F205B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="063BD03F-24A5-8BB9-F1D3-16FA0AE4E8C8" name="FK_USGSNAPSHOTSRC_MIMDBCT">
+<createdBy>egayca</createdBy>
+<createdTime>2019-02-22 16:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EF45E4B-2BE5-B124-F0A5-CB8FD7C3785B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,287 @@
+<dataset>
+
+   <!-- The intended structure of this data is as follows:
+
+   Assembly: ACFT_CD1                                               | Configuration Slot assmbl_bom_id
+   +=== System: SYS-APU                                             |				1
+   |  +=== Tracked part group: PARENT                               |				2
+   |  |  +=== Tracked part group with parent: TRK_WITH_PARENT       |		3 with next highest = 2
+   |  |  +=== Serialized part group with parent: SER_WITH_PARENT    |				2
+   |  |  \=== Batch part group with parent: BATCH_WITH_PARENT       |				2
+   |  +=== Tracked part group with no parent: TRK_NO_PARENT         |		4 with no next highest
+   |  +=== Serialized part group with no parent: SER_NO_PARENT      |				1
+   |  \=== Serialized part group with no parent: BATCH_NO_PARENT    |				1
+   \=== System: SYS-1                                               |				5
+   -->
+
+   <org_hr
+      hr_db_id = "4650"
+      hr_id = "193"
+      hr_cd = "193"
+      user_id = "9999999" />
+
+   <eqp_assmbl
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      alt_id = "5D732E2E0D41470E816E7ABF14C8AF38"
+   />
+
+   <!-- ******************* Config Slots ******************* -->
+
+   <!-- System config slot -->
+   <eqp_assmbl_bom
+      alt_id = "10000000000000000000000000000001"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "1"
+      assmbl_bom_cd = "SYS-APU"
+      assmbl_bom_name = "SYS-APU-NAME"
+      bom_class_db_id = "0"
+      bom_class_cd = "SYS"
+    />
+
+    <!-- Config slot of everybody's parent tracked part group -->
+    <eqp_assmbl_bom
+      alt_id = "10000000000000000000000000000002"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "2"
+      assmbl_bom_cd = "PARENT"
+      assmbl_bom_name = "PARENT-NAME"
+      bom_class_db_id = "0"
+      bom_class_cd = "TRK"
+      nh_assmbl_cd = "ACFT_CD1"
+      nh_assmbl_bom_id = "1"
+      nh_assmbl_db_id = "4650"
+    />
+
+   	<!-- Config slot of tracked part group with parent -->
+    <eqp_assmbl_bom
+      alt_id = "10000000000000000000000000000003"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "3"
+      assmbl_bom_cd = "TRACKED"
+      assmbl_bom_name = "TRACKED-NAME"
+      nh_assmbl_bom_id = "2"
+      nh_assmbl_cd = "ACFT_CD1"
+      nh_assmbl_db_id = "4650"
+      bom_class_db_id = "0"
+      bom_class_cd = "TRK"
+    />
+
+    <!-- Config slot of tracked part group with no parent  -->
+    <eqp_assmbl_bom
+      alt_id = "10000000000000000000000000000004"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "4"
+      assmbl_bom_cd = "TRACKED_NO_PARENT"
+      assmbl_bom_name = "TRACKED_NO_PARENT-NAME"
+      nh_assmbl_bom_id = "1"
+      nh_assmbl_cd = "ACFT_CD1"
+      nh_assmbl_db_id = "4650"
+      bom_class_db_id = "0"
+      bom_class_cd = "TRK"
+    />
+
+    <!-- System config slot for tests that change the system -->
+   	<eqp_assmbl_bom
+      alt_id = "10000000000000000000000000000005"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "5"
+      assmbl_bom_cd = "SYS-1"
+      assmbl_bom_name = "SYS-1-NAME"
+      bom_class_db_id = "0"
+      bom_class_cd = "SYS"
+    />
+
+    <!-- ******************* Part Groups ******************* -->
+
+
+    <!-- Tracked part group with no parent part group -->
+    <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      bom_part_cd = "TRK_NO_PARENT"
+      bom_part_name = "Tracked no parent"
+      alt_id = "20000000000000000000000000000001"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "4"
+      inv_class_cd = "TRK"
+      inv_class_db_id = "0"
+      part_qt = "1"
+   />
+
+   <!-- Serialized part group with no parent part group, system as the config slot -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "2"
+      bom_part_cd = "SER_NO_PARENT"
+      bom_part_name = "Serialized no parent"
+      alt_id = "20000000000000000000000000000002"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "1"
+      inv_class_cd = "SER"
+      inv_class_db_id = "0"
+      part_qt = "2"
+   ></eqp_bom_part>
+
+   <!-- Batch part group with no parent part group, system as the config slot -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "3"
+      bom_part_cd = "BATCH_NO_PARENT"
+      bom_part_name = "Batch no parent"
+      alt_id = "20000000000000000000000000000003"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "1"
+      inv_class_cd = "BATCH"
+      inv_class_db_id = "0"
+      part_qt = "1.2"
+   />
+
+    <!-- Tracked part group with parent part group -->
+    <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "4"
+      bom_part_cd = "TRK_WITH_PARENT"
+      bom_part_name = "Tracked with parent"
+      alt_id = "20000000000000000000000000000004"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "3"
+      inv_class_cd = "TRK"
+      inv_class_db_id = "0"
+      part_qt = "1"
+   />
+
+   <!-- Serialized part group with parent part group, config slot is the parent tracked part group's config slot -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "5"
+      bom_part_cd = "SER_WITH_PARENT"
+      bom_part_name = "Serialized with parent"
+      alt_id = "20000000000000000000000000000005"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "2"
+      inv_class_cd = "SER"
+      inv_class_db_id = "0"
+      part_qt = "2"
+   />
+
+   <!-- Batch part group with parent part group, config slot is the parent tracked part group's config slot -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "6"
+      bom_part_cd = "BATCH_WITH_PARENT"
+      bom_part_name = "Batch with parent"
+      alt_id = "20000000000000000000000000000006"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "2"
+      inv_class_cd = "BATCH"
+      inv_class_db_id = "0"
+      part_qt = "1.2"
+   />
+
+   <!-- Tracked part group which is the parent for everybody -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "7"
+      bom_part_cd = "PARENT"
+      bom_part_name = "Parent"
+      alt_id = "20000000000000000000000000000007"
+      assmbl_db_id = "4650"
+      assmbl_cd = "ACFT_CD1"
+      assmbl_bom_id = "2"
+      inv_class_cd = "TRK"
+      inv_class_db_id = "0"
+      part_qt = "1"
+   />
+
+   <!-- ******************* Parts ******************* -->
+
+   <ref_purch_type
+     purch_type_db_id = "1"
+     purch_type_cd    = "OTHER"
+   />
+
+   <eqp_manufact
+      manufact_db_id = "1"
+      manufact_cd = "ABC"
+      manufact_name = "Test Name"
+   />
+
+   <eqp_part_no
+      alt_id = "00000000000000000000000000000001"
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      manufact_db_id = "1"
+      manufact_cd = "ABC"
+      part_no_oem = "SER_PART_NUMBER_1"
+      inv_class_db_id = "0"
+      inv_class_cd = "SER"
+   />
+
+   <eqp_part_no
+      alt_id = "00000000000000000000000000000002"
+      part_no_db_id = "4650"
+      part_no_id = "2"
+      manufact_db_id = "1"
+      manufact_cd = "ABC"
+      part_no_oem = "BATCH_PART_NUMBER_1"
+      inv_class_db_id = "0"
+      inv_class_cd = "BATCH"
+   />
+
+   <eqp_part_no
+      alt_id = "00000000000000000000000000000003"
+      part_no_db_id = "4650"
+      part_no_id = "3"
+      manufact_db_id = "1"
+      manufact_cd = "ABC"
+      part_no_oem = "TRACKED_PART_NUMBER_1"
+      inv_class_db_id = "0"
+      inv_class_cd = "TRK"
+   />
+
+   <eqp_part_no
+      alt_id = "00000000000000000000000000000004"
+      part_no_db_id = "4650"
+      part_no_id = "4"
+      manufact_db_id = "1"
+      manufact_cd = "ABC"
+      part_no_oem = "SER_PART_NUMBER_2"
+      inv_class_db_id = "0"
+      inv_class_cd = "SER"
+   />
+
+   <eqp_part_no
+      alt_id = "00000000000000000000000000000005"
+      part_no_db_id = "4650"
+      part_no_id = "5"
+      manufact_db_id = "1"
+      manufact_cd = "ABC"
+      part_no_oem = "BATCH_PART_NUMBER_2"
+      inv_class_db_id = "0"
+      inv_class_cd = "BATCH"
+   />
+
+   <eqp_part_no
+      alt_id = "00000000000000000000000000000006"
+      part_no_db_id = "4650"
+      part_no_id = "6"
+      manufact_db_id = "1"
+      manufact_cd = "ABC"
+      part_no_oem = "TRACKED_PART_NUMBER_2"
+      inv_class_db_id = "0"
+      inv_class_cd = "TRK"
+   />
+
+</dataset>

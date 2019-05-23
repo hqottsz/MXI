@@ -1,0 +1,1 @@
+UPDATE utl_config_parm SET parm_value = 'FALSE' WHERE parm_name = 'ENCRYPT_PARAMETERS';

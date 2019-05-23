@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+  jasperserver:
+    image: docker-local.rdsrvartifactory/jasper/$JASPERSOFT_VERSION:1
+    container_name: jasperserver
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      - JASPER_DB_HOST=$JASPER_DB_HOST
+      - JASPER_DB_ORACLE_PORT=$JASPER_DB_ORACLE_PORT
+      - JASPER_DB_ORACLE_SID=$JASPER_DB_ORACLE_SID
+      - JASPER_DB_USERNAME=$JASPER_DB_USERNAME
+      - JASPER_DB_PASSWORD=$JASPER_DB_PASSWORD
+      - MAINTENIX_HOST=$MAINTENIX_HOST
+      - MAINTENIX_PORT=$MAINTENIX_PORT
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8080/jasperserver-pro/login.html"]
+        interval: 20s
+        timeout: 10s
+        retries: 5

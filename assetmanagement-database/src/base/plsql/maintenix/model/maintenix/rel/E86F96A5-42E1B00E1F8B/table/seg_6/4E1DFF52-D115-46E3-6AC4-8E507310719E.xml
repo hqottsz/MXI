@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_6" id="4E1DFF52-D115-46E3-6AC4-8E507310719E" name="AEROBUY_INVOICE_INFO">
+<createdBy>cmcgee</createdBy>
+<createdTime>2017-07-28 15:46:47 UTC</createdTime>
+<comment>Integration specific information relating to invoices</comment>
+<commentInRDBMS>Integration specific information relating to invoices</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_816</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_INVOICE_ALT_ID" id="9403E75F-9E3F-226E-74E8-87AEB08F2D68">
+<createdBy>cmcgee</createdBy>
+<createdTime>2017-08-02 19:39:21 UTC</createdTime>
+<commentInRDBMS>Primary key is the ALT_ID of the PO_INVOICE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INVOICE_TYPE" id="3B0E5B8F-60A0-8273-E599-04E6D24ED842">
+<createdBy>cmcgee</createdBy>
+<createdTime>2017-07-28 15:58:29 UTC</createdTime>
+<commentInRDBMS>Set to either &apos;C&apos; for credit or &apos;D&apos; for debit</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SHIP_TO_CODE" id="698A0723-E154-F5EC-A1C5-709507B07E2D">
+<createdBy>bcarjac</createdBy>
+<createdTime>2017-09-08 13:05:53 UTC</createdTime>
+<commentInRDBMS>Ship-to-Code = Shipment field</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PACKING_SHEET_NUMBER" id="EBAEDB1B-9B05-08DF-A41B-A3B004AB27FA">
+<createdBy>bcarjac</createdBy>
+<createdTime>2017-09-08 13:10:10 UTC</createdTime>
+<commentInRDBMS>Packing Sheet Number- Shipment field</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILL_OF_LADING_NUMBER" id="2FDD5803-B332-C603-E3E8-E0C1293A6ED4">
+<createdBy>bcarjac</createdBy>
+<createdTime>2017-09-08 13:11:43 UTC</createdTime>
+<commentInRDBMS>Bill of Lading Number - Shipment field</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REFERENCE_INVOICE_NUMBER" id="AE5B9780-E3E0-F249-5BC9-42802C034CEE">
+<createdBy>bcarjac</createdBy>
+<createdTime>2017-09-08 13:13:31 UTC</createdTime>
+<commentInRDBMS>Should be provided in the Invoice Details. Placing in the External Reference field is an option, however the vendor may already be using it to store data.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HARMONIZED_TARIFF_CODE" id="14BD1C3D-9409-E340-F9FE-1E69135050C2">
+<createdBy>bcarjac</createdBy>
+<createdTime>2017-09-08 13:15:05 UTC</createdTime>
+<commentInRDBMS>Specifically done for US customs purposes. Mostly for the accounts payable. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8F34C084-E0E0-80B8-74D4-CA467D3847C4" name="PK_AEROBUY_INVOICE_INFO">
+<createdBy>cmcgee</createdBy>
+<createdTime>2017-07-28 15:56:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9403E75F-9E3F-226E-74E8-87AEB08F2D68"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

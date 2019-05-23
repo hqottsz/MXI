@@ -1,0 +1,244 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_4" id="763B18B0-85CA-0082-48BB-EAEBB680F575" name="ORG_DEPT_HR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Department Human Resources: This entity lists all of the human resources that are assigned to a particular department.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F2256DBC-16C5-B3AF-A4DE-AD41346B9040</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DEPT_DB_ID" id="60585564-4451-1728-EA6E-058EEF09D63F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_WORK_DEPT. The department to which this HR is assigned.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>19159F21-F64F-2CFF-F2AD-CA6DBB4BAC09</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DEPT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30CC2B3D-D76D-39E1-9B68-6F0A2A81CEC3" referredColumn="CCBECD9C-B231-9F4E-7711-FD72004A916B"/>
+</associations>
+</Column>
+<Column name="DEPT_ID" id="AB292B0A-8612-716E-527D-61737529C34E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_WORK_DEPT. The department to which this HR is assigned.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A848C8C0-5126-2125-476D-EED6FA10E329</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DEPT_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30CC2B3D-D76D-39E1-9B68-6F0A2A81CEC3" referredColumn="38357AE3-83A8-119C-13C1-E915DE7B708A"/>
+</associations>
+</Column>
+<Column name="HR_DB_ID" id="5878DBA5-827F-90AD-47A1-9C2E969FB6A0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR. The human resource that is assigned to this department.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A94C760C-1C56-63DC-9772-937639BBDA56</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7D7BD28B-FD86-7785-FCB1-F97175B878B9" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="HR_ID" id="85FF5A2A-2359-9366-FAA5-100627846178">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR. The human resource that is assigned to this department.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CCCD3A1E-0AE9-6D5D-DA3E-DE84C0A98F3B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7D7BD28B-FD86-7785-FCB1-F97175B878B9" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="65E12083-1790-5CCF-057A-ABD3DA3E3213">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4D9EF35C-103C-3C77-248D-8E45EE913815</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2A14CA4C-8F09-E2BA-E8E5-3289B7967D53" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="36A46445-8515-689C-7D25-AAA6D5B51633">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EB57C6A0-5423-285F-3670-2C9B241AD794</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="F5DAB8FF-DA4C-2FC6-B447-392FCC497060">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8C6265BF-D6F5-B665-9C75-C254D51ABCAF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="DA8934AB-93A1-87C9-C271-0884E27A1832">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C0B325C-99B6-CCA9-249F-D53703F94C92</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="C202B6EE-B954-EC70-8513-4D2BF13E1742">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D569DA7B-A9B2-4710-0AB0-3DFBCACDBBE8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="849B672B-9C34-3E3A-5AD2-7504021890C0" name="PK_ORG_DEPT_HR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>38123BB0-03CF-9E45-947E-36C32990CE97</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60585564-4451-1728-EA6E-058EEF09D63F"/>
+<colUsage columnID="AB292B0A-8612-716E-527D-61737529C34E"/>
+<colUsage columnID="5878DBA5-827F-90AD-47A1-9C2E969FB6A0"/>
+<colUsage columnID="85FF5A2A-2359-9366-FAA5-100627846178"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6BF2A640-3196-1F25-467E-4DD33E3EFDC2" name="IX_ORGHR_ORGDEPTHR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6B825FAF-7752-6EC1-C1A1-BFDF95F69896</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5878DBA5-827F-90AD-47A1-9C2E969FB6A0"/>
+<colUsage columnID="85FF5A2A-2359-9366-FAA5-100627846178"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7DA7B14A-B55A-34AD-A34F-353E24D760C1" name="IX_ORGWORKDEPT_ORGDEPTHR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9AC94770-33B6-2A7B-BA80-CCDBDFFE43AE</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60585564-4451-1728-EA6E-058EEF09D63F"/>
+<colUsage columnID="AB292B0A-8612-716E-527D-61737529C34E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0D203019-F7EB-7ADB-B6B3-D9EA029CD14D" name="FK_MIMRSTAT_ORGDEPTHR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:34 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="65E12083-1790-5CCF-057A-ABD3DA3E3213"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D4D2305E-538B-21D5-E9FA-BD14E1A4B8CC" name="FK_ORGHR_ORGDEPTHR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5878DBA5-827F-90AD-47A1-9C2E969FB6A0"/>
+<colUsage columnID="85FF5A2A-2359-9366-FAA5-100627846178"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="744F5F19-14C5-92C6-EBD1-DFFD8454D78E" name="FK_ORGWORKDEPT_ORGDEPTHR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60585564-4451-1728-EA6E-058EEF09D63F"/>
+<colUsage columnID="AB292B0A-8612-716E-527D-61737529C34E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

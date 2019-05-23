@@ -1,0 +1,133 @@
+<!--
+Summary of data loaded for this query test suite:
+
+1) MEL Type Deferred Fault: i.e. a fault that has deferral reference information
+2) Fault without deferral reference information
+3) Several deferral references defined with the same name but varied assemblies or operator assignments in order to be certain that
+   the query is able to accurately select the correct deferral reference based on all uniquely identifying characteristics.
+
+This test was introduced in OPER-10593.
+-->
+<dataset>
+
+	<!-- MEL Type Deferred Fault -->
+	<sd_fault
+		alt_id = "ABCDEF1234567890ABCDEF1234567890"
+		fault_db_id = "4650"
+		fault_id = "1"
+		defer_ref_sdesc = "Deferral Reference"
+	/>
+	<sched_stask
+		sched_db_id = "4650"
+		sched_id = "100"
+		fault_db_id = "4650"
+		fault_id = "1"
+		main_inv_no_db_id = "4650"
+		main_inv_no_id = "1000"
+	/>
+	<inv_inv
+		inv_no_db_id = "4650"
+		inv_no_id = "1000"
+		h_inv_no_db_id = "4650"
+		h_inv_no_id = "1001"
+	/>
+	<inv_inv
+		inv_no_db_id = "4650"
+		inv_no_id = "1001"
+		assmbl_db_id = "4650"
+		assmbl_cd = "ASSMBL1"
+		carrier_db_id = "4650"
+		carrier_id = "10000"
+	/>
+	<fail_defer_ref
+	    fail_defer_ref_db_id = "4650"
+	    fail_defer_ref_id = "50"
+	    assmbl_db_id = "4650"
+	    assmbl_cd = "ASSMBL1"
+	    defer_ref_sdesc = "Deferral Reference"
+	/>
+	<fail_defer_carrier
+		fail_defer_ref_db_id = "4650"
+		fail_defer_ref_id = "50"
+		carrier_db_id = "4650"
+		carrier_id = "10000"
+	/>
+	<org_carrier
+		carrier_db_id = "4650"
+		carrier_id = "10000"
+	/>
+
+	<!-- Non MEL Type Deferred Fault -->
+	<sd_fault
+		alt_id = "1234567890ABCDEF1234567890ABCDEF"
+		fault_db_id = "4650"
+		fault_id = "2"
+	/>
+	<sched_stask
+		sched_db_id = "4650"
+		sched_id = "200"
+		fault_db_id = "4650"
+		fault_id = "2"
+		main_inv_no_db_id = "4650"
+		main_inv_no_id = "2000"
+	/>
+	<inv_inv
+		inv_no_db_id = "4650"
+		inv_no_id = "2000"
+		h_inv_no_db_id = "4650"
+		h_inv_no_id = "2001"
+	/>
+	<inv_inv
+		inv_no_db_id = "4650"
+		inv_no_id = "2001"
+		assmbl_db_id = "4650"
+		assmbl_cd = "ASSMBL2"
+		carrier_db_id = "4650"
+		carrier_id = "20000"
+	/>
+	<org_carrier
+		carrier_db_id = "4650"
+		carrier_id = "20000"
+	/>
+
+	<!-- Extra Deferral References With Similar Settings Not To Be Accidentally Selected For Alert Details -->
+	<fail_defer_ref
+	    fail_defer_ref_db_id = "4650"
+	    fail_defer_ref_id = "51"
+	    assmbl_db_id = "4650"
+	    assmbl_cd = "ASSMBL2"
+	    defer_ref_sdesc = "Deferral Reference"
+	/>
+	<fail_defer_carrier
+		fail_defer_ref_db_id = "4650"
+		fail_defer_ref_id = "51"
+		carrier_db_id = "4650"
+		carrier_id = "10000"
+	/>
+	<fail_defer_ref
+	    fail_defer_ref_db_id = "4650"
+	    fail_defer_ref_id = "52"
+	    assmbl_db_id = "4650"
+	    assmbl_cd = "ASSMBL1"
+	    defer_ref_sdesc = "Deferral Reference"
+	/>
+	<fail_defer_carrier
+		fail_defer_ref_db_id = "4650"
+		fail_defer_ref_id = "52"
+		carrier_db_id = "4650"
+		carrier_id = "20000"
+	/>
+	<fail_defer_ref
+	    fail_defer_ref_db_id = "4650"
+	    fail_defer_ref_id = "53"
+	    assmbl_db_id = "4650"
+	    assmbl_cd = "ASSMBL2"
+	    defer_ref_sdesc = "Deferral Reference"
+	/>
+	<fail_defer_carrier
+		fail_defer_ref_db_id = "4650"
+		fail_defer_ref_id = "53"
+		carrier_db_id = "4650"
+		carrier_id = "20000"
+	/>
+</dataset>

@@ -1,0 +1,199 @@
+<dataset>
+
+   <!-- 
+   Note; when an sched_stask is inserted for a component WP (CHECK or RO against a non-ACFT inventory) 
+   the DB trigger TIAF_SCHED_WP_INST automatically inserts a record in the sched_wp table with the 
+   column enforce_nsv set to the default value of 1
+    -->
+
+   <!-- NSV Task on inventory with no work packages -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "1"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_class_db_id = "0"
+      task_class_cd = "REQ"
+      />
+
+   <!-- NSV Task on inventory with one applicable work package
+        (applicable WP = non-historic, enforcing NSV tasks, and active) -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "2"
+      inv_class_db_id = "0"
+      inv_class_cd = "TRK"
+      />
+   <!-- NSV Task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "2"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "2"
+      task_class_db_id = "0"
+      task_class_cd = "REQ"
+      />
+   <!-- WP -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "21"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "2"
+      task_class_db_id = "0"
+      task_class_cd = "CHECK"
+      creation_dt = "01-JAN-2012 00:00"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "21"
+      hist_bool = "0"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      sched_start_gdt = "17-MAR-2012 11:00"
+      />
+
+   <!-- NSV Task on inventory with multiple applicable work packages 
+        with different scheduled dates -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "3"
+      inv_class_db_id = "0"
+      inv_class_cd = "TRK"
+      />
+   <!-- NSV Task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "3"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "3"
+      task_class_db_id = "0"
+      task_class_cd = "REQ"
+      />
+   <!-- Earlier scheduled WP -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "31"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "3"
+      task_class_db_id = "0"
+      task_class_cd = "CHECK"
+      creation_dt = "01-JAN-2012 00:00"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "31"
+      hist_bool = "0"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      sched_start_gdt = "17-MAR-2012 11:00"
+      />
+   <!-- Later scheduled WP -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "32"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "3"
+      task_class_db_id = "0"
+      task_class_cd = "CHECK"
+      creation_dt = "01-JAN-2012 00:00"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "32"
+      hist_bool = "0"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      sched_start_gdt = "01-APR-2012 11:00"
+      />
+
+   <!-- NSV Task on inventory with multiple applicable work packages 
+        with same scheduled dates but different creation dates -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "4"
+      inv_class_db_id = "0"
+      inv_class_cd = "TRK"
+      />
+   <!-- NSV Task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "4"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "4"
+      task_class_db_id = "0"
+      task_class_cd = "REQ"
+      />
+   <!-- Earlier creation WP -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "41"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "4"
+      task_class_db_id = "0"
+      task_class_cd = "RO"
+      creation_dt = "01-JAN-2012 00:00"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "41"
+      hist_bool = "0"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      sched_start_gdt = "17-MAR-2012 11:00"
+      />
+   <!-- Later creation WP -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "42"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "4"
+      task_class_db_id = "0"
+      task_class_cd = "CHECK"
+      creation_dt = "01-FEB-2012 00:00"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "42"
+      hist_bool = "0"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      sched_start_gdt = "17-MAR-2012 11:00"
+      />
+
+   <!-- NSV Task on inventory with one applicable work package that is an RO -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "5"
+      inv_class_db_id = "0"
+      inv_class_cd = "TRK"
+      />
+   <!-- NSV Task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "5"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "5"
+      task_class_db_id = "0"
+      task_class_cd = "REQ"
+      />
+   <!-- WP -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "51"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "5"
+      task_class_db_id = "0"
+      task_class_cd = "RO"
+      creation_dt = "01-JAN-2012 00:00"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "51"
+      hist_bool = "0"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      sched_start_gdt = "17-MAR-2012 11:00"
+      />
+
+
+</dataset>

@@ -1,0 +1,228 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0BDAC25B-C324-81E4-D6F1-BB673D177BA2" name="CAPACITY_PATTERN_SKILL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This entity represents the skill associated to a capacity pattern.  This entity determines the labour skills that will be applied for each shift under the capacity pattern.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8836BCAC-66A7-3052-6A01-1ACEBA09FE1B</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CAPACITY_PATTERN_DB_ID" id="88AAF782-4350-E895-3A45-11FCD972F51F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to CAPACITY_PATTERN table.  Represents capacity pattern for which the labour skill is defined.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4632BB6E-0BD0-C83E-B28D-13EBDD436909</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CAPACITY_PATTERN_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E672785D-E5F1-6C01-B2D3-00A373FF2E48" referredColumn="CA4B4A9A-5EEA-1302-DB98-EFB54270ED2E"/>
+</associations>
+</Column>
+<Column name="CAPACITY_PATTERN_ID" id="8E9FF403-73F8-790B-BC57-213D4DB81BBC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to CAPACITY_PATTERN table.  Represents capacity pattern for which the labour skill is defined.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AF95A895-14C6-B6E0-0E6E-CC31CE1821C0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CAPACITY_PATTERN_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E672785D-E5F1-6C01-B2D3-00A373FF2E48" referredColumn="D712776F-26BB-3E89-77E6-9C53F3EFF3B2"/>
+</associations>
+</Column>
+<Column name="LABOUR_SKILL_DB_ID" id="916A07C7-05D0-12DB-FF25-78B12E80D742">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to LABOUR_LABOUR.  Represents the labour skill that is applied to the capacity pattern.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6EE4CE63-3B9E-B1AC-9708-79B42F842E5F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LABOUR_SKILL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6FFAC6AB-5869-E24A-DE03-C383E0555CE6" referredColumn="FCC98F6C-F4B6-E147-4DC1-001D9E7E9C05"/>
+</associations>
+</Column>
+<Column name="LABOUR_SKILL_CD" id="51C50C96-37B4-7C7F-0A7D-1A88F88C631D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to LABOUR_LABOUR.  Represents the labour skill that is applied to the capacity pattern.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3F40AE11-6FDE-5A42-801A-2C8A479A9951</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6FFAC6AB-5869-E24A-DE03-C383E0555CE6" referredColumn="E5384F59-2483-76F0-624D-A71E378356F5"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="57E342CF-7B83-B3BC-10A2-36752E59F69D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9401B044-0900-F800-0C45-A6C9E38EADA4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D56F32D1-6746-88FE-CB48-97D13409FB30" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="CC25B710-7649-9445-671C-3C3C3F8F254F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1277584A-F43F-486E-82EA-C6E5DF2A1A83</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="D93CE711-A246-8C27-CB64-53612D72D6D9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>097D6818-EF0D-35E4-3FB1-40165C37195D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="AED98C16-CC31-B47C-FAF1-C58DB1021130">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>15D6FC0E-6CB4-D70E-7055-3DDB158C43F6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="ED0D3726-4B98-2E41-D8B9-52A6E2F307D9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>36421BA3-B874-9DC4-7D32-F5D267FCC6E7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="434A7128-674F-E476-717C-DD19A8D55146" name="PK_CAPACITY_PATTERN_SKILL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CA57EF94-E929-0CBF-6BBD-487145444F9E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88AAF782-4350-E895-3A45-11FCD972F51F"/>
+<colUsage columnID="8E9FF403-73F8-790B-BC57-213D4DB81BBC"/>
+<colUsage columnID="916A07C7-05D0-12DB-FF25-78B12E80D742"/>
+<colUsage columnID="51C50C96-37B4-7C7F-0A7D-1A88F88C631D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="751B6B37-D8BD-CC2D-AE79-EE029262D35C" name="IX_CP_CPSKILL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>430EA33F-038C-23B8-A35E-17230F22DC20</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88AAF782-4350-E895-3A45-11FCD972F51F"/>
+<colUsage columnID="8E9FF403-73F8-790B-BC57-213D4DB81BBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FDF2BCB7-8D58-12F6-3951-B07747DDEE64" name="FK_CP_CPSKILL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88AAF782-4350-E895-3A45-11FCD972F51F"/>
+<colUsage columnID="8E9FF403-73F8-790B-BC57-213D4DB81BBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9BB8D2C8-7F45-819A-59A4-8F6B3983A1F9" name="FK_MIMRSTAT_CPSKILL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57E342CF-7B83-B3BC-10A2-36752E59F69D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AEB085A3-EA5E-B403-941B-F077DBF5AD32" name="FK_REFLABOURSKILL_CPSKILL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="916A07C7-05D0-12DB-FF25-78B12E80D742"/>
+<colUsage columnID="51C50C96-37B4-7C7F-0A7D-1A88F88C631D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

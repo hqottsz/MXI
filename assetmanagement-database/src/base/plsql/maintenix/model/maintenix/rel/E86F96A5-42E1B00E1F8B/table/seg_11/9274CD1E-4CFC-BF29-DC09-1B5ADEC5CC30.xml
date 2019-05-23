@@ -1,0 +1,260 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="9274CD1E-4CFC-BF29-DC09-1B5ADEC5CC30" name="INV_AC_REG_TO_FP">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 16:57:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_831</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_NO_DB_ID" id="969CA2B8-2A6C-F540-0192-8E2FAF3BE2C1">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 16:58:58 UTC</createdTime>
+<comment>The aircraft inventory&apos;s database id.</comment>
+<commentInRDBMS>The aircraft inventory&apos;s database id.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2ACA636F-1F72-B6E3-500D-29864CE58F8F" referredColumn="388196D3-06E5-5110-AEC0-241107128B80"/>
+</associations>
+</Column>
+<Column name="INV_NO_ID" id="5AC9F0D7-33C8-FD54-0003-006431477C03">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 16:58:58 UTC</createdTime>
+<comment>The aircraft inventory&apos;s id.</comment>
+<commentInRDBMS>The aircraft inventory&apos;s id.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2ACA636F-1F72-B6E3-500D-29864CE58F8F" referredColumn="72B6B99E-0D80-5867-03C9-CFFFC619CBA5"/>
+</associations>
+</Column>
+<Column name="EXPORT_BOOL" id="8FBCBA87-FC0E-6A77-8E4D-57A6550B83B6">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:01:21 UTC</createdTime>
+<comment>A boolean indicating whether or not the associated aircraft inventory shall be exported to Fleet Planner.</comment>
+<commentInRDBMS>A boolean indicating whether or not the associated aircraft inventory shall be exported to Fleet Planner.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EXPORT_BOOL IN (0, 1)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="2FAC5386-D9A8-E91A-A2F1-63120AD14DD4">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:10:09 UTC</createdTime>
+<comment>Status of the record.</comment>
+<commentInRDBMS>Status of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C4B5137A-A4F4-8C2E-AF91-D5C3CE84E325" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="87CFFB11-DE9A-61CF-8CDE-D8C19B5DCFEE">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:10:29 UTC</createdTime>
+<comment>A number incremented each time the record is modified.</comment>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="C334DB97-7F2C-89EB-B359-F34EBA41C47A">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:11:03 UTC</createdTime>
+<comment>The identifier of the database that owns the record.</comment>
+<commentInRDBMS>The identifier of the database that owns the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CTRL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95CF5B7A-DC1E-CF46-3DDB-080E56677512" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="0FE2326B-9C9A-960B-A8A0-F649A643CD12">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:11:26 UTC</createdTime>
+<comment>The date and time at which the record was inserted.</comment>
+<commentInRDBMS>The date and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="48355392-122F-C777-F498-6BC6A1278B52">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:11:48 UTC</createdTime>
+<comment>The identifier of the database that inserted the record.</comment>
+<commentInRDBMS>The identifier of the database that inserted the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CREATION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="665F625D-6C8A-E185-1DF5-0761C44B5821" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_DT" id="9BE9675A-E7BD-807D-EAEB-0B498C26D2B2">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:12:10 UTC</createdTime>
+<comment>The date and time at which the record was last updated.</comment>
+<commentInRDBMS>The date and time at which the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="5105B519-2961-18ED-266E-7F08ECDD4A45">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:12:29 UTC</createdTime>
+<comment>The identifier of the database that last updated the record.</comment>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="748ECC31-32DF-8BDA-D88B-F77C53FD9962" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="B85035D1-7C9E-0ACE-6CEE-8CC27B8A0292">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:13:07 UTC</createdTime>
+<comment>The name of the user that last updated the record.</comment>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6CD059D4-A7D0-F78D-D881-8DE84E089721" name="PK_INV_AC_REG_TO_FP">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 16:59:10 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="969CA2B8-2A6C-F540-0192-8E2FAF3BE2C1"/>
+<colUsage columnID="5AC9F0D7-33C8-FD54-0003-006431477C03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="49086B57-C371-E820-AA0D-1A92D3A1533D" name="IX_EXPORTBOOL_INVACREGTOFP">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:07:07 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5AC9F0D7-33C8-FD54-0003-006431477C03"/>
+<colUsage columnID="969CA2B8-2A6C-F540-0192-8E2FAF3BE2C1"/>
+<colUsage columnID="8FBCBA87-FC0E-6A77-8E4D-57A6550B83B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="796DC0D2-ED56-798B-A3DC-4B47D0F3DBDA" name="FK_INVACREG_INVACREGTOFP">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:03:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="969CA2B8-2A6C-F540-0192-8E2FAF3BE2C1"/>
+<colUsage columnID="5AC9F0D7-33C8-FD54-0003-006431477C03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2FA902F3-18B6-E36E-4AAC-B4C1D110B4AA" name="FK_MIMDB_INVACREGTOFP_CT">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:19:08 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C334DB97-7F2C-89EB-B359-F34EBA41C47A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30BF4496-D628-7A3E-A644-DFF397A2B18B" name="FK_MIMDB_INVACREGTOFP_CR">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:19:08 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48355392-122F-C777-F498-6BC6A1278B52"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E9C20520-C539-4AD7-44FA-969AAC149915" name="FK_MIMDB_INVACREGTOFP_RE">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:19:08 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5105B519-2961-18ED-266E-7F08ECDD4A45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3D4BBA26-D1BE-5D2F-F0B6-E28BED81648F" name="FK_MIMRSTAT_INVACREGTOFP">
+<createdBy>tydoca</createdBy>
+<createdTime>2018-04-09 17:19:08 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FAC5386-D9A8-E91A-A2F1-63120AD14DD4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

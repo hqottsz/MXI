@@ -1,0 +1,85 @@
+apply plugin: 'mxenvironment'
+
+configurations {
+   liquibase
+   database {
+      transitive = false;
+      extendsFrom liquibase
+   }
+   buildinfoproperties
+}
+
+dependencies {
+   liquibaseDeployer "com.mxi.idk:database-deployer-cli:${idkVersion}"
+   liquibase "com.mxi.idk:dbtools-db:${idkVersion}"
+   database project(path: ":assetmanagement-database", configuration: 'database')
+   dbdiff "com.mxi.dbdiff:dbdiff-core:${dbdiffVersion}"
+   buildinfoproperties project( path: ':installers:buildinfo', configuration: 'buildinfoproperties' )
+}
+
+environments {
+   base {
+      database {
+         install {
+            liquibase {
+               configuration = configurations.database
+               forceUpgrade = false
+            }
+            assertComponentVersion {
+              componentCd = 'assetmanagement-database';
+              major = Integer.valueOf(projectMajorVersion);
+              minor = Integer.valueOf(projectMinorVersion);
+              servicepack = Integer.valueOf(projectServicepackVersion);
+              update = Integer.valueOf(projectUpdateVersion);
+            }
+            plsqlExec {
+               workingDirectory = file("src\\test\\plsql")
+               controlFile = file("${workingDirectory}\\validation.sql")
+            }
+         }
+      }
+   }
+}
+
+// by default, exportBaseDb doesn't depend on createBaseDb; however, we don't neccesarily want to explicitly
+// depend on it either, as it's plausible a user might want to export manually, or following other changes.
+tasks.exportBaseDb {
+   mustRunAfter createBaseDb
+   exportFileName = 'MAINTENIX.DMPX'
+   logFileName = 'MAINTENIX-EXPORT-DP.LOG'
+}
+
+// On account of above, create a task which will implicitly create and export the Base DB
+task createBaseDbDmpx {
+   dependsOn createBaseDb, exportBaseDb
+   finalizedBy dropBaseDb
+
+   ext.datapumpFile = exportBaseDb.getDatapumpFile()
+   ext.datapumpLog = exportBaseDb.getLogFile()
+
+   // Use inputs from exportBaseDb, as well as the DMPX file as an output; copied log file is already an output
+   inputs.files( exportBaseDb.inputs.files )
+   outputs.file( datapumpFile )
+   outputs.file( datapumpLog )
+}
+tasks.createBaseDb.outputs.upToDateWhen { project.gradle.taskGraph.hasTask( createBaseDbDmpx ) && exportBaseDb.outputs.upToDateSpec.isSatisfiedBy( exportBaseDb ) }
+
+task zipBaseDb(type: Zip) {
+   dependsOn createBaseDbDmpx, configurations.buildinfoproperties
+   from( createBaseDbDmpx.datapumpFile )
+   from( configurations.buildinfoproperties )
+}
+tasks.dropBaseDb.shouldRunAfter zipBaseDb
+
+configurations {
+   basedb
+}
+
+artifacts {
+   // The artifacts below are used only when publishing deliverables or building installers - developer builds don't need to trigger these.
+   if ( isDeliverablesBuild ) {
+      basedb( createBaseDbDmpx.datapumpFile ) { builtBy createBaseDbDmpx }
+      basedb( createBaseDbDmpx.datapumpLog ) { builtBy createBaseDbDmpx }
+      'default'( zipBaseDb ) { builtBy zipBaseDb }
+   }
+}

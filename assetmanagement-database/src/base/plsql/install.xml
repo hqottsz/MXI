@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  This is the install (control) file for liqiuibase.
+  Whenever a new control.sql call in src/base/control.sql file is added, the same change should be implemented here.
+  For more info, please contact Architecture team.
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+   <preConditions onFail="HALT">
+      <!-- The update attribute is specified to ensure that the component is upgraded from a specific patch update -->
+      <ext:version component="assetmanagement-database" major="0" minor="0" servicepack="0" update="0" />
+   </preConditions>
+
+   <include file="assetmanagement-database/stage-initialize.xml"/>
+
+   <!--maintenix -->
+   <include file="maintenix/control.xml" relativeToChangelogFile="true"/>
+
+   <!-- arc -->
+   <include file="arc/control.xml" relativeToChangelogFile="true"/>
+
+   <!-- api -->
+   <include file="api/control.xml" relativeToChangelogFile="true"/>
+
+   <!-- opr -->
+   <include file="opr/control.xml" relativeToChangelogFile="true"/>
+
+   <!-- rbl -->
+   <include file="rbl/control.xml" relativeToChangelogFile="true"/>
+
+   <!-- lrp -->
+   <include file="lrp/control.xml" relativeToChangelogFile="true"/>
+
+   <!-- Create Audit Trigger -->
+   <include file="maintenix/schema/audit_triggers.sql" relativeToChangelogFile="true"/>
+
+   <include file="assetmanagement-database/stage-finalize.xml"/>
+
+   <!-- Set Version -->
+   <changeSet author="assetmanagement-database" id="1" runAlways="true" runOnChange="true">
+      <comment>Update component version in upg_version</comment>
+      <createProcedure>
+         BEGIN
+            upg_version_v1_pkg.set_version('@module.name@', @version.major@, @version.minor@, @version.service@, @version.patch@, '@build.label@', '@build.location@', '@build.revision@');
+         END;
+      </createProcedure>
+   </changeSet>
+
+   <changeSet author="update_current_version" id="2" runAlways="true" runOnChange="true">
+      <comment></comment>
+      <createProcedure>
+
+         BEGIN
+
+            MERGE
+            INTO
+               utl_current_version
+            USING
+               (
+                  SELECT
+                     'Maintenix' AS component_name,
+                     '@version@' AS version,
+                      @servicepack.ver@ AS servicepack_ver,
+                      @update.ver@ AS update_ver,
+                     '@short.version.name@' AS short_version_name,
+                     '@full.version.name@' AS full_version_name,
+                     SUBSTR('@build.label@',1,100) AS build_label,
+                     SUBSTR('@build.location@',1,80) AS build_location,
+                     NVL('@build.revision@',NULL) AS build_revision,
+                     SYSDATE AS install_dt,
+                     'Database Upgrade' AS install_sdesc
+                  FROM
+                     dual
+               ) target_ver
+            ON
+               (
+                  utl_current_version.component_name = target_ver.component_name
+               )
+            WHEN MATCHED THEN
+               UPDATE
+               SET
+                   version            = target_ver.version,
+                   servicepack_ver    = target_ver.servicepack_ver,
+                   update_ver         = target_ver.update_ver,
+                   short_version_name = target_ver.short_version_name,
+                   full_version_name  = target_ver.full_version_name,
+                   build_label        = target_ver.build_label,
+                   build_location     = target_ver.build_location,
+                   build_revision     = target_ver.build_revision,
+                   install_dt         = SYSDATE,
+                   install_sdesc      = 'Database Upgrade'
+            WHEN NOT MATCHED THEN
+                INSERT (
+                   component_name,
+                   version,
+                   servicepack_ver,
+                   update_ver,
+                   short_version_name,
+                   full_version_name,
+                   build_label,
+                   build_location,
+                   build_revision,
+                   install_dt,
+                   install_sdesc
+                )
+                VALUES (
+                   target_ver.component_name,
+                   target_ver.version,
+                   target_ver.servicepack_ver,
+                   target_ver.update_ver,
+                   target_ver.short_version_name,
+                   target_ver.full_version_name,
+                   target_ver.build_label,
+                   target_ver.build_location,
+                   target_ver.build_revision,
+                   target_ver.install_dt,
+                   target_ver.install_sdesc
+                );
+
+         END;
+
+      </createProcedure>
+   </changeSet>
+
+</databaseChangeLog>

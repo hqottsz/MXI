@@ -1,0 +1,6 @@
+/****************************************************
+** 20-LEVEL INSERT SCRIPT FOR TABLE "REF_FLIGHT_TYPE"
+****************************************************/
+insert into ref_flight_type(flight_type_db_id, flight_type_cd, bitmap_db_id, bitmap_tag, desc_sdesc, desc_ldesc,  spec2k_flight_type_cd, rstat_cd, creation_dt, revision_dt, revision_db_id, revision_user) values (20, 'RGEN', 0, 45, 'Revenue Generating', 'Flight for the purpose of flight generation',  'R', 0, '23-MAR-01', '23-MAR-01', 100, 'MXI');
+insert into ref_flight_type(flight_type_db_id, flight_type_cd, bitmap_db_id, bitmap_tag, desc_sdesc, desc_ldesc,  spec2k_flight_type_cd, rstat_cd, creation_dt, revision_dt, revision_db_id, revision_user) values (20, 'NON RGEN', 0, 1, 'Non Revenue Generating', 'Flight for the purpose of locating equipment.', 'R', 0, '23-MAR-01', '23-MAR-01', 100, 'MXI');
+insert into ref_flight_type(flight_type_db_id, flight_type_cd, bitmap_db_id, bitmap_tag, desc_sdesc, desc_ldesc,  spec2k_flight_type_cd, rstat_cd, creation_dt, revision_dt, revision_db_id, revision_user) values (20, 'MAINT', 0, 56, 'Maintenance Routing', 'Aircraft Re-routed for Corrective Maintenance', 'R', 0, '23-MAR-01', '23-MAR-01', 100, 'MXI');

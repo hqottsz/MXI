@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false" xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+   <!-- ================ -->
+   <!-- Custom appenders -->
+   <!-- ================ -->
+
+   <!-- Weblogic server appender -->
+   <appender name="WeblogicAppender" class="com.mxi.mx.common.wls.log.WeblogicAppender">
+      <param name="Threshold" value="DEBUG" />
+   </appender>
+
+   <!-- ================== -->
+   <!-- XML file appenders -->
+   <!-- ================== -->
+
+   <!-- Maintenix application appender -->
+   <appender name="MaintenixAppender" class="org.apache.log4j.FileAppender">
+      <param name="Threshold" value="ALL" />
+      <param name="File" value="${weblogic.RootDirectory}/servers/${weblogic.Name}/logs/assetmanagement-log.xml" />
+      <param name="Append" value="false" />
+      <layout class="org.apache.log4j.xml.XMLLayout">
+         <param name="LocationInfo" value="true" />
+      </layout>
+   </appender>
+
+
+   <!-- ============= -->
+   <!-- Limit loggers -->
+   <!-- ============= -->
+
+
+   <!-- Maintenix logger -->
+   <logger name="com.mxi.mx" additivity="false">
+      <level value="INFO" />
+      <appender-ref ref="WeblogicAppender" />
+      <appender-ref ref="MaintenixAppender" />
+   </logger>
+
+   <!-- Limit the com.crystaldecisions logger to ERROR -->
+   <logger name="com.crystaldecisions" additivity="false">
+      <level value="ERROR" />
+      <appender-ref ref="WeblogicAppender" />
+   </logger>  
+
+   <!-- Limit the DWR logger to ERROR -->
+   <logger name="org.directwebremoting" additivity="false">
+      <level value="ERROR" />
+      <appender-ref ref="WeblogicAppender" />
+   </logger>
+   
+   <!-- Set Debug level logging for HTTP Compression Filter and Cache filter -->
+   <logger name="com.mxi.mx.common.filter.CompressionFilter" additivity="false">
+      <level value="DEBUG" />
+      <appender-ref ref="WeblogicAppender" />
+   </logger>
+   <logger name="com.mxi.mx.common.filter.CacheHeaderFilter" additivity="false">
+      <level value="DEBUG" />
+      <appender-ref ref="WeblogicAppender" />
+   </logger> 
+   
+   <!-- Message Ordering Processor tracing 
+   <logger name="com.mxi.mx.integration.ordering.MessageOrderingProcessor" additivity="false">
+      <level value="TRACE" />
+      <appender-ref ref="WeblogicAppender" />
+   </logger>-->
+
+   <!-- Integration Framework Flow Monitoring tracing 
+   <logger name="com.mxi.mx.integration.services.management.monitoring.FlowMonitor" additivity="false">
+      <level value="DEBUG" />
+      <appender-ref ref="WeblogicAppender" />
+   </logger>-->
+   
+   <!-- ===================== -->
+   <!-- Root logger           -->
+   <!-- ===================== -->
+
+   <root>
+      <level value="INFO" />
+      <appender-ref ref="WeblogicAppender" />
+   </root>
+
+</log4j:configuration>
+

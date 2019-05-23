@@ -1,0 +1,270 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="C4DDCC13-C38F-7962-594B-19F836A7E2E8" name="EQP_BOM_PART_SENS">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:10:36 UTC</createdTime>
+<commentInRDBMS>This is a relationship table between EQP_BOM_PART and REF_SENSITIVITY.&lt;br/&gt;A record in this table means that a sensitivity is enabled for a part group.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_828</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BOM_PART_DB_ID" id="2FD614EA-161D-0D88-3C11-6888151C185A">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:18:32 UTC</createdTime>
+<commentInRDBMS>FK to EQP_BOM_PART PK&apos;s table</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8B7A5494-07C2-038C-F37E-3BCE1FFBE491" referredColumn="E8EE7B6D-E8C9-300A-21B5-4BF414D622D5"/>
+</associations>
+</Column>
+<Column name="BOM_PART_ID" id="4691BAE3-B271-A9C0-4E11-2408D992565C">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:18:32 UTC</createdTime>
+<commentInRDBMS>FK to EQP_BOM_PART PK&apos;s table</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8B7A5494-07C2-038C-F37E-3BCE1FFBE491" referredColumn="D5CCBAFC-8109-25AA-1A59-CE9EB277DF87"/>
+</associations>
+</Column>
+<Column name="SENSITIVITY_CD" id="BF16158D-947E-40FE-4E82-823BF6092E5B">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:18:32 UTC</createdTime>
+<commentInRDBMS>FK to REF_SENSITIVITY&apos;s PK table</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="26FD4B88-F353-6C97-ECD5-596AC8B62B2F" referredColumn="1E947E79-C686-1D5B-3425-2F74DEB7E76E"/>
+</associations>
+</Column>
+<Column name="CTRL_DB_ID" id="3D6F9D08-261A-6333-1F3D-EC99038E5E35">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:27:36 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="C17957A2-114E-F509-0876-251E9A6E7A86" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="FCC80FC0-274C-B2FF-5211-70050DB03112">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:27:36 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+<valueDef value="2" description=""/>
+<valueDef value="3" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8A3BB398-C9E4-9134-F6A6-72199907ED73" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="75F9BE14-2171-6582-2E03-097016ACFFEA">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:30:12 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="9AA9CB30-D42E-445B-3FE0-3A79B516406A">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:29:52 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="6CFCF6C1-0B87-4CB4-5538-6C80A0D4C0C2" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="01B01FBA-5E87-DB05-6A78-413E2E6FA231">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:36:13 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="7C5BD311-6904-7DA7-6CB0-199856DCB5E9">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:31:02 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="9E7D63FD-D064-17F5-C03E-0776BF5D2E60">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:32:14 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="88C6B721-662D-67CC-E260-D0277B2FFA61" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="1C1FBDF8-4CB0-F647-6CC2-3F732AC392A9">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:33:13 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="83A9631E-1FDE-463E-FB3F-75FB6E2EC4F5" name="PK_EQP_BOM_PART_SENS">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 20:18:32 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FD614EA-161D-0D88-3C11-6888151C185A"/>
+<colUsage columnID="4691BAE3-B271-A9C0-4E11-2408D992565C"/>
+<colUsage columnID="BF16158D-947E-40FE-4E82-823BF6092E5B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9DD430B8-139D-AF9E-263A-2E424AC97117" name="FK_REFSENS_EQPBOMPARTSENS">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 21:05:44 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BF16158D-947E-40FE-4E82-823BF6092E5B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1CFF7761-8565-1A51-D453-ABAFD25573B3" name="FK_MIMDB_EQPBOMPARTSENS_CRE">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 21:08:59 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9AA9CB30-D42E-445B-3FE0-3A79B516406A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1BEC8850-5C59-56E4-5257-9E7522FFCC15" name="FK_EQPBOMPART_BOMPARTSENS">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 21:09:56 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FD614EA-161D-0D88-3C11-6888151C185A"/>
+<colUsage columnID="4691BAE3-B271-A9C0-4E11-2408D992565C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B030509A-E130-D2FF-9135-BA7207EB3C27" name="FK_MIMDB_EQPBOMPARTSENS_CTRL">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 21:10:50 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D6F9D08-261A-6333-1F3D-EC99038E5E35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E0B728A1-F506-9A41-F83F-265F4BDA7CC3" name="FK_MIMDB_EQPBOMPARTSENS_REV">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 21:11:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E7D63FD-D064-17F5-C03E-0776BF5D2E60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9613D07E-6925-9410-5337-5FBC8E72CFD9" name="FK_MIMRSTAT_EQPBOMPARTSENS">
+<createdBy>yabdillahi</createdBy>
+<createdTime>2018-01-08 21:14:46 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCC80FC0-274C-B2FF-5211-70050DB03112"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

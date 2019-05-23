@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<procedure-statement xmlns="http://xml.mxi.com/xsd/common/dataset/proc/1.0">
+   <name>ENABLE_EVENT_MX_RFQ_UPDATED</name>
+   <description>Used to enable MX_RFQ_UPDATED event</description>
+   <procedure>
+   		BEGIN
+			UPDATE
+				int_event_config
+			SET
+				enabled_bool = 0,
+				after_snapshot_bool = 0
+			WHERE
+				event_type_cd = 'MX_RFQ_UPDATED';
+        END;
+   </procedure>
+</procedure-statement>

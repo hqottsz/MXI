@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_3" id="B9DD4B2D-F039-A750-E031-D6104D0D426B" name="MIM_LOCAL_DB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Local Database: A physical entity that records the actual entry in MIM_DB used by Tracker/Baseliner/Administrator. (Points to one MIM_DB entry).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C8D855D-36D9-EF9F-524E-FB3E9F8882ED</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DB_ID" id="E6148751-41FB-A9C1-B28F-1B2B78F4DB17">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to mim_db.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C5B15E6F-6D51-8DF1-0C7D-962C59CECB24</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DA5D0782-0379-C2F4-FF3E-A38D07408AB2" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="EXEC_MODE_CD" id="95BA9285-0B66-2919-E350-35BF862203CE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Indicates the READ/WRITE execution mode for the system. This is no longer used - replaced by REF_DB_TYPE on MIM_DB.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>31792536-3258-6820-1EE7-515AF18A8504</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMPONENT_CD" id="46554723-0BCF-5F8F-258F-5C36BC814FF8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The organization code of the Maintenix instance.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>69B385DF-A0BC-2DC3-13C3-61FF2DB0C780</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F7F208E6-C808-C96D-5FF5-4E289062F9D9" name="PK_MIM_LOCAL_DB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3B63A1F3-9C39-11DA-7619-06E2AD835C7A</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6148751-41FB-A9C1-B28F-1B2B78F4DB17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="630C5029-0DCA-BEDE-1E8A-48D7B8273A7F" name="FK_MIMDB_MIMLOCALDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:32 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6148751-41FB-A9C1-B28F-1B2B78F4DB17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

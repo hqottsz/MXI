@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetConfigSlotPositionByCode</name>
+   <description />
+   <sql>
+      SELECT
+         eqp_assmbl_pos.assmbl_db_id,
+         eqp_assmbl_pos.assmbl_cd,
+         eqp_assmbl_pos.assmbl_bom_id,
+         eqp_assmbl_pos.assmbl_pos_id,
+         eqp_assmbl_pos.eqp_pos_cd
+      FROM
+         eqp_assmbl_pos
+      WHERE
+         eqp_assmbl_pos.assmbl_db_id = :aAssmblDbId AND
+         eqp_assmbl_pos.assmbl_cd = :aAssmblCd AND
+         eqp_assmbl_pos.assmbl_bom_id = :aAssmblBomId AND
+         eqp_assmbl_pos.eqp_pos_cd = :aPositionCode
+   </sql>
+   <arguments>
+      <argument name="aAssmblDbId" type="INTEGER"/>
+      <argument name="aAssmblCd" type="STRING" />
+      <argument name="aAssmblBomId" type="INTEGER" />
+      <argument name="aPositionCode" type="STRING" />
+   </arguments>
+</sql-statement>

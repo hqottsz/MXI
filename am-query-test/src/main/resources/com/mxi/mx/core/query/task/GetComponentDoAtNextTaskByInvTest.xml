@@ -1,0 +1,125 @@
+<dataset>
+<!-- This task will be returned -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100001"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      rstat_cd = "0"
+   />
+<!-- This task will be returned -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100002"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      rstat_cd = "0"
+   />
+<!-- The 'Do At Next' value is FALSE for this task -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100003"
+      event_status_db_id = "0"
+      event_status_cd = "ACTV"
+      rstat_cd = "0"
+   />
+<!-- This task has status COMPLETE  -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100004"
+      event_status_db_id = "0"
+      event_status_cd = "COMPLETE"
+      rstat_cd = "0"
+   />
+<!-- This task will be returned -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100001"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200002"
+      rstat_cd = "0"
+   />
+<!-- This task will be returned -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100002"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200003"
+      rstat_cd = "0"
+   />
+<!-- The 'Do At Next' value is FALSE for this task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100003"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200004"
+      rstat_cd = "0"
+   />
+<!-- This task has status COMPLETE  -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "100004"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "200003"
+      rstat_cd = "0"
+   />
+<!-- Do At Next is TRUE -->
+   <dao_update do_at_next_install_bool="1">
+      <table>sched_stask_flags</table>
+      <where sched_db_id="4650" sched_id="100001" rstat_cd="0" />
+   </dao_update>
+<!-- Do At Next is TRUE -->
+   <dao_update do_at_next_install_bool="1">
+      <table>sched_stask_flags</table>
+      <where sched_db_id="4650" sched_id="100002" rstat_cd="0" />
+   </dao_update>
+<!-- Do At Next is False -->
+   <dao_update do_at_next_install_bool="0">
+      <table>sched_stask_flags</table>
+      <where sched_db_id="4650" sched_id="100003" rstat_cd="0" />
+   </dao_update>
+<!-- Do At Next is TRUE -->
+   <dao_update do_at_next_install_bool="1">
+      <table>sched_stask_flags</table>
+      <where sched_db_id="4650" sched_id="100004" rstat_cd="0" />
+   </dao_update>
+<!-- Inventory tree -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "200001"
+      inv_class_db_id = "0"
+      inv_class_cd = "SYS"
+      rstat_cd = "0"
+   />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "200002"
+      nh_inv_no_db_id = "4650"
+      nh_inv_no_id = "200001"
+      inv_class_db_id = "0"
+      inv_class_cd = "BATCH"
+      rstat_cd = "0"
+   />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "200003"
+      nh_inv_no_db_id = "4650"
+      nh_inv_no_id = "200001"
+      inv_class_db_id = "0"
+      inv_class_cd = "BATCH"
+      rstat_cd = "0"
+   />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "200004"
+      nh_inv_no_db_id = "4650"
+      nh_inv_no_id = "200002"
+      inv_class_db_id = "0"
+      inv_class_cd = "BATCH"
+      rstat_cd = "0"
+   />
+
+</dataset>

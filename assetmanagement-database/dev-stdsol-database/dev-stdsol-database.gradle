@@ -1,0 +1,329 @@
+buildscript {
+    dependencies {
+        classpath "com.avast.gradle:gradle-docker-compose-plugin:0.6.0"
+    }
+}
+
+apply plugin: 'docker-compose'
+
+// Dynamic jasper URL
+def jasperURL = "${artifactoryRepoUrl}/mx-release-libs/com.mxi.jaspersoft/${jaspersoftVersion}/jaspersoft-server/tar/maintenix-reports-server-${jaspersoftVersion.replace(".","")}.tar.gz"
+
+dockerCompose {
+      forceRecreate = true
+      waitForTcpPorts = false
+      
+      jasper {
+         useComposeFiles = ['src/main/resources/docker-compose-jasper.yaml']
+        // variables below passed into context of jasper server container
+        environment.put 'JASPER_DB_HOST', InetAddress.localHost.hostName
+        environment.put 'JASPER_DB_ORACLE_PORT', 1525
+        environment.put 'JASPER_DB_ORACLE_SID', stdsolJasperDbSid
+        environment.put 'JASPER_DB_USERNAME', stdsolJasperDbUsername
+        environment.put 'JASPER_DB_PASSWORD', stdsolJasperDbPassword
+        environment.put 'MAINTENIX_HOST', InetAddress.localHost.hostName
+        environment.put 'MAINTENIX_PORT', 80
+        environment.put 'JASPERSOFT_VERSION', jaspersoftVersion
+      }
+      
+   }
+
+
+apply plugin: 'mxenvironment'
+
+configurations {
+   liquibase
+   database {
+      transitive = false;
+      extendsFrom liquibase
+   }
+   stdsoldmpx
+   buildinfoproperties
+   license
+   installer
+   jaspersoftInstaller
+}
+
+dependencies {
+   liquibaseDeployer "com.mxi.idk:database-deployer-cli:${idkVersion}"
+   liquibase "com.mxi.idk:dbtools-db:${idkVersion}"
+
+   database project(path: ":assetmanagement-database", configuration: 'database')
+   stdsoldmpx( group: 'maintenix', name: 'database', version: previousProductDeliverablesVersion, configuration: 'stdsol' )
+   buildinfoproperties project( path: ':installers:buildinfo', configuration: 'buildinfoproperties' )
+
+   license project(":mxcommon:mxcommonutils");
+   license "com.mxi.xml:mxxml:${mxxmlVersion}"
+   license project(":mxversion");
+   installer project(path: ":assetmanagement-installer", configuration: "windows");
+   jaspersoftInstaller project(path: ":assetmanagement-jaspersoft-installer", configuration: "windows");
+}
+
+environments {
+   stdsol {
+      database {
+         if (useDocker.toBoolean()){
+            // The following properties must be configured to use the database in the Docker container.
+            // Set user and password to mx_user if you want this environment to use the pre-created database user in the Docker image.
+            // Assign unique ports to prevent collisions with other Docker containers.
+            // The recommended port for the DB Control utility is the 11xx version of the database port to make it easy to find.
+            host="localhost";
+            password="mx_user";
+            username="mx_user";
+            port=1525;
+            def dbControlPort=1125;
+            service="or11g";
+            recreateDatabaseUser=false;
+
+            docker {
+               cleanup = "docker container rm -f ${productLabelPrefix}${productLabelCodeName}_${name}_db";
+               pull = "docker image pull ${dockerStdSolImage}";
+               run = "docker container run --detach --name ${productLabelPrefix}${productLabelCodeName}_${name}_db --publish ${port}:1521 --publish ${dbControlPort}:1158 --tmpfs /dev/shm:rw,exec,suid ${dockerStdSolImage}";
+             }
+         }
+         install {
+            if (!useDocker.toBoolean()){
+               datapump {
+                  datapumpFile = configurations.stdsoldmpx
+               }
+               setupMaintenixAudit {
+               }
+            }
+
+            // Pre-upgrade hook - Run the pre-upgrade script (in the dev-master-database component) to
+            // clean up data issues that were imported that would cause the upgrade scripts to fail.
+            plsqlExec {
+               workingDirectory = file("${projectDir}\\..\\dev-master-database\\src\\master\\plsql\\preUpgrade");
+               controlFile = file("${workingDirectory}\\preUpgradeCleanUp.sql");
+            }
+
+            liquibase {
+               configuration = configurations.database;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+         }
+         upgrade {
+            componentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(previousMajorVersion);
+               minor = Integer.valueOf(previousMinorVersion);
+               servicepack = Integer.valueOf(previousServicepackVersion);
+               update = Integer.valueOf(previousUpdateVersion);
+            }
+
+            // Pre-upgrade hook - Run the pre-upgrade script (in the dev-master-database component) to
+            // clean up data issues that were imported that would cause the upgrade scripts to fail.
+            plsqlExec {
+               workingDirectory = file("${projectDir}\\..\\dev-master-database\\src\\master\\plsql\\preUpgrade");
+               controlFile = file("${workingDirectory}\\preUpgradeCleanUp.sql");
+            }
+
+            liquibase {
+               configuration = configurations.database;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+            plsqlExec {
+               workingDirectory = file("src\\stdsol\\plsql");
+               controlFile = file("${workingDirectory}\\postMigration.sql");
+            }
+         }
+      }
+      application {
+         installerConfiguration = configurations.installer;
+         developmentMode = true;
+
+         license {
+            licenseConfiguration = configurations.license;
+            unsignedLicenseFile = file("weblogic-license.xml");
+            version = maintenixVersionNumber;
+         }
+
+         webLogic {
+            domainDir = file("${installDir}/domain");
+            adminHttpPort = Integer.valueOf( project.adminHttpPort );
+            appHttpPort = Integer.valueOf( project.appHttpPort );
+         }
+
+         settings = [
+            "initial.heap.size": initialHeapSize,
+            "maximum.heap.size": maximumHeapSize,
+            "oracle.home": oracleHome,
+            "mail.host": mailHost,
+            "mail.system.address": mailSystemAddress,
+            "admin.username": adminUsername,
+            "admin.password": adminPassword,
+            "admin.https.port": adminHttpsPort,
+            "admin.http.port": webLogic.adminHttpPort,
+            "app.http.port": webLogic.appHttpPort,
+            "app.https.port": appHttpsPort,
+            "startup.service.install": false,
+            "startup.service.name": startupServiceName,
+            "startup.service.user": startupServiceUser,
+            "node.manager.service.install": false,
+            "node.manager.service.name": nodeManagerServiceName,
+            "node.manager.service.user": nodeManagerServiceUser,
+            "node.manager.listen.port": nodeManagerListenPort,
+            "node.manager.enable.crash.recovery": nodeManagerEnableCrashRecovery,
+            "datasource.username": database.username,
+            "datasource.password": database.password,
+            "datasource.host": database.host,
+            "datasource.port": database.port,
+            "datasource.service": database.service,
+            "jaspersoft.configure": jaspersoftConfigure,
+            "jaspersoft.host": jaspersoftHost,
+            "jaspersoft.port": jaspersoftPort,
+            "jaspersoft.username": jaspersoftUsername,
+            "jaspersoft.password": jaspersoftPassword,
+            "log4j": "${projectDir}/weblogic-log4j.xml",
+            "license.key": "${license.publicKey}",
+            "license.path": "${license.signedLicenseFile}",
+            "domain.home": webLogic.domainDir.toString(),
+            "app.home": "${installDir}/apps",
+            "data.home": "${installDir}/data",
+            "java.home": "${installDir}/java"
+         ];
+
+         sso {
+            appHttpsPort = Integer.valueOf( project.appHttpsPort );
+            idpEntityId = project.idpEntityId;
+            resourceConfigDir = file("${installDir}/apps/assetmanagement/resource/config");
+         }
+      }
+      if (jasperDocker.toBoolean()){
+         jaspersoft {
+            installerConfiguration = configurations.jaspersoftInstaller
+            dataSourceUsername="mx_user";
+            dataSourcePassword="mx_user";
+            dataSourceHost= InetAddress.getLocalHost().getHostName();
+            dataSourcePort=1525;
+            dataSourceService="or11g";
+            jaspersoftConfigure= true;
+            jaspersoftHost = stdsolJasperHost;
+            jaspersoftPort = Integer.valueOf(stdsolJasperPort);
+            jaspersoftUsername = stdsolJasperUsername;
+            jaspersoftPassword = stdsolJasperPassword;
+         }
+      }
+   }
+}
+
+// Copying scripts required for setting up jasper db to stdsol database container
+task copyJasperResources (type:Exec){
+
+  // copy database setup shell script from resources to container
+  commandLine 'docker', 'cp', 'src/main/resources/jasper/import_jasper_db.sh', "${productLabelPrefix}${productLabelCodeName}_stdsol_db:/"
+}
+
+// Running scripts for setting up jasper db
+task setupJasperDatabase (type:Exec){
+  dependsOn copyJasperResources;
+ 
+  // docker exec database import shell script
+  // Note: database port is 1521 since it's running from inside db container
+  commandLine 'docker', 'exec', '-u','0','-i', "${productLabelPrefix}${productLabelCodeName}_stdsol_db", '\"./import_jasper_db.sh\"', "${jasperURL}", "${stdsolJasperDbUsername}", "${stdsolJasperDbPassword}", "${stdsolJasperDbHost}", "${stdsolJasperDbPort}", "${stdsolJasperDbSid}";
+}
+
+createStdsolDb.dependsOn configurations.stdsoldmpx
+archiveStdsolDb.dependsOn configurations.stdsoldmpx
+
+// adds jasper database after the stdsol database has been setup
+if (jasperDocker.toBoolean()){
+  createStdsolDb.finalizedBy setupJasperDatabase;
+  copyJasperResources.mustRunAfter createStdsolDb;
+}
+
+// update jasper properties for mx-jasper connection
+task updateJasperProperties {
+   ext.propertiesFile = file("build/environment/stdsol/apps/assetmanagement/resource/property/jasperreportengine.properties");
+
+   inputs.property 'report.host', stdsolJasperHost;
+   inputs.property 'report.port', stdsolJasperPort;
+   inputs.property 'login.username', stdsolJasperUsername;
+   inputs.property 'encrypted.login.password', stdsolJasperPassword;
+   inputs.property 'report.usehttps', "false";
+   inputs.property 'client.postdelay', "1";
+   inputs.property 'client.maxretries', "7200";
+   outputs.file ext.propertiesFile;
+
+   doFirst {
+      Properties lProperties = new Properties();
+      lProperties.setProperty("report.host", stdsolJasperHost);
+      lProperties.setProperty("report.port", String.valueOf(stdsolJasperPort));
+      lProperties.setProperty("login.username", stdsolJasperUsername);
+      lProperties.setProperty("encrypted.login.password", stdsolJasperPassword);
+      lProperties.setProperty("report.usehttps", "false");
+      lProperties.setProperty("client.postdelay", "1");
+      lProperties.setProperty("client.maxretries", "7200");
+
+      lProperties.store(ext.propertiesFile.newWriter(), null);
+
+      println "Updated jasper properties";
+   }
+}
+
+// jasper properties file must be updated after the app server has been installed, but before the server starts
+if (jasperDocker.toBoolean()){
+   installStdsolApp.finalizedBy updateJasperProperties;
+   startStdsolEnv.mustRunAfter updateJasperProperties;
+}
+
+if (jasperDocker.toBoolean()){
+   installStdsolJaspersoft.dependsOn 'jasperComposeUp';
+
+   task startJasper (){
+      dependsOn installStdsolJaspersoft;
+   }
+
+   task stopJasper (){
+      dependsOn 'jasperComposeDown';
+   }
+}
+
+// by default, exportStdsolDb doesn't depend on createStdsolDb; however, we don't neccesarily want to explicitly
+// depend on it either, as it's plausible a user might want to export manually, or following other changes.
+tasks.exportStdsolDb {
+   mustRunAfter createStdsolDb
+   exportFileName = 'MASTER_STDSOL.DMPX'
+   logFileName = 'MASTER_STDSOL-EXPORT-DP.LOG'
+}
+
+// On account of above, create a task which will implicitly create and export the Stdsol DB
+task createStdsolDbDmpx {
+   dependsOn createStdsolDb, exportStdsolDb
+   finalizedBy dropStdsolDb
+
+   ext.datapumpFile = exportStdsolDb.getDatapumpFile()
+   ext.datapumpLog = exportStdsolDb.getLogFile()
+
+   // Use inputs from exportStdsolDb, as well as the DMPX file as an output; copied log file is already an output
+   inputs.files( exportStdsolDb.inputs.files )
+   outputs.file( datapumpFile )
+   outputs.file( datapumpLog )
+}
+tasks.createStdsolDb.outputs.upToDateWhen { project.gradle.taskGraph.hasTask( createStdsolDbDmpx ) && exportStdsolDb.outputs.upToDateSpec.isSatisfiedBy( exportStdsolDb ) }
+
+task zipStdsolDb(type: Zip) {
+   dependsOn createStdsolDbDmpx, configurations.buildinfoproperties
+   from( createStdsolDbDmpx.datapumpFile )
+   from( configurations.buildinfoproperties )
+}
+tasks.dropStdsolDb.shouldRunAfter zipStdsolDb
+
+artifacts {
+   // The artifact below is used only when publishing deliverables - developer builds don't need to trigger this.
+   if ( isDeliverablesBuild ) {
+      'default'( zipStdsolDb ) { builtBy zipStdsolDb }
+   }
+}

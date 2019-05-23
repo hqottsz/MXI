@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="A19C8575-C452-B033-74AB-9D1A0227F55E" name="UTL_ALERT_TYPE_ROLE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6AADD1E1-423C-8B40-4966-2DE082D47497</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ALERT_TYPE_ID" id="2C520F08-4ACE-FB16-86A9-605491447265">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CF63B2BB-74A1-5713-6F7A-606B18AB293E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ALERT_TYPE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<delegate>B878062C-05D8-DB57-D6BB-5AEDBC9BA182</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E2E8CD97-0BEB-B2D3-1E3B-B039E5AA41FE" referredColumn="B878062C-05D8-DB57-D6BB-5AEDBC9BA182"/>
+</associations>
+</Column>
+<Column name="ROLE_ID" id="C63085F1-B788-B0B7-90F8-AC7745DC027F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>34584332-C8E4-C215-AA53-63F77BBCDA0D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<delegate>A7366B87-F93D-77E6-75A8-EE5917190954</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3FD4BD24-C97B-1D1A-6BB4-3063FF3DB577" referredColumn="A7366B87-F93D-77E6-75A8-EE5917190954"/>
+</associations>
+</Column>
+<Column name="UTL_ID" id="DFE655F5-9E7B-AC50-66C9-047D2C4B11BC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2704A8AA-5F6A-E766-BC47-6FE70B2C2CA7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<delegate>4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D406861D-4FBA-DF09-83BC-4BD84D56241A" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1F7CA89B-5DDE-A615-470D-59DA74AA4B2F" name="PK_UTL_ALERT_TYPE_ROLE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1628F2E6-909E-2C65-DA6C-A966D6822ECA</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C520F08-4ACE-FB16-86A9-605491447265"/>
+<colUsage columnID="C63085F1-B788-B0B7-90F8-AC7745DC027F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77FD3787-340E-F55A-6369-5130FFFD13E2" name="FK_ALRTTYPE_ALRTTYPEROLE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C520F08-4ACE-FB16-86A9-605491447265"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DBCF9F25-589A-033E-49CD-2494DE2BB696" name="FK_MIMDB_ALRTTYPEROLE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DFE655F5-9E7B-AC50-66C9-047D2C4B11BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C4FD428F-2AE3-B707-6181-46FC8351192D" name="FK_ROLE_ALRTTYPEROLE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:42 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C63085F1-B788-B0B7-90F8-AC7745DC027F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

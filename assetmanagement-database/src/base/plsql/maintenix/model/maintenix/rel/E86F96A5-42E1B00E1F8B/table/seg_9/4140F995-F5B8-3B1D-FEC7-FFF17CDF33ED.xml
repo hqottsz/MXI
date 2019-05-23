@@ -1,0 +1,293 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="4140F995-F5B8-3B1D-FEC7-FFF17CDF33ED" name="UTL_JOB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table lists all of the application scheduled jobs that execute on the application server based on the specified scheduling parameters.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>24134E12-D680-8A63-685F-45BC267BCEDA</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="JOB_CD" id="8097C777-E8ED-833E-0387-1B2D8DBA2178">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Job code name that is reference in source code usually in uppercase with underscores (e.g. MXCOMMON_CLEAN_REPORT_FILES).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>27463071-C49B-6DBD-A3C7-0AD12DC755AE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>06D9BA35-CE10-EE63-8752-6E97559E5832</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="JOB_NAME" id="02E1243A-389A-104A-E474-BC6858740951">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Short descriptive name for the job.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>22DEBB4D-549C-075C-61A8-9278341734D8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="START_TIME" id="AC591C71-D4DB-957B-3A68-05430ACC6015">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Start time in the day for a job in either HH:MM or HH:MM:SS format.  Only specified for jobs that are to start at a specific time during the day and any repeat interval time thereafter.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8ED8BBC0-D983-F2AA-DBA3-C07D48A7C5C2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="START_DELAY" id="C4B30705-60EA-5B59-A97F-64C18F2B86EB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Start delay in seconds for a repeat job to wait after the job controller is started before executing for the first time.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6B8C2953-C55B-8460-7A1C-AE7CE9D1CCA1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>23BF44B5-3695-80E7-CC85-74E51E946488</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPEAT_INTERVAL" id="035E3A7C-7CD4-909A-9207-B8AA98D331FF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Repeat interval in seconds between job executions.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A08F112A-20FE-25AE-3EC2-256A4449F801</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTIVE_BOOL" id="A3310F91-00FB-A15F-9BB4-9B9B7D5146A0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Boolean indicating whether or not the job is currently active.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A487743C-D62D-A3A2-1ECD-179D5C06882B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ACTIVE_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS_CD" id="D15F5352-9FF3-D5C7-4638-E0A137FDC901">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This holds the status of the job.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>540E82B7-8CC7-8F24-7FB0-32968CA1BB88</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EC3B5B3F-6A34-8405-2855-C85E56C8EEFE</domain>
+<defaultValue>&apos;IDLE&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SCHEDULE_DATE" id="91774C80-C0C2-178C-96A7-87A0B52D1FEA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Timestamp indicating when the job scheduling parameters (START_TIME, REPEAT_INTERVAL, ACTIVE_BOOL) were last updated.  This value is populated by an update trigger and indicates to the job controller that a job needs to be re-scheduled.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AEEA04E8-BDB1-902B-14EE-BBD2944FC569</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAST_START_DT" id="47930C20-C809-260B-8920-AE37923FD2B6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Start time of the last run.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0513C32F-A193-756D-18D8-F94BF93F6821</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAST_SUCCESS_END_DT" id="6FA0F279-31B6-16BB-C473-70FE028A6F8E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>End time of the last successful run.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF5368DC-B473-EA1C-D868-D1130276683C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAST_ERROR_END_DT" id="0F007F1E-EA07-3977-24E9-2387F26E6950">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>End time of the last failed run.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2991982F-5E87-6951-531A-95B0352F4B48</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAST_ERROR" id="911F320A-0797-7FEE-A778-9B5A21DD8BD0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Most recent error.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>66E59290-47FC-C113-A066-2E41F4A9837A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="4A8AEA68-B8D1-B2FD-ADCC-61C504E5398C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>44AB5477-C833-4955-3304-00203D04A7CB</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF2DD566-E7D4-01C0-00F3-0BCD90E77250" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="JOB_TYPE" id="1F13D749-958B-81DC-1D21-E565D5DC3D9B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Type of the job. Oracle or Maintenix. Maintenix jobs use the existing job framework. Oracle jobs can be scheduled through the oracle job engine.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F79C417F-5CDF-28A0-AA9B-C3A2E686C520</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="JOB_TYPE IN (&apos;MAINTENIX&apos;,&apos;ORACLE&apos;)"/>
+</checkConstraint>
+<defaultValue>&apos;MAINTENIX&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROGRAM_NAME" id="214F640A-A179-6790-81E7-305D4F6A671F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Holds the name of the program to be executed. This can be a plsql block, a procedure or an executable dependent on the selected program_type.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0A816DA2-1DBE-5123-EE5F-B247DC13E1E5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROGRAM_TYPE" id="22244745-FD0F-8063-073B-02B49C2BC60D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The type of oracle job to be executed. This can either be plsql_block , stored_procedure or executable.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4582838F-F090-A0A7-A12A-0A2EA3DDA54D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PROGRAM_TYPE IN (&apos;plsql_block&apos;,&apos;stored_procedure&apos;,&apos;executable&apos;)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPEAT_EXPRESSION" id="EE0E7408-4F41-F04A-089E-F7387AFFC90D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>A repeat expression can be used to use oracle scheduling expressions or if scheduling via a third party scheduling language e.g. CRON</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A6AC0D3A-2B34-42B9-B659-95E57D5A540B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EEA82163-2437-5103-17BC-0E657A739593" name="PK_UTL_JOB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C257B9C9-7E6D-F26F-8ABF-40544B4EBFB7</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8097C777-E8ED-833E-0387-1B2D8DBA2178"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="98042BC9-C105-1CAC-C655-B7E53479B673" name="FK_UTLJOB_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A8AEA68-B8D1-B2FD-ADCC-61C504E5398C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+ Version Control File
+-->
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+   <preConditions onFail="HALT">
+      <!--
+           The update attribute is automatically excluded for non-patch releases to allow upgrades from future patches on the previous branch,
+           however, it is included on patch releases to verify that patches are applied sequentially
+      -->
+      <ext:version component="assetmanagement-database" major="10" minor="0" servicepack="0" />
+   </preConditions>
+
+   <include file="assetmanagement-database/stage-initialize.xml"/>
+   <include file="sql/control.xml" relativeToChangelogFile="true"/>
+   <include file="assetmanagement-database/stage-finalize.xml"/>
+
+
+   <changeSet author="update_upg_version" id="1" runAlways="true" runOnChange="true">
+      <comment></comment>
+      <createProcedure>
+
+         BEGIN
+            upg_version_v1_pkg.set_version('assetmanagement-database', 10, 1, 0, 0, '@build.label@', '@build.location@', '@build.revision@');
+         END;
+
+      </createProcedure>
+   </changeSet>
+
+   <changeSet author="update_current_version" id="2" runAlways="true" runOnChange="true">
+      <comment></comment>
+      <createProcedure>
+
+         BEGIN
+
+            MERGE
+            INTO
+               utl_current_version
+            USING
+               (
+                  SELECT
+                     'Maintenix' AS component_name,
+                     '8.2.0.0' AS version,
+                      3 AS servicepack_ver,
+                      0 AS update_ver,
+                     '8200sp3' AS short_version_name,
+                     '8.2.0.0-sp3' AS full_version_name,
+                     SUBSTR('@build.label@',1,100) AS build_label,
+                     SUBSTR('@build.location@',1,80) AS build_location,
+                     SUBSTR('@build.revision@',1,50) AS build_revision,
+                     SYSDATE AS install_dt,
+                     'Database Upgrade' AS install_sdesc
+                  FROM
+                     dual
+               ) target_ver
+            ON
+               (
+                  utl_current_version.component_name = target_ver.component_name
+               )
+            WHEN MATCHED THEN
+               UPDATE
+               SET
+                   version            = target_ver.version,
+                   servicepack_ver    = target_ver.servicepack_ver,
+                   update_ver         = target_ver.update_ver,
+                   short_version_name = target_ver.short_version_name,
+                   full_version_name  = target_ver.full_version_name,
+                   build_label        = target_ver.build_label,
+                   build_location     = target_ver.build_location,
+                   build_revision     = target_ver.build_revision,
+                   install_dt         = SYSDATE,
+                   install_sdesc      = 'Database Upgrade'
+            WHEN NOT MATCHED THEN
+                INSERT (
+                   component_name,
+                   version,
+                   servicepack_ver,
+                   update_ver,
+                   short_version_name,
+                   full_version_name,
+                   build_label,
+                   build_location,
+                   build_revision,
+                   install_dt,
+                   install_sdesc
+                )
+                VALUES (
+                   target_ver.component_name,
+                   target_ver.version,
+                   target_ver.servicepack_ver,
+                   target_ver.update_ver,
+                   target_ver.short_version_name,
+                   target_ver.full_version_name,
+                   target_ver.build_label,
+                   target_ver.build_location,
+                   target_ver.build_revision,
+                   target_ver.install_dt,
+                   target_ver.install_sdesc
+                );
+
+         END;
+
+      </createProcedure>
+   </changeSet>
+
+</databaseChangeLog>

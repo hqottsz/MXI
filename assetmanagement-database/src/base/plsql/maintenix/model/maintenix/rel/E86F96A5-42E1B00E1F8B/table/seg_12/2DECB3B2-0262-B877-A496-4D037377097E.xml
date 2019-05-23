@@ -1,0 +1,663 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="2DECB3B2-0262-B877-A496-4D037377097E" name="INV_CND_CHG_EVENT">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:42 UTC</createdTime>
+<commentInRDBMS>Inventory Change (AC) Event.  This class enumerates all of the change actions (i.e. data records, fault records, etc.) that are entered into the system against an inventory item. It is the foundation for all recorded transactions against assets and is driven in sequence by time and usage. Events can be historical in nature, can be current or can be in the future. An event has&lt;br&gt;a) a lifecycle&lt;br&gt;b) a duration&lt;br&gt;c) records completed actions for FAA purposes&lt;br&gt;d) records pending actions for FAA purposes&lt;br&gt;e) records technical log related information&lt;br&gt;f) records journey log related information</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F6611000-1068-97C0-526E-BE361D74F0DE</importedID>
+<ordsAlias>inv_chg_event</ordsAlias>
+<abbreviation>INV_CND_CHG_EVT</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="event_db_id" id="B694AC50-ECE6-232F-15FF-6DA27F26A3D0">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record and forms part of the record&apos;s primary key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EE93EF1C-EBB1-F64E-72D1-97C7CE363C82</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EVENT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="025832D0-2AD8-0F52-6483-14A5BCB18541" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="event_id" id="217EA499-E726-0832-F713-200837CEB67D">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Unique idenifier assigned from Sequence EVENT_ID_SEQ.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5F86C161-B267-61A1-DA85-8579F3739497</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EVENT_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stage_reason_db_id" id="BDA77AA8-61E9-7EFE-6688-2F26814BEBDE">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to REF_STAGE_REASON</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3DA43C59-405A-17A5-5897-2B338FD8ADD7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="69A414F8-856E-94DB-7718-32A3FA6092FC" referredColumn="16172159-1BB2-C9BB-C4E4-0B9306F791EC"/>
+</associations>
+</Column>
+<Column name="stage_reason_cd" id="D4170F90-4D6A-7ABB-D93E-61E80EF81C06">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to REF_STAGE_REASON.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>37DE1492-5063-B1DB-123B-CB8C5C3DC887</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="69A414F8-856E-94DB-7718-32A3FA6092FC" referredColumn="6271A0AD-E7C6-8F92-55E0-26CB7B4829F0"/>
+</associations>
+</Column>
+<Column name="editor_hr_db_id" id="67DA6788-C8E1-B378-206C-69012DA7E5FA">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR. The current editor of the event record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B4A9CCFD-5034-FF48-0130-52A531C7717E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E6E63A1-DC16-1DF9-6A5B-8E8C545C4B4E" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="editor_hr_id" id="E2EE9E0A-0216-2B84-7775-96ED9728881B">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR. The current editor of the event record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A9A59772-556B-F6C7-8F32-31D79E05147C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E6E63A1-DC16-1DF9-6A5B-8E8C545C4B4E" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="event_status_db_id" id="4E730C6D-17C0-8F05-E535-8511DD43A327">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The last recorded status of the workflow. FK to REF_EVENT_STATUS</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7A36BA6C-D309-ABF6-6971-ACE84797D839</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA72B07A-704E-49D1-4E2B-C5869F8FC95D" referredColumn="376735C7-ED6D-F695-5BD5-9A7EE368F9E6"/>
+</associations>
+</Column>
+<Column name="event_status_cd" id="7A063E3E-0683-AEF9-1AD2-E1DB60BA9482">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The last recorded status of the workflow. FK to REF_EVENT_STATUS</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>11AD6BB5-B588-6082-05FD-AC5E9156C339</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA72B07A-704E-49D1-4E2B-C5869F8FC95D" referredColumn="B4736C3E-AD9C-5BC2-254D-E3F9E8DCE66A"/>
+</associations>
+</Column>
+<Column name="event_reason_db_id" id="9F04DF7D-8834-9F53-F2C9-BE24AADCECCA">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to REF_EVENT_REASON. Identifies main reason for event occurrence.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>023D82E5-7DA3-75F2-E048-30116CB9AE0A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1ED88E7D-9822-7D59-F157-1D47D3FCDC77" referredColumn="8B13A4FA-009F-18A7-E321-38E27EAA28A1"/>
+</associations>
+</Column>
+<Column name="event_reason_cd" id="2C733820-CA7C-5595-8963-28B8F683D3CA">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to REF_EVENT_REASON. Identifies main reason for event occurrence.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>68F515B1-ED04-32BE-E14E-94C4CAB369DB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1ED88E7D-9822-7D59-F157-1D47D3FCDC77" referredColumn="AE0689C7-0A53-55F1-4B1B-C6BEDC182338"/>
+</associations>
+</Column>
+<Column name="data_source_db_id" id="E9A64F32-169B-CFB2-2714-9CA5716A3894">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to REF_DATA_SOURCE.  Identifies the method that the system will use to retrieve actual data.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>960436B0-6652-E751-1BD6-03213BC9A6B1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CA15F8F-1BC3-C916-8EC8-487FF9159B68" referredColumn="02A58CFF-2E66-E89B-5ECE-69DE77B4EDC3"/>
+</associations>
+</Column>
+<Column name="data_source_cd" id="DEEBA09A-AF24-A7A5-DA7F-774AB951EA91">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to REF_DATA_SOURCE.  Identifies the method that the system will use to retrieve actual data.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>96E68902-B4F3-BE06-9F50-5B7E15F13891</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CA15F8F-1BC3-C916-8EC8-487FF9159B68" referredColumn="12B439EB-A971-D517-736B-72EEEEB6105F"/>
+</associations>
+</Column>
+<Column name="h_event_db_id" id="77C1B824-346A-8E1C-6136-8FC31B6F2AF7">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to INV_CND_CHG_EVENT.  Corresponds to the highest Event under which this Event is grouped.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5D80449B-AADC-4459-F1A6-AF59502D7B01</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0D47056-7AA3-E13A-ECF8-612A95CD0C76" referredColumn="B694AC50-ECE6-232F-15FF-6DA27F26A3D0"/>
+</associations>
+</Column>
+<Column name="h_event_id" id="A815983F-DE0C-A00D-4E0C-93812801E80A">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>FK to INV_CND_CHG_EVENT.  Corresponds to the highest Event under which this Event is grouped.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B2F27797-C978-6707-6165-0F0C472006A4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0D47056-7AA3-E13A-ECF8-612A95CD0C76" referredColumn="217EA499-E726-0832-F713-200837CEB67D"/>
+</associations>
+</Column>
+<Column name="event_sdesc" id="07408929-FFC8-2FF7-13D7-00436B91CC7F">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>A short label used for the event. Frequently generated by the system.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CCA13090-B360-A9B8-F80E-B019954D9ADA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ext_key_sdesc" id="2D51C36A-A26E-E910-9908-4717D2DA1219">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>A field used to store an external system&apos;s PK value.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F0731CD4-0246-3E02-4E4F-C032B2B76D73</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="seq_err_bool" id="0575456A-3041-4EF5-CFF6-DA300D888AB9">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Indicates if the event was recorded out of chronological sequence.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C7BF5C63-CCAD-EA84-6CA0-0F353DBFEDAF</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+</listOfValues>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="event_ldesc" id="00F32C58-4EDA-4782-D42E-C6E51F0E555E">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>A long description for the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>56AEB197-6C23-87CE-E8E1-8D0D8875AE6C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="event_dt" id="9BDAAC2A-3647-6AE2-180D-DBC459AA0BFF">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Local time that the event actually ended.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2877C318-1FCF-E678-F21B-B752180F2DEE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sched_start_dt" id="8A83335A-F013-FBBD-3F00-D89692BA8559">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Scheduled local time to start the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F8E05032-FEDA-1949-E32F-6AAF07A7F3E0</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sub_event_ord" id="B149E83D-DA46-9B0A-C9A6-6A3A72DD476D">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>Defines the hierarchy of a series of related events.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D43AB7AC-2F22-D68C-675C-014171B6B3FE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>098F23FF-4DC2-8BAC-FBD8-20234B78AA9A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="alt_id" id="735992E1-3B84-1EBD-C678-321925482374">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9FE8C1AB-5C42-BC0B-E414-EC1D49ED56AC</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rstat_cd" id="4F2A528F-8071-161F-2F46-E0610CDDE8E1">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FF5F281E-DD19-9B21-1A45-9620CA8F70E6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+<valueDef value="2" description=""/>
+<valueDef value="3" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E2CFC8B8-1CE0-69A0-5640-A3EEEB238BE1" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="revision_no" id="2EBEC503-AA30-C72A-7FCC-D009060C9C8B">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-27 19:07:39 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ctrl_db_id" id="250236A6-05C7-B976-E3BA-08887339A1C2">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>81B646C6-2CC6-EA17-DC73-C09948E7BD0C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C3E99C19-D663-D415-F904-48236D9D6B4A" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="creation_dt" id="96BF74A9-E62B-5935-3888-282F3145D0E3">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>83D8D7E9-4E3A-EB29-252C-34ECD2061FDF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="revision_dt" id="4CFA8A8C-7D9B-22B6-8C68-00C78FF3366B">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0368BAE0-FEBA-2248-C400-94E9F1D82580</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="revision_db_id" id="272D5F9B-540D-56E7-0CD2-703AC6E012F2">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7138C4ED-C791-603E-6370-D3F4B4B458DD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="revision_user" id="B625F7A1-350B-9B60-31FD-C1786B3BB54A">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D16670B6-26FF-E28B-43F3-17FD187244D8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BE107EFF-CE7B-ED12-3E9D-C7F94CE3B95C" name="PK_INV_CND_CHG_EVENT">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5464AB11-F4D5-1DE1-291D-6FB0B46787B9</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B694AC50-ECE6-232F-15FF-6DA27F26A3D0"/>
+<colUsage columnID="217EA499-E726-0832-F713-200837CEB67D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A312A0EE-8368-3BB0-780E-2F9C08F5558B" name="IX_INV_CND_CHG_EVENTALTID_UNQ">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A09DE8BF-AE9C-A01C-C65E-1CC734EEF82D</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="735992E1-3B84-1EBD-C678-321925482374"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFB73ACE-283A-C89D-BF82-6F84C6910459" name="IX_INV_CND_CHG_EVENT_SDESC_LW">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>ABD9A74A-850F-F6F4-B142-283BA7009AC6</importedID>
+<indexExpression>LOWER(EVENT_SDESC)</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="60DA04F7-4292-2B9A-0A7E-8BAA7EA26181" name="IX_INV_CND_CHG_EVENT_EVTEVTH">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FDB3BADC-2786-01C6-5196-815A2E12EAE3</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77C1B824-346A-8E1C-6136-8FC31B6F2AF7"/>
+<colUsage columnID="A815983F-DE0C-A00D-4E0C-93812801E80A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="92FB8310-5EFE-02FF-828E-687AF7621585" name="IX_INV_CND_CHG_EVENT_EVTSDESC">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E9FE5DCB-1F7A-0A6B-CB7D-91523A013310</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="07408929-FFC8-2FF7-13D7-00436B91CC7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B022FCA7-ECB5-3AB9-B007-B1AFC9E767B1" name="IX_INVCNDCHGEVT_EXTKEYSDESC">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>33A1D21B-7C48-3D2A-CB00-4DCEFA9C4856</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D51C36A-A26E-E910-9908-4717D2DA1219"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F20B9AF1-89D1-20E8-2F38-FF80CC6EA17C" name="IX_INVCNDCHGEVT_TYPESTATUS">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>66264F2E-9B63-D864-0F3C-14D0813FEAF1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E730C6D-17C0-8F05-E535-8511DD43A327"/>
+<colUsage columnID="7A063E3E-0683-AEF9-1AD2-E1DB60BA9482"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C263793-C29E-11F3-E692-E7C33F8D78A0" name="IX_ORGHR_INV_CND_CHG_EVENT">
+<sourceDDLFile>prelim_ddl_dml_ac_events.sql</sourceDDLFile>
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7EBF42F3-9666-C6CD-D4F5-840017D17207</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67DA6788-C8E1-B378-206C-69012DA7E5FA"/>
+<colUsage columnID="E2EE9E0A-0216-2B84-7775-96ED9728881B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7529C1F-5731-1C90-7D70-72BCEDB8A864" name="FK_MIMDBCTRL_INV_CND_CHG_EVENT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="250236A6-05C7-B976-E3BA-08887339A1C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15E10619-2E73-94D5-4000-93E0CE90D4DE" name="FK_MIMDB_INV_CND_CHG_EVENT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B694AC50-ECE6-232F-15FF-6DA27F26A3D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="54171FA3-2198-13B9-A9EB-E219F871DF52" name="FK_MIMRSTAT_INV_CND_CHG_EVENT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F2A528F-8071-161F-2F46-E0610CDDE8E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45F26509-6AB1-3A1E-0C15-F8A14D75B231" name="FK_ORGHR_INV_CND_CHG_EVENT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67DA6788-C8E1-B378-206C-69012DA7E5FA"/>
+<colUsage columnID="E2EE9E0A-0216-2B84-7775-96ED9728881B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="94058208-E8ED-2358-F9C1-552ABFFF1181" name="FK_REFDATASOURCE_INVCNDCHGEVT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9A64F32-169B-CFB2-2714-9CA5716A3894"/>
+<colUsage columnID="DEEBA09A-AF24-A7A5-DA7F-774AB951EA91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="67794FB8-91C8-39A6-F25F-6EE3C64398FC" name="FK_REFEVENTREASON_INVCNDCHEVT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F04DF7D-8834-9F53-F2C9-BE24AADCECCA"/>
+<colUsage columnID="2C733820-CA7C-5595-8963-28B8F683D3CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6009A589-CD0B-497F-186C-6A5A2A8B13A7" name="FK_REFEVENTSTATUS_INVCNDCHEVT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E730C6D-17C0-8F05-E535-8511DD43A327"/>
+<colUsage columnID="7A063E3E-0683-AEF9-1AD2-E1DB60BA9482"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4FD24852-87E4-CD20-D696-BCE90537C1D6" name="FK_REFSTAGEREASON_INVCNDCHEVT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 14:23:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BDA77AA8-61E9-7EFE-6688-2F26814BEBDE"/>
+<colUsage columnID="D4170F90-4D6A-7ABB-D93E-61E80EF81C06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC02E0DF-D8B6-2104-326A-094C295C8508" name="FK_INVCNDCHGEVT_INVCNDCHGEVT">
+<createdBy>dazwca</createdBy>
+<createdTime>2018-08-21 18:47:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77C1B824-346A-8E1C-6136-8FC31B6F2AF7"/>
+<colUsage columnID="A815983F-DE0C-A00D-4E0C-93812801E80A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

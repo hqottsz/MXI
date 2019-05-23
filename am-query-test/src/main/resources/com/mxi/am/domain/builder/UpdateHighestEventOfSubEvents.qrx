@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>UpdateHighestEventOfSubEvents</name>
+   <description>
+      Updates the highest event value for all the sub-events under the provided root event.
+   </description>
+   <sql>
+      UPDATE
+         evt_event
+      SET
+         evt_event.h_event_db_id      = :aHighestEventDbId,
+         evt_event.h_event_id         = :aHighestEventId
+      WHERE
+         (evt_event.event_db_id, evt_event.event_id) IN
+         (
+            SELECT
+               evt_event.event_db_id,
+               evt_event.event_id
+            FROM
+               evt_event
+            WHERE
+               NOT
+               (
+                  evt_event.event_db_id = :aRootEventDbId AND
+                  evt_event.event_id    = :aRootEventId
+               )
+            START WITH
+               evt_event.event_db_id = :aRootEventDbId AND
+               evt_event.event_id    = :aRootEventId
+            CONNECT BY
+               PRIOR evt_event.event_db_id = evt_event.nh_event_db_id AND
+               PRIOR evt_event.event_id    = evt_event.nh_event_id
+         )
+   </sql>
+   <arguments>
+      <argument name="aRootEventDbId" type="INTEGER" />
+      <argument name="aRootEventId" type="INTEGER" />
+      <argument name="aHighestEventDbId" type="INTEGER" />
+      <argument name="aHighestEventId" type="INTEGER" />
+   </arguments>
+</sql-statement>

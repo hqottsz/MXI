@@ -1,0 +1,299 @@
+<dataset>
+
+   <!-- Create an Aircraft -->
+   <INV_INV
+         inv_no_db_id   = "4650"   
+         inv_no_id = "10000"
+         h_inv_no_db_id = "4650" 
+         h_inv_no_id = "10000"
+         inv_no_sdesc = "Aircraft Name"
+         locked_bool = "0"
+         assmbl_db_id = "4650" 
+         assmbl_cd = "ASCD"
+         />
+
+   <!-- Create a Task Tree of 1 root and 2 leafs, one of which has the CDAY driving deadline -->
+   <SCHED_STASK
+         sched_db_id = "4650" 
+         sched_id = "10000"
+         task_class_db_id = "0" 
+         task_class_cd = "REQ"
+         task_priority_db_id = "4650" 
+         task_priority_cd = "LOW"
+         barcode_sdesc = "ROOT"
+         min_plan_yield_pct = "0.8"
+         heavy_bool = "0"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650" 
+         main_inv_no_id = "10000"
+         />
+   <EVT_EVENT
+         event_db_id = "4650" 
+         event_id = "10000"
+         nh_event_db_id = "8888" 
+         nh_event_id = "88888"
+         h_event_db_id  = "8888" 
+         h_event_id  = "88888"
+         event_status_db_id = "0" 
+         event_status_cd = "ACTV"
+         sched_priority_db_id = "0" 
+         sched_priority_cd = "NONE"
+         hist_bool = "0"
+         />
+
+   <SCHED_STASK
+         sched_db_id = "4650" 
+         sched_id = "10001"
+         task_class_db_id = "0" 
+         task_class_cd = "JIC"
+         task_priority_db_id = "4650" 
+         task_priority_cd = "LOW"
+         barcode_sdesc = "LEAF1"
+         min_plan_yield_pct = "0.8"
+         heavy_bool = "0"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650" 
+         main_inv_no_id = "10000"
+         />
+   <EVT_EVENT
+         event_db_id = "4650" 
+         event_id = "10001"
+         nh_event_db_id = "4650" 
+         nh_event_id = "10000"
+         h_event_db_id  = "8888"  
+         h_event_id = "88888"
+         event_status_db_id = "0" 
+         event_status_cd = "ACTV"
+         sched_priority_db_id = "0" 
+         sched_priority_cd = "NONE"
+         hist_bool = "0"
+         />
+
+   <SCHED_STASK
+         sched_db_id = "4650" 
+         sched_id = "10002"
+         task_class_db_id = "0" 
+         task_class_cd = "JIC"
+         task_priority_db_id = "4650" 
+         task_priority_cd = "LOW"
+         barcode_sdesc = "LEAF2DUE"
+         min_plan_yield_pct = "0.8"
+         est_duration_qt = "5.0"
+         heavy_bool = "0"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650" 
+         main_inv_no_id = "10000"
+         />
+   <EVT_EVENT
+         event_db_id = "4650" 
+         event_id = "10002"
+         nh_event_db_id = "4650" 
+         nh_event_id = "10000"
+         h_event_db_id  = "8888"  
+         h_event_id = "88888"
+         event_status_db_id = "0" 
+         event_status_cd = "ACTV"
+         sched_priority_db_id = "0" 
+         sched_priority_cd = "NONE"
+         hist_bool = "0"
+         />
+   <EVT_SCHED_DEAD
+         event_db_id = "4650" 
+         event_id = "10002"
+         sched_driver_bool = "1"
+         data_type_db_id = "4650" 
+         data_type_id = "90000"
+         sched_dead_dt = "17-MAY-2006 19:00"
+         interval_qt = "10"
+         />
+
+  <!-- The following two tasks (sched_id = 10004, 10005) should not be returned by query -->
+  <SCHED_STASK
+         sched_db_id = "4650" 
+         sched_id = "10004"
+         task_class_db_id = "0" 
+         task_class_cd = "ADHOC"
+         task_priority_db_id = "4650" 
+         task_priority_cd = "LOW"
+         barcode_sdesc = "OTHER1"
+         min_plan_yield_pct = "0.8"
+         heavy_bool = "0"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "10000"
+         />
+   <EVT_EVENT
+         event_db_id = "4650" 
+         event_id = "10004"
+         nh_event_db_id = "8888" 
+         nh_event_id = "88888"
+         h_event_db_id  = "8888" 
+         h_event_id  = "88888"
+         event_status_db_id = "0" 
+         event_status_cd = "IN WORK"
+         sched_priority_db_id = "0" 
+         sched_priority_cd = "NONE"
+         hist_bool = "0"
+         />
+
+   <SCHED_LABOUR
+         labour_db_id = "4650" 
+         labour_id = "1000"
+         sched_db_id = "4650" 
+         sched_id = "10004"
+         labour_stage_db_id = "0" 
+         labour_stage_cd = "IN WORK"
+         />
+
+   <EVT_SCHED_DEAD
+         event_db_id = "4650" 
+         event_id = "10004"
+         sched_driver_bool = "1"
+         data_type_db_id = "4650" 
+         data_type_id = "90001"
+         sched_dead_dt = "16-MAY-2006 19:00"
+         interval_qt = "10"
+         />
+
+   <SCHED_STASK
+         sched_db_id = "4650" 
+         sched_id = "10005"
+         task_class_db_id = "0" 
+         task_class_cd = "ADHOC"
+         task_priority_db_id = "4650" 
+         task_priority_cd = "LOW"
+         barcode_sdesc = "OTHER2"
+         min_plan_yield_pct = "0.8"
+         heavy_bool = "0"
+         prevent_lpa_bool = "0"
+         lrp_bool = "1"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "10000"
+         />
+   <EVT_EVENT
+         event_db_id = "4650" 
+         event_id = "10005"
+         nh_event_db_id = "8888" 
+         nh_event_id = "88888"
+         h_event_db_id  = "8888" 
+         h_event_id  = "88888"
+         event_status_db_id = "0" 
+         event_status_cd = "ACTV"
+         sched_priority_db_id = "0" 
+         sched_priority_cd = "NONE"
+         hist_bool = "0"
+         />
+
+   <EVT_SCHED_DEAD
+          event_db_id = "4650" 
+          event_id = "10005"
+          sched_driver_bool = "1"
+          data_type_db_id = "4650" 
+          data_type_id = "90001"
+          sched_dead_dt = "16-MAY-2006 19:00"
+          interval_qt = "10"
+         />
+
+
+   <!-- Create the root Task or Check for the Tasks -->
+   <SCHED_STASK
+         sched_db_id = "8888" 
+         sched_id = "88888"
+         task_class_db_id = "0" 
+         task_class_cd = "CHECK"
+         task_priority_db_id = "4650" 
+         task_priority_cd = "LOW"
+         barcode_sdesc = "CHECK"
+         min_plan_yield_pct = "0.8"
+         heavy_bool = "0"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650" 
+         main_inv_no_id = "10000"
+         />
+   <EVT_EVENT
+         event_db_id   = "8888"   
+         event_id = "88888"
+         h_event_db_id = "8888" 
+         h_event_id = "88888"
+         event_status_db_id = "0" 
+         event_status_cd = "ACTV"
+         sched_priority_db_id = "0" 
+         sched_priority_cd = "NONE"
+         hist_bool = "0"
+         />
+
+   <!-- Tie the Tasks to the Aircraft -->
+   <INV_AC_REG
+         inv_no_db_id = "4650" 
+         inv_no_id = "10000"
+         prevent_lpa_bool = "0"
+         />
+   <EVT_INV
+         event_db_id = "4650" 
+         event_id = "10000" 
+         event_inv_id = "1"
+         inv_no_db_id = "4650" 
+         inv_no_id = "10000"
+         main_inv_bool = "1"
+         />
+   <EVT_INV
+         event_db_id = "4650" 
+         event_id = "10001" 
+         event_inv_id = "1"
+         inv_no_db_id = "4650" 
+         inv_no_id = "10000"
+         main_inv_bool = "1"
+         />
+   <EVT_INV
+         event_db_id = "4650" 
+         event_id = "10002" 
+         event_inv_id = "1"
+         inv_no_db_id = "4650" 
+         inv_no_id = "10000"
+         main_inv_bool = "1"
+         />
+   <EVT_INV
+         event_db_id = "8888" 
+         event_id = "88888" 
+         event_inv_id = "1"
+         inv_no_db_id = "4650" 
+         inv_no_id = "10000"
+         main_inv_bool = "1"
+         />
+
+   <!-- Setup the Baseline Data -->
+   <MIM_DATA_TYPE
+         data_type_db_id = "4650" 
+         data_type_id = "90000"
+         eng_unit_db_id = "4650" 
+         eng_unit_cd = "90000"
+         domain_type_cd = "CA"
+         data_type_cd = "CDY" />
+   <MIM_DATA_TYPE
+         data_type_db_id = "4650" 
+         data_type_id = "90001"
+         eng_unit_db_id = "4650" 
+         eng_unit_cd = "90001"
+         domain_type_cd = "CA"
+         data_type_cd = "CHR" />
+   <REF_ENG_UNIT
+         eng_unit_db_id = "4650" 
+         eng_unit_cd = "90000"
+         ref_mult_qt = "1" />
+
+   <REF_ENG_UNIT
+         eng_unit_db_id = "4650" 
+         eng_unit_cd = "90001"
+         ref_mult_qt = "1" />
+
+   <REF_TASK_PRIORITY
+         task_priority_db_id = "4650" 
+         task_priority_cd = "LOW"
+         task_priority_ord = "0" />
+   <REF_TASK_PRIORITY
+         task_priority_db_id = "4650" 
+         task_priority_cd = "HIGH"
+         task_priority_ord = "1" />
+
+
+</dataset>

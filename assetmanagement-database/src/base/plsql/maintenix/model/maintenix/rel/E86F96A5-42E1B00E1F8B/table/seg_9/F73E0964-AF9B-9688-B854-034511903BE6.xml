@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="F73E0964-AF9B-9688-B854-034511903BE6" name="UTL_MENU_GROUP_ITEM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table is used to assign a list of menu items into a particular menu group.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>35376146-B569-59D7-6F52-18271B7FF79B</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="GROUP_ID" id="6D4FFF96-E2D1-24CC-EC98-69DEE4976699">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to UTL_MENU_GROUP.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>03DB2F50-B94F-4452-4A45-A9A146528D17</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="GROUP_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FCD18326-75A9-A9AE-26F5-1F02C0C3E076" referredColumn="9632A6EB-239E-A925-A890-24C9FA83AF06"/>
+</associations>
+</Column>
+<Column name="MENU_ID" id="FFD3C029-4B62-C6DB-D56E-BCC00D0849C3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to UTL_MENU_ITEM.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5A1328B3-A9D4-9BE8-A16E-C7187CC669D7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MENU_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D63526DA-03C4-568F-C47D-FA37B8239493" referredColumn="69795299-1D48-4975-E976-2BA6C9105AED"/>
+</associations>
+</Column>
+<Column name="MENU_ORDER" id="FD122864-2FE2-745E-6796-3EEAD980CAB5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The order the menu items are meant to be in.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7A4ACD26-9887-FF3F-6A07-0570BF801FF6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MENU_ORDER BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BREAK_BOOL" id="F17FF5EA-C771-11F3-1722-10AAE2A03EF8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>If true, a break must separate this menu item from the next menu item (if any).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>72998A5C-965B-D4CD-8A18-DF6E6132F4E3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="BREAK_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="D9DF2BAB-9ECC-CB06-0FD9-9020537405FC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>14371D6E-172F-2247-5FC6-50D6F297D9E0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="07A1AF6A-49DD-8752-A3C9-A32D7B7B3D67" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="019D0624-538A-390A-2586-A5A72FCFC3A9" name="pk_UTL_MENU_GROUP_ITEM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>AB114621-0D2A-B1B4-EA43-030827C3D316</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D4FFF96-E2D1-24CC-EC98-69DEE4976699"/>
+<colUsage columnID="FFD3C029-4B62-C6DB-D56E-BCC00D0849C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A913D1B7-328A-58E8-246E-0432164357E5" name="FK_UTLID_UTLMNUGROUP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D9DF2BAB-9ECC-CB06-0FD9-9020537405FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FCA9BD49-A580-7809-644F-891DCEC33B7E" name="FK_UTLMENUGRP_UTLMNUGITEM">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D4FFF96-E2D1-24CC-EC98-69DEE4976699"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="06412BF3-870A-3EF6-EE4F-096E1E6DD065" name="FK_UTLMNUITEM_MENUGROUP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FFD3C029-4B62-C6DB-D56E-BCC00D0849C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

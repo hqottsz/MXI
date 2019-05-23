@@ -1,0 +1,350 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_1" id="48EB4419-8299-65F3-87FD-00A3A011C809" name="EQP_PART_COMPAT_DEF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Part Compatibility Definition: The parent-child part incompatibilities are explicitly enumerated in this table. The system supports any dimensions of part compatibility and is not restricted to parts on the immediate assembly.&lt;br&gt;&lt;/br&gt;By default (ie. if a part compatibility row is not defined), the system assumes that all parts defined in the part baseline are compatible with each other.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AA08B59E-514E-B3A9-2AA9-D2CAE6242E3A</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BOM_PART_DB_ID" id="3DD325B3-809B-FDB6-5FCB-695276B4A5D7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the part that is trying to &apos;fit into&apos; the assembly.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5262FE03-5EB1-EC4A-BBC4-3C628A088AAD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="BOM_PART_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="643EF892-C459-1A9D-E881-29E078D7271F" referredColumn="9D015B80-EE91-7FBF-B6CC-56FF4E4591A7"/>
+</associations>
+</Column>
+<Column name="BOM_PART_ID" id="5C4CCAAB-7439-1CA8-AB9D-1FDDE568A9B6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the part that is trying to &apos;fit into&apos; the assembly.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>71CD1B4B-3DE1-ED96-D6D0-8BDD07DE9A5C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="BOM_PART_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="643EF892-C459-1A9D-E881-29E078D7271F" referredColumn="289D1CD0-D954-A9F4-19D1-798773984610"/>
+</associations>
+</Column>
+<Column name="PART_NO_DB_ID" id="DFD1395B-50CA-CFBB-E561-BCB64A550B7F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the part that is trying to &apos;fit into&apos; the assembly.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6FB26122-8878-6A3E-0BB7-FD867805E0E6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="643EF892-C459-1A9D-E881-29E078D7271F" referredColumn="0F912700-8B49-75C5-BFCE-85D47F1672EC"/>
+</associations>
+</Column>
+<Column name="PART_NO_ID" id="F025E85A-2975-AF2F-B8C1-E0A191772B5D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the part that is trying to &apos;fit into&apos; the assembly.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>79AFEBC9-8670-9BDC-4C72-A061F1482569</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="643EF892-C459-1A9D-E881-29E078D7271F" referredColumn="7A2B325B-2AF3-DC9B-8F55-648B21233035"/>
+</associations>
+</Column>
+<Column name="NH_BOM_PART_DB_ID" id="B1F1EE8C-C2E0-6689-2613-F7108B0846C2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the parts that are on the assembly that restrict the installation of the &apos;fits into&apos; part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5F95755C-EE31-2B03-CF7F-6A41C19EF8EA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NH_BOM_PART_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74B088B8-646D-F670-D606-2954E4AF622C" referredColumn="9D015B80-EE91-7FBF-B6CC-56FF4E4591A7"/>
+</associations>
+</Column>
+<Column name="NH_BOM_PART_ID" id="E1E2FB8E-D8F2-A0C0-3FE7-17FCB8070408">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the parts that are on the assembly that restrict the installation of the &apos;fits into&apos; part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C283BD54-938D-A00A-6B30-0CB59E756477</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NH_BOM_PART_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74B088B8-646D-F670-D606-2954E4AF622C" referredColumn="289D1CD0-D954-A9F4-19D1-798773984610"/>
+</associations>
+</Column>
+<Column name="NH_PART_NO_DB_ID" id="E9574671-6304-4360-B6C6-B3617A89C121">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the parts that are on the assembly that restrict the installation of the &apos;fits into&apos; part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CDC1779A-89B3-04B4-409A-6328D2D05B3C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NH_PART_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74B088B8-646D-F670-D606-2954E4AF622C" referredColumn="0F912700-8B49-75C5-BFCE-85D47F1672EC"/>
+</associations>
+</Column>
+<Column name="NH_PART_NO_ID" id="94CFAC58-2DA1-9A0D-FEF7-9590416743F0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_BASELINE. Indicates the parts that are on the assembly that restrict the installation of the &apos;fits into&apos; part.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>474FB68A-C361-40C5-DF51-C7759F6EBDE4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NH_PART_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74B088B8-646D-F670-D606-2954E4AF622C" referredColumn="7A2B325B-2AF3-DC9B-8F55-648B21233035"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="315F9E9D-00CC-99CA-07E1-3E5E9BA164F6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>04150FDB-6A18-8CCA-E977-87D363CDB207</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFEE4E75-9C6F-FFE4-684F-ABBBE75D9D11" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="0893D776-8F1C-5F77-502F-D11DBB29FB56">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>56803040-0518-E3F6-F3DE-06B35D9A1D37</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="5240DD82-EBBF-AFC5-FBA6-2BF551FF8355">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E564E4AC-EBA1-2145-30CF-6736E3B60045</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="904EE8F0-3CCB-E8B3-5F80-A32ECF9D47C8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>295DE8A3-E531-CC46-9DCF-13DF78A3EA7E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="2776013E-88DD-8C96-A3AB-ACB4852F366C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9A680D31-0121-4530-18F6-543EBCC56C00</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BBB3FC28-B842-09A0-CFF6-BAAF53D8E07B" name="PK_EQP_PART_COMPAT_DEF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>25BF9D7D-94FB-3BF4-E58C-696CB8012583</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DD325B3-809B-FDB6-5FCB-695276B4A5D7"/>
+<colUsage columnID="5C4CCAAB-7439-1CA8-AB9D-1FDDE568A9B6"/>
+<colUsage columnID="DFD1395B-50CA-CFBB-E561-BCB64A550B7F"/>
+<colUsage columnID="F025E85A-2975-AF2F-B8C1-E0A191772B5D"/>
+<colUsage columnID="B1F1EE8C-C2E0-6689-2613-F7108B0846C2"/>
+<colUsage columnID="E1E2FB8E-D8F2-A0C0-3FE7-17FCB8070408"/>
+<colUsage columnID="E9574671-6304-4360-B6C6-B3617A89C121"/>
+<colUsage columnID="94CFAC58-2DA1-9A0D-FEF7-9590416743F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3D300E06-514D-418F-C8CF-097240C7D87D" name="IX_EQP_PART_COMPAT_DEF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>153C686B-0AAD-FA00-8F3C-9DF785C40120</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9574671-6304-4360-B6C6-B3617A89C121"/>
+<colUsage columnID="94CFAC58-2DA1-9A0D-FEF7-9590416743F0"/>
+<colUsage columnID="B1F1EE8C-C2E0-6689-2613-F7108B0846C2"/>
+<colUsage columnID="E1E2FB8E-D8F2-A0C0-3FE7-17FCB8070408"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B69CD67-F477-976F-8AA1-DB149823CD61" name="IX_EQPRTBSLINE_EQPPARTCOMPATDE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>500B30B7-61D5-511A-8BED-4793D0284ACD</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DD325B3-809B-FDB6-5FCB-695276B4A5D7"/>
+<colUsage columnID="5C4CCAAB-7439-1CA8-AB9D-1FDDE568A9B6"/>
+<colUsage columnID="DFD1395B-50CA-CFBB-E561-BCB64A550B7F"/>
+<colUsage columnID="F025E85A-2975-AF2F-B8C1-E0A191772B5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A98127A5-E266-57FF-4C5A-36F4D1296A8C" name="IX_EQPPRTBASELINE_EQPPARTCOMPA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E3638D9E-6BEB-74C7-F1F3-694F1D1FCB66</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1F1EE8C-C2E0-6689-2613-F7108B0846C2"/>
+<colUsage columnID="E1E2FB8E-D8F2-A0C0-3FE7-17FCB8070408"/>
+<colUsage columnID="E9574671-6304-4360-B6C6-B3617A89C121"/>
+<colUsage columnID="94CFAC58-2DA1-9A0D-FEF7-9590416743F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B8C870CC-0F16-4B7F-E6F9-54DCB48C42F4" name="FK_EQPPRTBASELINE_EQPPARTCOMPA">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1F1EE8C-C2E0-6689-2613-F7108B0846C2"/>
+<colUsage columnID="E1E2FB8E-D8F2-A0C0-3FE7-17FCB8070408"/>
+<colUsage columnID="E9574671-6304-4360-B6C6-B3617A89C121"/>
+<colUsage columnID="94CFAC58-2DA1-9A0D-FEF7-9590416743F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DAC6982-2DE9-4FDC-700C-CFBF2BDB91E8" name="FK_EQPRTBSLINE_EQPPARTCOMPATDE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DD325B3-809B-FDB6-5FCB-695276B4A5D7"/>
+<colUsage columnID="5C4CCAAB-7439-1CA8-AB9D-1FDDE568A9B6"/>
+<colUsage columnID="DFD1395B-50CA-CFBB-E561-BCB64A550B7F"/>
+<colUsage columnID="F025E85A-2975-AF2F-B8C1-E0A191772B5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9F8F6B75-4FDF-34D7-7A67-9675C9E496D5" name="FK_MIMRSTAT_EQPPARTCOMPATDEF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="315F9E9D-00CC-99CA-07E1-3E5E9BA164F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

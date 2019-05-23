@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="8C1EFFB2-8CD4-0C83-A4F5-FB8EDF8A1197" name="UTL_PERM_MATRIX_ROW">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The utl_perm_matrix_row, represent a row of a decision matrix, a row has a mode such as EDIT/NONE/READ.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4983AE53-D709-521E-B7E9-5976A9E8253D</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MATRIX_ROW_ID" id="C203E4F1-D76A-C4F9-1431-B0F03CE87B48">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>73B7A7D7-0B10-7E53-34C4-B709CF211033</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MATRIX_ROW_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MODE_CD" id="567D68DD-478C-5348-6667-8560EFE56E56">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>248D5A5C-31BF-A976-8BC9-6A2919AA5993</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95D1B75F-B623-BF9B-87B5-AB061E3CDABC" referredColumn="CAC72EAB-83F8-10C5-2411-9A85831223B4"/>
+</associations>
+</Column>
+<Column name="MATRIX_ID" id="74A6F4F1-EC89-1B2E-58BB-9874C56F169E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>045B0D38-0055-593F-1D41-39FFDBEA0D7A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MATRIX_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65F8DAAE-A763-0021-2341-E33E33B9F16B" referredColumn="11016182-DD4C-04BE-562C-E223788D1A82"/>
+</associations>
+</Column>
+<Column name="ROW_ORD" id="AD9D1DBB-4A80-AEAE-0932-A9CA81E722CA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>14EB4185-505C-7C2D-7DE2-A388276919C6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="7C4D7F7B-982C-26F8-357B-E7E0A10A7819">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4B5FD9DC-D051-4EF0-6F69-05CB68D2EA50</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A27CAD5C-23F2-4A32-3FB5-1F6E48E46BFA" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8950F6F2-B4C0-C4B2-3FDB-5668A950EC4F" name="PK_UTL_PERM_MATRIX_ROW">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C897CDCE-859A-4996-B0C4-00DA8F55E726</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C203E4F1-D76A-C4F9-1431-B0F03CE87B48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26985623-C149-E4A7-C995-FD4CEE53C3A0" name="FK_MIMDB_PMATRIXROW">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:32 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C4D7F7B-982C-26F8-357B-E7E0A10A7819"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9ED0EF64-CD68-546E-4BDB-E5F09D41BD32" name="FK_PMATRIXHEADER_PMATRIXROW">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="74A6F4F1-EC89-1B2E-58BB-9874C56F169E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="910D7C73-CD16-BC98-9936-F5394269E5AA" name="FK_UTLPERMMODE_PMATRIXROW">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="567D68DD-478C-5348-6667-8560EFE56E56"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

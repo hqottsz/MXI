@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="13BBD300-5727-61C4-8C7F-2FE15A7EDB33" name="BLT_WF_ERROR_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>The purpose of this table is to log errors that occur against each workflow - the item failing should also be identifiable from this table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A86F97D7-2BBF-35ED-5B16-988EB23DC1DB</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="WF_ERROR_LOG_ID" id="3CF07627-B408-8B8C-FEE8-BD9E26F531CB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Primary key identifier (GUID)</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EBB00026-218C-AD06-1FB9-0F2AECB301F9</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WF_REC_LOG_ID" id="5CB40514-3239-2831-136F-D8A5CF9A2FEC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CE01EAEA-D290-5599-0812-9E44F93A040A</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3D2080E-4F0E-DD05-146D-522A27012BB5" referredColumn="47772CB3-CC2F-BA74-D925-53AF745B9155"/>
+</associations>
+</Column>
+<Column name="WF_CYCLE_LOG_ID" id="3CE587FB-EEAA-43DF-55E2-C509B6B02819">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>214FA433-BE2D-6506-0327-E4421CBB70E0</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3D2080E-4F0E-DD05-146D-522A27012BB5" referredColumn="AEFF82A1-DC9A-5918-51AD-595F2826CEEC"/>
+</associations>
+</Column>
+<Column name="REF_ERROR_CD" id="3530BC4C-EE1E-D2F3-53DB-2E1631B44F10">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5D029F9E-5FFD-9477-699F-F9ABFEE24C96</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9B83493A-54E3-A72D-7349-61E5AA9D14AC" referredColumn="07A07D0D-E467-86C2-91FC-F21336EB95F8"/>
+</associations>
+</Column>
+<Column name="WF_ERROR_REC_IDENTIFIER" id="8579CC1D-6FB2-C112-8B5F-1FC34D72B118">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Unique record identifier so that original record can be identified as to where the error originates.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>85FA6F11-540A-5597-D0AA-2D980FFAC132</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="71E92B27-2B72-ED48-BAC5-FE9026DAA2E4" name="PK_BLT_WF_ERROR_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AC207DB5-F03D-E397-7EF4-37580B15F61B</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3CF07627-B408-8B8C-FEE8-BD9E26F531CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C8BA753-E157-782D-1635-EE3AEBC5D32C" name="IX_BLTWFERRORLOG_WFERRORRECIDE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B62AABC8-4574-5EFE-372E-E5AF8C0F5106</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8579CC1D-6FB2-C112-8B5F-1FC34D72B118"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="685FF7E0-2CF3-20D9-FF71-8F3AE5A0B8E7" name="IX_BLTREFERROR_BLTWFERRORLOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2687CDD4-FAB2-DCEF-37E6-47CDCB30AD04</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3530BC4C-EE1E-D2F3-53DB-2E1631B44F10"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6350A2DB-7BC0-5B05-7843-3BE2B0E26C18" name="IX_BLTWFRECLOG_BLTWFERRORLOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FF2B3258-0061-5AEA-991F-BFD297D3A8E1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CB40514-3239-2831-136F-D8A5CF9A2FEC"/>
+<colUsage columnID="3CE587FB-EEAA-43DF-55E2-C509B6B02819"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3E4106A-EF8E-C18D-1FD4-76CBA09348BF" name="FK_BLTREFERROR_BLTWFERRORLOG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3530BC4C-EE1E-D2F3-53DB-2E1631B44F10"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="00F58400-5BD2-6E04-E7B3-BF4B142C4114" name="FK_BLTWFRECLOG_BLTWFERRORLOG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CB40514-3239-2831-136F-D8A5CF9A2FEC"/>
+<colUsage columnID="3CE587FB-EEAA-43DF-55E2-C509B6B02819"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

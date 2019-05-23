@@ -1,0 +1,261 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_4" id="D592DFFE-97D0-4698-75F3-3BA639D6B066" name="PO_INVOICE_LINE_MAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table is used to map invoice lines against purchase order lines. Using this table a single PO line can be linked to multiple invoice lines, and a single invoice line can be used to pay for multiple PO lines.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F1D37894-D08D-FF8D-7BC4-97F6B306EDA7</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_INVOICE_DB_ID" id="F6C5C33F-933F-0B98-B69E-06A027BE0E94">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_INVOICE_LINE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>52623DBA-87A5-89FA-5CAD-BE825D602F81</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_INVOICE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D68D925-DC10-793E-E216-B5A2C414B714" referredColumn="3413476E-6034-3998-BD93-C4198E0584B3"/>
+</associations>
+</Column>
+<Column name="PO_INVOICE_ID" id="B5DB1635-621E-8818-BEEC-32194CCDD3E5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_INVOICE_LINE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FDFE51E6-4E10-E8EB-CA80-F0C4083C3AF5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_INVOICE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D68D925-DC10-793E-E216-B5A2C414B714" referredColumn="1426BD41-812F-FC2C-E969-D1CF75ADB05C"/>
+</associations>
+</Column>
+<Column name="PO_INVOICE_LINE_ID" id="3B7D8796-9754-3891-C333-3F8B2DFDB1B3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_INVOICE_LINE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7B5DC9DE-EAEB-01CF-722B-A4FD7E7A28C4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_INVOICE_LINE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D68D925-DC10-793E-E216-B5A2C414B714" referredColumn="D2C8F959-AC44-4AA1-01DC-7ECDE4F7783D"/>
+</associations>
+</Column>
+<Column name="PO_DB_ID" id="6F9AD262-42DA-A1B1-46DD-272E870BC0BA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_LINE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B81327C3-1535-50BE-6818-C50F2B3E2EC6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4F8B720-AEB3-775A-F2A4-32113B8E2A1B" referredColumn="AE4D476A-9C81-31A2-1B84-E4360290FCB2"/>
+</associations>
+</Column>
+<Column name="PO_ID" id="73E7DD64-F058-9EC8-AB20-F7D2DBF17248">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_LINE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DA84AE19-DEE1-23F4-425E-CFE50F46E383</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4F8B720-AEB3-775A-F2A4-32113B8E2A1B" referredColumn="8FB93D1B-D368-C513-CEFB-47CB96A754D6"/>
+</associations>
+</Column>
+<Column name="PO_LINE_ID" id="466A2F53-6CDB-8F34-1935-8516F67792FC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK: FK PO_LINE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>476EC3A4-237C-BAFC-0E69-0BA884F5D57F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_LINE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4F8B720-AEB3-775A-F2A4-32113B8E2A1B" referredColumn="80D8ED4A-3F0D-33B7-93B9-F7247DC29D94"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="E1D13B1A-6D99-C1CB-5246-83515BEEAD41">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EDECE9AC-3916-A902-DACC-EC9052B5B15A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="5326C15A-137C-A06E-2CFB-0512675CE5EB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9BEB71E4-9A59-D07E-A471-4B467ECD1F1E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="1B3BB954-CBB7-1C2C-02BD-C10E51D4C6D1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7BEFAEEE-5181-ECFE-6273-2994486C3A24</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="651C7169-D6F5-5855-67BB-F7DA0E6FBFAA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>62F89113-2B06-7C77-6DF9-287F817EF077</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="48198CA5-F30C-67D4-1FA4-54BB8304E6F6" name="pk_PO_INVOICE_LINE_MAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>51EBE4AF-C903-8E62-12CC-9A1E89A6E622</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6C5C33F-933F-0B98-B69E-06A027BE0E94"/>
+<colUsage columnID="B5DB1635-621E-8818-BEEC-32194CCDD3E5"/>
+<colUsage columnID="3B7D8796-9754-3891-C333-3F8B2DFDB1B3"/>
+<colUsage columnID="6F9AD262-42DA-A1B1-46DD-272E870BC0BA"/>
+<colUsage columnID="73E7DD64-F058-9EC8-AB20-F7D2DBF17248"/>
+<colUsage columnID="466A2F53-6CDB-8F34-1935-8516F67792FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5575597E-A75B-8742-9A6B-1863A4BD5D42" name="IX_POLINE_POINVOICELINEMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B48F756C-B329-61B8-7B9C-398DA979C43B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6F9AD262-42DA-A1B1-46DD-272E870BC0BA"/>
+<colUsage columnID="73E7DD64-F058-9EC8-AB20-F7D2DBF17248"/>
+<colUsage columnID="466A2F53-6CDB-8F34-1935-8516F67792FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7DADCE85-7511-E788-B589-51CF9D96762B" name="IX_POINVOICELINE_POINVLINEMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>04BD44DE-F045-96B0-C271-6F4CDC5B4FF4</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6C5C33F-933F-0B98-B69E-06A027BE0E94"/>
+<colUsage columnID="B5DB1635-621E-8818-BEEC-32194CCDD3E5"/>
+<colUsage columnID="3B7D8796-9754-3891-C333-3F8B2DFDB1B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="32495DD7-A616-8612-860B-7FF62B8C0A6F" name="FK_POINVOICELINE_POINVLINEMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6C5C33F-933F-0B98-B69E-06A027BE0E94"/>
+<colUsage columnID="B5DB1635-621E-8818-BEEC-32194CCDD3E5"/>
+<colUsage columnID="3B7D8796-9754-3891-C333-3F8B2DFDB1B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F9CD76FA-15A1-CE85-EEB5-67688C9B9F6B" name="FK_POLINE_POINVOICELINEMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6F9AD262-42DA-A1B1-46DD-272E870BC0BA"/>
+<colUsage columnID="73E7DD64-F058-9EC8-AB20-F7D2DBF17248"/>
+<colUsage columnID="466A2F53-6CDB-8F34-1935-8516F67792FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

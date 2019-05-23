@@ -1,0 +1,81 @@
+<dataset>
+   <!-- Valid Task -->
+   <sched_stask
+      sched_db_id = "1234"
+      sched_id = "56789"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "9999"
+      alt_id = "ABCDEF1234567890ABCDEF1234567891"
+   />
+
+   <!-- Invalid Task -->
+   <sched_stask
+      sched_db_id = "1111"
+      sched_id = "11111"
+      main_inv_no_db_id = "1111"
+      main_inv_no_id = "1111"
+      alt_id = "BCDEF1234567890ABCDEF1234567890A"
+   />
+
+   <!-- Part Group -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "8888"
+      alt_id = "ABCDEF1234567890ABCDEF1234567890"
+   />
+
+   <!-- Part -->
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "7777"
+      part_no_sdesc = "TEST PART"
+      part_no_oem = "1234-ABCD"
+      alt_id = "1234567890ABCDEF1234567890ABCDEF"
+	/>
+
+	<!-- Main Inventory -->
+	<inv_inv
+	   inv_no_db_id = "4650"
+	   inv_no_id = "9999"
+	   assmbl_inv_no_db_id = "4650"
+	   assmbl_inv_no_id = "9999"
+	   inv_class_cd = "ASSY"
+	/>
+
+	<!-- Installed Inventory -->
+	<inv_inv
+	   inv_no_db_id = "4650"
+	   inv_no_id = "5555"
+	   bom_part_db_id = "4650"
+	   bom_part_id = "8888"
+	   part_no_db_id = "4650"
+	   part_no_id = "7777"
+	   assmbl_inv_no_db_id = "4650"
+	   assmbl_inv_no_id = "9999"
+	   assmbl_db_id = "4650"
+	   assmbl_cd = "TEST1"
+	   assmbl_bom_id = "3333"
+	   assmbl_pos_id = "1"
+	   serial_no_oem = "XYZ"
+	   inv_class_cd = "TRK"
+	   rstat_cd = "0"
+	   alt_id = "234567890ABCDEF1234567890ABCDEF1"
+	/>
+
+	<!-- Part Baseline -->
+	<eqp_part_baseline
+	   bom_part_db_id = "4650"
+	   bom_part_id = "8888"
+	   part_no_db_id = "4650"
+	   part_no_id = "7777"
+	   interchg_ord = "2"
+	/>
+
+	<!-- Assembly Position -->
+	<eqp_assmbl_pos
+	   assmbl_db_id = "4650"
+	   assmbl_cd = "TEST1"
+	   assmbl_bom_id = "3333"
+	   assmbl_pos_id = "1"
+	/>
+</dataset>

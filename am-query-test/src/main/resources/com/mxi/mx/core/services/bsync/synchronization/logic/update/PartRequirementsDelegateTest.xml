@@ -1,0 +1,195 @@
+<dataset>
+
+  <!-- part requirement for a job card under a REPL that is not for the replacement position -->
+   <task_part_list
+      task_db_id="4650"
+      task_id="1001"
+      task_part_id="1"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="50"
+      assmbl_pos_id="2"
+      bom_part_db_id="4650"
+      bom_part_id="2001"
+      req_qt="1"
+      remove_bool="1"
+      install_bool="0"
+      req_action_db_id="0"
+      req_action_cd="REQ"
+      />
+
+   <!--
+      part requirement for a job card under a REPL that is for the replacement config slot.
+
+      Note that it is important that the position specified here is different from the actual
+      position used during the test.
+    -->
+   <task_part_list
+      task_db_id="4650"
+      task_id="1002"
+      task_part_id="1"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="100"
+      assmbl_pos_id="2"
+      bom_part_db_id="4650"
+      bom_part_id="2001"
+      req_qt="1"
+      remove_bool="1"
+      install_bool="0"
+      req_action_db_id="0"
+      req_action_cd="REQ"
+      />
+
+
+    <!-- data set up for synchronize_DuplicateBomPosition() test -->
+
+   <eqp_bom_part
+      bom_part_db_id="4650"
+      bom_part_id="1003"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="200"
+      inv_class_db_id="0"
+      inv_class_cd="TRK"
+      bom_part_name="TRACKED PART"
+   />
+
+   <eqp_assmbl_pos
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="200"
+      assmbl_pos_id="1"
+   />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "2"
+      inv_class_db_id = "0"
+      inv_class_cd = "ACFT"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="100"
+   />
+
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+      inv_class_db_id = "0"
+      inv_class_cd = "SYS"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="200"
+      h_inv_no_db_id = "4650"
+      h_inv_no_id="2"
+   />
+
+   <task_defn
+      task_defn_db_id = "4650"
+      task_defn_id = "1"
+      last_revision_ord = "2"
+      new_revision_bool = "0"
+   />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "1"
+      task_defn_db_id = "4650"
+      task_defn_id = "1"
+      revision_ord = "1"
+      task_class_db_id = "0"
+      task_class_cd = "JIC"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="100"
+      task_def_status_db_id="0"
+      task_def_status_cd = "SUPRSEDE"
+   />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "2"
+      task_defn_db_id = "4650"
+      task_defn_id = "1"
+      revision_ord = "2"
+      task_class_db_id = "0"
+      task_class_cd = "JIC"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="100"
+      task_def_status_db_id="0"
+      task_def_status_cd = "ACTV"
+   />
+
+   <task_part_list
+      task_db_id="4650"
+      task_id="2"
+      task_part_id="1"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="200"
+      assmbl_pos_id="1"
+      bom_part_db_id="4650"
+      bom_part_id="1003"
+      req_qt="1"
+      remove_bool="1"
+      install_bool="0"
+      req_action_db_id="0"
+      req_action_cd="REQ"
+   />
+
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+      task_class_db_id = "0"
+      task_class_cd = "JIC"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+   />
+
+   <evt_event
+      event_db_id = "4650"
+      event_id = "2"
+      event_type_db_id = "4650"
+      event_type_cd = "TS"
+      hist_bool = "0"
+      h_event_db_id = "4650"
+      h_event_id = ""
+   />
+
+   <evt_event
+      event_db_id = "4650"
+      event_id = "1"
+      event_type_db_id = "4650"
+      event_type_cd = "TS"
+      hist_bool = "0"
+      h_event_db_id = "4650"
+      h_event_id = "2"
+   />
+
+   <evt_inv
+      event_db_id = "4650"
+      event_id = "1"
+      event_inv_id = "1"
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+      main_inv_bool = "1"
+   />
+
+   <sched_part
+      sched_db_id = "4650"
+      sched_id = "1"
+      sched_part_id = "1"
+      sched_bom_part_db_id = "4650"
+      sched_bom_part_id = "1003"
+      sched_part_status_db_id = "0"
+      sched_part_status_cd = "ACTV"
+      assmbl_db_id="4650"
+      assmbl_cd="ACFT"
+      assmbl_bom_id="200"
+      assmbl_pos_id="1"
+   />
+
+</dataset>

@@ -1,0 +1,22 @@
+DECLARE
+   ln_code NUMBER := NULL;
+   VALIDATION_FAILED EXCEPTION;
+   IMPORT_FAILED EXCEPTION;
+BEGIN
+   ${package_name}.${validate_method}(ln_code);
+   IF ln_code = -1 THEN
+      RAISE VALIDATION_FAILED;
+   END IF;
+
+   ${package_name}.${import_method}(ln_code);
+   IF ln_code = -1 THEN
+      RAISE IMPORT_FAILED;
+   END IF;
+   
+EXCEPTION
+   WHEN VALIDATION_FAILED THEN
+      raise_application_error(-20001,'Failed to validate data in ${package_name}.');   
+   WHEN IMPORT_FAILED THEN
+      raise_application_error(-20001,'Failed to import data in ${package_name}.');
+END;
+/

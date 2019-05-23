@@ -1,0 +1,471 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CFAD1822-59D9-3660-FF0D-49DCA93D124B" name="CLAIM_LABOUR_LINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>this table defines labour that has or will be claimed for against work that was covered under warranty</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2DE3EBF9-7B1B-ABF1-0052-64D93F978655</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLAIM_LABOUR_LINE_ID" id="A0AE94ED-BA18-A41D-BB73-40625853ED35">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>PRIMARY KEY OF CLAIM LABOUR LINE ID - FROM SEQUENCE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3C03DC71-CD39-E34A-1996-122C0EC49A87</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CLAIM_LABOUR_LINE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLAIM_DB_ID" id="4DCCF8AD-3968-4C16-2429-9E6303F3053C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4818C8AF-4251-4086-ECB7-254E045E5623</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CLAIM_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E51C588E-DCE3-B30D-9604-DF94E020B1D0" referredColumn="09E38E9D-B561-95EA-FA83-EFA945152D96"/>
+</associations>
+</Column>
+<Column name="CLAIM_ID" id="F09AF590-A04E-257E-B07B-E4D0B52D7942">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>209BEC8D-15EC-5A7C-0C25-8827E46087BB</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CLAIM_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E51C588E-DCE3-B30D-9604-DF94E020B1D0" referredColumn="22343943-B920-5648-473A-A308C7BA870A"/>
+</associations>
+</Column>
+<Column name="LABOUR_SKILL_DB_ID" id="B1A47AFA-9981-0DAE-E254-8D0094AB64DD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7F1E6D4D-034A-9CF3-E39B-B323DE685D0B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LABOUR_SKILL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF15FBE0-65EA-E75C-2EF9-3BBE57D8D8FA" referredColumn="FCC98F6C-F4B6-E147-4DC1-001D9E7E9C05"/>
+</associations>
+</Column>
+<Column name="LABOUR_SKILL_CD" id="F5FF614E-E5C0-D5DD-FF73-98C101CDF9F3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4A77F6AA-104E-FBCC-85FC-B898C27465ED</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF15FBE0-65EA-E75C-2EF9-3BBE57D8D8FA" referredColumn="E5384F59-2483-76F0-624D-A71E378356F5"/>
+</associations>
+</Column>
+<Column name="WARRANTY_EVAL_DB_ID" id="F94B5A55-1B06-07F9-AD30-8F4EC7835E69">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C228E93D-C639-2F92-182A-7AA0B5C1789B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="WARRANTY_EVAL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0C9A873-DEDF-1CF3-C64A-5E6B48F829E2" referredColumn="5F12BA6F-FE10-E9D4-7B18-82F4234B709C"/>
+</associations>
+</Column>
+<Column name="WARRANTY_EVAL_ID" id="47A9EE37-0153-EB0F-6B8F-931774E97FDB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2F733CE9-70CA-45E3-A7B9-80642AD1308F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="WARRANTY_EVAL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0C9A873-DEDF-1CF3-C64A-5E6B48F829E2" referredColumn="B8C36571-B69D-E389-01FE-5168747BEB1B"/>
+</associations>
+</Column>
+<Column name="WARRANTY_EVAL_TASK_ID" id="7F62781A-DD42-770F-F109-CC670A8144AE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>272A49FD-3F8E-003E-7F17-297F0885E74F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="WARRANTY_EVAL_TASK_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0C9A873-DEDF-1CF3-C64A-5E6B48F829E2" referredColumn="696161E2-0EDB-81F3-6C8B-9A6DE01C1E87"/>
+</associations>
+</Column>
+<Column name="WARRANTY_EVAL_LABOUR_ID" id="E866E4C0-4C93-FB8C-2207-096B29E02342">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CE093C0E-F991-9B5D-326D-93E3D067241C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="WARRANTY_EVAL_LABOUR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0C9A873-DEDF-1CF3-C64A-5E6B48F829E2" referredColumn="804EA512-2F82-B750-8CC3-12295EE1FCED"/>
+</associations>
+</Column>
+<Column name="SCHED_DB_ID" id="CFBD581C-BFFB-821E-8A63-1D5EA9C5D562">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B8DF166F-CF2E-4538-F832-B236C94372C7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="872125A9-8FA5-B8DD-AE29-90695934846C" referredColumn="3CE58C05-954B-BC92-B4C2-886A85D7EE7D"/>
+</associations>
+</Column>
+<Column name="SCHED_ID" id="77360505-556B-9CCA-95F4-6906A40A6870">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3E41D0A8-AA86-EEB6-CCFD-8654E7ABB931</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="872125A9-8FA5-B8DD-AE29-90695934846C" referredColumn="9583F48B-ACAC-467C-F22F-F2F672CB100C"/>
+</associations>
+</Column>
+<Column name="LINE_LDESC" id="A071268E-6CFF-6BFA-167F-0BF6A01DD861">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>REF_LABOUR_SKILL.LABOUR_SKILL_CD (DESC_SDESC) </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EDADF6D7-E74E-9ACF-A0D2-78404FCB8972</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLAIM_QT" id="440BACDA-C1A8-2E64-C5D6-2063641A17F0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>WARRANTY_EVAL_LABOUR.ACTUAL_HR  </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5B8D9B72-D898-EC77-B163-DF9C1AA24C13</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UNIT_PRICE" id="E1A6D96D-8ABD-8C04-6D50-7C92E08AB5B6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>REF_LABOUR_SKILL.EST_HOURLY_COST. Default 0.00</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D426632E-2D83-0A97-1800-5B8B889B45F3</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0.00</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LINE_PRICE" id="099C63F4-AC57-4134-2BED-648EC6E57180">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>CLAIM_QT * UNIT_PRICE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2FCAEDCC-4CC6-3E69-AA15-5D3C187043C2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REJECT_WARRANTY_BOOL" id="7439091B-8EB1-EEFD-2963-9A727FCA05C4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>USED TO DEFINE IF THIS LINE HAS BEEN REJECTED DURRING CLAIM PROCESS</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8478A00A-C0CF-7D1C-EEC0-26408508CB10</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REJECT_WARRANTY_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOTE" id="FDDE864D-0AE6-8786-4AEB-3EA847111E79">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>note for a labour line associate with a claim</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AE7EF3A6-5EBB-863D-B19A-1D61FA0F1597</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="D2E005EB-25EF-EAF1-66F8-7CFD2EDBBFC6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F96700EC-9FBB-8495-6E0D-ABD6847B1F83</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="C865EC0A-543C-9B71-A9EB-99856A0ADDB7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8E9F3BA3-8E03-3768-DA15-1C741243DB3A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="FBBA6FA2-BCD6-92CE-EA48-F56786BAAF8B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E79262F0-CA52-AD0B-D66E-AA7000D970C7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="3E917B34-A137-1B6B-9C25-2BA767C50C10">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B321F973-A176-A791-7AAB-3FFA2DD6D663</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="C229D0BB-60E5-A9C4-B5A5-AB17CB5E8B22">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4562E515-9010-2D68-27D4-12F8D64C52A4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BED333E8-4E2C-F585-A129-D2BB91DA2269" name="PK_CLAIM_LABOUR_LINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7840D208-5A24-9A97-B777-F50757FF3AAB</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0AE94ED-BA18-A41D-BB73-40625853ED35"/>
+<colUsage columnID="4DCCF8AD-3968-4C16-2429-9E6303F3053C"/>
+<colUsage columnID="F09AF590-A04E-257E-B07B-E4D0B52D7942"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="439CD4AC-C93D-E048-0E16-45E65EC4E2D6" name="IX_SCHEDSTASK_CLAIMLABOURLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9C605A61-891B-4B1D-4AC2-C7151FA413FF</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFBD581C-BFFB-821E-8A63-1D5EA9C5D562"/>
+<colUsage columnID="77360505-556B-9CCA-95F4-6906A40A6870"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C9D701CD-7CDB-9922-9338-EAFB9FC341B9" name="IX_WAREVALLAB_CLMLABLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FD170BD3-30FF-116E-1F2B-05A5C53BEC9E</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F94B5A55-1B06-07F9-AD30-8F4EC7835E69"/>
+<colUsage columnID="47A9EE37-0153-EB0F-6B8F-931774E97FDB"/>
+<colUsage columnID="7F62781A-DD42-770F-F109-CC670A8144AE"/>
+<colUsage columnID="E866E4C0-4C93-FB8C-2207-096B29E02342"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="04F482DA-911B-7CA5-A133-9F5F5DFF7F54" name="IX_CLAIM_CLMLABLINE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8A6257DE-EAF1-BB25-A9DD-B1B6BC4D55F9</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DCCF8AD-3968-4C16-2429-9E6303F3053C"/>
+<colUsage columnID="F09AF590-A04E-257E-B07B-E4D0B52D7942"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F3006855-CD92-44F8-D0A2-83B86165D129" name="FK_CLAIM_CLMLABLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DCCF8AD-3968-4C16-2429-9E6303F3053C"/>
+<colUsage columnID="F09AF590-A04E-257E-B07B-E4D0B52D7942"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2810CFBC-3F50-7D50-6593-20F117DDC90C" name="FK_REFLABOURSKILL_CLAIMLABOURL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1A47AFA-9981-0DAE-E254-8D0094AB64DD"/>
+<colUsage columnID="F5FF614E-E5C0-D5DD-FF73-98C101CDF9F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E84500FB-5EB5-1945-B3E3-37D8F733F145" name="FK_SCHEDSTASK_CLAIMLABOURLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFBD581C-BFFB-821E-8A63-1D5EA9C5D562"/>
+<colUsage columnID="77360505-556B-9CCA-95F4-6906A40A6870"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4FBD62E5-BC56-79AC-0EDB-F5C029795D49" name="FK_WAREVALLAB_CLMLABLINE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:46 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F94B5A55-1B06-07F9-AD30-8F4EC7835E69"/>
+<colUsage columnID="47A9EE37-0153-EB0F-6B8F-931774E97FDB"/>
+<colUsage columnID="7F62781A-DD42-770F-F109-CC670A8144AE"/>
+<colUsage columnID="E866E4C0-4C93-FB8C-2207-096B29E02342"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

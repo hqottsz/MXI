@@ -1,0 +1,142 @@
+<dataset>
+
+   <!-- Task with no Due Date -->
+   <EVT_EVENT
+         event_db_id = "888" event_id = "8888"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "888" sched_id = "8888"
+         min_plan_yield_pct = "0.8" />
+   <EVT_SCHED_DEAD
+         event_db_id = "888" event_id = "8888"
+         sched_driver_bool = "1"
+         data_type_db_id = "4650" data_type_id = "90000"
+         interval_qt = "7" />
+
+   <!-- Task with no Driving Deadline -->
+   <EVT_EVENT
+         event_db_id = "999" event_id = "9999"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "999" sched_id = "9999"
+         min_plan_yield_pct = "0.8" />
+   <EVT_SCHED_DEAD
+         event_db_id = "999" event_id = "9999"
+         sched_driver_bool = "0"
+         data_type_db_id = "4650" data_type_id = "90000"
+         sched_dead_dt = "17-MAY-2006 19:00"
+         interval_qt = "5" />
+
+   <!-- Task with Negative Deadline Interval -->
+   <EVT_EVENT
+         event_db_id = "555" event_id = "55555"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "555" sched_id = "5555"
+         min_plan_yield_pct = "0.8" />
+   <EVT_SCHED_DEAD
+         event_db_id = "555" event_id = "5555"
+         sched_driver_bool = "1"
+         data_type_db_id = "4650" data_type_id = "90000"
+         sched_dead_dt = "17-MAY-2006 19:00"
+         interval_qt = "-7" />
+
+   <!-- Task with no Min Planning Yield -->
+   <EVT_EVENT
+         event_db_id = "777" event_id = "7777"
+         nh_event_db_id = "" nh_event_id = ""
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "777" sched_id = "7777"
+         task_db_id = "" task_id = ""
+         min_plan_yield_pct = "" />
+   <EVT_SCHED_DEAD
+         event_db_id = "777" event_id = "7777"
+         sched_driver_bool = "1"
+         data_type_db_id = "4650" data_type_id = "90000"
+         sched_dead_dt = "17-MAY-2006 19:00"
+         interval_qt = "20" />
+
+
+
+   <!-- Create a Task Tree of 1 root and 2 leafs, one of which has the CDAY driving deadline -->
+   <EVT_EVENT
+         event_db_id = "4650" event_id = "10000"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "4650" sched_id = "10000"
+         min_plan_yield_pct = "0.8" />
+
+   <EVT_EVENT
+         event_db_id = "4650" event_id = "10001"
+         nh_event_db_id = "4650" nh_event_id = "10000"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "4650" sched_id = "10001"
+         min_plan_yield_pct = "0.8" />
+
+   <EVT_EVENT
+         event_db_id = "4650" event_id = "10002"
+         nh_event_db_id = "4650" nh_event_id = "10000"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "4650" sched_id = "10002"
+         min_plan_yield_pct = "0.8" />
+   <EVT_SCHED_DEAD
+         event_db_id = "4650" event_id = "10002"
+         sched_driver_bool = "1"
+         data_type_db_id = "4650" data_type_id = "90000"
+         sched_dead_dt = "17-MAY-2006 19:00"
+         interval_qt = "10" />
+
+   <!-- Create a Task Tree of 1 root and 2 leafs, one of which has the CMON driving deadline -->
+   <EVT_EVENT
+         event_db_id = "4650" event_id = "20000"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "4650" sched_id = "20000"
+         min_plan_yield_pct = "0.8" />
+
+   <EVT_EVENT
+         event_db_id = "4650" event_id = "20001"
+         nh_event_db_id = "4650" nh_event_id = "20000"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "4650" sched_id = "20001"
+         min_plan_yield_pct = "0.8" />
+
+   <EVT_EVENT
+         event_db_id = "4650" event_id = "20002"
+         nh_event_db_id = "4650" nh_event_id = "20000"
+         hist_bool = "0"/>
+   <SCHED_STASK
+         sched_db_id = "4650" sched_id = "20002"
+         min_plan_yield_pct = "0.8" />
+   <EVT_SCHED_DEAD
+         event_db_id = "4650" event_id = "20002"
+         sched_driver_bool = "1"
+         data_type_db_id = "4650" data_type_id = "90001"
+         sched_dead_dt = "17-MAY-2006 19:00"
+         interval_qt = "10" />
+
+
+
+   <!-- Setup the Baseline Data -->
+   <MIM_DATA_TYPE
+         data_type_db_id = "4650" data_type_id = "90000"
+         eng_unit_db_id = "4650" eng_unit_cd = "90000"
+         domain_type_cd = "CA"
+         data_type_cd = "CDY" />
+   <REF_ENG_UNIT
+         eng_unit_db_id = "4650" eng_unit_cd = "90000"
+         ref_mult_qt = "1" />
+   <MIM_DATA_TYPE
+         data_type_db_id = "4650" data_type_id = "90001"
+         eng_unit_db_id = "4650" eng_unit_cd = "90001"
+         domain_type_cd = "CA"
+         data_type_cd = "CMON" />
+   <REF_ENG_UNIT
+         eng_unit_db_id = "4650" eng_unit_cd = "90001"
+         ref_mult_qt = "30" />
+
+</dataset>

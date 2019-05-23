@@ -1,0 +1,295 @@
+<dataset>
+
+
+   <!-- TEST CASE: Inventory No Part Request -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="3"
+      inv_no_sdesc="Inventory no part request"
+      barcode_sdesc="I000001"
+      part_no_db_id="4650"
+      part_no_id="100"/>
+
+
+   <!-- TEST CASE: Issue part request and completed task -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1"
+      inv_no_sdesc="Inventory Issued part request and completed task"
+      barcode_sdesc="I000002"
+      part_no_db_id="4650"
+      part_no_id="102"/>
+
+   <req_part
+      req_part_db_id="4650"
+      req_part_id = "1"
+      inv_no_db_id="4650"
+      inv_no_id="1"
+      req_type_db_id="0"
+      req_type_cd="TASK"
+      sched_db_id = "4650"
+      sched_id = "20"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"/>
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1"
+      event_status_db_id = "0"
+      event_status_cd = "PRISSUED"/>
+   <!-- The task -->
+   <evt_event
+      event_db_id="4650"
+      event_id = "20"
+      hist_bool = "1"
+      event_status_db_id="0"
+      event_status_cd="COMPLETE"
+   />
+   <sched_stask
+      sched_db_id="4650"
+      sched_id = "20"
+   />
+
+   <sched_inst_part
+      sched_db_id = "4650"
+      sched_id="20"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+   />
+   <!-- TEST CASE: Issue part request not completed task -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="2"
+      inv_no_sdesc="Inventory Issued part request but the task and labour row not completed"
+      barcode_sdesc="I000003"
+      part_no_db_id="4650"
+      part_no_id="103"/>
+   <req_part
+      req_part_db_id="4650"
+      req_part_id = "2"
+      inv_no_db_id="4650"
+      inv_no_id="2"
+      req_type_db_id="0"
+      req_type_cd="TASK"
+      sched_db_id = "4650"
+      sched_id = "21"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="2"
+      event_status_db_id = "0"
+      event_status_cd = "PRISSUED"/>
+   <!-- The task -->
+   <evt_event
+      event_db_id="4650"
+      event_id = "21"
+      hist_bool = "0"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+   />
+   <sched_stask
+      sched_db_id="4650"
+      sched_id = "21"
+   />
+
+   <sched_inst_part
+      sched_db_id = "4650"
+      sched_id="21"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+   />
+
+   <!-- TEST CASE: part request but it is not issued -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="4"
+      inv_no_sdesc="Inventory no issued part request"
+      barcode_sdesc="I000004"
+      part_no_db_id="4650"
+      part_no_id="104"/>
+   <req_part
+      req_part_db_id="4650"
+      req_part_id = "3"
+      inv_no_db_id="4650"
+      inv_no_id="4"
+      req_type_db_id="0"
+      req_type_cd="TASK"
+      sched_db_id = "4650"
+      sched_id = "22"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="3"
+      event_status_db_id = "0"
+      event_status_cd = "PRAVAIL"/>
+   <!-- The task -->
+   <evt_event
+      event_db_id="4650"
+      event_id = "22"
+      hist_bool = "0"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+   />
+   <sched_stask
+      sched_db_id="4650"
+      sched_id = "22"
+   />
+
+   <!-- TEST CASE: issued part request and the inventory is installed by a completed labour row -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="5"
+      inv_no_sdesc="Inventory Issued part request not completed task, but compelted instalation labour row"
+      barcode_sdesc="I000005"
+      part_no_db_id="4650"
+      part_no_id="105"/>
+   <req_part
+      req_part_db_id="4650"
+      req_part_id = "4"
+      inv_no_db_id="4650"
+      inv_no_id="5"
+      req_type_db_id="0"
+      req_type_cd="TASK"
+      sched_db_id = "4650"
+      sched_id = "23"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"/>
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4"
+      event_status_db_id = "0"
+      event_status_cd = "PRISSUED"/>
+
+   <!-- The task -->
+   <evt_event
+      event_db_id="4650"
+      event_id = "23"
+      hist_bool = "0"
+   />
+   <sched_stask
+      sched_db_id="4650"
+      sched_id = "23"
+   />
+   <sched_inst_part
+      sched_db_id = "4650"
+      sched_id="23"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+   />
+   <sched_labour
+      labour_db_id="4650"
+      labour_id="1"
+      sched_db_id = "4650"
+      sched_id="23"/>
+   <sched_labour_inst_part
+      labour_db_id="4650"
+      labour_id="1"
+      sched_db_id = "4650"
+      sched_id="23"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+   />
+
+   <!-- TEST CASE: Issue part request for a batch inventory not completed task -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="6"
+      inv_no_sdesc="Inventory no part requests"
+      barcode_sdesc="I000006"
+      part_no_db_id="4650"
+      part_no_id="106"/>
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="7"
+      inv_no_sdesc="Second Inventory with Issued part request and the task and labour row not completed"
+      barcode_sdesc="I000006"
+      part_no_db_id="4650"
+      part_no_id="106"/>
+
+   <req_part
+      req_part_db_id="4650"
+      req_part_id = "5"
+      inv_no_db_id="4650"
+      inv_no_id="7"
+      req_type_db_id="0"
+      req_type_cd="TASK"
+      sched_db_id = "4650"
+      sched_id = "24"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"/>
+
+   <evt_event
+      event_db_id="4650"
+      event_id="5"
+      event_status_db_id = "0"
+      event_status_cd = "PRISSUED"/>
+   <!-- The task -->
+   <evt_event
+      event_db_id="4650"
+      event_id = "24"
+      hist_bool = "0"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+   />
+   <sched_stask
+      sched_db_id="4650"
+      sched_id = "24"
+   />
+
+   <sched_inst_part
+      sched_db_id = "4650"
+      sched_id="24"
+      sched_part_id ="1"
+      sched_inst_part_id="1"
+   />
+
+   <!-- TEST CASE: Issue adhoc part request for a batch inventory-->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="8"
+      inv_no_sdesc="Inventory no part requests"
+      barcode_sdesc="I000008"
+      part_no_db_id="4650"
+      part_no_id="107"/>
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="9"
+      inv_no_sdesc="Second Inventory with Issued adhoc part request"
+      barcode_sdesc="I000008"
+      part_no_db_id="4650"
+      part_no_id="107"/>
+
+   <req_part
+      req_part_db_id="4650"
+      req_part_id = "6"
+      inv_no_db_id="4650"
+      inv_no_id="9"
+      req_type_db_id="0"
+      req_type_cd="ADHOC"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+   />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="6"
+      event_status_db_id = "0"
+      event_status_cd = "PRISSUED"/>
+
+
+</dataset>

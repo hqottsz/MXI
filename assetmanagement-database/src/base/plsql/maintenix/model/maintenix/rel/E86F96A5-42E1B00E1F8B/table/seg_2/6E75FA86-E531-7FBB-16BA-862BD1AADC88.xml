@@ -1,0 +1,231 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_2" id="6E75FA86-E531-7FBB-16BA-862BD1AADC88" name="EVT_LIC_DEFN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This table stores license definition history.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>381C0AAC-4FAC-81DF-717B-3F74AE05C254</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LIC_DB_ID" id="6C552169-ED14-E13D-8CC4-BD18961AA745">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is a primary key for the license definition historic event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>34130F9F-6655-7127-2179-19030B994FC4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LIC_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BCCF01B9-1708-84DB-F96B-5D14BD28FD03" referredColumn="34F44241-F707-8484-43FD-F8796FCC7612"/>
+</associations>
+</Column>
+<Column name="LIC_ID" id="71BB252F-72AA-84D3-91CA-BCBCA3616C77">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is a primary key for the license definition historic event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C2BC155F-72B7-3C68-5CF9-86B530FA76AD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LIC_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BCCF01B9-1708-84DB-F96B-5D14BD28FD03" referredColumn="B8D24AC5-5C72-7107-F408-7CC144804BEF"/>
+</associations>
+</Column>
+<Column name="EVENT_DB_ID" id="E5841BF5-F0A4-F401-3949-50C47281349D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is a primary key for the license definition historic event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>36D49660-616F-D22E-C4E5-C08C489A620D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EVENT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C917CD97-82C7-5D42-DA87-38DABDECC1AC" referredColumn="BB51EFD6-96FB-FF96-132E-5A74E3F6C505"/>
+</associations>
+</Column>
+<Column name="EVENT_ID" id="84A16C74-29FC-E6F1-BAEA-CDAECB67FAD5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is a primary key for the license definition historic event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CA6672D0-E325-C44B-097B-CD095CBEF198</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EVENT_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C917CD97-82C7-5D42-DA87-38DABDECC1AC" referredColumn="6C14E8B2-CC00-491B-7320-18CE425097B6"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="BDFE053D-5EEC-E2AA-5A4F-CD9507A95190">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AD29FDC9-72CA-D3E2-7E80-44A94B7FBE82</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="2724CC0A-F56D-9642-0AB5-E94BA8EADB97">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AFDA178A-815E-5EED-C447-54717649C3FA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="9EC68E4B-A037-901E-2B91-BE81994DD203">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9C2C5535-9FB9-E457-28C4-4A2E2B802636</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="F5966C51-4542-B712-A294-56158F40B01A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6DC8DE93-8BBB-44EE-E356-3D672B024D0A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="1FE4E1C3-0734-BFF5-BCCB-B5678EEEA34E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AAD32C72-5FCD-7CC1-10F5-C3ED12DFDF56</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D623A687-2FF9-1217-34BE-992A8486DF31" name="PK_EVT_LIC_DEFN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>20312A9E-2FDE-004E-8A54-0B95397C751A</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C552169-ED14-E13D-8CC4-BD18961AA745"/>
+<colUsage columnID="71BB252F-72AA-84D3-91CA-BCBCA3616C77"/>
+<colUsage columnID="E5841BF5-F0A4-F401-3949-50C47281349D"/>
+<colUsage columnID="84A16C74-29FC-E6F1-BAEA-CDAECB67FAD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5203DFAB-31F1-7DAA-883D-925547B8EC30" name="IX_EVTEVENT_EVTLICDEFN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CE54F45A-E7DA-87B1-9AA6-3B6B842A1C0D</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5841BF5-F0A4-F401-3949-50C47281349D"/>
+<colUsage columnID="84A16C74-29FC-E6F1-BAEA-CDAECB67FAD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6946C590-BEC8-8275-2F84-8503C9F0D0D7" name="IX_LICDEFN_EVTLICDEFN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>15BCC400-A0B4-009C-D9D1-E86F5FB769DD</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C552169-ED14-E13D-8CC4-BD18961AA745"/>
+<colUsage columnID="71BB252F-72AA-84D3-91CA-BCBCA3616C77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D393E2F-CFB4-9461-E4AE-7A280C268EF2" name="FK_EVTEVENT_EVTLICDEFN">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5841BF5-F0A4-F401-3949-50C47281349D"/>
+<colUsage columnID="84A16C74-29FC-E6F1-BAEA-CDAECB67FAD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75F16EF8-AB50-561D-D97D-4C7856AE46BE" name="FK_LICDEFN_EVTLICDEFN">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C552169-ED14-E13D-8CC4-BD18961AA745"/>
+<colUsage columnID="71BB252F-72AA-84D3-91CA-BCBCA3616C77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

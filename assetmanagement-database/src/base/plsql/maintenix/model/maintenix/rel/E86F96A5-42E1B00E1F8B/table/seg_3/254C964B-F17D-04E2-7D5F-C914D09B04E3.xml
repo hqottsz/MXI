@@ -1,0 +1,255 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_3" id="254C964B-F17D-04E2-7D5F-C914D09B04E3" name="LPA_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Lists the various types of time off that can be recorded for a user.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>64FACF3D-96E6-E65D-0EB6-68F280017940</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LPA_DB_ID" id="E345C83D-12F5-E7AF-7626-A85056D52D27">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>726504C6-5B78-C8CF-F02F-4ACF9533EE35</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LPA_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6ED37369-BDA2-DF69-BD27-F76E2C6691EE" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="LPA_STATUS_DB_ID" id="C0C91190-AFC3-7BA2-804B-69C0A6625B74">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AB1E3D79-D2AC-E3E9-A7E6-E04784A796E1</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LPA_STATUS_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8D121AD6-E4E8-2E71-EA25-1A686F039F29" referredColumn="3C4396F5-4AF5-BAE3-9C11-81E89A87FB07"/>
+</associations>
+</Column>
+<Column name="LPA_STATUS_CD" id="C9C404A6-57B0-D8E8-4710-DF36BB327FF6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>38D4E134-C3EF-3389-2941-B2854B905824</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8D121AD6-E4E8-2E71-EA25-1A686F039F29" referredColumn="26FC6938-5F41-335C-5E73-1F835B14C74A"/>
+</associations>
+</Column>
+<Column name="LOG_START_DT" id="53A27C70-1A5E-C78B-061F-457B7F264693">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column represents start of the line planning automation</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EEAAABDF-2141-7EF9-F430-8E95EB04AA37</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOG_END_DT" id="5A59342B-E4A9-57C8-E979-A2AA626ABE9D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column represents end of the line planning automation</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>099CD943-F1A2-78B6-E24F-FCEE0088E931</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEF_SCHED_RANGE_QT" id="9885A267-E739-09FD-946A-B4B1C1B1E430">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column represents global scheduling range captured during line planning automation. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF7FF9BF-BCDA-351F-D6F4-E00D9A33DABA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEF_PLAN_YIELD_PCT" id="4C097BAE-9E22-7415-C829-529935608EFA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column represents global planning yield captured during line planning automation. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>ED452D7D-5A0B-52EB-9137-D0A4DD2C641D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DEF_PLAN_YIELD_PCT BETWEEN 0 AND 1"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_SCHED_RANGE_QT" id="90BBB657-FCFB-1E2D-308C-8D118F6DCF25">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column represents scheduling range entered by user captured during line planning automation. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F1EF4A6C-0C81-0894-227A-F6F286D20200</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HR_DB_ID" id="E23421F7-6BF5-32D9-B274-699D4836F503">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column represents line planner that executed the line planning automation.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>18DF141B-89FB-EC5E-3EBE-AC993F501ACE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65B659B2-335B-BF65-0970-E0F8AF1C4171" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="HR_ID" id="34F7E767-0413-4989-6BC5-37A104357CAD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column represents line planner that executed the line planning automation.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0167FE79-886F-B522-7082-E600A7C0BCDB</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65B659B2-335B-BF65-0970-E0F8AF1C4171" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="LOCKED_BOOL" id="195D44BC-E85C-CB5A-7199-781E70CC6527">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This column indicates whether line planning automation is locked. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>980F3D5A-848B-5D93-40C5-329C67ED8643</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LOCKED_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B44104A2-E4CA-FBFF-9138-D6434AD5DC7C" name="PK_LPA_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7E1CF324-815E-1D9D-E066-F4FF5F2C2AFD</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E345C83D-12F5-E7AF-7626-A85056D52D27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55FFAC0A-CD9D-8B56-5CC8-75AE93934FF7" name="IX_ORGHR_LPALOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>96790FE5-AFBC-11EA-4176-D59447473E67</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E23421F7-6BF5-32D9-B274-699D4836F503"/>
+<colUsage columnID="34F7E767-0413-4989-6BC5-37A104357CAD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0B4671AB-1B12-C94B-90E9-BDACBCBC97D6" name="FK_MIMDB_LPALOG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:32 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E345C83D-12F5-E7AF-7626-A85056D52D27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="24C8BCF5-B366-1D43-43D4-8BD4C13D74F0" name="FK_ORGHR_LPALOG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E23421F7-6BF5-32D9-B274-699D4836F503"/>
+<colUsage columnID="34F7E767-0413-4989-6BC5-37A104357CAD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="83D89DC8-4A83-D39D-52AF-C10265DD3788" name="FK_REFLPASTATUS_LPALOG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0C91190-AFC3-7BA2-804B-69C0A6625B74"/>
+<colUsage columnID="C9C404A6-57B0-D8E8-4710-DF36BB327FF6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,206 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="18994617-01F7-764E-88C5-3D7EB5C6CF70" name="UTL_TODO_BUTTON">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>List of available buttons that you can use on your To Do Lists. It will include every single button that does not require any context. You cannot extend this list.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9D0EE1FC-D763-C360-39D6-B8F4741BA725</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TODO_BUTTON_ID" id="7A17D875-6893-C137-8910-D91BF8F911F3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record and forms part of the record&apos;s primary key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F9AB8EF9-39A2-C4D2-8C13-0CE446EA17F0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="TODO_BUTTON_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUTTON_NAME" id="8A2D17FE-6035-1258-7847-48F206262A2E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The name of the button.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C5C9751-59B5-6DCD-B850-C3DEC7C45AC4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ICON" id="F86BC971-0D76-9F46-4D92-3C40C02E284A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The name of the icon.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E1BC4C78-AB31-4727-D348-D8E97208F2CF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTION" id="603659F6-3EB9-E6C5-73E3-C98626CA37A5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The action the button performs</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>95718F8D-E29E-F06A-7C6F-CC505D808E7B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOOLTIP" id="BCC09F6F-5E99-1DF3-92F0-3BCCBF1CEE65">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The tooltip that pops up when a mouse &apos;hovers&apos; over a button.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DA35455C-530C-5F38-A478-F934A82D95C8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARM_NAME" id="96539EF9-F53F-93D1-4C34-FEF950954B42">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK UTL_ACTION_CONFIG_PARM.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DADE9150-B8F0-ABFA-1ED9-E8182BD87734</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CD2BBD8-220D-106A-3371-94DC4E26CCFB" referredColumn="F4BCECE8-3103-12F1-E1FB-4703FB96EF99"/>
+</associations>
+</Column>
+<Column name="TODO_BUTTON_LDESC" id="4C3B46FD-D63D-234D-711B-5939B52F1AD9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The long description of the buttons action.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6892C10C-9455-319D-5594-5BB0560B88C4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUERY_PATH" id="4705A73C-DBDB-2F90-1D7C-4DF77941DD08">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Query that can indicate a number of items that apply to the button/action.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2DB32A33-32BC-5E09-8D35-FF0C9871050C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POCKET_BUTTON_BOOL" id="EBB8D9B0-3BC2-4C18-78C1-BCC51672D2C5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>An indicator if the button is to be shown on Pocket (=1) or Regular (=0) To Do List </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>762427F6-E45A-DE2F-74FB-9799EFA7A37F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="POCKET_BUTTON_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="E3EC3E7D-D14D-AC40-A342-BBCD1D90FA03">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F05F3F4C-8951-7EF8-EE91-1193B0A715F6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A7EE3E1C-7778-0F10-A170-4B1E8D334C26" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="83A87CE0-6B81-5259-B1E6-C4F88D0285C8" name="pk_UTL_TODO_BUTTON">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>702561A6-8CFA-D834-C286-CE2B23F661A3</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A17D875-6893-C137-8910-D91BF8F911F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA5E68C9-57F9-630C-6CCF-BBFC6B484590" name="FK_UTLACTCNFGPRM_UTLTODOBUTT">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:44 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="96539EF9-F53F-93D1-4C34-FEF950954B42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F97FEF74-9FFF-C5FE-03CE-2103DE394058" name="FK_UTLID_UTLTDBUTTON">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E3EC3E7D-D14D-AC40-A342-BBCD1D90FA03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

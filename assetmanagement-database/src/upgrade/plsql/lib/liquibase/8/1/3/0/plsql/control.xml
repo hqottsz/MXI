@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<include file="ppc_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="ppc_pkg_body.sql" relativeToChangelogFile="true"/>
+	<include file="lpa_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="lpa_pkg_body.sql" relativeToChangelogFile="true"/>
+	<include file="event_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="event_pkg_body.sql" relativeToChangelogFile="true"/>
+	<include file="BaselineSyncPkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="BaselineSyncPkg_body.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

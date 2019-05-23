@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+	<include file="oper-236.sql" relativeToChangelogFile="true"/>
+	<include file="dev-2470.sql" relativeToChangelogFile="true"/>
+	<include file="oper-499.sql" relativeToChangelogFile="true"/>
+
+	<!--  schema -->
+	<include file="schema/drop_rbl.sql" relativeToChangelogFile="true"/>
+	<include file="schema/create_rbl.sql" relativeToChangelogFile="true"/>
+
+	<!--  materialized view -->
+	<include file="mview/control.xml" relativeToChangelogFile="true"/>
+
+	<!--  plsql -->
+	<include file="plsql/opr_fleet_summary_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_fleet_summary_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_rbl_comp_rmvl_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_comp_rmvl_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_rbl_eng_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_eng_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_rbl_pirepmarep_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_pirepmarep_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_rbl_utility_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_utility_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_report_period_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_report_period_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_rbl_job_call.sql" relativeToChangelogFile="true"/>
+
+	<!--  view -->
+	<include file="view/aopr_calendar_month_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_fleet_movement_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_rbl_acft_eng_type_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_rbl_fault_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_rbl_fleet_fault_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_hist_comp_rmvl_basic_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_hist_logfaults_basic_v1.sql" relativeToChangelogFile="true"/>
+
+	<!--  data -->
+	<include file="data/opr_fleet_movement.sql" relativeToChangelogFile="true"/>
+	<include file="data/opr_rbl_delay_category.sql" relativeToChangelogFile="true"/>
+	<include file="data/opr_report.sql" relativeToChangelogFile="true"/>
+	<include file="data/opr_report_job.sql" relativeToChangelogFile="true"/>
+	<include file="data/opr_report_mview.sql" relativeToChangelogFile="true"/>
+	<include file="data/utl_config_parm.sql" relativeToChangelogFile="true"/>
+	<include file="data/utl_job.sql" relativeToChangelogFile="true"/>
+	<include file="data/xx_opr_calendar_month.sql" relativeToChangelogFile="true"/>
+	<include file="data/opr_rbl_eng_shopvisit_loc.sql" relativeToChangelogFile="true"/>
+	<include file="data/opr_rbl_eng_indicator_measure.sql" relativeToChangelogFile="true"/>
+
+
+</databaseChangeLog>

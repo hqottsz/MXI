@@ -1,0 +1,1357 @@
+<dataset>
+
+   <!-- aircraft 1, fleet A -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1001"
+      assmbl_db_id="4650"
+      assmbl_cd="A"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <!-- aircraft 101, fleet A -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1101"
+      assmbl_db_id="4650"
+      assmbl_cd="A"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="A"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2001"
+      />
+
+   <!-- service check definition 1 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3001"
+      task_defn_db_id="4650"
+      task_defn_id="2001"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD1"
+      task_name="SRVC_CHK_NAME1"
+      />
+
+   <!-- service check definition 101, new revision -->
+   <task_task
+      task_db_id="4650"
+      task_id="3101"
+      task_defn_db_id="4650"
+      task_defn_id="2001"
+      revision_ord="2"
+      task_def_status_db_id="0"
+      task_def_status_cd="REVISION"
+      task_cd="SRVC_CHK_CD1"
+      task_name="SRVC_CHK_NAME1"
+      />
+
+   <!-- actual service check 1,
+      based on service check definition 1,
+      assigned to work package 1,
+      is for aircraft 1 -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4001"
+      task_db_id="4650"
+      task_id="3001"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1001"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:01"
+      barcode_sdesc="BARCODE1"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4001"
+      nh_event_db_id="4650"
+      nh_event_id="5001"
+      h_event_db_id="4650"
+      h_event_id="5001"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME1"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4001"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:01"
+      />
+
+   <!-- actual service check 101,
+      based on service check definition 1,
+      assigned to work package 101,
+      is for aircraft 101 -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4101"
+      task_db_id="4650"
+      task_id="3001"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1101"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:01"
+      barcode_sdesc="BARCODE101"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4101"
+      nh_event_db_id="4650"
+      nh_event_id="5101"
+      h_event_db_id="4650"
+      h_event_id="5101"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME101"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4101"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:01"
+      />
+
+   <!-- work package 1,
+      scheduled to location 1 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5001"
+      hist_bool="0"
+      event_sdesc="WP_NAME1"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5001"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1001"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5001"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6001"
+      />
+
+   <!-- work package 101,
+      scheduled to location 1 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5101"
+      hist_bool="0"
+      event_sdesc="WP_NAME101"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5101"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1101"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5101"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6001"
+      />
+
+   <!-- location 1 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6001"
+      supply_loc_db_id="4650"
+      supply_loc_id="7001"
+      loc_cd="LOCATION_CD1"
+      loc_name="LOCATION_NAME1"
+      />
+
+   <!-- supply location 1 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7001"
+      loc_cd="AIRPORT_CD1"
+      loc_name="AIRPORT_NAME1"
+      />
+
+   <!-- aircraft 2, fleet B -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1002"
+      assmbl_db_id="4650"
+      assmbl_cd="B"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="B"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2002"
+      />
+
+   <!-- service check definition 2 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3002"
+      task_defn_db_id="4650"
+      task_defn_id="2002"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD2"
+      task_name="SRVC_CHK_NAME2"
+      />
+
+   <!-- actual service check 2,
+      based on service check definition 2,
+      assigned to work package 2,
+      is for aircraft 2 -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4002"
+      task_db_id="4650"
+      task_id="3002"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1002"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:02"
+      barcode_sdesc="BARCODE2"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4002"
+      nh_event_db_id="4650"
+      nh_event_id="5002"
+      h_event_db_id="4650"
+      h_event_id="5002"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME2"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4002"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:02"
+      />
+
+   <!-- work package 2,
+      scheduled to location 2 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5002"
+      hist_bool="0"
+      event_sdesc="WP_NAME2"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5002"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1002"
+      prevent_lpa_bool="1"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5002"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6002"
+      />
+
+   <!-- location 2 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6002"
+      supply_loc_db_id="4650"
+      supply_loc_id="7002"
+      loc_cd="LOCATION_CD2"
+      loc_name="LOCATION_NAME2"
+      />
+
+   <!-- supply location 2 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7002"
+      loc_cd="AIRPORT_CD2"
+      loc_name="AIRPORT_NAME2"
+      />
+
+   <!-- aircraft 3, fleet C1 -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1003"
+      assmbl_db_id="4650"
+      assmbl_cd="C1"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="C2"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2003"
+      />
+
+   <!-- service check definition 3 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3003"
+      task_defn_db_id="4650"
+      task_defn_id="2003"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD3"
+      task_name="SRVC_CHK_NAME3"
+      />
+
+   <!-- actual service check 3,
+      based on service check definition 3,
+      assigned to work package 3,
+      is for aircraft 3 -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4003"
+      task_db_id="4650"
+      task_id="3003"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1003"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:03"
+      barcode_sdesc="BARCODE3"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4003"
+      nh_event_db_id="4650"
+      nh_event_id="5003"
+      h_event_db_id="4650"
+      h_event_id="5003"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME3"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4003"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:03"
+      />
+
+   <!-- work package 3,
+      scheduled to location 3 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5003"
+      hist_bool="0"
+      event_sdesc="WP_NAME3"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5003"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1003"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5003"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6003"
+      />
+
+   <!-- location 3 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6003"
+      supply_loc_db_id="4650"
+      supply_loc_id="7003"
+      loc_cd="LOCATION_CD3"
+      loc_name="LOCATION_NAME3"
+      />
+
+   <!-- supply location 3 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7003"
+      loc_cd="AIRPORT_CD3"
+      loc_name="AIRPORT_NAME3"
+      />
+
+   <!-- aircraft 4, fleet D -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1004"
+      assmbl_db_id="4650"
+      assmbl_cd="D"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <!-- aircraft 104, fleet D -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1104"
+      assmbl_db_id="4650"
+      assmbl_cd="D"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="D"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2004"
+      />
+
+   <!-- service check definition 4 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3004"
+      task_defn_db_id="4650"
+      task_defn_id="2004"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD4"
+      task_name="SRVC_CHK_NAME4"
+      />
+
+   <!-- service check definition 104, new revision -->
+   <task_task
+      task_db_id="4650"
+      task_id="3104"
+      task_defn_db_id="4650"
+      task_defn_id="2004"
+      revision_ord="2"
+      task_def_status_db_id="0"
+      task_def_status_cd="REVISION"
+      task_cd="SRVC_CHK_CD104"
+      task_name="SRVC_CHK_NAME104"
+      />
+
+   <!-- actual service check 4,
+      based on service check definition 4,
+      assigned to work package 4,
+      is for aircraft 4 -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4004"
+      task_db_id="4650"
+      task_id="3004"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1004"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:04"
+      barcode_sdesc="BARCODE4"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4004"
+      nh_event_db_id="4650"
+      nh_event_id="5004"
+      h_event_db_id="4650"
+      h_event_id="5004"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME4"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4004"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:04"
+      />
+
+   <!-- actual service check 104,
+      based on service check definition 4,
+      assigned to work package 104,
+      is for aircraft 104 -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4104"
+      task_db_id="4650"
+      task_id="3004"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1104"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:04"
+      barcode_sdesc="BARCODE104"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4104"
+      nh_event_db_id="4650"
+      nh_event_id="5104"
+      h_event_db_id="4650"
+      h_event_id="5104"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME104"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4104"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:04"
+      />
+
+   <!-- work package 1,
+      not scheduled -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5004"
+      hist_bool="0"
+      event_sdesc="WP_NAME4"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5004"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1004"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <!-- work package 104,
+      not scheduled -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5104"
+      hist_bool="0"
+      event_sdesc="WP_NAME104"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5104"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1104"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <!-- location 4 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6004"
+      supply_loc_db_id="4650"
+      supply_loc_id="7004"
+      loc_cd="LOCATION_CD4"
+      loc_name="LOCATION_NAME4"
+      />
+
+   <!-- supply location 4 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7004"
+      loc_cd="AIRPORT_CD4"
+      loc_name="AIRPORT_NAME4"
+      />
+
+   <!-- aircraft 5, fleet E -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1005"
+      assmbl_db_id="4650"
+      assmbl_cd="E"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="E"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2005"
+      />
+
+   <!-- service check definition 5 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3005"
+      task_defn_db_id="4650"
+      task_defn_id="2005"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD5"
+      task_name="SRVC_CHK_NAME5"
+      />
+
+   <!-- actual service check 5,
+      based on service check definition 5,
+      assigned to work package 5,
+      is for aircraft 5,
+      is from LRP -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4005"
+      task_db_id="4650"
+      task_id="3005"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1005"
+      lrp_bool="1"
+      plan_by_dt="15-MAY-2012 01:05"
+      barcode_sdesc="BARCODE5"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4005"
+      nh_event_db_id="4650"
+      nh_event_id="5005"
+      h_event_db_id="4650"
+      h_event_id="5005"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME5"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4005"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:05"
+      />
+
+   <!-- work package 5,
+      scheduled to location 5 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5005"
+      hist_bool="0"
+      event_sdesc="WP_NAME5"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5005"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1005"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5005"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6005"
+      />
+
+   <!-- location 5 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6005"
+      supply_loc_db_id="4650"
+      supply_loc_id="7005"
+      loc_cd="LOCATION_CD5"
+      loc_name="LOCATION_NAME5"
+      />
+
+   <!-- supply location 5 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7005"
+      loc_cd="AIRPORT_CD5"
+      loc_name="AIRPORT_NAME5"
+      />
+
+   <!-- aircraft 6, fleet F -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1006"
+      assmbl_db_id="4650"
+      assmbl_cd="F"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="F"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2006"
+      />
+
+   <!-- service check definition 6 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3006"
+      task_defn_db_id="4650"
+      task_defn_id="2006"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD6"
+      task_name="SRVC_CHK_NAME6"
+      />
+
+   <!-- actual service check 6,
+      based on service check definition 6,
+      assigned to work package 6,
+      is for aircraft 6,
+      is IN WORK -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4006"
+      task_db_id="4650"
+      task_id="3006"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1006"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:06"
+      barcode_sdesc="BARCODE6"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4006"
+      nh_event_db_id="4650"
+      nh_event_id="5006"
+      h_event_db_id="4650"
+      h_event_id="5006"
+      event_status_db_id="0"
+      event_status_cd="IN WORK"
+      hist_bool="0"
+      event_sdesc="TASK_NAME6"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4006"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:06"
+      />
+
+   <!-- work package 6,
+      scheduled to location 6 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5006"
+      hist_bool="0"
+      event_sdesc="WP_NAME6"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5006"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1006"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5006"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6006"
+      />
+
+   <!-- location 6 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6006"
+      supply_loc_db_id="4650"
+      supply_loc_id="7006"
+      loc_cd="LOCATION_CD6"
+      loc_name="LOCATION_NAME6"
+      />
+
+   <!-- supply location 6 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7006"
+      loc_cd="AIRPORT_CD6"
+      loc_name="AIRPORT_NAME6"
+      />
+
+   <!-- aircraft 7, fleet G -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1007"
+      assmbl_db_id="4650"
+      assmbl_cd="G"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="G"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2007"
+      />
+
+   <!-- service check definition 7 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3007"
+      task_defn_db_id="4650"
+      task_defn_id="2007"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD7"
+      task_name="SRVC_CHK_NAME7"
+      />
+
+   <!-- actual service check 7,
+      based on service check definition 7,
+      assigned to work package 7,
+      is for aircraft 7,
+      is ACTV -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4007"
+      task_db_id="4650"
+      task_id="3007"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1007"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:07"
+      barcode_sdesc="BARCODE7"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4007"
+      nh_event_db_id="4650"
+      nh_event_id="5007"
+      h_event_db_id="4650"
+      h_event_id="5007"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME7"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4007"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:07"
+      />
+
+   <!-- work package 7,
+      scheduled to location 7 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5007"
+      hist_bool="0"
+      event_sdesc="WP_NAME7"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5007"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1007"
+      prevent_lpa_bool="0"
+      heavy_bool="1"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5007"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6007"
+      />
+
+   <!-- location 7 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6007"
+      supply_loc_db_id="4650"
+      supply_loc_id="7007"
+      loc_cd="LOCATION_CD7"
+      loc_name="LOCATION_NAME7"
+      />
+
+   <!-- supply location 7 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7007"
+      loc_cd="AIRPORT_CD7"
+      loc_name="AIRPORT_NAME7"
+      />
+
+   <!-- aircraft 8, fleet H -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1008"
+      assmbl_db_id="4650"
+      assmbl_cd="H"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="H"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2008"
+      />
+
+   <!-- service check definition 8 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3008"
+      task_defn_db_id="4650"
+      task_defn_id="2008"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD8"
+      task_name="SRVC_CHK_NAME8"
+      />
+
+   <!-- actual service check 8,
+      based on service check definition 8,
+      assigned to work package 8,
+      is for aircraft 8,
+      is ACTV -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4008"
+      task_db_id="4650"
+      task_id="3008"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1008"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:08"
+      barcode_sdesc="BARCODE8"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4008"
+      nh_event_db_id="4650"
+      nh_event_id="5008"
+      h_event_db_id="4650"
+      h_event_id="5008"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME8"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4008"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:08"
+      />
+
+   <!-- work package 8,
+      scheduled to location 8 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5008"
+      hist_bool="0"
+      event_status_db_id="0"
+      event_status_cd="COMMIT"
+      event_sdesc="WP_NAME8"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5008"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1008"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5008"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6008"
+      />
+
+   <!-- location 8 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6008"
+      supply_loc_db_id="4650"
+      supply_loc_id="7008"
+      loc_cd="LOCATION_CD8"
+      loc_name="LOCATION_NAME8"
+      />
+
+   <!-- supply location 8 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7008"
+      loc_cd="AIRPORT_CD8"
+      loc_name="AIRPORT_NAME8"
+      />
+
+   <!-- aircraft 9, fleet I -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1009"
+      assmbl_db_id="4650"
+      assmbl_cd="I"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="I"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2009"
+      />
+
+   <!-- service check definition 9 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3009"
+      task_defn_db_id="4650"
+      task_defn_id="2009"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD9"
+      task_name="SRVC_CHK_NAME9"
+      />
+
+   <!-- actual service check 9,
+      based on service check definition 9,
+      assigned to work package 9,
+      is for aircraft 9,
+      is ACTV -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4009"
+      task_db_id="4650"
+      task_id="3009"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1009"
+      lrp_bool="0"
+      plan_by_dt="14-MAY-2012 01:09"
+      barcode_sdesc="BARCODE9"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4009"
+      nh_event_db_id="4650"
+      nh_event_id="5009"
+      h_event_db_id="4650"
+      h_event_id="5009"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME9"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4009"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="14-MAY-2012 02:09"
+      />
+
+   <!-- work package 9,
+      scheduled to location 9 -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5009"
+      hist_bool="0"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      event_sdesc="WP_NAME9"
+      sched_start_dt="14-MAY-2012 00:00"
+      sched_end_dt="14-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5009"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1009"
+      prevent_lpa_bool="0"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5009"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6009"
+      />
+
+   <!-- location 9 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6009"
+      supply_loc_db_id="4650"
+      supply_loc_id="7009"
+      loc_cd="LOCATION_CD9"
+      loc_name="LOCATION_NAME9"
+      />
+
+   <!-- supply location 9 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7009"
+      loc_cd="AIRPORT_CD9"
+      loc_name="AIRPORT_NAME9"
+      />
+
+   <!-- aircraft 10, fleet E -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="1010"
+      assmbl_db_id="4650"
+      assmbl_cd="J"
+      inv_class_db_id="0"
+      inv_class_cd="ACFT"
+      />
+
+   <lpa_fleet
+      fleet_db_id="4650"
+      fleet_cd="J"
+      turn_block_defn_db_id="4650"
+      turn_block_defn_id="2010"
+      />
+
+   <!-- service check definition 10 -->
+   <task_task
+      task_db_id="4650"
+      task_id="3010"
+      task_defn_db_id="4650"
+      task_defn_id="2010"
+      revision_ord="1"
+      task_def_status_db_id="0"
+      task_def_status_cd="ACTV"
+      task_cd="SRVC_CHK_CD10"
+      task_name="SRVC_CHK_NAME10"
+      />
+
+   <!-- actual service check 10,
+      based on service check definition 10,
+      assigned to work package 10,
+      is for aircraft 10,
+      is not LRP -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="4010"
+      task_db_id="4650"
+      task_id="3010"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1010"
+      lrp_bool="0"
+      plan_by_dt="15-MAY-2012 01:10"
+      barcode_sdesc="BARCODE10"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="4010"
+      nh_event_db_id="4650"
+      nh_event_id="5010"
+      h_event_db_id="4650"
+      h_event_id="5010"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      hist_bool="0"
+      event_sdesc="TASK_NAME10"
+      />
+
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="4010"
+      data_type_db_id="0"
+      data_type_id="1"
+      sched_driver_bool="1"
+      sched_dead_dt="15-MAY-2012 02:10"
+      />
+
+   <!-- work package 10,
+      scheduled to location 10,
+      is LRP -->
+   <evt_event
+      event_db_id="4650"
+      event_id="5010"
+      hist_bool="0"
+      event_sdesc="WP_NAME10"
+      event_status_db_id="0"
+      event_status_cd="ACTV"
+      sched_start_dt="15-MAY-2012 00:00"
+      sched_end_dt="15-MAY-2012 12:00"
+      />
+
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="5010"
+      task_class_db_id="0"
+      task_class_cd="CHECK"
+      main_inv_no_db_id="4650"
+      main_inv_no_id="1010"
+      prevent_lpa_bool="0"
+      lrp_bool="1"
+      heavy_bool="0"
+      />
+
+   <evt_loc
+      event_db_id="4650"
+      event_id="5010"
+      event_loc_id="1"
+      loc_db_id="4650"
+      loc_id="6010"
+      />
+
+   <!-- location 10 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="6010"
+      supply_loc_db_id="4650"
+      supply_loc_id="7010"
+      loc_cd="LOCATION_CD10"
+      loc_name="LOCATION_NAME10"
+      />
+
+   <!-- supply location 10 -->
+   <inv_loc
+      loc_db_id="4650"
+      loc_id="7010"
+      loc_cd="AIRPORT_CD10"
+      loc_name="AIRPORT_NAME10"
+      />
+
+</dataset>

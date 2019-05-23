@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+	<include file="MTX-1746.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-1103.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-220_1.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-220_2.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-1559.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-1683.sql" relativeToChangelogFile="true"/>
+	<include file="API-13.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-2015.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-1924.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-2016.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2025.sql" relativeToChangelogFile="true"/>
+
+	<!--  CORE UPGRADES SCRIPTS MUST BE RAN ABOVE -->
+	<!--  The following component upgrades will be executed  -->
+	<!--  after the core upgrade scripts have been applied. -->
+	<include file="api/control.xml" relativeToChangelogFile="true"/>
+	<include file="opr/control.xml" relativeToChangelogFile="true"/>
+	<include file="rbl/control.xml" relativeToChangelogFile="true"/>
+	<include file="lrp/control.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

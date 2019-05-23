@@ -1,0 +1,145 @@
+<dataset>
+
+
+<!-- History Notes -->
+
+	<evt_stage
+		event_id        = "1001"
+		event_db_id     = "4650"
+		stage_id        = "1"
+		stage_gdt       = "2019-04-30 13:00:00"
+		stage_reason_cd = "OBSOLETE"
+		event_status_cd = "CANCEL"
+		stage_note      = "Test Note 1 on WP 1"
+		hr_db_id        = "4650"
+		hr_id           = "100"
+		alt_id          = "AAAAAAAAAAAAAAAA1111111111111111"
+	/>
+
+	<evt_stage
+		event_id        = "1001"
+		event_db_id     = "4650"
+		stage_id        = "2"
+		stage_gdt       = "2019-04-30 14:00:00"
+		stage_reason_cd = "CORRECT"
+		event_status_cd = "CFCERT"
+		stage_note      = "Test Note 2 on WP 1"
+		hr_db_id        = "4650"
+		hr_id           = "100"
+		alt_id          = "AAAAAAAAAAAAAAAA2222222222222222"
+	/>
+
+	<evt_stage
+		event_id        = "1001"
+		event_db_id     = "4650"
+		stage_id        = "3"
+		stage_gdt       = "2019-04-30 15:00:00"
+		stage_reason_cd = "CORRECT"
+		event_status_cd = "CFCERT"
+		stage_note      = "Test Note 3 on WP 1"
+		hr_db_id        = "4650"
+		hr_id           = "100"
+		alt_id          = "AAAAAAAAAAAAAAAA3333333333333333"
+	/>
+
+	<evt_stage
+		event_id 	    = "1002"
+		event_db_id     = "4650"
+		stage_id        = "1"
+		stage_gdt       = "2019-04-30 15:00:00"
+		stage_reason_cd = "NEW"
+		event_status_cd = "HRACTV"
+		stage_note      = "Test Note 1 on WP 2"
+		hr_db_id        = "4650"
+		hr_id           = "100"
+		alt_id          = "AAAAAAAAAAAAAAAA4444444444444444"
+	/>
+
+<!-- WorkPackages -->
+
+	<sched_stask
+		sched_id    = "1001"
+		sched_db_id = "4650"
+		alt_id      = "BBBBBBBBBBBBBBBB1111111111111111"
+	/>
+
+	<sched_stask
+		sched_id    = "1002"
+		sched_db_id = "4650"
+		alt_id      = "BBBBBBBBBBBBBBBB2222222222222222"
+	/>
+
+	<sched_stask
+		sched_id    = "1003"
+		sched_db_id = "4650"
+		alt_id      = "BBBBBBBBBBBBBBBB3333333333333333"
+	/>
+
+	<evt_event
+		event_id    = "1003"
+		event_db_id = "4650"
+		alt_id      = "CCCCCCCCCCCCCCCC3333333333333333"
+	/>
+
+
+<!-- Authorization Info -->
+
+	<org_hr
+      HR_DB_ID = "4650"
+      HR_ID = "100"
+      USER_ID = "100"
+    />
+
+    <utl_user_role
+      ROLE_ID = "100"
+      USER_ID = "100"
+    />
+
+    <utl_action_role_parm
+      PARM_NAME = "API_WORKPACKAGE_PARM"
+      PARM_VALUE = "TRUE"
+      ROLE_ID = "100"
+   />
+
+    <utl_user
+      USER_ID = "100"
+      USERNAME = "authorized"
+      ALT_ID = "CCCCCCCCCCCCCCCC1111111111111111"
+    />
+
+   <org_hr
+      HR_DB_ID = "4650"
+      HR_ID = "101"
+      USER_ID = "101"
+    />
+
+    <utl_user_role
+      ROLE_ID = "101"
+      USER_ID = "101"
+    />
+
+    <utl_action_role_parm
+      PARM_NAME = "API_WORKPACKAGE_PARM"
+      PARM_VALUE = "FALSE"
+      ROLE_ID = "101"
+    />
+
+   <utl_user
+      USER_ID = "101"
+      USERNAME = "unauthorized"
+   />
+
+    <org_hr
+      HR_DB_ID = "4650"
+      HR_ID = "102"
+      USER_ID = "102"
+    />
+
+    <utl_user
+      USER_ID = "102"
+      USERNAME = "mxi"
+      ALT_ID = "CCCCCCCCCCCCCCCC2222222222222222"
+    />
+
+
+</dataset>

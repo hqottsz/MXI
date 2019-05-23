@@ -1,0 +1,345 @@
+import com.mxi.gradle.plugins.db.task.ArchiveDatabase
+import com.mxi.gradle.plugins.db.util.LiquibaseUtil
+import com.mxi.gradle.jar.task.VerifiedCopy
+
+apply plugin: 'mxjava';
+apply plugin: 'mxenvironment';
+
+
+configurations {
+   buildinfoproperties
+   liquibase
+   database {
+      extendsFrom liquibase
+   }
+   upgrdmpx
+}
+
+dependencies {
+   liquibaseDeployer "com.mxi.idk:database-deployer-cli:${idkVersion}";
+   liquibase "com.mxi.idk:dbtools-db:${idkVersion}";
+   upgrdmpx( group: 'maintenix', name: 'database', version: previousProductDeliverablesVersion, configuration: 'base' )
+
+   // used when packaging test results zips
+   buildinfoproperties project( path: ':installers:buildinfo', configuration: 'buildinfoproperties' )
+}
+
+task stageBase( type: VerifiedCopy ) {
+   destinationDir = file( "${buildDir}/database/assetmanagement-database/base" )
+   ignoreOnVerify( '(.+/)?control\\.(sql|xml)' )
+
+   from( "src/base/plsql" ) {
+      exclude "**/model/**"
+   }
+
+   doLast {
+      logger.info( "Starting liquibase conversion." )
+      LiquibaseUtil.formatToLiquibase ( file( "${destinationDir}/maintenix/schema/maintenix.sql" ) )
+      delete( file( "${destinationDir}/maintenix/schema/maintenix.sql.orig" ) )
+      destinationDir.eachFileRecurse() {
+         if ( it.name == 'control.sql' ) {
+            logger.info( "Processing ${it.absolutePath}" )
+            LiquibaseUtil.formatControlToLiquibase( it )
+            delete( it )
+         }
+      }
+
+      delete( file( "${destinationDir}/control.xml" ) )
+   }
+}
+
+task stageUpgrade( type: VerifiedCopy ) {
+   destinationDir = file( "${buildDir}/database/assetmanagement-database/upgrade" )
+   def currentDir = "${previousMajorVersion}/${previousMinorVersion}/${previousServicepackVersion}/${previousUpdateVersion}"
+   ignoreOnVerify( '(.+/)?control\\.(sql|xml)' )
+   def srcPathToSqlCurrentUpgrade = "${projectDir}/src/upgrade/plsql/lib/current/sql"
+
+   doFirst {
+      def sqlUpgradeScriptSrcDir = new File(srcPathToSqlCurrentUpgrade)
+      LiquibaseUtil.validateFilenameFormatMeetsUpgradeStandard(sqlUpgradeScriptSrcDir)
+   }
+
+   from( "src/upgrade/plsql/lib/liquibase" )
+   into( currentDir ) {
+      from( "src/upgrade/plsql/lib/current" ) {
+         exclude "**/README.*"
+         exclude "**/validation/**"
+      }
+   }
+
+   doLast {
+      LiquibaseUtil.createLiquibaseControlFromFilenames( new File("${destinationDir}/${currentDir}/sql") )
+   }
+}
+
+task stageXMLTools( type: VerifiedCopy ) {
+   destinationDir = file( "${buildDir}/database/assetmanagement-database/xml-tools" )
+
+   from( "src" ) {
+      include "*.xml"
+   }
+}
+
+
+dependencies {
+   database "com.mxi.idk:dbtools-db:${idkVersion}";
+   database files(jar.archivePath) {
+      builtBy 'jar';
+   }
+}
+
+jar {
+   dependsOn stageBase, stageUpgrade, stageXMLTools
+
+   into( 'assetmanagement-database' ) {
+      from( stageXMLTools.destinationDir )
+      into( 'base' ) {
+         from( stageBase.destinationDir )
+      }
+      into( 'upgrade' ) {
+         from( stageUpgrade.destinationDir )
+      }
+   }
+
+   eachFile {
+      filter ( org.apache.tools.ant.filters.ReplaceTokens, tokens: [
+         'module.name': 'assetmanagement-database',
+         'prev.version.major': previousMajorVersion,
+         'prev.version.minor': previousMinorVersion,
+         'prev.version.service': previousServicepackVersion,
+         'prev.version.patch': previousUpdateVersion,
+         'prev.version.patch.parm': (Integer.parseInt(projectUpdateVersion) > 0) ? "update=\"" + previousUpdateVersion + "\"" : "",
+         'version.major': projectMajorVersion,
+         'version.minor': projectMinorVersion,
+         'version.service': projectServicepackVersion,
+         'version.patch': projectUpdateVersion,
+         'version': maintenixVersionNumber,
+         'servicepack.ver': productServicepackVersion,
+         'update.ver': productUpdateVersion,
+         'short.version.name': productVersionLabelLicense,
+         'full.version.name': productVersionLabel,
+         'full.version.desc': maintenixVersionNumber + prodVerDescSuffix,
+         'build.label': buildLabel,
+         'build.location': gitRepoUrl,
+         'build.revision': gitShortRevision
+      ])
+   }
+
+   version = null // drop the version in the artifact name
+   manifest {
+      attributes('Mxi-Database-Dependencies': 'dbtools-db',
+                 'Mxi-Database-Links': '');
+   }
+
+   doLast {
+      // It is adequate to only check the state of the input files after running because each of the staging tasks ran verify()
+      // when they finished running. So we have book-ended the jar task with checks that the source is still valid.  ISD-550
+      logger.info( "> Post-validating staged files for ${path}" )
+      stageBase.verify()
+      stageUpgrade.verify()
+      stageXMLTools.verify()
+   }
+}
+
+// Package & Publish
+configurations {
+  precheck
+  solution
+}
+
+task precheckZip(type: Zip) {
+    from ("src/upgrade/plsql/pre_check");
+    destinationDir = file("${buildDir}/precheck");
+    archiveName = "assetmanagement-database-precheck.zip";
+}
+
+task solutionZip(type: Zip) {
+   from("src/solution/plsql")
+   destinationDir = file("${buildDir}/distributions");
+   archiveName = "assetmanagement-solution-database.zip";
+}
+
+tasks.withType( AbstractCopyTask.class ) {
+   // ISD-130 ISD-550: By adding gitBranch as an input, copy/zip/jar tasks won't be up-to-date after branch changes
+   inputs.property( 'gitBranch', gitBranch )
+}
+
+artifacts {
+   database jar
+   precheck precheckZip
+   solution solutionZip
+}
+
+
+task zipDiffDbResults(type: Zip) {
+   dependsOn configurations.buildinfoproperties
+   version = ''
+   destinationDir = file( 'build/zipped-test-results' )
+   from( fileTree( 'build' ) ) { include 'reports/dbdiff/**/*', 'dbdiff/report/**/*' }
+   from( configurations.buildinfoproperties )
+}
+
+
+// Publishing to Ivy
+publishing.publications {
+   ivy(IvyPublication) {
+      configurations {
+         create "solution"
+         create "database"
+      }
+
+      artifact(solutionZip) {
+         type "zip";
+         conf "solution";
+         name "assetmanagement-solution-database";
+      }
+
+      // See OPER-10665 for why we need to publish this non-release artifact
+      artifact(jar) {
+         type "jar"
+         conf "database"
+      }
+   }
+}
+
+
+environments {
+   upgr {
+      database {
+         install {
+            datapump {
+               datapumpFile = configurations.upgrdmpx
+            }
+            setupMaintenixAudit {
+            }
+            liquibase {
+               configuration = configurations.database;
+               forceUpgrade = true;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+         }
+      }
+   }
+
+   solution {
+      database {
+         install {
+            plsqlExec {
+               workingDirectory = file("src\\base\\plsql");
+               controlFile = file("${workingDirectory}\\control.sql");
+            }
+            setupMaintenixAudit {
+            }
+            plsqlExec {
+               workingDirectory = file("src\\solution\\plsql");
+               controlFile = file("${workingDirectory}\\control.sql");
+            }
+         }
+      }
+   }
+}
+
+createUpgrDb.dependsOn configurations.upgrdmpx
+archiveUpgrDb.dependsOn configurations.upgrdmpx
+
+task convertToLiquibase {
+
+   doLast {
+      new File( "$sqlFolder" ).eachFileRecurse() {
+
+          if ( it.name.endsWith('.sql') &&
+               it.name.take(it.name.lastIndexOf('.')) != 'control' &&
+               it.name.take(it.name.lastIndexOf('.')) != 'maintenix' ) {
+
+              println it;
+              LiquibaseUtil.formatToLiquibase(it);
+           }
+      }
+   }
+}
+
+apply from: "database-utility.gradle";
+
+// Post Release
+task stageDev {
+   doLast {
+      processPostReleaseRoutine(LiquibaseUtil);
+   }
+}
+
+
+// Compare: Base to Upgrade
+dependencies {
+   dbdiff "com.mxi.dbdiff:dbdiff-core:${dbdiffVersion}"
+}
+
+ArchiveDatabase archiveBaseDb = tasks.getByPath( 'base-database:archiveBaseDb' )
+
+archiveBaseDb.inputs.dir( file( "src/base/plsql" ) )
+archiveUpgrDb.inputs.dir( file( "src/upgrade/plsql" ) )
+
+import com.mxi.gradle.plugins.upg.task.DiffDatabase
+task diffDb(type: DiffDatabase) {
+   classpath = configurations.dbdiff
+   fromArchive = archiveBaseDb.archiveDir
+   toArchive = archiveUpgrDb.archiveDir
+   rulesFile = file("comparison_rules.xml")
+   mustRunAfter archiveBaseDb, archiveUpgrDb
+   finalizedBy zipDiffDbResults, deployTestResults
+}
+
+tasks.replace( 'envSetUp' )
+envSetUp.dependsOn jar, archiveBaseDb, archiveUpgrDb
+
+task envTest {
+   dependsOn diffDb
+   mustRunAfter envSetUp, archiveBaseDb, archiveUpgrDb
+   doLast { sleep(90000) } // sleep 90 seconds so Bamboo doesn't fail
+}
+
+deployTestResults {
+   mustRunAfter zipDiffDbResults
+   organisation = "${projectGroup}.envtest"
+   deploy( zipDiffDbResults, project.name, 'envtest', 'envtest' )
+}
+
+
+// Delete the dbdiff output directory before the base DB and upgrade DB creation. The purpose of
+// this delete is to proactively catch and raise any delete issues at the start of the script to
+// allow the user to manually delete the directory and rerun the script. Previously the delete
+// wasn't attempted until the DB diff tool ran late in the process meaning that users may have to
+// wait 30+ minutes to learn that the script was going to fail due to a windows lock issue. Now the
+// user will learn about delete errors immediately allowing them to close the programs that caused
+// the lock (such as an open command window from a previous run of this script), manually delete
+// the directory, and rerun this script.
+task deleteDbdiffDir {
+   doFirst {
+
+      // Define a variable for the dbdiff directory
+      def dbdiffDir = "${project.buildDir}/reports/dbdiff"
+
+      // Log the directory that we are deleting
+      logger.lifecycle('Deleting directory: ' + dbdiffDir)
+
+      try {
+         // Delete the dbdiff directory
+         project.delete(dbdiffDir)
+      } catch (Exception e) {
+         // The delete failed so log the error, explain the common cause and solution, and then
+         // raise the error.
+         logger.lifecycle('ERROR: ' + e.getMessage())
+         logger.lifecycle('CAUSE: The script was unable to delete the dbdiff directory which ' + \
+            'is usually caused by Windows locks.')
+         logger.lifecycle('SOLUTION: Close any programs that could be locking the directory ' + \
+            '(such as open command windows from previous runs of this script), then manually ' + \
+            'delete the directory and rerun this script.')
+         throw e;
+      }
+   }
+}

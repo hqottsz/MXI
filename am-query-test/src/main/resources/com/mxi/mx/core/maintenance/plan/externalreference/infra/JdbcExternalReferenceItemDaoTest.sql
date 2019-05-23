@@ -1,0 +1,1 @@
+INSERT INTO ext_ref_item (ext_ref_item_db_id, ext_ref_item_id, reference_item_name) VALUES (4650, 5, 'IPC 123');

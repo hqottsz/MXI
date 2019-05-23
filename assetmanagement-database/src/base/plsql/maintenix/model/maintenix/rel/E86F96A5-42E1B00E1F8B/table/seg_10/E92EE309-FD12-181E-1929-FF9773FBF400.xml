@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="E92EE309-FD12-181E-1929-FF9773FBF400" name="UTL_TRIGGER">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table defines Java classes that provide trigger functionality for areas of the application where interface &quot;hooks&quot; have been provided.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0768003F-35E8-2514-34B5-8402A709D0CC</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRIGGER_ID" id="D4BC40C5-68FC-EF62-7B2C-B30CB4BB4707">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>70E25727-CC0B-08C2-44E5-B960EDA4EBFB</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="TRIGGER_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRIGGER_CD" id="F0D045D9-C272-44E3-01C8-1E9E53509ACA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Trigger code that is referenced in the source code, usually with capital letters with underscores (e.g. MXCORE_BEFORE_CREATE_TASK).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C9FF578-D45C-EB77-BBA7-E45CDDE8833A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>06D9BA35-CE10-EE63-8752-6E97559E5832</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EXEC_ORDER" id="BC07EC8D-39B9-ACEC-3D21-9040D12713DF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Trigger ordering number to indicate what order to execute triggers when more than one is defined for the same interface.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C3424E69-6404-A284-A6BE-23492D2EFB45</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>23BF44B5-3695-80E7-CC85-74E51E946488</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EXEC_ORDER BETWEEN 0 AND 99999"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE_CD" id="33CB4100-98A9-23AB-12A7-867F38E85B4A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Trigger type code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8CEE7BDF-AF8E-82F4-1E6C-08ECD17B2546</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRIGGER_NAME" id="CC58C0B0-E51A-A82E-D538-4FBA26F8732C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Short trigger name description.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>464D8476-6A1E-8FD4-90CD-19D787F26D93</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLASS_NAME" id="D3830843-0856-4C07-32CC-76A305B89CB7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Fully qualified class name for the trigger class.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>79C3700F-BFB6-BD4C-40F7-430AE5848C5D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTIVE_BOOL" id="38473A40-2417-36B5-7A7B-207370978B9C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Boolean indicating whether or not the trigger is currently active.  Inactive triggers will not run.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>66491E38-2C04-C063-B9DE-0FDABE9DE25D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ACTIVE_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="CFC44413-4661-6EA1-AA9D-2B06A789B39D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>44B6EF88-8B02-D5EC-B06B-3A9DD4BD3EC3</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="395785BD-E2F7-CD4D-0722-A4F2570A0C03" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8945C47B-F527-AE51-55C0-DDEEFA071511" name="PK_UTL_TRIGGER">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1302C8BB-7AE7-226A-1857-78FEBC80B484</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4BC40C5-68FC-EF62-7B2C-B30CB4BB4707"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8DDE4ABB-0329-61EB-1BA2-34747A843B04" name="FK_UTLTRIG_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:46 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFC44413-4661-6EA1-AA9D-2B06A789B39D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

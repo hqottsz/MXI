@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetStdLrpLocCapacity</name>
+   <description>This query retrieves an Standard LRP Locations Capacities by StdLocationCapacity key</description>
+   <sql>
+      SELECT
+         *
+      FROM
+         lrp_loc_cap_std
+      WHERE
+      lrp_loc_cap_std.lrp_db_id = :aLRPDbId   AND
+      lrp_loc_cap_std.lrp_id    = :aLRPId    AND
+      lrp_loc_cap_std.loc_db_id = :aLocDbId AND
+      lrp_loc_cap_std.loc_id    = :aLocId  AND
+      lrp_loc_cap_std.capacity_pattern_db_id = :aCapacityDbIdId  AND
+      lrp_loc_cap_std.capacity_pattern_id    = :aCapacityId AND
+      lrp_loc_cap_std.capacity_std_id   = :aCapacityStdId
+     AND
+      lrp_loc_cap_std.rstat_cd   = 0
+    </sql>
+    <arguments>
+      <argument name="aLRPDbId" type="INTEGER" default="-1" />
+      <argument name="aLRPId"   type="INTEGER" default="-1" />
+      <argument name="aLocDbId" type="INTEGER" default="-1" />
+      <argument name="aLocId"   type="INTEGER" default="-1" />
+      <argument name="aCapacityDbIdId" type="INTEGER" default="-1" />
+      <argument name="aCapacityId" type="INTEGER" default="-1" />
+      <argument name="aCapacityStdId" type="INTEGER" default="-1" />
+   </arguments>
+</sql-statement>

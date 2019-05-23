@@ -1,0 +1,303 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_2" id="6D1D93F1-CEC4-0F09-28E6-CBF94CE8A00B" name="INV_AC_FLIGHT_PLAN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Defines the location an inventory item will fly to.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2611A575-F528-A43C-A461-DE986AAD2C2F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_NO_DB_ID" id="3C0A70D3-053E-56EE-C4E5-BFF32E4FA44F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Inventory Database Id.  Not a FK Link to the INV_INV table.  This table is dynamically populated at run time.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1B50C600-B1AE-D42C-D227-C1A1EE40D3B4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INV_NO_ID" id="4BCEB4A7-D230-4094-7CA5-C02C1F7B3BF5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Inventory Database Id.  Not a FK Link to the INV_INV table.  This table is dynamically populated at run time.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>13044974-EA87-4576-6994-38D201DC7272</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLIGHT_PLAN_ORD" id="AE9E52AB-18B9-2CC6-A271-7065A9D5BEB4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The index of flights for the aircraft listed in the table.  They are listed in order of occurrence.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>872A493C-34E5-AAE9-54ED-F908D1DD0088</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>098F23FF-4DC2-8BAC-FBD8-20234B78AA9A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARR_LEG_ID" id="37ED3D4E-7CC8-C6E8-9EFF-F34667538428">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to FL_LEG table.  Represents the arrival flight.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3AD04C1A-A7D9-C1EF-3226-DD2D3959F4DC</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6DAA2ED9-8597-4D5B-8C40-C57CF80FF900" referredColumn="BE13C7E4-5960-310A-E0FA-FC518D135508"/>
+</associations>
+</Column>
+<Column name="DEP_LEG_ID" id="87806F3E-01CB-0F28-3469-64D6635DDE7B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to FL_LEG table.  Represents the departure flight.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BCEC556D-0907-B3B7-07F3-A216E626DCF6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BA801969-618C-468E-C9F3-BF2B4259F64F" referredColumn="BE13C7E4-5960-310A-E0FA-FC518D135508"/>
+</associations>
+</Column>
+<Column name="LOC_DB_ID" id="7894EA30-74A5-4302-F8F4-A94A63650865">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record and forms part of the record&apos;s primary key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>04240364-3910-9418-6C88-C94D014216A8</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LOC_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E63535B-7C9D-719F-0843-E9B610B9B657" referredColumn="C3496C77-33EB-F40A-B8DE-691CD0D63D76"/>
+</associations>
+</Column>
+<Column name="LOC_ID" id="81E0BB43-F2CA-ECD7-C913-68CB3E8B0CCB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Unique identifier serving as part of the primary key, and assigned from the sequence LOC_ID_SEQ</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>49D57ABA-8827-9685-0B38-47059100D452</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LOC_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E63535B-7C9D-719F-0843-E9B610B9B657" referredColumn="F9059C24-7BD8-276B-84DA-AAE2F9C3FF0F"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="8DAA351F-01E2-F768-CC72-03257C0BA98E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;/br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D8B3426E-B52F-7480-3546-465123864D32</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2F661E60-10C0-D445-13DF-E2BD15244A3D" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="528D8AFA-3731-0813-DE3E-C3EF8DC041EF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>19947322-E7AB-5D2D-A57A-4B516792D9C1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="DB6AD724-99FC-E2C0-E080-59F05B98E4B2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A373C7C1-C1A5-C74E-B398-B4C953129EAA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="5D896957-9013-00FF-75FA-0A72BE827C7C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>76D774E9-6526-7FE3-9921-BBA625394450</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="83D3AF77-3656-CF52-8049-DA7A0BC8DF4D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6FA73710-5E1F-4224-C8E5-36D5D22A0B25</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="84EE61D3-3902-2DB5-854B-E2870CE0C6DF" name="PK_INV_AC_FLIGHT_PLAN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B617CF34-6FF4-6E98-7D66-64B45F9D6320</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C0A70D3-053E-56EE-C4E5-BFF32E4FA44F"/>
+<colUsage columnID="4BCEB4A7-D230-4094-7CA5-C02C1F7B3BF5"/>
+<colUsage columnID="AE9E52AB-18B9-2CC6-A271-7065A9D5BEB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1F9AF21-BFA1-8C67-CA14-3F2EB26AF243" name="IX_INVLOC_INVACFLIGHTPLAN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>29E6EB11-77E4-B936-7580-E6FA73B026A2</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7894EA30-74A5-4302-F8F4-A94A63650865"/>
+<colUsage columnID="81E0BB43-F2CA-ECD7-C913-68CB3E8B0CCB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B51E515F-4589-B94D-ABAE-61A1A702A362" name="IX_ARRFLLEG_INVACFLPLAN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8C5ADDBB-381D-5BA1-9A3F-FA7498D8A8A1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37ED3D4E-7CC8-C6E8-9EFF-F34667538428"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="63A96DF6-08A6-4646-DAB4-6CE65582E927" name="IX_DEPFLLEG_INVACFLPLAN">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B976E008-34F2-210E-CDA0-5C6215BFB564</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87806F3E-01CB-0F28-3469-64D6635DDE7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9EC97C1F-5909-EE3C-9D9C-40A77A533DB1" name="FK_ARRFLLEG_INVACFLPLAN">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37ED3D4E-7CC8-C6E8-9EFF-F34667538428"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FE7EC4D-AF85-1D1D-0C4E-498295EC3F0F" name="FK_DEPFLLEG_INVACFLPLAN">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87806F3E-01CB-0F28-3469-64D6635DDE7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1C4C43D9-A8E9-0D07-2123-D95A17330677" name="FK_INVLOC_INVACFLIGHTPLAN">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7894EA30-74A5-4302-F8F4-A94A63650865"/>
+<colUsage columnID="81E0BB43-F2CA-ECD7-C913-68CB3E8B0CCB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D896222F-1914-3C6C-9046-6ACAA6D61E53" name="FK_MIMRSTAT_INVACFLIGHTPLAN">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8DAA351F-01E2-F768-CC72-03257C0BA98E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

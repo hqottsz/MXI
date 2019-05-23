@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+   <!--  stock request that has a PO    -->
+   <inv_owner
+      owner_db_id="4650"
+      owner_id="10"
+      local_bool="1"
+   />
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1000"
+      req_stock_no_db_id="4650"
+      req_stock_no_id="100034"
+      req_loc_db_id="10"
+      req_loc_id="1000"
+      req_type_cd="STOCK"
+      po_db_id="4650"
+      po_id="1111"
+      po_line_id="1"
+      req_qt="15"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1000"
+      event_status_db_id="0"
+      event_status_cd="PRPOREQ"
+      event_type_db_id="0"
+      event_type_cd="PR"
+      hist_bool="0"
+      />
+
+    <po_line
+       po_db_id="4650"
+       po_id="1111"
+       po_line_id="1"
+       order_qt="30"
+    />
+    <po_line
+       po_db_id="4650"
+       po_id="1111"
+       po_line_id="2"
+       order_qt="50"
+    />
+    <po_header
+       po_db_id="4650"
+       po_id="1111"
+    />
+    <evt_event
+      event_db_id="4650"
+      event_id="1111"
+      event_status_db_id="0"
+      event_status_cd="POISSUED"
+      event_type_db_id="0"
+      event_type_cd="PO"
+      hist_bool="0"
+    />
+
+   <!--  stock request that has no PO    -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1001"
+      req_stock_no_db_id="4650"
+      req_stock_no_id="100044"
+      req_loc_db_id="10"
+      req_loc_id="1000"
+      req_type_cd="STOCK"
+      req_qt="5"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="1001"
+      event_status_db_id="0"
+      event_status_cd="PRPOREQ"
+      event_type_db_id="0"
+      event_type_cd="PR"
+      hist_bool="0"
+      />
+
+<!--  multiple stock requests with a PO that is OPEN (so only the second select will apply)
+         i.e. sum of all stock request quantity
+   -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="1"
+      req_stock_no_db_id="4650"
+      req_stock_no_id="100054"
+      req_loc_db_id="10"
+      req_loc_id="1000"
+      req_type_cd="STOCK"
+      po_db_id="4650"
+      po_id="10"
+      po_line_id="1"
+      req_qt="5"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+   <evt_event
+      event_db_id="4650"
+      event_id="1"
+      event_status_db_id="0"
+      event_status_cd="PRPOREQ"
+      event_type_db_id="0"
+      event_type_cd="PR"
+      hist_bool="0"
+      />
+
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="2"
+      req_stock_no_db_id="4650"
+      req_stock_no_id="100054"
+      req_loc_db_id="10"
+      req_loc_id="1000"
+      req_type_cd="STOCK"
+      po_db_id="4650"
+      po_id="10"
+      po_line_id="1"
+      req_qt="6"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="2"
+      event_status_db_id="0"
+      event_status_cd="PRPOREQ"
+      event_type_db_id="0"
+      event_type_cd="PR"
+      hist_bool="0"
+      />
+
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="3"
+      req_stock_no_db_id="4650"
+      req_stock_no_id="100054"
+      req_loc_db_id="10"
+      req_loc_id="1000"
+      req_type_cd="STOCK"
+      po_db_id="4650"
+      po_id="10"
+      po_line_id="1"
+      req_qt="7"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="3"
+      event_status_db_id="0"
+      event_status_cd="PRPOREQ"
+      event_type_db_id="0"
+      event_type_cd="PR"
+      hist_bool="0"
+      />
+
+    <po_line
+       po_db_id="4650"
+       po_id="10"
+       po_line_id="1"
+       order_qt="100"
+    />
+
+    <po_header
+       po_db_id="4650"
+       po_id="10"
+    />
+    <evt_event
+       event_db_id="4650"
+       event_id="10"
+       event_status_db_id="0"
+       event_status_cd="POOPEN"
+       event_type_db_id="0"
+       event_type_cd="PO"
+       hist_bool="0"
+    />
+
+    <!--  multiple stock requests with a PO that is ISSUED (so only the first select will apply)
+         i.e. po line expected quantity will be used in this example
+   -->
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="4"
+      req_stock_no_db_id="4650"
+      req_stock_no_id="100066"
+      req_loc_db_id="10"
+      req_loc_id="1000"
+      req_type_cd="STOCK"
+      po_db_id="4650"
+      po_id="100"
+      po_line_id="1"
+      req_qt="5"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+   <evt_event
+      event_db_id="4650"
+      event_id="4"
+      event_status_db_id="0"
+      event_status_cd="PRONORDER"
+      event_type_db_id="0"
+      event_type_cd="PR"
+      hist_bool="0"
+      />
+
+   <req_part
+      req_part_db_id="4650"
+      req_part_id="5"
+      req_stock_no_db_id="4650"
+      req_stock_no_id="100066"
+      req_loc_db_id="10"
+      req_loc_id="1000"
+      req_type_cd="STOCK"
+      po_db_id="4650"
+      po_id="100"
+      po_line_id="1"
+      req_qt="6"
+      QTY_UNIT_DB_ID = "0"
+	  QTY_UNIT_CD = "EA"
+      />
+
+   <evt_event
+      event_db_id="4650"
+      event_id="5"
+      event_status_db_id="0"
+      event_status_cd="PRONORDER"
+      event_type_db_id="0"
+      event_type_cd="PR"
+      hist_bool="0"
+      />
+
+    <po_line
+       po_db_id="4650"
+       po_id="100"
+       po_line_id="1"
+       order_qt="100"
+       received_qt = "0"
+    />
+
+    <po_header
+       po_db_id="4650"
+       po_id="100"
+    />
+    <evt_event
+       event_db_id="4650"
+       event_id="100"
+       event_status_db_id="0"
+       event_status_cd="POISSUED"
+       event_type_db_id="0"
+       event_type_cd="PO"
+       hist_bool="0"
+    />
+
+</dataset>

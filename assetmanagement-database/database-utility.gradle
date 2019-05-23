@@ -1,0 +1,132 @@
+def processPostReleaseRoutine(def lbUtil) {
+
+   def response = "";
+   def libDir = "${project.rootDir}/assetmanagement-database/src/upgrade/plsql/lib"
+   def baseDir = "${libDir}/liquibase";
+   def currentDir = "${libDir}/current/sql"
+   File targetDir = new File("${baseDir}/${previousMajorVersion}/${previousMinorVersion}/${previousServicepackVersion}/${previousUpdateVersion}");
+   File newTargetDir = new File("${baseDir}/${projectMajorVersion}/${projectMinorVersion}/${projectServicepackVersion}/${projectUpdateVersion}");
+
+      //# current feature git branch can be also check
+      def localBranchName = exec {
+         workingDir "${rootDir}"
+         commandLine 'cmd', '/c', "git rev-parse --abbrev-ref HEAD"
+      }
+
+      println ("\n\r");
+    /*  if (productReleaseCode != "" && productReleaseCode != "GA") {
+        ant.input(message:'> Are you sure this is PRE-RELEASE? (y/n): ', validargs:'y,n', addproperty:'response')
+        if (ant.response != 'y') {
+          throw new GradleException('Aborting! Change the value of "productReleaseCode" parameter.')
+        }
+      }
+    */
+      println ("\n\r");
+      if (localBranchName == 'develop') {
+        println "You are working on a develop branch!"
+        // response = console.readPassword('> Are you sure you want to continue? (y/n): ')
+        ant.input(message:'> Are you sure you want to continue? (y/n): ', validargs:'y,n', addproperty:'response')
+        if (ant.response != "y") {
+          throw new GradleException('Post release automation should be against a feature branch.')
+        }
+      }
+
+       // response = console.readPassword('> You know the password right? Type it in:')
+       ant.input(message:'> You know the password right?: ', addproperty:'response')
+       if (ant.response == "YES") { //"ME?SUREIAM"
+            if (targetDir.isDirectory()  &&
+                targetDir.list().length == 1 &&
+                new File("${targetDir}/upgrade.xml").exists() ) {
+
+                println "\n\rExecuting branching activities, please wait...\n\r"
+
+                //# copy SQL files from current to liquibase target directory
+                println "\n\r# Moving files from current directory to target"
+                println "  Source: ${currentDir}"
+                println "  Desitination: ${targetDir}"
+                lbUtil.validateFilenameFormatMeetsUpgradeStandard(new File(currentDir))
+                copy {
+                   from("${currentDir}")
+                   exclude "README.*"
+                   into "${targetDir}/sql"
+                }
+
+                //# convert control file to liquibase xml
+                println "\n\r# Transforming controls file to liquibase control file "
+                println "  Working Dir: ${targetDir}/sql"
+                lbUtil.createLiquibaseControlFromFilenames(new File("${targetDir}/sql"));
+
+                //# git remove the files in currentDir
+                println "\n\r# Git remove SQL file in target diretory"
+                println "  Working Dir: ${currentDir}"
+                exec {
+                   workingDir "${currentDir}"
+                   commandLine 'cmd', '/c', "git rm -f -r -q . && git checkout HEAD -- README.*"
+                }
+
+
+
+                //# create liquibase folder for newly release version
+                println "\n\r# Creating folder container for the newly released version"
+                println "  Working Dir: ${newTargetDir}"
+                newTargetDir.mkdir();
+                copy {
+                   from "${targetDir}/upgrade.xml"
+                   into "${newTargetDir}"
+                }
+
+                //# replace variable in upgrade.xml file in targert directory
+                println "\n\r# Replacing version variables/tokens in upgrade.xml"
+                println "  Working Dir: ${targetDir}"
+
+                copy {
+                   from ("${targetDir}/upgrade.xml") {
+                      eachFile {
+                         filter ( org.apache.tools.ant.filters.ReplaceTokens, tokens: [
+                            'module.name': 'assetmanagement-database',
+                            'prev.version.major': previousMajorVersion,
+                            'prev.version.minor': previousMinorVersion,
+                            'prev.version.service': previousServicepackVersion,
+                            'prev.version.patch': previousUpdateVersion,
+                            'prev.version.patch.parm': (Integer.parseInt(projectUpdateVersion) > 0) ? "update=\"" + previousUpdateVersion + "\"" : "",
+                            'version.major': projectMajorVersion,
+                            'version.minor': projectMinorVersion,
+                            'version.service': projectServicepackVersion,
+                            'version.patch': projectUpdateVersion,
+                            'version': maintenixVersionNumber,
+                            'servicepack.ver': productServicepackVersion,
+                            'update.ver': productUpdateVersion,
+                            'short.version.name': productVersionLabelLicense,
+                            'full.version.name': productVersionLabel
+                         ]);
+                      }
+                   }
+                   into "${buildDir}/tmp"
+                }
+                copy {
+                   from "${buildDir}/tmp/upgrade.xml"
+                   into "${targetDir}"
+                }
+
+                 //# git add all move and new files
+                println "\n\r# Git add all moved files in target diretory "
+                println "  Working Dir: ${targetDir}"
+                exec {
+                   workingDir "${targetDir}"
+                   commandLine 'cmd', '/c', "git add -A :/"
+                }
+
+            } else {
+               println "\n\rTarget directory is in unexpected state."
+               println "  - It should be a folder that have a single file in it."
+               println "  Target Directory: ${targetDir}"
+            }
+       } else {
+          println "\n\rYou seems not authorized to execute this task!"
+       }
+}
+
+
+ext {
+   processPostReleaseRoutine = this.&processPostReleaseRoutine;
+}

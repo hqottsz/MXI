@@ -1,0 +1,361 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_1" id="37FAD2A6-F5B0-975A-757D-B81F242917EB" name="EQP_ASSMBL_POS">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Log Card Position: When there are multiple log cards of the same type on an assembly, these individual log cards can be identified by position. For example, a Boeing 747 that has four engines will have a single log card definition for the engines, and an explicit log card position for each engine.&lt;br&gt;&lt;/br&gt;Like their parent log cards, log card positions are also organized hierarchically. The hierarchy of the log card positions must be the same as the hierarchy of the log cards. However if the next highest log card has more than one position, then you must indicate which next highest position this log card position belongs under.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>214C04A9-66AA-469A-0F16-3BE61C6F8CEC</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ASSMBL_DB_ID" id="152346E1-156F-D018-BABA-A8973047D6F4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_BOM. The log card for which this position is defined.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E1299806-909E-C97C-9192-1956CB43B4D8</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ASSMBL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6346C72B-04A8-3FE2-9E40-7F6A8C6F72D7" referredColumn="3C79E456-14A7-1023-7F50-5413C7A0A309"/>
+</associations>
+</Column>
+<Column name="ASSMBL_CD" id="C0F55CC8-4643-4A00-03E8-CEA547F66DB4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_BOM. The log card for which this position is defined.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>04B47AFA-F4FA-C5C3-0042-F56D2107A81B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6346C72B-04A8-3FE2-9E40-7F6A8C6F72D7" referredColumn="52B5FC65-912A-82CD-85E6-95957E1DD31C"/>
+</associations>
+</Column>
+<Column name="ASSMBL_BOM_ID" id="812F4B5F-E04F-A993-919D-260B82110A9B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_BOM. The log card for which this position is defined.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F1A71813-9285-ADB2-4760-49C33E77767B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ASSMBL_BOM_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6346C72B-04A8-3FE2-9E40-7F6A8C6F72D7" referredColumn="3DB0847B-8400-78B1-82EF-9B43F331A13C"/>
+</associations>
+</Column>
+<Column name="ASSMBL_POS_ID" id="75B022C9-1B82-C9CE-171E-EC0BD176AB4C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Unique identifier assigned in context of the log card (assmbl_pos_id = 1..n).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>638DAD76-97A1-CC45-233F-23D26DD793F0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ASSMBL_POS_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALT_ID" id="BE539C32-FB8E-5A9C-9077-D217E9F8AB00">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>UUID for the position entity</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>72CE290B-0529-FC1B-0F5F-FE5CD823714C</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NH_ASSMBL_DB_ID" id="CB0F21E9-965C-BAED-77C4-ACF1141E8043">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_POS. The parent logcard position, in the logcard hierarchy. Although EQP_ASSMBL_BOM has a NH link to indicate hierarchy, we also include these columns because of the complications involved with logcards that have multiple positions.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E4991592-4426-2EF9-4B52-33596FDCB20E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NH_ASSMBL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CF6A9C6-3322-2846-361A-C868D85D9434" referredColumn="152346E1-156F-D018-BABA-A8973047D6F4"/>
+</associations>
+</Column>
+<Column name="NH_ASSMBL_CD" id="D0EFF0EB-E775-F5A2-86AF-5B16C1CF5A01">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_POS. The parent logcard position, in the logcard hierarchy. Although EQP_ASSMBL_BOM has a NH link to indicate hierarchy, we also include these columns because of the complications involved with logcards that have multiple positions.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FE3F1712-35E0-217B-648E-510C5007BB17</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CF6A9C6-3322-2846-361A-C868D85D9434" referredColumn="C0F55CC8-4643-4A00-03E8-CEA547F66DB4"/>
+</associations>
+</Column>
+<Column name="NH_ASSMBL_BOM_ID" id="70264EE3-644E-BAB9-5091-350B0EF8C707">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_POS. The parent logcard position, in the logcard hierarchy. Although EQP_ASSMBL_BOM has a NH link to indicate hierarchy, we also include these columns because of the complications involved with logcards that have multiple positions.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6D15B525-F275-87BE-5ED2-846448272C8A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NH_ASSMBL_BOM_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CF6A9C6-3322-2846-361A-C868D85D9434" referredColumn="812F4B5F-E04F-A993-919D-260B82110A9B"/>
+</associations>
+</Column>
+<Column name="NH_ASSMBL_POS_ID" id="11D48A4E-D953-0D91-A229-85F7F16955AF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_POS. The parent logcard position, in the logcard hierarchy. Although EQP_ASSMBL_BOM has a NH link to indicate hierarchy, we also include these columns because of the complications involved with logcards that have multiple positions.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>777C23FA-25C0-B69C-E3AD-92AD28D6B4C6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NH_ASSMBL_POS_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CF6A9C6-3322-2846-361A-C868D85D9434" referredColumn="75B022C9-1B82-C9CE-171E-EC0BD176AB4C"/>
+</associations>
+</Column>
+<Column name="EQP_POS_CD" id="FA37D34A-F9BE-5249-FA57-C69AC62662A3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The standard, defining code for this position (eg. &quot;left&quot;, &quot;right&quot;, etc.)</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9F907772-55E0-515F-AB77-57043051DD04</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="8EEB9F77-AD08-6CFD-5C2E-866A7EF05232">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B55EAABA-47B5-4FE8-D440-F5B273F545BD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F91513E-A846-25A8-1B88-BC524B73FF89" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="2DA1FEE8-2CFE-0ED0-1B62-38712F845E5B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B1C85567-4606-33D5-CD38-76E080087BD1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="A9A4A259-827E-1D0C-70ED-DD99F6EDB9DB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E2C5A23D-5B52-055E-B441-567BECF3A8BE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="358D3AF2-2D1C-6D06-1749-89C20169E032">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>508028E3-691F-1AA5-3D82-D0CF8C4DE450</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="D9B09BC7-2CD3-55A3-01D0-8CFEBB1E3BBC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>55699E56-D35D-3177-CF49-3F5CD2A84757</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CE84A23D-6E7C-5451-6DBF-E49620B40F23" name="PK_EQP_ASSMBL_POS">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>95937281-4211-6D84-1615-3C092DCA581D</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="152346E1-156F-D018-BABA-A8973047D6F4"/>
+<colUsage columnID="C0F55CC8-4643-4A00-03E8-CEA547F66DB4"/>
+<colUsage columnID="812F4B5F-E04F-A993-919D-260B82110A9B"/>
+<colUsage columnID="75B022C9-1B82-C9CE-171E-EC0BD176AB4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="269CF148-FA2A-A548-26EE-AF46C9E9E61E" name="IX_EQPASSMBLPOSALTID_UNQ">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AFD751D5-D2DC-A724-D80C-44499D2CA326</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE539C32-FB8E-5A9C-9077-D217E9F8AB00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ED417849-3E7C-C73A-F260-C3AAE9266AA3" name="IX_EQPASSMBLBOM_EQPASSMBLPOS">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E5F9FBC0-92E6-6433-C190-1235F8A9C842</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="152346E1-156F-D018-BABA-A8973047D6F4"/>
+<colUsage columnID="C0F55CC8-4643-4A00-03E8-CEA547F66DB4"/>
+<colUsage columnID="812F4B5F-E04F-A993-919D-260B82110A9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0F7C9038-30C8-5E5F-B75C-904E772B0DF9" name="IX_EQPASSMBLPOS_EQPASSMBLPOS">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>341A0017-199D-7650-76D6-D2A50ACB5F24</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB0F21E9-965C-BAED-77C4-ACF1141E8043"/>
+<colUsage columnID="D0EFF0EB-E775-F5A2-86AF-5B16C1CF5A01"/>
+<colUsage columnID="70264EE3-644E-BAB9-5091-350B0EF8C707"/>
+<colUsage columnID="11D48A4E-D953-0D91-A229-85F7F16955AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C9331DBD-7AE6-A6DB-8AA7-8C02B76C834B" name="FK_EQPASSMBLBOM_EQPASSMBLPOS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="152346E1-156F-D018-BABA-A8973047D6F4"/>
+<colUsage columnID="C0F55CC8-4643-4A00-03E8-CEA547F66DB4"/>
+<colUsage columnID="812F4B5F-E04F-A993-919D-260B82110A9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E1C10AC2-C495-65DD-AD4F-7C7763F7F898" name="FK_EQPASSMBLPOS_EQPASSMBLPOS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB0F21E9-965C-BAED-77C4-ACF1141E8043"/>
+<colUsage columnID="D0EFF0EB-E775-F5A2-86AF-5B16C1CF5A01"/>
+<colUsage columnID="70264EE3-644E-BAB9-5091-350B0EF8C707"/>
+<colUsage columnID="11D48A4E-D953-0D91-A229-85F7F16955AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03415871-07AF-7B76-8807-DC12ED7FD0C4" name="FK_MIMRSTAT_EQPASSMBLPOS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8EEB9F77-AD08-6CFD-5C2E-866A7EF05232"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,258 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_4" id="0FD38E95-1EB9-5B23-AAC5-ADA22870D512" name="ORG_ORG_VENDOR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This table contains the organization specific vendor approval information.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>674FC80C-49FA-3653-0DA9-F0463BBD24A2</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORG_DB_ID" id="2DAD368F-B89E-F7DC-A316-E5A59686C2CB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_ORG. To indicate the organization of the given vendor-organization relationship.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2A672CE3-D653-1A80-14DC-001B927C73FE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ORG_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0A2CB34C-4D88-8456-EA0F-9DFDF1179A15" referredColumn="3F3138B8-94C5-AFE8-BF09-65A64FCE0AD3"/>
+</associations>
+</Column>
+<Column name="ORG_ID" id="80FC3565-0679-ACAC-49D6-F06BD62816E0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_ORG. To indicate the organization of the given vendor-organization relationship.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D57D4A0B-8F01-E3EB-631C-EBA025A47316</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ORG_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0A2CB34C-4D88-8456-EA0F-9DFDF1179A15" referredColumn="B0C99035-C44F-D579-6E15-DCA9D6BEE075"/>
+</associations>
+</Column>
+<Column name="VENDOR_DB_ID" id="A65AE83C-BB51-8197-327B-7DB1B0CD8BAC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_VENDOR. To indicate the vendor of the given vendor-organization relationship.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>30F61D71-D6E3-C584-FAF6-C3CBD373E1E4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="VENDOR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="52E5813C-4839-2E86-E4DB-B2E485E97E13" referredColumn="902C7506-CC9F-3380-0A77-697A4B6E198B"/>
+</associations>
+</Column>
+<Column name="VENDOR_ID" id="DC623061-53A1-726D-DA2E-4466FB80C0AF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_VENDOR. To indicate the vendor of the given vendor-organization relationship.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>ABB93028-B642-56CC-12CC-EAF9A03C3012</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="VENDOR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="52E5813C-4839-2E86-E4DB-B2E485E97E13" referredColumn="3AD3C27D-1D1B-5609-2C19-2EB8F4621871"/>
+</associations>
+</Column>
+<Column name="VENDOR_NOTE" id="9F84AA55-E578-3B94-C18F-CBB1B916B49C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Notes about the vendor.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>432B65F4-E76B-AF56-AD0F-D6FD89EDA20E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="3DBAA54D-978F-CA83-56BE-414D5FE754D7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>75813A8C-15EC-1AE8-9EB8-B875CD820B84</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91243093-F969-8CEB-F6F3-2E1D14306D35" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="39E4D1C3-7BA3-B163-7784-7A81A1C3125D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C999D630-9758-972A-54AE-E6E973D9C8F7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="F9E4F30F-A750-C2D0-19A2-5F7D69C45360">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B9A0771F-BECE-3F6C-AF99-B21D3FF4755D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="45948066-6887-8BD2-F360-96FE3FC57F3F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>14252B4F-EAF4-DB8C-0D90-E3A1D4A16A53</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="E4A1F82F-43D2-A0EE-7955-2A0350551256">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E25EAA3F-3549-022B-9A3A-26E347DE18B1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6CDE3931-8426-2100-9F13-D22F8A87DEE9" name="PK_ORG_ORG_VENDOR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>739E538C-348F-A3C2-F290-ECC73DED6345</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DAD368F-B89E-F7DC-A316-E5A59686C2CB"/>
+<colUsage columnID="80FC3565-0679-ACAC-49D6-F06BD62816E0"/>
+<colUsage columnID="A65AE83C-BB51-8197-327B-7DB1B0CD8BAC"/>
+<colUsage columnID="DC623061-53A1-726D-DA2E-4466FB80C0AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E2502B4-ACEE-F42B-1F06-6FC419983DDF" name="IX_ORGVENDOR_ORGORGVENDOR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C73D919F-FD6E-A118-9DD6-CFFD40E6211A</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A65AE83C-BB51-8197-327B-7DB1B0CD8BAC"/>
+<colUsage columnID="DC623061-53A1-726D-DA2E-4466FB80C0AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="82A7D2C5-2606-197D-3387-BBB66504CA86" name="IX_ORGORG_ORGORGVENDOR">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0A8E2012-12B2-4D5E-D17C-617782AD0530</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DAD368F-B89E-F7DC-A316-E5A59686C2CB"/>
+<colUsage columnID="80FC3565-0679-ACAC-49D6-F06BD62816E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="20E5A888-56E1-4B57-2746-014B35AF66AA" name="FK_MIMRSTAT_ORGORGVENDOR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:34 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DBAA54D-978F-CA83-56BE-414D5FE754D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="10DC92BD-A391-BCD6-E1EE-1BAD2153B236" name="FK_ORGORG_ORGORGVENDOR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DAD368F-B89E-F7DC-A316-E5A59686C2CB"/>
+<colUsage columnID="80FC3565-0679-ACAC-49D6-F06BD62816E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C6463B71-01B5-7A3F-8D35-0AD57377BFCC" name="FK_ORGVENDOR_ORGORGVENDOR">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A65AE83C-BB51-8197-327B-7DB1B0CD8BAC"/>
+<colUsage columnID="DC623061-53A1-726D-DA2E-4466FB80C0AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

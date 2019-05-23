@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+<!--  History Notes -->
+	<evt_stage
+		event_id    = "0001"
+		event_db_id = "4650"
+		stage_id    = "1"
+		stage_note      = "Test note 1 on task"
+		event_status_cd = "IN WORK"
+		stage_gdt       = "2019-04-30 13:00:00"
+		stage_reason_cd    = "NEW"
+		stage_reason_db_id = "0"
+		hr_db_id = "4650"
+		hr_id    = "100"
+		alt_id   = "AAAAAAAAAAAAAAAA1111111111111111"
+	/>
+
+	<evt_stage
+		event_id    = "0001"
+		event_db_id = "4650"
+		stage_id    = "2"
+		stage_note      = "Test note 2 on task"
+		event_status_cd = "COMMIT"
+		stage_gdt       = "2019-04-30 14:00:00"
+		stage_reason_cd    = "OBSOLETE"
+		stage_reason_db_id = "0"
+		hr_db_id = "4650"
+		hr_id    = "100"
+		alt_id   = "AAAAAAAAAAAAAAAA2222222222222222"
+	/>
+
+	<evt_stage
+		event_id    = "0002"
+		event_db_id = "4650"
+		stage_id    = "1"
+		stage_note      = "Test note on task 2"
+		event_status_cd = "IN WORK"
+		stage_gdt       = "2019-04-30 13:00:00"
+		stage_reason_cd    = "NEW"
+		stage_reason_db_id = "0"
+		hr_db_id = "4650"
+		hr_id    = "100"
+		alt_id   = "AAAAAAAAAAAAAAAA3333333333333333"
+	/>
+
+<!-- Tasks -->
+
+	<evt_event
+		event_id    = "0001"
+		event_db_id = "4650"
+	/>
+
+	<sched_stask
+		sched_id    = "0001"
+		sched_db_id = "4650"
+		alt_id      = "BBBBBBBBBBBBBBBB1111111111111111"
+	/>
+
+	<evt_event
+		event_id    = "0002"
+		event_db_id = "4650"
+	/>
+
+	<sched_stask
+		sched_id    = "0002"
+		sched_db_id = "4650"
+		alt_id      = "BBBBBBBBBBBBBBBB2222222222222222"
+	/>
+
+	<evt_event
+		event_id    = "0003"
+		event_db_id = "4650"
+	/>
+
+	<sched_stask
+		sched_id    = "0003"
+		sched_db_id = "4650"
+		alt_id      = "BBBBBBBBBBBBBBBB3333333333333333"
+	/>
+
+<!-- Authorization Info -->
+
+	<org_hr
+      HR_DB_ID = "4650"
+      HR_ID = "100"
+      USER_ID = "100"
+    />
+
+    <utl_user_role
+      ROLE_ID = "100"
+      USER_ID = "100"
+    />
+
+    <utl_action_role_parm
+      PARM_NAME = "API_AIRCRAFT_PARM"
+      PARM_VALUE = "TRUE"
+      ROLE_ID = "100"
+   />
+
+    <utl_user
+      USER_ID = "100"
+      USERNAME = "authorized"
+      ALT_ID = "CCCCCCCCCCCCCCCC1111111111111111"
+    />
+
+   <org_hr
+      HR_DB_ID = "4650"
+      HR_ID = "101"
+      USER_ID = "101"
+    />
+
+    <utl_user_role
+      ROLE_ID = "101"
+      USER_ID = "101"
+    />
+
+    <utl_action_role_parm
+      PARM_NAME = "API_AIRCRAFT_PARM"
+      PARM_VALUE = "FALSE"
+      ROLE_ID = "101"
+    />
+
+   <utl_user
+      USER_ID = "101"
+      USERNAME = "unauthorized"
+   />
+
+    <org_hr
+      HR_DB_ID = "4650"
+      HR_ID = "102"
+      USER_ID = "102"
+    />
+
+    <utl_user
+      USER_ID = "102"
+      USERNAME = "mxi"
+      ALT_ID = "CCCCCCCCCCCCCCCC2222222222222222"
+    />
+
+</dataset>

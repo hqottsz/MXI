@@ -1,0 +1,244 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_8" id="E088B99C-BC28-B6B5-E110-C8EC4F2B87BD" name="TASK_BOM_PART_LIST">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Task Affected Parts List: This is a list of components that will be affected by the maintenance activity. Although the task is logged against a particular log card item, several components may actually be affected by the work. This list is different than the &quot;materiel required&quot; list in that it deals with items that were affected without replacement. It is typically used during servicing-type corrective work.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8646B995-55F3-7D40-3E6D-82B9ED30BC2F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TASK_DB_ID" id="68E24562-B826-DA87-6B92-55DB3925FF65">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to TASK_TASK. The task to which this affected inventory is assigned,</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>54E45BEC-B400-B2DD-5AEB-2020B9F91B9B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="TASK_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F511ACCA-0B0D-8CD0-FBCF-5466E5B09260" referredColumn="660184D8-482F-2B7C-BB3E-718A5090F133"/>
+</associations>
+</Column>
+<Column name="TASK_ID" id="BDDA0924-B6A4-F69D-A439-F46421F1CE81">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to TASK_TASK. The task to which this affected inventory is assigned,</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4F0404C2-D4A8-7174-30E5-730E5A54747F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="TASK_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F511ACCA-0B0D-8CD0-FBCF-5466E5B09260" referredColumn="A4A6F9A3-F780-2F58-0314-0C75BF7D6786"/>
+</associations>
+</Column>
+<Column name="BOM_PART_DB_ID" id="392D7B65-479E-D006-B9C1-BB0750B942F1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to EQP_BOM_PART. The Bill of Materiels item that will be assigned to the task.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>132442E8-BC48-AB75-8BEF-58508BD31926</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="BOM_PART_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C398849-23F5-9C3E-D740-45CA8152E08D" referredColumn="E8EE7B6D-E8C9-300A-21B5-4BF414D622D5"/>
+</associations>
+</Column>
+<Column name="BOM_PART_ID" id="66D7A94D-7F0F-8CCE-5D12-36636F2B6595">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to EQP_BOM_PART. The Bill of Materiels item that will be assigned to the task.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1FE48840-147E-1B5E-41AB-4789C265334D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="BOM_PART_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C398849-23F5-9C3E-D740-45CA8152E08D" referredColumn="D5CCBAFC-8109-25AA-1A59-CE9EB277DF87"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="9A7C6880-B7C2-F44E-284C-F7E6452C54C8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FFEB337E-192A-0ABD-3179-EA0B39ADC8FB</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0C0F5B4-3251-E1F0-A838-D68874B9FADF" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="DB16E242-B6E5-3005-BD4A-4F72969C50D1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2B31684C-CE16-8691-9670-9BE3987E7CC5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="FC2F83B2-794A-1C04-5061-ED9E8A30D75C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>26DEC50B-B116-8673-78FD-A814E91E1021</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="ED3A658C-7E08-1A33-FDDB-8369D93DB9F6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF32D0EB-6F57-389B-7685-EA1E1C9FF896</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="C51D9D4E-C849-7C52-9E38-267755A53AE2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BBA370FD-2CE5-5A03-411B-B41A34020098</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8B1CD4A3-C4EC-FB9B-A35F-01BDFE215AF9" name="PK_TASK_BOM_PART_LIST">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8824DB8E-568A-271F-4E31-6FD39EAF4EF0</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68E24562-B826-DA87-6B92-55DB3925FF65"/>
+<colUsage columnID="BDDA0924-B6A4-F69D-A439-F46421F1CE81"/>
+<colUsage columnID="392D7B65-479E-D006-B9C1-BB0750B942F1"/>
+<colUsage columnID="66D7A94D-7F0F-8CCE-5D12-36636F2B6595"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1192073F-BD08-AC6E-69CE-8E6A0378BB71" name="IX_EQPBOMPART_TASKBOMPARTLIST">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5DB40DC0-E820-CF39-ABD5-5403E0BD4667</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="392D7B65-479E-D006-B9C1-BB0750B942F1"/>
+<colUsage columnID="66D7A94D-7F0F-8CCE-5D12-36636F2B6595"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3663CA5-D40E-A932-F9AC-EDD212E68A9E" name="IX_TASKTASK_TASKBOMPARTLIST">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>28CAD8E2-D346-499D-5683-38936C2A44F2</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68E24562-B826-DA87-6B92-55DB3925FF65"/>
+<colUsage columnID="BDDA0924-B6A4-F69D-A439-F46421F1CE81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9ED2878-232A-FDB7-595F-7826980BFCDE" name="FK_EQPBOMPART_TASKBOMPARTLIST">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="392D7B65-479E-D006-B9C1-BB0750B942F1"/>
+<colUsage columnID="66D7A94D-7F0F-8CCE-5D12-36636F2B6595"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="52C194BC-BD4F-F7B5-F107-1C41AFEED683" name="FK_MIMRSTAT_TASKBOMPRTLIST">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:36 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A7C6880-B7C2-F44E-284C-F7E6452C54C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B85624D3-D65A-4BAE-0828-6584CC01829E" name="FK_TASKTASK_TASKBOMPARTLIST">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:44 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68E24562-B826-DA87-6B92-55DB3925FF65"/>
+<colUsage columnID="BDDA0924-B6A4-F69D-A439-F46421F1CE81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

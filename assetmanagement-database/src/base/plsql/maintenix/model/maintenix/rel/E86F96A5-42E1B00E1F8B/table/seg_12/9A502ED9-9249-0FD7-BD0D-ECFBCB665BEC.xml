@@ -1,0 +1,269 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="9A502ED9-9249-0FD7-BD0D-ECFBCB665BEC" name="PO_LINE_MP">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:07:31 UTC</createdTime>
+<commentInRDBMS>This table stores the material planning key description for an order line.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_842</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_DB_ID" id="10DE07BD-10BF-D97C-1147-BA5C0AE0714B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:08:15 UTC</createdTime>
+<commentInRDBMS>The order database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B8FED73C-DA2B-9AAC-0FB7-B758BCC36BFE" referredColumn="AE4D476A-9C81-31A2-1B84-E4360290FCB2"/>
+</associations>
+</Column>
+<Column name="PO_ID" id="8F494279-4DAD-6ED9-58CD-D15F3F168B94">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:08:30 UTC</createdTime>
+<commentInRDBMS>The order identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B8FED73C-DA2B-9AAC-0FB7-B758BCC36BFE" referredColumn="8FB93D1B-D368-C513-CEFB-47CB96A754D6"/>
+</associations>
+</Column>
+<Column name="PO_LINE_ID" id="A5EC64BC-AF4F-4023-7770-1D4A4E5987AB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:08:47 UTC</createdTime>
+<commentInRDBMS>The order line identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PO_LINE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B8FED73C-DA2B-9AAC-0FB7-B758BCC36BFE" referredColumn="80D8ED4A-3F0D-33B7-93B9-F7247DC29D94"/>
+</associations>
+</Column>
+<Column name="MP_KEY_SDESC" id="D5ED83BB-4557-3FDA-4AA4-66E844FB0514">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:09:04 UTC</createdTime>
+<commentInRDBMS>External key of a related object in Material Planning application. To be used only in context of Material Planning API.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="C58A0C7B-74B1-5090-E6F6-4859C38474BB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:14:52 UTC</createdTime>
+<commentInRDBMS>Status of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A1100A22-7020-4878-7F26-EA693F78E884" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="AE9A7E1B-509F-46FE-AA22-E8DB5CAB2C5E">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-12 08:03:21 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_NO BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="CC6E0F0B-9AA5-074A-E06B-E6D9ED445D41">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-12 08:04:34 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CTRL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9CFD24F9-C347-454C-E654-00F27ABCDBBB" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="A953B4F4-104E-B3FD-1019-DD9C5253BF90">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:15:17 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="0921A2CA-F837-1358-6BAE-F386DDC00465">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-12 08:05:36 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CREATION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E1DE2DB-89FF-8AD7-CC4B-6F8547373947" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_DT" id="19062F75-98E5-9698-49BD-618A1B4BB9A6">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:15:36 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="B902FC70-A508-8621-46D3-C44E2A47827E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:16:00 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9BFF8FCF-2549-2904-DC14-3AFB6EF994CE" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="363C05C4-DA88-3146-6024-7857FAA98E4E">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:16:26 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9296C3CC-7AEB-541D-29C4-E07DAD84EB86" name="PK_PO_LINE_MP">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:10:17 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10DE07BD-10BF-D97C-1147-BA5C0AE0714B"/>
+<colUsage columnID="8F494279-4DAD-6ED9-58CD-D15F3F168B94"/>
+<colUsage columnID="A5EC64BC-AF4F-4023-7770-1D4A4E5987AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="181C6A3C-9E11-C424-23A5-A61F6351E898" name="IX_MP_KEY_SDESC_POLINEMP">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:19:20 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5ED83BB-4557-3FDA-4AA4-66E844FB0514"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7F5633EF-6796-603C-CC3D-38BC937C9ED9" name="FK_MIMRSTAT_POLINEMP">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:18:47 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C58A0C7B-74B1-5090-E6F6-4859C38474BB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D0C57D77-C176-72F5-E93C-A30A6F2307D2" name="FK_PO_LINE_POLINEMP">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-11 23:18:47 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10DE07BD-10BF-D97C-1147-BA5C0AE0714B"/>
+<colUsage columnID="8F494279-4DAD-6ED9-58CD-D15F3F168B94"/>
+<colUsage columnID="A5EC64BC-AF4F-4023-7770-1D4A4E5987AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09B8F205-68A0-F3F7-9740-4470C1BD2010" name="FK_MIMDB_POLINEMP_CT">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-12 08:21:16 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CC6E0F0B-9AA5-074A-E06B-E6D9ED445D41"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A2F7889F-DF09-D05D-BC82-CED311ED19ED" name="FK_MIMDB_POLINEMP_CR">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-12 08:21:16 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0921A2CA-F837-1358-6BAE-F386DDC00465"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C0D4ECE7-185E-7A79-A314-63ECBAC28F4F" name="FK_MIMDB_POLINEMP_RE">
+<createdBy>frzhca</createdBy>
+<createdTime>2018-06-12 08:21:16 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B902FC70-A508-8621-46D3-C44E2A47827E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

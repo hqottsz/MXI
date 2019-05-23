@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="3F0C65D0-7780-7518-21F2-7F56346AF949" name="PUBSUB_EVENT_PROPERTIES">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-03-01 22:43:01 UTC</createdTime>
+<commentInRDBMS>Properties of pubsub event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_831</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="KEY" id="CEA3DAF3-5F80-CFC4-5697-C4E1B2747C7C">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-03-01 22:53:40 UTC</createdTime>
+<commentInRDBMS>Property key</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>06D9BA35-CE10-EE63-8752-6E97559E5832</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PUBSUB_EVENT_ID" id="B71319B0-7443-7407-97E0-485F3A2CEC19">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-03-01 22:53:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="151C8951-9F45-D5BC-78A0-E7CE7E3D5FE3" referredColumn="676E0014-EBA1-77D2-FCB0-CC8D1ECE0F45"/>
+</associations>
+</Column>
+<Column name="VALUE" id="B17ED347-A3B6-BCC1-C970-A146C1950481">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-03-01 22:53:40 UTC</createdTime>
+<commentInRDBMS>Property value</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="972B3766-7E95-17BD-556F-BEEAB122E83D" name="IX_PUBSUB_EVENT_PROPERTIES_UNQ">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-03-01 22:54:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B71319B0-7443-7407-97E0-485F3A2CEC19"/>
+<colUsage columnID="CEA3DAF3-5F80-CFC4-5697-C4E1B2747C7C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2EDC01C3-96FA-987C-EF51-C20181B750AA" name="IX_PUBSUB_EVENT_PROPERTIES">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-03-01 22:57:59 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B71319B0-7443-7407-97E0-485F3A2CEC19"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3427744-2B05-3F08-FF12-EC8B697D45A1" name="FK_PUBS_EVT_PROPS_PUBS_EVT">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-03-01 22:53:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B71319B0-7443-7407-97E0-485F3A2CEC19"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,14 @@
+--liquibase formatted sql
+
+
+--changeSet OPER-8058:1 stripComments:false
+INSERT INTO
+   UTL_CONFIG_PARM
+   (
+      PARM_VALUE, PARM_NAME, PARM_TYPE, PARM_DESC, CONFIG_TYPE, ALLOW_VALUE_DESC, DEFAULT_VALUE, MAND_CONFIG_BOOL, CATEGORY, MODIFIED_IN, UTL_ID
+   )
+   SELECT '', 'ASSEMBLY_CODE', 'PLANNING_VIEWER','Planning viewer parameters','USER', 'STRING', '', 0, 'Planning Viewer', '8.0', 0
+   FROM
+      dual
+   WHERE
+      NOT EXISTS ( SELECT 1 FROM UTL_CONFIG_PARM WHERE PARM_NAME = 'ASSEMBLY_CODE' );

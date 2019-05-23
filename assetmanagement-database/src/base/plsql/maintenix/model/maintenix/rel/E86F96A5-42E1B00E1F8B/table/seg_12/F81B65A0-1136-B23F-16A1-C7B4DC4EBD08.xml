@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="F81B65A0-1136-B23F-16A1-C7B4DC4EBD08" name="MT_MAT_REQ_STAT_LOG">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>This table is used as intermediate storage for results for Materials Request Status Job. It is not to be used directly. Instead, please execute JOIN or logic operations on MV_MATERIALS_REQUEST_STATUS object. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9002971D-5395-47D8-4570-FB083992FAEB</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SCHED_DB_ID" id="7866F4A1-FBC3-EAED-6A62-3BC481031539">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>FK to sched_stask</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>096E576F-6561-7BF3-966D-067D70EB73D2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SCHED_ID" id="3DBB39CE-F14E-5C96-7902-3EBC83608328">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>FK to sched_stask</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>50975F9B-40E2-AD86-1CC7-B2FCFE412ED5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REQUEST_STATUS_DB_ID" id="162AFA3C-1601-3DF5-46B9-907576792179">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>Ref to ref_material_req_status</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>01B1B68C-D54C-6299-F287-3C1E8D01D975</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REQUEST_STATUS_CD" id="73B3C45B-9F28-B87A-0285-4B1A851B98B1">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>Ref to ref_material_req_status</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3F9580A3-C26C-D895-290F-FA9DDF04981B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LATEST_ESTIMATED_TIME" id="55CE7E53-087C-0ECB-7EFD-4D25A23DC51F">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>Ref to req_part updated_eta or est_arrival_dt</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>02C435E4-1E3E-E2AB-950E-935840BA83B2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REQ_PART_DB_ID" id="AABB702C-7AA5-0638-B5C9-80CFF70690D2">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>FK to req_part</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C3D0FF1C-9D1E-6992-A838-CDE9412D8203</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REQ_PART_ID" id="F0345645-0E2A-7ACA-E2E6-9812B50CB7E7">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>FK to req_part</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>71A928B2-2F66-FB5F-7AFB-A6DC3EAF7204</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0D1AD64-9EB3-A5FD-319A-98851F489E6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WARNING_BOOL" id="AE63BE28-9A3D-EF82-593D-80A4FE6A27D7">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<commentInRDBMS>Description of part</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>902FE220-C29A-C6F0-A9AC-EC7FFE7437BF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REQ_PART_SDESC" id="0ED3B237-F0CD-68C6-D9A5-393D9E833653">
+<sourceDDLFile>maketable.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-12-12 14:32:26 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DB12F77B-12B0-630B-665A-7EC379AFDA36</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

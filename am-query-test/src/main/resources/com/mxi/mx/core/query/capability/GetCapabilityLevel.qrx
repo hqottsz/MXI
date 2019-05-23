@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetCapabilityLevel</name>
+   <description />
+   <sql>
+      SELECT
+         cap_db_id,
+         cap_cd,
+         config_level_db_id,
+         config_level_cd
+      FROM
+         acft_cap_levels
+      WHERE
+         acft_no_db_id	= :aAcftNoDbId AND
+         acft_no_id		= :aAcftNoId   AND
+         cap_db_id      = :aCapDbId    AND
+         cap_cd         = :aCapCd
+   </sql>
+   <arguments>
+      <argument name="aAcftNoDbId" type="INTEGER" />
+      <argument name="aAcftNoId"   type="INTEGER" />
+      <argument name="aCapDbId" type="INTEGER" />
+      <argument name="aCapCd"   type="STRING" />
+   </arguments>
+</sql-statement>
+

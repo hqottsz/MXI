@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="D906712C-768E-296B-200B-AAD756059A41" name="UTL_ROLE_PARM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table lists the role specific configuration parameter values.  The configuration parameter must be defined in the UTL_CONFIG_PARM table first.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>948EAF6A-E3F1-B58D-D6C6-49677FFAFCE6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ROLE_ID" id="340187C2-7C8E-5619-D725-9D8B9775A681">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F8300CC2-5A8F-24B4-4378-4BC24FE22309</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA3DA1A2-0132-653B-273D-E25EFAF17212" referredColumn="A7366B87-F93D-77E6-75A8-EE5917190954"/>
+</associations>
+</Column>
+<Column name="PARM_NAME" id="DDC9DAEE-272E-E825-E3BD-5BCCA5A35CDC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The name of the configuration parameter.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E59E30FF-4499-DB5E-345D-A77F7EC4DA7B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB1A2F34-5895-7F56-315E-734BCE07185E" referredColumn="332A1F93-7715-D8B6-7585-F94F6244F14E"/>
+</associations>
+</Column>
+<Column name="PARM_TYPE" id="ADCAAD6F-C77C-D2A9-C35C-FE8AAD7AEFA7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Configuration paramater type.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6D836134-11ED-7528-D2E4-6C23C5EEED9A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB1A2F34-5895-7F56-315E-734BCE07185E" referredColumn="89F8C30F-650E-014D-4164-27616A4B19DE"/>
+</associations>
+</Column>
+<Column name="PARM_VALUE" id="F1003530-AFC3-02D5-9814-F951916229BF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Configuration parameter value.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F44EF7D2-F9AC-93DB-DB01-B584BB425C70</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="C88B35BC-0C06-A3E8-C9C7-DB2DC3DA62B7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D29B101B-1F1E-C98D-79CA-06BE54931BCA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="574DA48D-2DBC-079C-BA2B-BB91D02623B4" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="407DEEDD-D65F-F002-F043-BCB4F7645295" name="PK_UTL_ROLE_PARM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1A1B0336-B6E5-051D-9A72-A055585A7C87</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="340187C2-7C8E-5619-D725-9D8B9775A681"/>
+<colUsage columnID="DDC9DAEE-272E-E825-E3BD-5BCCA5A35CDC"/>
+<colUsage columnID="ADCAAD6F-C77C-D2A9-C35C-FE8AAD7AEFA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="49AF9A6D-CFD3-FE14-7D92-B8449369D663" name="FK_UTLCONFIGPARM_UTLROLEPARM">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDC9DAEE-272E-E825-E3BD-5BCCA5A35CDC"/>
+<colUsage columnID="ADCAAD6F-C77C-D2A9-C35C-FE8AAD7AEFA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0D654A3-66D0-D82E-B696-BBE3F2D33014" name="FK_UTLRLPRM_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C88B35BC-0C06-A3E8-C9C7-DB2DC3DA62B7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BA9EE98A-9CA3-AEEF-FA2D-683D5D008DB7" name="FK_UTLROLE_UTLROLEPARM">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="340187C2-7C8E-5619-D725-9D8B9775A681"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

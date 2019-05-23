@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetLrpLoc</name>
+   <description>This query retrieves an LRP Aircrafts by LR Plan</description>
+   <sql>
+      SELECT
+         *
+      FROM
+         lrp_inv_inv
+      WHERE
+         lrp_db_id      = :aLrpDbId AND
+         lrp_id         = :aLrpId
+   </sql>
+    <arguments>
+      <argument name="aLrpDbId" type="INTEGER" />
+      <argument name="aLrpId" type="INTEGER" />
+   </arguments>
+</sql-statement>

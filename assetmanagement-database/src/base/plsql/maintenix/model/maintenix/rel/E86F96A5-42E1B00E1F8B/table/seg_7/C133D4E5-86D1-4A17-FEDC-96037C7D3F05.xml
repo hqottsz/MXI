@@ -1,0 +1,205 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_7" id="C133D4E5-86D1-4A17-FEDC-96037C7D3F05" name="AEROBUY_INVOICE_TAXES">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-24 19:12:24 UTC</createdTime>
+<comment>Integration specific information relating to invoice taxes</comment>
+<commentInRDBMS>Integration specific information relating to invoice taxes</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_818</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_INVOICE_ALT_ID" id="615581E5-985F-65D5-E7CE-ED315A1516D6">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-24 19:31:33 UTC</createdTime>
+<commentInRDBMS>Primary key is the ALT_ID of the PO_INVOICE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1DA07C0E-54D8-3B81-CED2-F80B7E19D4BD" referredColumn="9403E75F-9E3F-226E-74E8-87AEB08F2D68"/>
+</associations>
+</Column>
+<Column name="LOCAL_TAX" id="4616835A-0BF5-BE98-9B10-F2A7FC30A3C2">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 13:58:02 UTC</createdTime>
+<commentInRDBMS>Local Sales Tax of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATE_TAX" id="E54E42F0-45BD-0D7C-BF74-C33BC5ED90CA">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 13:58:02 UTC</createdTime>
+<commentInRDBMS>State Sales Tax of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNTY_TAX" id="4C33FBAD-1AAD-96D5-A62A-35E534E6B281">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:02:27 UTC</createdTime>
+<commentInRDBMS>County Sales Tax of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_SALE" id="1568E5C6-1CC2-A26E-36AA-28E66C406D33">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Sale of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_PURCHASE" id="5DB5D6B8-A1AF-3887-2E2B-7348AC4B66B4">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Purchase of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_CREDIT_LOAN" id="AD47A34A-07A2-2970-F92C-A5F6CEB80803">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Credit Loans/Conditional Sales of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_EXCHANGE" id="EC75E546-A358-2FD2-452D-06B7B4F51CC3">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Exchange of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_LEASE" id="AED6826D-79B4-940C-1D4B-B8C64F4AA304">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Lease/Hire/Rental of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_PROVISIONING" id="6E2B2BE4-0BA3-2B28-801F-BBA22B10F33A">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Provisioning of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_COMMISSIONS" id="4B08BF85-401D-ADBE-7D26-F5B034EAF0B8">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Sales/Commissions of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VAT_EXEMPT" id="31924333-9785-3B63-1C63-3D91FB52E821">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 15:36:38 UTC</createdTime>
+<commentInRDBMS>Value Added Tax Exempt of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B1DE1690-D29B-383E-3525-4CF397DDA586" name="PK_AEROBUY_INVOICE_TAXES">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-24 19:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="615581E5-985F-65D5-E7CE-ED315A1516D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0D9185CD-9D00-A4EA-64F9-695C1FDA0842" name="FK_AEB_INV_TAXES_AEB_INV_INFO">
+<createdBy>calaca</createdBy>
+<createdTime>2017-08-25 17:18:46 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="615581E5-985F-65D5-E7CE-ED315A1516D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

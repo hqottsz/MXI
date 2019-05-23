@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="45333FD5-D5C3-4B05-9357-7E05F16C373C" name="UTL_CONTEXT_SEQUENCE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table is used to store dynamically generated context-sensitive sequences for the application.&lt;br&gt;Maintenix will automatically populate this table so there is no need to migrate data.  This table should be empty when creating new databases.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B28EF448-3307-7EE3-2ECC-A00AB701C984</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQUENCE_CD" id="3CD5EBDC-7D41-73C6-EF94-FE534722CCF3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Sequence code identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>257CA0A2-E3CD-FD1F-3C24-02F2F12D3DC2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTEXT_KEY" id="AD871F6E-707D-0008-15E3-4BBFD100FCA2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Unique context for the sequence code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F779A63C-8DDA-93FF-5DEE-BE506FCC4DB2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NEXT_VALUE" id="1BBAEF79-5F9C-5656-2B5B-679A2B043CAC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The next value to be used in the sequence.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2D5258D2-763B-8982-B816-3E0E10C948FB</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="NEXT_VALUE BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D54246EC-DE5F-21C4-8D61-5EE169EEFB6C" name="pk_UTL_CONTEXT_SEQUENCE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>6C6644E9-2339-E283-C0A7-60335A861F81</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3CD5EBDC-7D41-73C6-EF94-FE534722CCF3"/>
+<colUsage columnID="AD871F6E-707D-0008-15E3-4BBFD100FCA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

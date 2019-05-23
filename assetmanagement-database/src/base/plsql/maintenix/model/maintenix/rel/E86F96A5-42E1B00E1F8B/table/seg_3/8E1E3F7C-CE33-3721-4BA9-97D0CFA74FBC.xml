@@ -1,0 +1,432 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_3" id="8E1E3F7C-CE33-3721-4BA9-97D0CFA74FBC" name="INV_RELIABILITY_NOTE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This table contains the details of a reliability note. a reliability note is used to track inventory with reliability problems.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>69C66B9E-4FBF-9A45-16B6-A838CC9D4391</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_NO_DB_ID" id="72939E57-3AC6-7D67-97C1-12C2BD2DEC95">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PFK to inv_inv. the inventory that the reliability note was recorded against.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A2A62985-096E-46AE-75E1-82D3D0350C25</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BFBB1216-AC18-B350-0D36-8573C65B9DE2" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="INV_NO_ID" id="3C8532B2-ECF0-D981-4867-6ADBE899CCD1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PFK to inv_inv. the inventory that the reliability note was recorded against.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8073C9B8-8F2F-52A8-A818-83ECD5608DA4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BFBB1216-AC18-B350-0D36-8573C65B9DE2" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="RELIABILITY_NOTE_ID" id="CD01AC19-B8D7-EF5D-2874-C09B9D184339">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Unique identifier assigned from Sequence INV_RELIABILITY_NOTE_ID_SEQ</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>21D604B0-4C64-3F30-785F-0E1CB16811C7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RELIABILITY_NOTE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RELIABILITY_NOTE_TYPE_DB_ID" id="3235CA67-F06B-720F-806B-2F275A19EDFC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_RELIABILITY_NOTE_TYPE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1C56FB50-E426-CF7D-8568-8BEA4C5875C1</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RELIABILITY_NOTE_TYPE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="460ED87F-2C3D-6CC0-5DBD-038C6720FABC" referredColumn="630FEEF5-C636-B64F-FC02-78561C834286"/>
+</associations>
+</Column>
+<Column name="RELIABILITY_NOTE_TYPE_CD" id="5591A374-B2EA-17A0-6D90-90033E30F54A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_RELIABILITY_NOTE_TYPE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>33C2D795-B992-DB52-D180-CAAB19577C57</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="460ED87F-2C3D-6CC0-5DBD-038C6720FABC" referredColumn="8E4C279F-4728-4B20-1F02-A4F75C7CFB3B"/>
+</associations>
+</Column>
+<Column name="RELIABILITY_NOTE" id="69094E67-3A05-BB14-4B79-01162D024E20">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Records the content of the reliability note.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>17324439-A829-C848-9FBF-0B523FF8E7F5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ISSUE_HR_DB_ID" id="79B959EF-9F37-07F7-BA11-D2C1065343A3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR.  Records the id of the user who issued/added the reliability note.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E7C6D4C1-F4F1-C0B8-BA9F-1C0552C0D905</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ISSUE_HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2B961D9A-C9B7-B846-CC48-7DAD0C4FE918" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="ISSUE_HR_ID" id="F3BD7529-6138-283E-BD07-258477C5A619">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR.  Records the id of the user who issued/added the reliability note.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0DDE5873-F5FA-A635-7A1B-754084D21933</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ISSUE_HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2B961D9A-C9B7-B846-CC48-7DAD0C4FE918" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="ISSUE_DT" id="4922AF52-47F5-F0E2-91EA-B44AC5BBBF14">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Records the date when the reliability note was issued/added.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1F215D05-ADBE-7F89-522B-E7C1065A59D6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESOLVED_BOOL" id="CF462A64-BD6F-DC6C-3FDE-DBE06B44F319">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Boolean flag to indicate if the Reliability Note is resolved or not.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6C9086EF-6F2B-3220-D250-CABC636D5CDA</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RESOLVED_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESOLVE_NOTE" id="65C5FDFF-31CF-BDD1-47CB-557549744775">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Records the resolution note.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3A108B89-6788-C254-764C-DCCEA253C539</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESOLVE_HR_DB_ID" id="EE0F0B13-FBBF-465F-E4C3-6976F86FE7C4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR.  Records the id of the user who entered the resolution note.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B500B452-016D-00E8-B05E-6BA4766DCD04</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RESOLVE_HR_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B0591DE-368A-20B0-CA6B-837B332D841D" referredColumn="90BFF9E0-5D3A-186C-BD57-0DE93BDFDD80"/>
+</associations>
+</Column>
+<Column name="RESOLVE_HR_ID" id="8D1905DF-C268-FDD6-4282-0BDBE9945E22">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to ORG_HR.  Records the id of the user who entered the resolution note.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F8800B1C-B4E1-0EC8-9057-4548FFCE6599</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RESOLVE_HR_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B0591DE-368A-20B0-CA6B-837B332D841D" referredColumn="64553DF8-5D14-B1D4-F20D-E64BBDDFF0ED"/>
+</associations>
+</Column>
+<Column name="RESOLVE_DT" id="C75B6D16-E501-3F3D-FF75-DCDC51A7E959">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Records the date when the resolution note was entered.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>53DD7870-6E07-7CE5-87C2-D480E1C194AD</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="4DB2E276-5CF9-C10A-96A7-EF640EAFE1D2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F1DF0B61-89C1-4AC1-1901-ACCFD4017BE1</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="98B3A52A-CCB5-3DB3-7549-E7FFD70CB54C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C8D31D0-221E-5C4F-1763-B5D09626DA93</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="CBE3E643-110D-BFDA-C4C6-564E6C32C3D6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>21A2D5B8-5EDC-B9BD-D38D-56A61E644256</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="71E4FE18-CD91-2A41-75B6-18CA53EA0102">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>409B0E58-231B-7C8B-3215-17DCC8717E68</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="E842E961-8393-3191-25C9-BAED7EB0755F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>008926DE-15C0-24A3-8A18-E7A79DC5A667</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CC9A6D82-1401-5380-D1CA-6C54AEFC3C1D" name="PK_INV_RELIABILITY_NOTE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E7FC13C2-ADBB-97F8-5966-C16B4740908E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72939E57-3AC6-7D67-97C1-12C2BD2DEC95"/>
+<colUsage columnID="3C8532B2-ECF0-D981-4867-6ADBE899CCD1"/>
+<colUsage columnID="CD01AC19-B8D7-EF5D-2874-C09B9D184339"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4010554E-CF79-5E69-71A8-930647BC4B35" name="IX_INVINV_INVRELNOTE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DD71ACD8-4C61-306E-302B-139E60612746</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72939E57-3AC6-7D67-97C1-12C2BD2DEC95"/>
+<colUsage columnID="3C8532B2-ECF0-D981-4867-6ADBE899CCD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="11CEAB25-6FFA-DED3-51DE-7F272E157117" name="IX_ISSUEORGHR_INVRELNOTE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DE53B1CD-B129-BB77-045E-DEDD1F336E13</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="79B959EF-9F37-07F7-BA11-D2C1065343A3"/>
+<colUsage columnID="F3BD7529-6138-283E-BD07-258477C5A619"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AA4A395C-28AA-8214-4A69-40CE1E044E09" name="IX_RESOLVEORGHR_INVRELNOTE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E0F1E72E-CCBB-0CA2-11B7-157BB88F93C7</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE0F0B13-FBBF-465F-E4C3-6976F86FE7C4"/>
+<colUsage columnID="8D1905DF-C268-FDD6-4282-0BDBE9945E22"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="43403F0B-6AC8-AA5F-3F72-300514275919" name="FK_INVINV_INVRELNOTE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72939E57-3AC6-7D67-97C1-12C2BD2DEC95"/>
+<colUsage columnID="3C8532B2-ECF0-D981-4867-6ADBE899CCD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA37D274-40A7-1597-5C59-54280661D656" name="FK_ISSUEORGHR_INVRELNOTE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="79B959EF-9F37-07F7-BA11-D2C1065343A3"/>
+<colUsage columnID="F3BD7529-6138-283E-BD07-258477C5A619"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="814B6CD4-6A8B-AF29-0970-F9C47F307E1E" name="FK_REFRELNOTETYPE_INVRELNOTE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3235CA67-F06B-720F-806B-2F275A19EDFC"/>
+<colUsage columnID="5591A374-B2EA-17A0-6D90-90033E30F54A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE8CCA50-C654-3FBA-9E82-BFAD4C37AE3E" name="FK_RESOLVEORGHR_INVRELNOTE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:42 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE0F0B13-FBBF-465F-E4C3-6976F86FE7C4"/>
+<colUsage columnID="8D1905DF-C268-FDD6-4282-0BDBE9945E22"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

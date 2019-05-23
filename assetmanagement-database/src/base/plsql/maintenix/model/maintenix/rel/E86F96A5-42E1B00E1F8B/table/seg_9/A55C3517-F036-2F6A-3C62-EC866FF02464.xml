@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="A55C3517-F036-2F6A-3C62-EC866FF02464" name="UTL_CURRENT_VERSION">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F2E96408-E293-9A38-7127-D5FACF3AC685</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COMPONENT_NAME" id="30FA5599-919C-DD46-1FC1-359B872D4F0A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The name of the component that was installed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3F3D4450-D683-0836-5271-87858E5B6356</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VERSION" id="988A0F2B-F6C3-AEBA-2D8D-DEB6B5979A82">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The version for the component in the 0.0.0.0 format.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>63A964CE-1303-9F6A-610E-496983B0D3E0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="(REPLACE(REPLACE(TRANSLATE(VERSION, &apos;123456789&apos;, &apos;000000000&apos;), &apos;00&apos;, &apos;0&apos;), &apos;00&apos;, &apos;0&apos;) = &apos;0.0.0.0&apos;)"/>
+</checkConstraint>
+<defaultValue>&apos;1.0.0.0&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERVICEPACK_VER" id="319041AE-067A-E5BC-D31F-304F36FED88B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The service pack version for the component.  This should be set to 0 if no service pack is installed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BB749C1E-38EA-BA8E-AEF5-F595B79E2171</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SERVICEPACK_VER BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATE_VER" id="E0EF29CA-75E3-B175-07F4-630DD48DD726">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The update version for the component.  This should be set to 0 if no update is installed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9E6DF8CB-8BE9-67C9-E316-4B9A37B8F015</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UPDATE_VER BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SHORT_VERSION_NAME" id="06820D47-8D8D-F30E-3970-8883558320F1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The short version label is an alphanumeric name that combines the vesion code, service pack id, and update id.  The short label should exclude characters such as periods that cannot be used in folder names.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BC9ED0C7-973A-8CE4-E555-DDE468FA2E42</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FULL_VERSION_NAME" id="F32D5D1D-507F-CEAD-73EB-3ED7BD81855A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The full version label is an alphanumeric name that combines the vesion code, service pack id, and update id.  The full label can include additional characters such as periods since it is not used for folder names.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B8E8BBDD-9038-AFCC-ED25-B31038CB6254</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUILD_LABEL" id="366EDFD4-00ED-9E03-28E9-9DF0B34AEFA7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The build label that was generated during the build of this component.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D3CFD9FB-9563-2F30-CA9F-4FD3477285CB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUILD_LOCATION" id="5DAFF24E-AFF1-2E78-3469-817BD80A9B26">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The build location that was generated during the build of this component.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>87E848A5-4E1D-C4F1-EBF4-0116E121FC95</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUILD_REVISION" id="0E5DA2FF-0504-CDBA-FF8F-F3494FF31A51">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The build revision that was generated during the build of this component.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>08DCAE86-1BA3-2BA9-3B4C-6578561F556C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<generateConstraintInDDL>NO</generateConstraintInDDL>
+</Column>
+<Column name="INSTALL_DT" id="40F379EB-82D1-E01B-CE96-02714518777C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The date and time when this component was installed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0F6D773E-8664-BFA4-6B55-4DB85392D2E2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSTALL_SDESC" id="BE107D6C-2CEC-B397-0AED-4D1C3BF34B37">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The descrition of the method in which this component was installed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9E0D9DB6-AA37-BD43-8C8B-C9D9A13DFDA9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="82A1E2EA-E61A-5C85-3F2C-07E88B39D741" name="PK_UTL_CURRENT_VERSION">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EB2BC4FE-09BA-6FA0-8D4B-FE8999C6CAB7</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30FA5599-919C-DD46-1FC1-359B872D4F0A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,278 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="4D5183C0-81F1-2378-C85B-4B0B3DDBB919" name="EQP_ASSMBL_BOM_SENS">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:10:24 UTC</createdTime>
+<commentInRDBMS>This is a relationship table between EQP_ASSMBL_BOM and REF_SENSITIVITY.&lt;br/&gt;A record in this table means that a sensitivity is enabled for a system.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_822</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ASSMBL_DB_ID" id="68E83DFB-945B-9892-AC9C-04036353634F">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>FK to  EQP_ASSMBL_BOM&apos;s PK table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="180EEC54-2766-7DB4-D514-4ED0D51FC180" referredColumn="3C79E456-14A7-1023-7F50-5413C7A0A309"/>
+</associations>
+</Column>
+<Column name="ASSMBL_CD" id="0A698B29-0EDC-A02E-F6C7-5937B4A42069">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>FK to  EQP_ASSMBL_BOM&apos;s PK table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="180EEC54-2766-7DB4-D514-4ED0D51FC180" referredColumn="52B5FC65-912A-82CD-85E6-95957E1DD31C"/>
+</associations>
+</Column>
+<Column name="ASSMBL_BOM_ID" id="2894FD1C-F4E8-1875-D9AA-95F4B8AA84B4">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>FK to  EQP_ASSMBL_BOM&apos;s PK table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="180EEC54-2766-7DB4-D514-4ED0D51FC180" referredColumn="3DB0847B-8400-78B1-82EF-9B43F331A13C"/>
+</associations>
+</Column>
+<Column name="SENSITIVITY_CD" id="B111B3E1-5BAA-674F-16CB-8B20E9BC41B2">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>FK to REF_SENSITIVITY PK table</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C3ECA10C-875A-A569-BC9F-6E84BF309C2C" referredColumn="1E947E79-C686-1D5B-3425-2F74DEB7E76E"/>
+</associations>
+</Column>
+<Column name="CTRL_DB_ID" id="99210CFE-F5B6-587F-6301-F2463FC50BD9">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2017-10-03 14:28:06 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CTRL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D49B4CC0-B811-81EA-DA9B-86F1AEDC0C86" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="1F17E780-83FB-1474-F3B5-CCD5DFEFFE6E">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+<valueDef value="2" description=""/>
+<valueDef value="3" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8B2BA38E-D650-F9E0-D9F8-55A6515877E5" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DB_ID" id="20E5AD87-BFF0-9B47-DB12-9F282B847BD7">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="DE7E2A0A-0A7F-F557-8F87-CAA73D5F2F98" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="F6891A4D-21CE-F8B0-83B1-1158F5490532">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_NO" id="F4823B6D-DAC9-2E6B-2634-D7022E2C1E9E">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="2C4FED94-16EB-B313-C463-D6A875D7BFEA">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="62CEB8CF-80C5-BA3E-E3D0-D7E5E18CA2F8">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="0C2FD146-A37C-5212-6B3A-A120994A53C1" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="CB91EF31-F20D-C1D7-67CA-79AC0E23F636">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8F84C01B-3183-E59A-0F88-226982FF7DB8" name="PK_EQP_ASSMBL_BOM_SENS">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:14:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68E83DFB-945B-9892-AC9C-04036353634F"/>
+<colUsage columnID="0A698B29-0EDC-A02E-F6C7-5937B4A42069"/>
+<colUsage columnID="2894FD1C-F4E8-1875-D9AA-95F4B8AA84B4"/>
+<colUsage columnID="B111B3E1-5BAA-674F-16CB-8B20E9BC41B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7D0FCFF2-9A63-AB2B-525E-A422D9F0D69B" name="FK_EQPASSMBLBOM_ASSMBLBOMSENS">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:27:19 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68E83DFB-945B-9892-AC9C-04036353634F"/>
+<colUsage columnID="0A698B29-0EDC-A02E-F6C7-5937B4A42069"/>
+<colUsage columnID="2894FD1C-F4E8-1875-D9AA-95F4B8AA84B4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C00B1144-5CC2-2BD1-B2F8-F12A197098B6" name="FK_MIMDB_EQPASSMBLBOMSENS_REV">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:27:19 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62CEB8CF-80C5-BA3E-E3D0-D7E5E18CA2F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6C8FF454-1E08-575E-5CA5-AA81FB7B63DF" name="FK_MIMDB_EQPASSMBLBOMSENS_CRE">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:27:19 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="20E5AD87-BFF0-9B47-DB12-9F282B847BD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D35C4F8-BD98-3306-9F4E-F32588F22231" name="FK_MIMRSTAT_EQPASSMBLBOMSENS">
+<createdBy>gpichetto</createdBy>
+<createdTime>2017-10-02 16:30:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F17E780-83FB-1474-F3B5-CCD5DFEFFE6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C914394-F834-5295-F7C6-6235C712087B" name="FK_MIMDB_EQPASSMBLBOMSENS_CTRL">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2017-10-03 14:42:48 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99210CFE-F5B6-587F-6301-F2463FC50BD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA69D6B2-9356-2D77-3E4A-896CEC7751A1" name="FK_REFSENS_EQPASSMBLBOMSENS">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-25 15:55:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B111B3E1-5BAA-674F-16CB-8B20E9BC41B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

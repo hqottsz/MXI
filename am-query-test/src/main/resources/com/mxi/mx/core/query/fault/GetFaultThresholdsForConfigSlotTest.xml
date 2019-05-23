@@ -1,0 +1,57 @@
+<dataset>
+   <!-- Test data for GetFaultThresholdsForConfigSlot query -->
+
+   <!-- Root config slot with threshold -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      assmbl_bom_cd = "TEST-1"
+     />
+
+   <eqp_assmbl_bom_threshold
+      fault_threshold_db_id = "4650"
+      fault_threshold_id = "1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1" />
+
+   <!-- Sub-config slot with threshold -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "2"
+      assmbl_bom_cd = "TEST-2"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST"
+      nh_assmbl_bom_id = "1" />
+
+   <eqp_assmbl_bom_threshold
+      fault_threshold_db_id = "4650"
+      fault_threshold_id = "2"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "2" />
+
+   <!-- Unrelated config slot with threshold -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      assmbl_bom_cd = "TEST-3"
+     />
+
+   <eqp_assmbl_bom_threshold
+      fault_threshold_db_id = "4650"
+      fault_threshold_id = "3"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3" />
+
+   <!-- Inventory with no applicability code -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+     />
+
+</dataset>

@@ -1,0 +1,32 @@
+<dataset>
+
+   <!--Create data for organizations of type ADMIN and MRO.
+       Admin organization is added to the database as 0 level data.
+       Admin organization owner is default and local.
+       MRO organization is not supposed to be local in order not to
+       trigger financial transactions -->
+   <org_org
+         org_type_cd       = "MRO"
+         org_db_id         = "4650"
+         org_id            = "10002"
+         company_org_db_id = "4650"
+         company_org_id    = "10001"
+         />
+   <inv_owner
+         owner_db_id       = "4650"
+         owner_id          = "20001"
+         org_db_id         = "0"
+         org_id            = "1"
+         local_bool        = "1"
+         default_bool      = "1"
+         />
+   <inv_owner
+         owner_db_id       = "4650"
+         owner_id          = "20002"
+         org_db_id         = "4650"
+         org_id            = "10002"
+         local_bool        = "0"
+         default_bool      = "0"
+         />
+
+</dataset>

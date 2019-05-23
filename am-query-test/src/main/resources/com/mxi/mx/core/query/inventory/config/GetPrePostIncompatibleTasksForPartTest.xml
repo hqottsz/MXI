@@ -1,0 +1,200 @@
+<dataset>
+
+   <!-- Baseline Configuration: Part group -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      />
+
+   <!-- Incompatible Requirement task definition -->
+   <task_task
+      task_db_id = "4650"
+      task_id = "1"
+      task_defn_db_id = "4650"
+      task_defn_id = "11"
+      />
+
+   <task_task
+      task_db_id = "4650"
+      task_id = "2"
+      task_defn_db_id = "4650"
+      task_defn_id = "22"
+      />
+
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "3"
+      />
+
+   <!--=============================== Incompatibility Definition (OPEN) ===============================-->
+
+   <!-- Incompatible part -->
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      />
+
+   <!-- Incompatible when the actual task of task defn is OPEN -->
+   <eqp_part_compat_task
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      task_defn_db_id = "4650"
+      task_defn_id = "11"
+      pre_complete_bool = "1"
+      />
+
+   <!--=============================== Incompatibility Definition (COMPLETED) ===============================-->
+
+   <!-- Incompatible part -->
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "2"
+      />
+
+   <!-- Incompatible when the actual task of task defn is completed -->
+   <eqp_part_compat_task
+      part_no_db_id = "4650"
+      part_no_id = "2"
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      task_defn_db_id = "4650"
+      task_defn_id = "11"
+      pre_complete_bool = "0"
+      />
+
+   <!--=============================== Testing Data on Actuals ===============================-->
+
+   <!-- The inventory that the modification is working on -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+      h_inv_no_db_id = "4650"
+      h_inv_no_id = "1"
+      />
+
+   <!-- Actual of Incompatible Requirement Task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "1"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+      h_sched_db_id = "4650"
+      h_sched_id = "1"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "1"
+      event_status_db_id = "0"
+      event_status_cd = 'ACTV'
+      hist_bool = "0"
+      />
+
+   <!-- Actual JIC of Requirement task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "2"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      h_sched_db_id = "4650"
+      h_sched_id = "1"
+      />
+
+   <!-- Adhoc Task -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "3"
+      h_sched_db_id = "4650"
+      h_sched_id = "3"
+      />
+
+   <!--=============================== Fault raised on actual of requirement task ===============================-->
+
+   <!-- Fault event -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "11"
+      />
+   <!-- Fault event relationship: -->
+   <!-- event_db_id/id is PK of actual of requirement task -->
+   <!-- rel_event_db_id/id is PK of to fault event -->
+   <evt_event_rel
+      event_db_id = "4650"
+      event_id = "1"
+      event_rel_id = "1"
+      rel_event_db_id = "4650"
+      rel_event_id = "11"
+      rel_type_cd = "DISCF"
+      />
+
+   <!-- Corrective task of the fault -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "12"
+      h_sched_db_id = "4650"
+      h_sched_id = "12"
+      />
+   <!-- Corrective task event -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "12"
+      />
+   <!-- Correction event relationship -->
+   <!-- event_db_id/id is PK of fault event -->
+   <!-- rel_event_db_id/id is PK of corrective event -->
+   <evt_event_rel
+      event_db_id = "4650"
+      event_id = "11"
+      event_rel_id = "2"
+      rel_event_db_id = "4650"
+      rel_event_id = "12"
+      rel_type_cd = "CORRECT"
+      />
+
+   <!--=============================== Fault raised on JIC actual of requirement task ===============================-->
+
+   <!-- Fault event -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "21"
+      />
+   <!-- Fault event relationship: -->
+   <!-- event_db_id/id is PK of JIC actual of requirement task -->
+   <!-- rel_event_db_id/id is PK of fault event -->
+   <evt_event_rel
+      event_db_id = "4650"
+      event_id = "2"
+      event_rel_id = "1"
+      rel_event_db_id = "4650"
+      rel_event_id = "21"
+      rel_type_cd = "DISCF"
+      />
+
+   <!-- Corrective task of the fault -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "22"
+      h_sched_db_id = "4650"
+      h_sched_id = "22"
+      />
+   <!-- Corrective task event -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "22"
+      />
+   <!-- Correction event relationship -->
+   <!-- event_db_id/id is PK of fault event -->
+   <!-- rel_event_db_id/id is PK of corrective event -->
+   <evt_event_rel
+      event_db_id = "4650"
+      event_id = "21"
+      event_rel_id = "2"
+      rel_event_db_id = "4650"
+      rel_event_id = "22"
+      rel_type_cd = "CORRECT"
+      />
+
+</dataset>

@@ -1,0 +1,690 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_1" id="5AEAA6A1-EC9C-A1E7-7B77-1AEA48C6D485" name="EQP_STOCK_NO">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DC48D2C9-0ED9-0C4F-DAA3-CC989A609184</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="STOCK_NO_DB_ID" id="834BBB93-65A2-BC1D-A537-CAF5F6FF0542">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record and forms part of the record&apos;s primary key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8B35C99D-6B97-1C98-78E3-CBBEAFCCD221</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="STOCK_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CA94F885-B87B-749E-2E55-9E634048EEAF" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="STOCK_NO_ID" id="2C1B198A-DC66-DDE8-299F-6D31BFBF3C18">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Unique ID assigned from java sequence eqp_stock_no_id.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B202D038-8A4B-9D60-1D4A-0BD0C2B1C0F4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="STOCK_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QTY_UNIT_DB_ID" id="40ED9CFF-CA1D-37BC-B490-6F46E7CE4053">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Units of measure are used whenever you need to describe stock quantities for storage, movement, purchasing, etc. Every part number within this stock number must have the same unit of measure. FK to REF_QTY_UNIT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>87DF441B-1B2D-731C-23B6-990241918291</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="QTY_UNIT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7BE1453A-117D-F413-4901-8782F8191C39" referredColumn="23B22E93-6232-A314-4C1F-4B7D89BC1E46"/>
+</associations>
+</Column>
+<Column name="QTY_UNIT_CD" id="1C2A60F4-CDC2-2155-159E-D37A4310D4BC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Units of measure are used whenever you need to describe stock quantities for storage, movement, purchasing, etc. Every part number within this stock number must have the same unit of measure. FK to REF_QTY_UNIT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>88E459E5-3E27-8E1E-A38D-C1EF24C7BB5B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7BE1453A-117D-F413-4901-8782F8191C39" referredColumn="2C619450-2757-FF09-71C4-A95A00D015B0"/>
+</associations>
+</Column>
+<Column name="ABC_CLASS_DB_ID" id="8492FB9D-566E-1124-B907-333770190260">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>An ABC analysis tries to categorize parts based on how expensive/important they are. Class ?A? parts are the most expensive and frequently used parts, while class ?C? parts are the least expensive or frequently used parts.  FK to REF_ABC_CLASS.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5A2E9ECD-9600-CCAA-E132-BB6484214A17</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ABC_CLASS_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32C3E705-72C1-F810-D63E-B6C7ED573428" referredColumn="2EDAC1E2-67E5-396A-9413-29307E172C16"/>
+</associations>
+</Column>
+<Column name="ABC_CLASS_CD" id="B2B10238-1E4D-DE3F-3420-2AC8C5904EEF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>An ABC analysis tries to categorize parts based on how expensive/important they are. Class ?A? parts are the most expensive and frequently used parts, while class ?C? parts are the least expensive or frequently used parts.  FK to REF_ABC_CLASS.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6299B320-6230-A9C7-798E-EC156881AA83</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32C3E705-72C1-F810-D63E-B6C7ED573428" referredColumn="8170B00C-98B0-43F7-C2CC-36EFB61B302C"/>
+</associations>
+</Column>
+<Column name="INV_CLASS_DB_ID" id="2F98F73A-E907-1AA5-6D71-815C6DD0BCB9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_INV_CLASS.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D5D25A11-E3AE-6796-D3D9-78F458A9AE75</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_CLASS_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="23C06443-12E0-FD3B-1CCE-4E286D6474DC" referredColumn="57730EAE-8812-A52E-CE4D-4B521AB1C237"/>
+</associations>
+</Column>
+<Column name="INV_CLASS_CD" id="BFF10A28-817B-06CA-1AA4-80124F8C5D5E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_INV_CLASS.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>34296CCB-7056-9B71-24F6-2B96AA3042C2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="23C06443-12E0-FD3B-1CCE-4E286D6474DC" referredColumn="B2708416-E276-3CA1-C1C1-B1BE1C922B5A"/>
+</associations>
+</Column>
+<Column name="PURCH_TYPE_DB_ID" id="E58C371A-BBC8-720B-9C6F-C5B4111CC7D0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_PURCH_TYPE.  Used to categorize stock numbers for purchasing.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8C5C88F0-4E2E-4C8B-5D67-F41AFB069021</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PURCH_TYPE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D261968-689A-0E90-0241-7C6941643B4E" referredColumn="C7A79FA5-AC1C-FC6F-07D5-ACBCC6E20635"/>
+</associations>
+</Column>
+<Column name="PURCH_TYPE_CD" id="9D6D09DA-3702-AEAA-5939-03F1665CD502">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_PURCH_TYPE.  Used to categorize stock numbers for purchasing.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1D1D4B3B-E25A-DE1E-4A00-3A2D5AECC416</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D261968-689A-0E90-0241-7C6941643B4E" referredColumn="7F4A303B-1535-CBE5-2B35-A87C128484FD"/>
+</associations>
+</Column>
+<Column name="STOCK_NO_NAME" id="9D20B541-7D82-D5DB-C0B7-AA4A9B85189D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Every stock number has a code and a name.  The name is descriptive.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C8AE2FA3-EFF2-A978-F627-953D9471C858</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>06D9BA35-CE10-EE63-8752-6E97559E5832</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STOCK_NO_CD" id="24531762-32F3-4A87-F759-EFBFD0123B8A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Every stock number has a code and a name.  The code is typically an internally generated unique value</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1DC2BECC-D2FF-00AB-09FF-6BF5E8E7A7E8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARRY_COST_INTEREST_QT" id="DBE2C81B-40DB-7D68-95C2-5BC4D7C60EBA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Carrying costs are the dollar-costs involved with holding stock in your inventory warehouse.  This column stores interest costs.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8401B6FD-43D5-0011-9EA0-9F601FED6620</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARRY_COST_INSURANCE_QT" id="7BEB0210-30E0-9265-011F-6318B9876A1B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Carrying costs are the dollar-costs involved with holding stock in your inventory warehouse.&lt;br&gt;This column stores insurance costs.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>47921215-65F5-4E79-758D-1E0F6AD09F0E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARRY_COST_TAXES_QT" id="C10F1C56-6791-63E6-2F2F-429DA0E3B147">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Carrying costs are the dollar-costs involved with holding stock in your inventory warehouse.&lt;br&gt;This column stores tax costs.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DF354C9F-E551-8728-88EE-42B8376A63DE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARRY_COST_STORAGE_QT" id="C1C47FA2-7F27-2B3D-013C-1DD1080EBC61">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Carrying costs are the dollar-costs involved with holding stock in your inventory warehouse.&lt;br&gt;This column stores storage costs.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B46A2F32-689C-42D0-AECB-DCDE56A41160</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARRY_COST_TOTAL_QT" id="4148D9E4-E2A7-F6BF-1AED-F98D5E3994A7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Maintenix calculates CARRY_COST_TOTAL_QT as the sum of the individual carrying costs. The total carrying cost will be updated whenever any of the sub-costs are changed.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>84541432-11EA-4213-C7CF-A9A6B3A4F049</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>BC1D8428-DC46-0004-E28A-8CAB1C19D291</domain>
+<defaultValue>0.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PURCHASE_LEAD_TIME" id="0C7F0754-F04C-3C9F-FCDD-C4EA36860377">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Purchasing lead time (PURCHASE_LEAD_TIME_QT) represent the time it takes for a vendor to deliver this part; from the time you place the order to the time it leaves the vendor?s shipping dock.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BF3210B6-6CFF-ECE1-A828-B6DADFA0DE90</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>1.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPAIR_LEAD_TIME" id="CAD938B1-BBC7-0670-F3C2-3E247ADB0BD6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Repair lead times (REPAIR_LEAD_TIME_QT) represent the average time it takes to repair a component; from the time the part is sent to the repair shop to the time the part leaves the repair shop.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>84E8AB72-18B9-A820-DE33-5D33CFC90223</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>1.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SHIP_QT" id="78FB146F-FE83-BBAF-9932-30CBA11D3DBD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This is the standard quantity to ship from a hub/supplier location when a satelite location hits low stock. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B37546CE-FA16-190D-5532-8817F8F22175</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SHIPPING_TIME_QT" id="C75FC7CB-1101-6A7E-D762-68E1C6C5D680">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Assume that shipping time is the same for a repaired and a new part. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>58087D4B-73DD-2433-BAC2-29C2A58625E9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>1.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROCESSING_TIME_QT" id="AB1B62DC-B942-8DF3-8864-E9410DBDD3C9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Processing time is the amount of time it takes QC to inspect the part and put it on the shelf. We assume that this takes the same amount of time for both repaired and purchased parts. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>547E8D61-7B18-6021-2901-1E5451B12F20</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>1.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOTAL_LEAD_TIME_QT" id="BD6FCB58-ADFB-9FE7-E01E-79553E7013D2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>In order to determine the reorder level, you must decide the service level that you would like to achieve. This is sometimes called the fill rate. Essentially it means, how often should the part be available when you go to look for it.  This is the service level quantity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EDB706C2-751A-80BB-1EFF-7DC20468605C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERVICE_LVL_PCT" id="8B1B2C54-13B0-69DA-64D1-334A7F73C4BC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>In order to determine the reorder level, you must decide the ?service level? that you would like to achieve. This is sometimes called the ?fill rate?. Essentially it means, how often should the part be available when you go to look for it.  This is the service level quantity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6C4A872C-C14D-837F-5FE3-5BDBA6AB1FCE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>0.0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAX_MULT_QT" id="676EFE7F-9941-F0F8-1406-3D2055016E94">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user will be able to get Maintenix to calculate the max level based on the by taking the reorder level and multiplying it by the MAX_MULT_QT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1BE71A62-8B1A-8747-B62F-3B239DC33F5C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GLOBAL_REORDER_QT" id="30B1788B-BF51-E5BD-64D7-E376A5639C4D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>When the quantity of serviceable stock drops below this level, Maintenix will initiate replenishment actions. Should probably be called GLOBAL_REORDER_LEVEL_QT for clarity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E432B4E5-DC16-388E-9651-77A65CC76E14</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SAFETY_LEVEL_QT" id="4F6EFFE0-F9AB-8992-BFC9-566B55722B9A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The Safety Level = Global Reorder Level ? (Average Demand * Lead Time).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>60CB1491-55FD-2062-5796-6FB10DBF0CDB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MONTHLY_DEMAND_QT" id="C496F103-A27F-B73F-C592-BE12BB106239">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Used to analyze the monthly demand starting from a given date, stored in the configuration parameter MONTHLY_DEMAND_START_DT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>083D9189-4486-883D-4C64-A23BA6FA4AC8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BATCH_SIZE" id="8E779FE0-7585-6236-148C-F7F4C5DB4788">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DAEF82F4-B073-E6FB-DCDF-773F2AAE706D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTO_CREATE_PO_BOOL" id="643A0658-820E-B461-772D-FF424CB8CE4A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This flag indicates if a new PO should be automatically created when the stock runs low.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C18DCF89-85BC-17B3-9C6F-2B1577FFCF9C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="AUTO_CREATE_PO_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTO_ISSUE_PO_BOOL" id="0D083288-26CA-61C9-3678-2B7AB537539A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This flag indicates if the new PO created automatically should also be automatically issued when the stock runs low.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A7E3FAC3-FFDD-A293-2DBF-90456CC14355</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="AUTO_ISSUE_PO_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALT_ID" id="8C993C2E-DA11-5C12-D9CA-B516BB2598CF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The alternate key is useful for identifying a specific row in the database when dealing with integrations and Maintenix front ends.  The alternate key can is unique to each entity and acts as a surrogate key.&lt;br&gt;&lt;/br&gt;The alternate key is intended to be system generated.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7416C814-C1D5-CF18-F605-FE81B6D82563</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="5D4B6F90-7433-8D45-D237-28C5D03EB1BE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>09DC680D-B9C7-DAFD-22A0-714F79B53220</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C28361F-F5AE-CA48-9867-E3C06F2C99E5" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="13AFD855-16E6-3013-2A47-54A42ABC9388">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D2EFF99C-0F2C-9D3D-4F06-632976D28710</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="C72E7E94-FA14-41B0-B5E3-277285EB5740">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B2F82DFC-DA36-F242-A8E3-900140E2F49F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="91BEBB9F-ADE7-DE64-B9AA-BBC36F72D39C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>74025860-05CA-6DF2-15AB-1BD23F1DF124</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="673CB6E5-DCF0-018C-5AB9-36CC139ED93C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>440C5CEB-C1B5-6B61-6F0E-D99B618CA845</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOTE" id="D7F44F16-3278-537B-EB03-29F88ADA850A">
+<createdBy>hgaylk</createdBy>
+<createdTime>2018-01-22 04:48:48 UTC</createdTime>
+<commentInRDBMS>Generic receiving notes for the stock number.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E2688997-5B38-B4DF-526E-9A8C20751233</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="30C90C3F-091D-53A4-4D48-15FF36417298" name="pk_EQP_STOCK_NO">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>323476FC-9CF9-3C14-A57D-FD5D9DB9C42D</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="834BBB93-65A2-BC1D-A537-CAF5F6FF0542"/>
+<colUsage columnID="2C1B198A-DC66-DDE8-299F-6D31BFBF3C18"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5082E95-FCB3-A451-76DC-A90688FD7280" name="IX_EQPSTOCKNOALTID_UNQ">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>771DFE38-13BD-08C0-7AA7-07E5BAFD03CD</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C993C2E-DA11-5C12-D9CA-B516BB2598CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="74A39827-AF1B-7267-F4B6-226C82B66897" name="FK_MIMDB_EQPSTOCKNO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:32 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="834BBB93-65A2-BC1D-A537-CAF5F6FF0542"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="62B6D1D9-02EE-4B19-17A3-29B5EBFBD2D1" name="FK_MIMRSTAT_EQPSTOCKNO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D4B6F90-7433-8D45-D237-28C5D03EB1BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="17075A9F-D8BE-936C-37E2-8E624C18B71C" name="FK_REFINVCLAS_EQPSTKNO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F98F73A-E907-1AA5-6D71-815C6DD0BCB9"/>
+<colUsage columnID="BFF10A28-817B-06CA-1AA4-80124F8C5D5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="693A900C-7B91-3017-6DF4-8BC16E325107" name="FK_REFPURCHTYPE_EQPSTOCKNO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E58C371A-BBC8-720B-9C6F-C5B4111CC7D0"/>
+<colUsage columnID="9D6D09DA-3702-AEAA-5939-03F1665CD502"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C0B679E9-F65A-BA3F-A87F-371A28177C8B" name="FK_REF_ABC_CLASS_EQPSTOCKNO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:42 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8492FB9D-566E-1124-B907-333770190260"/>
+<colUsage columnID="B2B10238-1E4D-DE3F-3420-2AC8C5904EEF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C54EF97-B7AE-A39A-D60A-1BCB100F80B6" name="FK_REF_QTY_UNIT_EQPSTOCKNO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:42 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40ED9CFF-CA1D-37BC-B490-6F46E7CE4053"/>
+<colUsage columnID="1C2A60F4-CDC2-2155-159E-D37A4310D4BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

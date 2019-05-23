@@ -1,0 +1,311 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_2" id="ED80D7EE-57A5-0F86-A279-26F221A9B18A" name="FCT_INV_OIL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DA75C1BC-B2C2-0E0F-86B0-40072DFF322E</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FCT_INV_OIL_ID" id="362ECD68-27E4-0F58-78F3-588E6EFC257C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2C0ECD47-9695-E667-2A84-6F8FCC6811FD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FCT_INV_OIL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIM_INV_ID" id="21CA080C-4BF4-B041-E0D9-FBDB98864C9E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2F84457A-085A-F0CE-ED04-E3ED4B8DDA8F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DIM_INV_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<delegate>E4F0ABF7-B38E-7A6F-6479-42DDDDB23F24</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B04787F6-2A68-8D4A-1485-9591828C91A1" referredColumn="E4F0ABF7-B38E-7A6F-6479-42DDDDB23F24"/>
+</associations>
+</Column>
+<Column name="DIM_OIL_STATUS_ID" id="714AD296-29C0-BDC1-0605-513F92B1F504">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1F259FB0-17EF-26D2-1D18-9BEAE4E6F013</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DIM_OIL_STATUS_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<delegate>2447A472-9963-9E7F-C84E-8B8E94CE60B4</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EA1AA1DF-C8EC-7828-DA7D-BEDA452FEFB1" referredColumn="2447A472-9963-9E7F-C84E-8B8E94CE60B4"/>
+</associations>
+</Column>
+<Column name="DIM_TIME_ID" id="BC61FE90-DCFF-A0D4-EC88-05129EB6E775">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6CAC2B56-B493-55AC-9128-A1EC4100C314</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DIM_TIME_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<delegate>B28B205E-EEE2-B0E1-2772-A2A8D55DB33F</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F93FE287-459B-BFD6-BB78-D7979B6F645A" referredColumn="B28B205E-EEE2-B0E1-2772-A2A8D55DB33F"/>
+</associations>
+</Column>
+<Column name="EVENT_GDT" id="8AD9E5E2-2745-A792-4910-130E03B4F2E1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6A265584-F27A-0897-DB3C-6219AB3DE63A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OIL_QT" id="D45A2928-D274-FB60-A31E-CAD11B102B20">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>77613C49-DCE4-334D-57D7-B584F3087580</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELTA_TIME_QT" id="B9017CAD-1181-3D26-84D5-CAA7D238672F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A8A8FB71-D89B-0DF7-0676-1A96709402AC</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TASK_BARCODE_SDESC" id="ABF3D365-862D-3439-988E-23897D2906E3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>23F37931-7E23-26F9-71D1-F07BABBBB986</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TSN_QT" id="D3758E9E-4961-4C9A-70FA-E08E68CC1BF7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B5132F4E-1742-36BE-76BA-5BABB1E39B30</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TSI_QT" id="65228813-5C3F-0A49-8CAC-A4EBCB3C0508">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D1C9C034-1380-CDF5-8486-FD9D7D7FADF6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="42C7E34A-3E7A-1B8D-449C-31EF3FAD472F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>31FF184B-1C7D-6941-0DC4-BD55DA78A741</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<delegate>F2BCD552-E6B5-EEEE-C285-3806DE2E5B44</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ECFBE518-301B-CD29-C203-D007F20E0CB9" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="F7CAE660-4262-55B9-963E-FB8540BAEDAC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>714C46FA-8102-1E67-9C08-69D84A3B0204</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="47D0BA9E-D263-201C-6212-064899A070B7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3710B88B-4410-6FC5-16B9-061C447B1D10</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="5AC6A36B-A7E4-0C26-CA85-8FC834E38562">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3F2EFF13-1B84-BAF2-0ACD-A14A0A881441</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="F67709D6-CDE0-ACD7-6AC4-D48EBF6319E0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7BD783B9-47F9-FF2E-BBA5-54AD684B05A1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8C317194-1C43-457F-CBC7-46EAFE89CA7F" name="PK_FCT_INV_OIL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C45B33AD-F709-FB56-823F-39E4E72A8284</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="362ECD68-27E4-0F58-78F3-588E6EFC257C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1DCF5020-D655-9801-364D-334138E11540" name="IX_DIMINV_FCTINVOIL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7D3BC05F-4858-1568-9307-0DE0C813EE06</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21CA080C-4BF4-B041-E0D9-FBDB98864C9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9F23B3B3-1A66-7B22-7A26-E7AF0FCB25DC" name="IX_DIMOILSTATUS_FCTINVOIL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7F1BD772-BF09-4EBA-F53C-E7E713911137</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="714AD296-29C0-BDC1-0605-513F92B1F504"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="868B384D-0D57-4AB2-F8A5-1B2E1527DEBB" name="IX_DIMTIME_FCTINVOIL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>950AEF5E-97A3-655C-ADC5-5BF5B717835C</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC61FE90-DCFF-A0D4-EC88-05129EB6E775"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7A7C026E-D83A-9863-2584-C44993919996" name="FK_DIMINV_FCTINVOIL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21CA080C-4BF4-B041-E0D9-FBDB98864C9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="021515CE-256A-F25D-0941-B26C3697F50F" name="FK_DIMOILSTATUS_FCTINVOIL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="714AD296-29C0-BDC1-0605-513F92B1F504"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="17051A00-316D-69C5-D56A-5C1C0FDBC597" name="FK_DIMTIME_FCTINVOIL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC61FE90-DCFF-A0D4-EC88-05129EB6E775"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C72B1F32-EDF3-289E-A4AE-A5ECC45577D8" name="FK_MIMRSTAT_FCTINVOIL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42C7E34A-3E7A-1B8D-449C-31EF3FAD472F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

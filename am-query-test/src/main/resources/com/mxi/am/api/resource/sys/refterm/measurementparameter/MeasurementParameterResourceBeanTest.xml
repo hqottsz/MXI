@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+
+	<!-- Measurement Parameter 1 -->
+	<mim_data_type
+		DATA_TYPE_DB_ID="4650"
+		DATA_TYPE_ID="1000"
+		DATA_TYPE_CD="TSIG"
+		DATA_TYPE_SDESC="Take Off Signal"
+		DATA_TYPE_MDESC="TSIG description"
+		ENG_UNIT_CD="UC1"
+		ENTRY_PREC_QT="1"
+		DOMAIN_TYPE_CD="CH"
+		RSTAT_CD="0"
+	/>
+
+	<mim_data_value
+		DATA_TYPE_DB_ID="4650"
+		DATA_TYPE_ID="1000"
+		DATA_VALUE_DB_ID="4650"
+		DATA_VALUE_CD="BUSY"
+	/>
+
+	<mim_data_value
+		DATA_TYPE_DB_ID="4650"
+		DATA_TYPE_ID="1000"
+		DATA_VALUE_DB_ID="4650"
+		DATA_VALUE_CD="CLEAR"
+	/>
+
+    <!-- Data Value for Measurement Parameter 1 -->
+	<ref_data_value
+		DATA_VALUE_DB_ID="4650"
+		DATA_VALUE_CD="BUSY"
+		DESC_SDESC="BUSY Signal"
+	/>
+
+	<ref_data_value
+		DATA_VALUE_DB_ID="4650"
+		DATA_VALUE_CD="CLEAR"
+		DESC_SDESC="CLEAR Signal"
+	/>
+
+	<!-- Measurement Parameter 2 -->
+	<mim_data_type
+		DATA_TYPE_DB_ID="4652"
+		DATA_TYPE_ID="1001"
+		DATA_TYPE_CD="CHAR"
+		DATA_TYPE_SDESC="Character Measurement"
+		DATA_TYPE_MDESC="Character Measurement Test"
+		ENG_UNIT_CD="UC2"
+		ENTRY_PREC_QT="2"
+		DOMAIN_TYPE_CD="CME"
+		RSTAT_CD="0"
+	/>
+
+	<mim_data_value
+		DATA_TYPE_DB_ID="4652"
+		DATA_TYPE_ID="1001"
+		DATA_VALUE_DB_ID="4653"
+		DATA_VALUE_CD="TEST"
+	/>
+	<!-- Data Value for MeasurementParameter 2 -->
+	<ref_data_value
+		DATA_VALUE_DB_ID="4653"
+		DATA_VALUE_CD="TEST"
+		DESC_SDESC="Test"
+	/>
+
+    <!-- For authorization -->
+	<org_hr
+		ALT_ID = "4AF698E4E6E6455C88AFE97B391DC58F"
+		HR_DB_ID = "4650"
+		HR_ID = "100"
+		USER_ID = "2"
+	/>
+
+	<org_hr
+		ALT_ID = "4AF698E4E6E6455C88AFE97B391DC58D"
+		HR_DB_ID = "4650"
+		HR_ID = "101"
+		USER_ID = "1"
+	/>
+
+	<utl_user
+		USER_ID = "1"
+		USERNAME = "unauthorized"
+		FIRST_NAME = "unauthorized"
+		ALT_ID = "A054FC32D41C4DDBBC37D76B3E6412F1"
+	/>
+
+	<utl_user
+		USER_ID = "2"
+		USERNAME = "authorized"
+		FIRST_NAME = "authorized"
+		ALT_ID = "A054FC32D41C4DDBBC37D76B3E6412F2"
+	/>
+
+	<utl_role
+		ROLE_ID = "101"
+	/>
+
+	<utl_role
+		ROLE_ID = "102"
+	/>
+
+	<utl_user_role
+		ROLE_ID = "101"
+		USER_ID = "1"
+	/>
+
+	<utl_user_role
+		ROLE_ID = "102"
+		USER_ID = "2"
+	/>
+
+	<utl_action_role_parm
+		PARM_NAME = "API_REF_TERM_PARM"
+		PARM_VALUE = "FALSE"
+		ROLE_ID="101"
+	/>
+
+	<utl_action_role_parm
+		PARM_NAME = "API_REF_TERM_PARM"
+		PARM_VALUE = "TRUE"
+		ROLE_ID="102"
+	/>
+
+</dataset>

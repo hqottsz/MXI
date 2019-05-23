@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+   Component Initialize Script ([module]/initialize.xml)
+
+   This logic is executed once before the component install/upgrade before all
+   version upgrade stages.
+-->
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+   <include file="dbtools-db/tools/component/initialize.xml"/>
+
+   <changeSet author="am-db-init" id="1" runAlways="true" runOnChange="true">
+
+       <preConditions onFail="CONTINUE">
+           <sqlCheck expectedResult="1">
+                SELECT
+                   COUNT(1)
+                FROM
+                   user_tables
+                WHERE
+                   table_name = 'UTL_CURRENT_VERSION'
+           </sqlCheck>
+       </preConditions>
+
+       <createProcedure>
+
+		INSERT
+		INTO upg_version (
+		     component_cd,
+		     major_ver,
+		     minor_ver,
+		     servicepack_ver,
+		     update_ver,
+		     version_cd,
+		     build_label,
+		     build_location,
+		     build_revision,
+		     install_dt,
+		     install_sdesc
+		  )
+		SELECT
+		   'assetmanagement-database'             AS component_cd,
+		   SUBSTR(version,1,INSTR(version,'.')-1) AS major_ver,
+		   SUBSTR(version,INSTR(version,'.',1,1) + 1,
+			  (INSTR(version,'.',1,2) - 1) - INSTR(version,'.',1,1)
+			 )                                AS minor_ver,
+		   servicepack_ver,
+		   update_ver,
+		   full_version_name                      AS version_cd,
+		   'UNASSIGNED'                           AS build_label,
+		   'UNASSIGNED'                           AS build_location,
+		   0                                      AS build_revision,
+		   SYSDATE                                AS install_dt,
+		   'Mantenix Database'                    AS install_sdesc
+		FROM
+		   utl_current_version
+		WHERE
+		   NOT EXISTS (
+		      SELECT
+			     1
+			  FROM
+				 upg_version
+			   WHERE
+			     component_cd = 'assetmanagement-database'
+		    )
+
+       </createProcedure>
+
+       <createProcedure>
+
+       	INSERT
+       	INTO
+       	   upg_version_hist
+       	SELECT
+		   component_cd,
+		   major_ver,
+		   minor_ver,
+		   servicepack_ver,
+	       update_ver,
+		   version_cd,
+		   build_label,
+		   build_location,
+		   build_revision,
+		   install_dt,
+		   install_sdesc
+       	FROM
+       	   upg_version
+       	WHERE
+       	   NOT EXISTS (
+              SELECT
+                 1
+              FROM
+                 upg_version_hist
+              WHERE
+                 upg_version_hist.version_cd = upg_version.version_cd
+       	   )
+
+       </createProcedure>
+
+  </changeSet>
+
+</databaseChangeLog>

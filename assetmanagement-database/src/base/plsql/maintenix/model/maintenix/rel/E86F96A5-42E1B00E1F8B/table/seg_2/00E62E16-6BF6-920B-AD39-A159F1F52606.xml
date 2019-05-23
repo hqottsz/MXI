@@ -1,0 +1,517 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_2" id="00E62E16-6BF6-920B-AD39-A159F1F52606" name="FL_LEG_DISRUPT">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Historic records of flight disruptions. These records are entered by the users.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7EDE38EF-5151-E877-6B5E-BB16E7983FCC</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LEG_DISRUPT_ID" id="0CAD73C6-EC77-12E7-3AB4-4D12C377C7E9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Unique Id for FL_LEG_DISRUPT table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8F83D635-7EFC-0DB9-C1BB-3D520431F33B</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEG_ID" id="BD23574F-089C-20A7-0DA9-F7411298103E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to FL_LEG table.  Indicates the flight leg for which the disruption is created.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>910CB80C-7600-B651-DFDF-AD2DB6D4D42B</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AB7FC02F-7F83-38F0-1C10-EE74AA78B5AA" referredColumn="BE13C7E4-5960-310A-E0FA-FC518D135508"/>
+</associations>
+</Column>
+<Column name="EXT_REF" id="E2A41028-250C-7D69-63B7-F2CED0F00DB7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>External reference for the flight leg disruption.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D78E7636-2272-B49F-6A1B-18122F41011C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLIGHT_STAGE_DB_ID" id="6E3A7DE3-AF19-CE11-41C9-4B3B7ECBBB80">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FLIGHT_STAGE.  Indicates the flight stage when the disruption occured.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F6A24DB3-987A-92B1-FCEE-7AD2AA209642</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FLIGHT_STAGE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5687E9C-2F61-02AB-008B-1210703D98E8" referredColumn="5CFFF70C-0B4B-9C70-FBCE-179056B939E2"/>
+</associations>
+</Column>
+<Column name="FLIGHT_STAGE_CD" id="C5C7E870-751C-7800-CC70-0100A58E2260">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FLIGHT_STAGE.  Indicates the flight stage when the disruption occured.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F9E19D68-6FB2-DCE4-7845-A9B227166630</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5687E9C-2F61-02AB-008B-1210703D98E8" referredColumn="2DC0C877-3A5A-5501-91DE-A4BEDDA00C13"/>
+</associations>
+</Column>
+<Column name="SCHED_DB_ID" id="64E95D53-2181-45C2-7408-5304301F032D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to SCHED_STASK table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C3724FF7-DD11-94A4-43ED-08253FE39B1D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11E7BAA9-13C8-B436-56D6-0F9DA0BD5BCE" referredColumn="3CE58C05-954B-BC92-B4C2-886A85D7EE7D"/>
+</associations>
+</Column>
+<Column name="SCHED_ID" id="2AD47761-2545-3517-B81F-49C717B6CD45">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to SCHED_STASK table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>42425E86-2738-F8A8-AD05-9EAE53C1EFC3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11E7BAA9-13C8-B436-56D6-0F9DA0BD5BCE" referredColumn="9583F48B-ACAC-467C-F22F-F2F672CB100C"/>
+</associations>
+</Column>
+<Column name="DELAY_CODE_DB_ID" id="413083FF-3E55-6CB3-40B0-44322D5A738A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_DELAY_CODE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CCBC5E6D-F0F7-4FA7-D0DA-26D14C01E0E9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DELAY_CODE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E77639A-ABD1-9036-5337-D2692165B97D" referredColumn="8029282B-A764-95BF-0A39-A5F60ABE276D"/>
+</associations>
+</Column>
+<Column name="DELAY_CODE_CD" id="9CFE4955-1D78-C67E-E48A-8FD629EDFBE5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_DELAY_CODE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AE778AA0-07F7-CD65-2B51-A9F5F882949C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E77639A-ABD1-9036-5337-D2692165B97D" referredColumn="40B2E0CD-DB1E-753F-4E67-E3AD415817B8"/>
+</associations>
+</Column>
+<Column name="MAINT_DELAY_TIME_QT" id="CA5778E9-6C0C-D6C8-A06F-91F607BE2E0F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Maintenance delay time for the flight (in minutes).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>52453361-0EE7-0CA4-01EC-E5F5DA6D1C48</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TECH_DELAY_BOOL" id="D88F1B6B-DEF3-BB3B-8B80-E05E6E4E2486">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This boolean indicates if the flight disruption is a technical delay.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E1DAA2B0-BB76-30F7-4590-33FAEB5332CD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="TECH_DELAY_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DISRUPTION_DESC" id="AF8F4F15-2567-73E2-CA56-BD8124A44DAC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Description of the flight disruption.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FD8022C8-98A7-12D3-1669-F730D60421F9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DISRUPTION_NOTE" id="30828802-87BD-A6BB-6AE3-1086361692C0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Detailed note on the flight leg disruption.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>303520C0-A8DA-4645-9764-D0A222429C17</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEGACY_KEY" id="16A285EB-0F78-FB93-AFC7-C76712FB6DBE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Indicates the representation of the entity in the old data model.  Used only for reference purposes.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1621338B-5458-C643-6521-4635D03A4374</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>44BEE9C2-1B97-D2DF-44D0-CC167314E84A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="72D3AB0F-5357-B4D6-CB2D-4954997B0120">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5C1A214B-287A-4F2C-495E-A2EDC2116C9B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CTRL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0B7A715B-530B-3EF9-ED8F-F0361FE406F7" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="EC0C4E22-1002-ADEF-5AD9-7819FEB8CF88">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D27A3CD5-4A79-AD85-A1BE-5E70BF7CC15E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_NO BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="BD929C7D-F219-6B8D-3E03-0F7B2C48DA35">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EEE2F623-5927-9915-F50E-21D462CCBCF7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CREATION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="F5AFC3CC-2E76-254A-C081-433747C18C08">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The status of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3609BADD-3241-2C8B-B70D-F1875BFC164C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="56252DB6-D10A-EF34-2D0F-42E8A0077921" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="877661C8-FA11-A887-512F-A84A41F9F16C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The data and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D96134E9-0405-0977-0643-45E89DB1E9C9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="4C06B6C6-6B89-F225-857A-AA55AC8DCE93">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The data and time at which the record was updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D6922256-D4C3-778B-8AFC-77EDBFAFD164</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="B5574345-4E42-64F8-B4FE-408D310C5B88">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3124E7D1-BC42-BC19-E867-871C2CE7587B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="533B632C-F379-0A11-7545-FB61046C675C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B66CEF77-4072-84F9-4585-8460E5C211C1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E601164F-32D4-5684-410D-67974561FA1A" name="PK_FL_LEG_DISRUPT">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D36C9650-B59C-85EF-13D5-2A81FD317E82</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0CAD73C6-EC77-12E7-3AB4-4D12C377C7E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="213780B6-A9C1-5655-DF54-9B0FE909B85C" name="IX_FL_LEG_DIS_REFFLSTG_FK">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8B89C529-06A8-A4C1-B583-EADC3DF39F7B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6E3A7DE3-AF19-CE11-41C9-4B3B7ECBBB80"/>
+<colUsage columnID="C5C7E870-751C-7800-CC70-0100A58E2260"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A33924A6-B33B-946E-158B-55466B189AB4" name="IX_FL_LEG_DIS_REFDELCD_FK">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BFD6EB8B-8B66-EF53-994F-096B7E095AC7</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="413083FF-3E55-6CB3-40B0-44322D5A738A"/>
+<colUsage columnID="9CFE4955-1D78-C67E-E48A-8FD629EDFBE5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7F04475E-423F-AE6E-664C-D0EFF8B360B8" name="IX_FLLEGDISRUPT_NK">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>258E3FF7-0A4A-ADBA-9DB5-B94FCE0FEB16</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD23574F-089C-20A7-0DA9-F7411298103E"/>
+<colUsage columnID="9CFE4955-1D78-C67E-E48A-8FD629EDFBE5"/>
+<colUsage columnID="413083FF-3E55-6CB3-40B0-44322D5A738A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16F680D0-634D-B28D-D537-398A09E50C25" name="IX_SCHEDSTASK_FLLEGDIS">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A5436FDF-6287-59DA-D069-2A542BCB9651</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64E95D53-2181-45C2-7408-5304301F032D"/>
+<colUsage columnID="2AD47761-2545-3517-B81F-49C717B6CD45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="59E69E36-627C-D529-60A2-BC807AA5107F" name="IX_FLLEG_FLLEGDISRUPT">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A7A79B4E-0E55-EA4F-11A8-F32A28B3C659</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD23574F-089C-20A7-0DA9-F7411298103E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="840D4FBE-949D-1502-B773-0C75823C9A50" name="FK_FLLEG_FLLEGDISRUPT">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD23574F-089C-20A7-0DA9-F7411298103E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F08C8801-DB92-889E-D49B-9DA229F49356" name="FK_MIMDB_FLLEGDIS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:32 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72D3AB0F-5357-B4D6-CB2D-4954997B0120"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9295D4AC-F5C4-C331-4F79-9CD7E4228E8D" name="FK_MIMRSTAT_FLLEGDIS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5AFC3CC-2E76-254A-C081-433747C18C08"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="70AC310F-7852-AF4F-0E3C-1B0AC64BE561" name="FK_REFDELCODE_FLLEGDIS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:39 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="413083FF-3E55-6CB3-40B0-44322D5A738A"/>
+<colUsage columnID="9CFE4955-1D78-C67E-E48A-8FD629EDFBE5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45A7CA8B-3163-1275-373F-519DAB6AFC56" name="FK_REFFLSTG_FLLEGDIS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6E3A7DE3-AF19-CE11-41C9-4B3B7ECBBB80"/>
+<colUsage columnID="C5C7E870-751C-7800-CC70-0100A58E2260"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="275496FF-9D81-EE39-E67B-6F5F1292CDF9" name="FK_SCHEDSTASK_FLLEGDIS">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64E95D53-2181-45C2-7408-5304301F032D"/>
+<colUsage columnID="2AD47761-2545-3517-B81F-49C717B6CD45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

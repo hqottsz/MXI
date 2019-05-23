@@ -1,0 +1,224 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_3" id="F3B9F123-35E1-9BA3-BDFB-A03DA6434FC6" name="LPA_STASK_MAINT_OP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Lists the various types of time off that can be recorded for a user.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF1E7454-73E3-D72E-FB9C-DC5EECE5CF26</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LPA_DB_ID" id="9A454800-D92A-B229-B0E3-6530F592ECA4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>74164D3F-3A5F-22BC-B706-F41DCB3F7F0A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LPA_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="26242766-C089-C96F-8EDF-45B9B5023028" referredColumn="BDC81CBE-5AE2-3147-8BB7-D1F3F2392CD5"/>
+</associations>
+</Column>
+<Column name="SCHED_DB_ID" id="FE4CA9CF-9C1A-72A4-CBC1-AE49D6F6CFD2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF9E11DE-A341-5092-601C-548C164E8028</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="26242766-C089-C96F-8EDF-45B9B5023028" referredColumn="6F41BA3B-56BF-7686-18FD-B4FB82CE61CD"/>
+</associations>
+</Column>
+<Column name="SCHED_ID" id="C62537A1-F011-EE0F-F308-1C420CC6ED26">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0F9C2930-6B72-F6A9-5921-F682AA650F36</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="26242766-C089-C96F-8EDF-45B9B5023028" referredColumn="BEC0298B-B703-167D-92A8-2BA8C119BFD8"/>
+</associations>
+</Column>
+<Column name="STASK_MAINT_OP_ID" id="CA982BFC-D745-0EB8-A7EA-353378CDA377">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is maintenance opportunity unique id. It should be inserted in the order the conflict was found, therefore could be used as ordering column on line planning log page. The order in which maintenance task visited each maintenance opportunity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7272EF55-A67D-FEF9-6D8E-20B39DFD6A8F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="STASK_MAINT_OP_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPP_START_DT" id="20099060-DE47-B756-247C-E5FDD9CB1126">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Start of the maintenance opportunity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A259BF3A-4BF4-26B8-F9A6-507B370CB6FB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPP_END_DT" id="7A10D52E-4A38-3314-7F63-8B4866BB1C5E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>End of the maintenance opportunity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F8B96801-C208-1EDE-4B96-8FE939F4FDA4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOC_DB_ID" id="F16DD37D-5330-6042-2BE2-2B9EB59BE5AC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Line maintenance location representing the maintenance opportunity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4CD598CC-5B2C-FDE1-2A82-445A35E1EDA1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LOC_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7B39C3D9-D396-4D9E-FF95-4861B8B49887" referredColumn="C3496C77-33EB-F40A-B8DE-691CD0D63D76"/>
+</associations>
+</Column>
+<Column name="LOC_ID" id="E34BA6D8-3A55-63F7-E113-DFD2795FD015">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Line maintenance location representing the maintenance opportunity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D928A2F2-C126-F801-B0A0-9BB55C601330</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LOC_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7B39C3D9-D396-4D9E-FF95-4861B8B49887" referredColumn="F9059C24-7BD8-276B-84DA-AAE2F9C3FF0F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CC505380-EBAC-51E4-2BC2-E00D1A684DA7" name="PK_LPA_STASK_MAINT_OP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A1118578-861E-F15B-C1A0-9EB97E4DF6BF</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A454800-D92A-B229-B0E3-6530F592ECA4"/>
+<colUsage columnID="FE4CA9CF-9C1A-72A4-CBC1-AE49D6F6CFD2"/>
+<colUsage columnID="C62537A1-F011-EE0F-F308-1C420CC6ED26"/>
+<colUsage columnID="CA982BFC-D745-0EB8-A7EA-353378CDA377"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7FFB337B-546C-FEAA-514D-5536AFFDC05F" name="IX_INVLOC_LPASTASKMAINTOP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C4B55BE2-0471-2BB3-DA22-A6DE36719553</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F16DD37D-5330-6042-2BE2-2B9EB59BE5AC"/>
+<colUsage columnID="E34BA6D8-3A55-63F7-E113-DFD2795FD015"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DEFA7A57-BC34-E72A-2889-577A76083DB1" name="IX_LPASTASK_LPASTASKMAINTOP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AEFA0448-211C-5061-57A0-F0847FE3A93A</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A454800-D92A-B229-B0E3-6530F592ECA4"/>
+<colUsage columnID="FE4CA9CF-9C1A-72A4-CBC1-AE49D6F6CFD2"/>
+<colUsage columnID="C62537A1-F011-EE0F-F308-1C420CC6ED26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5557FA22-D030-1CC1-BF99-5D7782E023EA" name="FK_INVLOC_LPASTASKMAINTOP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F16DD37D-5330-6042-2BE2-2B9EB59BE5AC"/>
+<colUsage columnID="E34BA6D8-3A55-63F7-E113-DFD2795FD015"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="36980E54-1862-5092-BEFB-02BEA9240AF2" name="FK_LPASTASK_LPASTASKMAINTOP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A454800-D92A-B229-B0E3-6530F592ECA4"/>
+<colUsage columnID="FE4CA9CF-9C1A-72A4-CBC1-AE49D6F6CFD2"/>
+<colUsage columnID="C62537A1-F011-EE0F-F308-1C420CC6ED26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

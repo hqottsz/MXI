@@ -1,0 +1,231 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="98480E1E-B9E2-ADBC-2B59-847E372A9707" name="INV_ASSOCIATION">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 20:27:23 UTC</createdTime>
+<commentInRDBMS>Table holds association between inventories with each inventory belonging to only one association at any point in time.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_835</ordsAlias>
+<abbreviation>INV_ASSOCIATION</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_NO_DB_ID" id="5CE1E739-8C9A-DBB6-04E3-F1ACB8FB9904">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 20:40:03 UTC</createdTime>
+<commentInRDBMS>Primary Key for INV_ASSOCIATION And Foreign Key for INV_INV.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="104B6B3C-BBE4-0184-F868-D422B06C4432" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="INV_NO_ID" id="C1E6EF07-7A5F-DE3E-1561-0B9290B8D4DD">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:10:20 UTC</createdTime>
+<commentInRDBMS>Primary Key for INV_ASSOCIATION And Foreign Key for INV_INV.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="104B6B3C-BBE4-0184-F868-D422B06C4432" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="ASSOCIATION_ID" id="2A1AB2F4-3FA2-22FE-0466-0EC7EF54A7B6">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-07 21:27:15 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="909CC2BF-6E77-6581-471F-D393A0362233">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:12:05 UTC</createdTime>
+<commentInRDBMS>Status of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6539EF9A-BC34-142D-E18F-80FD20CD7B80" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="383B39EF-44B6-1808-14AD-C7C7F13C776F">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 14:29:31 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="D66421B4-3BAE-A772-4588-5AE52E6D92D7">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:14:25 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="53A05A93-0107-3000-130C-F3BF39E6E58F">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 14:29:31 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record.&lt;br/&gt;For new tables with single-column keys, this column replaces the DB_ID column of the legacy multi-column primary keys.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="140876CC-29EE-BEBC-7784-D819D58E330C" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_DT" id="3F03E751-6C4E-0969-70F3-7BBCAB186D34">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:17:16 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="76D9A7CA-F865-7E0F-514C-D7DDA788E392">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:17:16 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95B08713-C891-360E-79CA-B0E7616B872F" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="0FF4D2C4-4D21-C69B-3C22-26A63B2251A1">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:17:16 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="926773E4-91D7-0CBF-2399-7316371B92CE">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 20:03:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0C1F810A-E1A3-D394-2A8D-F360A1B47F8F" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="715EA31B-7829-C8F1-DE7B-233588A69B3F" name="PK_INV_ASSOCIATION">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:09:35 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1E6EF07-7A5F-DE3E-1561-0B9290B8D4DD"/>
+<colUsage columnID="5CE1E739-8C9A-DBB6-04E3-F1ACB8FB9904"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="22B780D0-0E13-AE27-104D-F31182F01EDE" name="IX_INV_ASSOCIATION_ASSO_ID">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 15:33:11 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A1AB2F4-3FA2-22FE-0466-0EC7EF54A7B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DBD8D2F2-725B-92E0-19E8-DC8CBF50C55B" name="FK_INV_ASSOCIATION_INV_INV">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-04 21:18:02 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CE1E739-8C9A-DBB6-04E3-F1ACB8FB9904"/>
+<colUsage columnID="C1E6EF07-7A5F-DE3E-1561-0B9290B8D4DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="370B7467-91BF-694E-1A1E-64EEF2392DCD" name="FK_INV_ASSOCIATION_MIM_RSTAT">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 15:29:47 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="909CC2BF-6E77-6581-471F-D393A0362233"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECA62EAF-B8EE-F3EF-4F3B-DF847F5AE99A" name="FK_INV_ASSOCIATION_MIM_DB_CR">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 15:29:47 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="53A05A93-0107-3000-130C-F3BF39E6E58F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E25BC91-FE6F-986A-3225-50EDECCD57E2" name="FK_INV_ASSOCIATION_MIM_DB">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 15:29:47 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="76D9A7CA-F865-7E0F-514C-D7DDA788E392"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60D2F09E-50F5-0D80-1410-CE8A214688AE" name="FK_INV_ASSOCIATION_MIM_DB_CT">
+<createdBy>msharma</createdBy>
+<createdTime>2018-06-05 20:06:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="926773E4-91D7-0CBF-2399-7316371B92CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

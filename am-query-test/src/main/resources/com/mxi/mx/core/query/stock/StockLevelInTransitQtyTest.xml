@@ -1,0 +1,483 @@
+<dataset>
+   <!-- Setup -->
+   <inv_loc
+      loc_db_id = "4650"
+      loc_id = "1"
+      supply_loc_db_id = "4650"
+      supply_loc_id = "1"
+      />
+   <inv_loc
+      loc_db_id = "4650"
+      loc_id = "2"
+      supply_loc_db_id = "4650"
+      supply_loc_id = "2"
+      />
+
+   <!-- Stock In Transit with no On Order -->
+   <inv_loc_stock
+      stock_no_db_id = "4650"
+      stock_no_id = "1"
+      loc_db_id = "4650"
+      loc_id = "1"
+      owner_db_id = "4650"
+      owner_id = "1"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      stock_no_db_id = "4650"
+      stock_no_id = "1"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "1"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "1"
+      hist_bool = "0"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "1"
+      shipment_db_id = "4650"
+      shipment_id = "1"
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      expect_qt = "5"
+      />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "1"
+      shipment_db_id = "4650"
+      shipment_id = "1"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "1"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+
+
+   <!-- Stock with in-transit multi-segment shipment
+        (shippment destined for stock level location) -->
+   <inv_loc_stock
+      stock_no_db_id = "4650"
+      stock_no_id = "4"
+      loc_db_id = "4650"
+      loc_id = "1"
+      owner_db_id = "4650"
+      owner_id = "1"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "4"
+      stock_no_db_id = "4650"
+      stock_no_id = "4"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "4"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "4"
+      hist_bool = "0"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "4"
+      shipment_db_id = "4650"
+      shipment_id = "4"
+      part_no_db_id = "4650"
+      part_no_id = "4"
+      expect_qt = "5"
+      />
+   <!-- first segment shipped to 4650:2 , final segment shipped to 4650:1  -->
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "41"
+      shipment_db_id = "4650"
+      shipment_id = "4"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "41"
+      ship_to_db_id = "4650"
+      ship_to_id = "2"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "42"
+      shipment_db_id = "4650"
+      shipment_id = "4"
+      segment_ord = "2"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "42"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+
+
+   <!-- Stock without in-transit multi-segment shipment
+        (shippment passing through stock level location)-->
+   <inv_loc_stock
+      stock_no_db_id = "4650"
+      stock_no_id = "5"
+      loc_db_id = "4650"
+      loc_id = "1"
+      owner_db_id = "4650"
+      owner_id = "1"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "5"
+      stock_no_db_id = "4650"
+      stock_no_id = "5"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "5"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "5"
+      hist_bool = "0"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "5"
+      shipment_db_id = "4650"
+      shipment_id = "5"
+      part_no_db_id = "4650"
+      part_no_id = "5"
+      expect_qt = "5"
+      />
+   <!-- first segment shipped to 4650:1 , final segment shipped to 4650:2  -->
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "51"
+      shipment_db_id = "4650"
+      shipment_id = "5"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "51"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "52"
+      shipment_db_id = "4650"
+      shipment_id = "5"
+      segment_ord = "2"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "52"
+      ship_to_db_id = "4650"
+      ship_to_id = "2"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+
+
+   <!-- Stock In Transit with multiple shipments -->
+   <inv_loc_stock
+      stock_no_db_id = "4650"
+      stock_no_id = "6"
+      loc_db_id = "4650"
+      loc_id = "1"
+      owner_db_id = "4650"
+      owner_id = "1"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "6"
+      stock_no_db_id = "4650"
+      stock_no_id = "6"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "61"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "61"
+      hist_bool = "0"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "61"
+      shipment_db_id = "4650"
+      shipment_id = "61"
+      part_no_db_id = "4650"
+      part_no_id = "6"
+      expect_qt = "3"
+      />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "61"
+      shipment_db_id = "4650"
+      shipment_id = "61"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "61"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "62"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "62"
+      hist_bool = "0"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "62"
+      shipment_db_id = "4650"
+      shipment_id = "62"
+      part_no_db_id = "4650"
+      part_no_id = "6"
+      expect_qt = "2"
+      />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "62"
+      shipment_db_id = "4650"
+      shipment_id = "62"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "62"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+
+
+   <!-- Stock In Transit with single shipment with multiple shipment lines -->
+   <inv_loc_stock
+      stock_no_db_id = "4650"
+      stock_no_id = "7"
+      loc_db_id = "4650"
+      loc_id = "1"
+      owner_db_id = "4650"
+      owner_id = "1"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "7"
+      stock_no_db_id = "4650"
+      stock_no_id = "7"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "7"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "7"
+      hist_bool = "0"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "71"
+      shipment_db_id = "4650"
+      shipment_id = "7"
+      part_no_db_id = "4650"
+      part_no_id = "7"
+      expect_qt = "3"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "72"
+      shipment_db_id = "4650"
+      shipment_id = "7"
+      part_no_db_id = "4650"
+      part_no_id = "7"
+      expect_qt = "2"
+      />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "7"
+      shipment_db_id = "4650"
+      shipment_id = "7"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "7"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+
+
+   <!-- Stock In Transit with multiple parts (with same stock number) -->
+   <inv_loc_stock
+      stock_no_db_id = "4650"
+      stock_no_id = "8"
+      loc_db_id = "4650"
+      loc_id = "1"
+      owner_db_id = "4650"
+      owner_id = "1"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "81"
+      stock_no_db_id = "4650"
+      stock_no_id = "8"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "82"
+      stock_no_db_id = "4650"
+      stock_no_id = "8"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "8"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "8"
+      hist_bool = "0"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "81"
+      shipment_db_id = "4650"
+      shipment_id = "8"
+      part_no_db_id = "4650"
+      part_no_id = "81"
+      expect_qt = "2"
+      />
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "82"
+      shipment_db_id = "4650"
+      shipment_id = "8"
+      part_no_db_id = "4650"
+      part_no_id = "82"
+      expect_qt = "3"
+      />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "8"
+      shipment_db_id = "4650"
+      shipment_id = "8"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "8"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+
+
+   <!-- Stock In Transit with picked inventory having non-RFI condition -->
+   <inv_loc_stock
+      stock_no_db_id = "4650"
+      stock_no_id = "9"
+      loc_db_id = "4650"
+      loc_id = "1"
+      owner_db_id = "4650"
+      owner_id = "1"
+      />
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "9"
+      stock_no_db_id = "4650"
+      stock_no_id = "9"
+      />
+   <ship_shipment
+      shipment_db_id = "4650"
+      shipment_id = "9"
+      />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "9"
+      hist_bool = "0"
+      />
+   <!-- first line has picked inventory with condition of RFI -->
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "91"
+      shipment_db_id = "4650"
+      shipment_id = "9"
+      part_no_db_id = "4650"
+      part_no_id = "9"
+      inv_no_db_id = "4650"
+      inv_no_id = "91"
+      expect_qt = "3"
+      />
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "91"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "RFI"
+   />
+   <!-- second line has picked inventory with condition of non-RFI -->
+   <ship_shipment_line
+      shipment_line_db_id = "4650"
+      shipment_line_id = "92"
+      shipment_db_id = "4650"
+      shipment_id = "9"
+      part_no_db_id = "4650"
+      part_no_id = "9"
+      inv_no_db_id = "4650"
+      inv_no_id = "92"
+      expect_qt = "2"
+      />
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "92"
+      inv_cond_db_id = "0"
+      inv_cond_cd = "REPREQ"
+   />
+   <ship_segment_map
+      segment_db_id = "4650"
+      segment_id = "9"
+      shipment_db_id = "4650"
+      shipment_id = "9"
+      segment_ord = "1"
+      />
+   <ship_segment
+      segment_db_id = "4650"
+      segment_id = "9"
+      ship_to_db_id = "4650"
+      ship_to_id = "1"
+      segment_status_db_id = "0"
+      segment_status_cd = "PEND"
+      />
+
+</dataset>

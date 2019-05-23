@@ -1,0 +1,28 @@
+version: "3.6"
+services:
+  selenium-hub-smokeTest:
+    image: docker-local.rdsrvartifactory/selenium/hub/2.53.1:1
+    container_name: selenium-hub-smokeTest
+    ports:
+      - "4444:4444"
+  chrome1:
+    image: docker-local.rdsrvartifactory/selenium/node-chrome/2.53.1:1
+    container_name: selenium-chrome1
+    depends_on:
+      - selenium-hub-smokeTest
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub-smokeTest
+  chrome2:
+      image: docker-local.rdsrvartifactory/selenium/node-chrome/2.53.1:1
+      container_name: selenium-chrome2
+      depends_on:
+      - selenium-hub-smokeTest
+      environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub-smokeTest
+  chrome3:
+      image: docker-local.rdsrvartifactory/selenium/node-chrome/2.53.1:1
+      container_name: selenium-chrome3
+      depends_on:
+      - selenium-hub-smokeTest
+      environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub-smokeTest

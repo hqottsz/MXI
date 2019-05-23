@@ -1,0 +1,251 @@
+apply plugin: 'mxjava';
+
+configurations {
+   // Prevent Java EE specification compilation stubs from causing absent code errors
+   // Concrete implementations are bundled with the WebLogic client JARs
+   compile.exclude group: 'javax', module: 'javaee-api'
+}
+
+dependencies {
+   compile "junit:junit:${junitVersion}";
+
+   // Database Connection (QAO/DAO/JBDC)
+   compile project(":mxcommon:mxcommonejb");
+   runtime files(weblogicOjdbcJar)
+   runtime files(wlfullclientJarPath);
+   compile "com.mxi.xml:mxxml:${mxxmlVersion}"
+   compile project(":mxversion");
+
+   // YAML Reader
+   compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+   compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jacksonVersion}"
+
+   // Test Dependencies
+   compile project(":am-test");
+   compile project(":maintenix");
+   compile project(":mxcommon:mxweblogic")
+   compile project(":mxcoreejb");
+   compile project(":mxcoreplugin");
+   compile project(":amapiejb");
+   compile project(":mxjobejb");
+   compile project(":lrp");
+   compile project(":pv");
+   compile project(":mxapi")
+   compile project(":wpl-ejb")
+   compile "org.hamcrest:hamcrest-library:${hamcrestVersion}"
+   compile "thirdparty:jgroups:${jbossVersion}"
+   compile "org.jmock:jmock:${jmockVersion}";
+   compile "org.hibernate:hibernate-validator:${hibernateValidatorVersion}";
+   compile "org.mockito:mockito-core:${mockitoVersion}"
+
+   compile files(weblogicJerseyCommonJar)
+   compile files(weblogicJerseyClientJar)
+
+   runtime files(weblogicJerseyEntityFilteringJar)
+   runtime files(weblogicJerseyGuavaJar)
+   runtime files(weblogicJerseyJaxbJar)
+   runtime files(weblogicJerseyJsonJacksonJar)
+   runtime files(weblogicJerseyJsonProcessingJar)
+   runtime files(weblogicJerseyMoxyJar)
+   runtime files(weblogicJerseyMultipartJar)
+   runtime files(weblogicJerseySseJar)
+   runtime files(weblogicJsonpJar)
+   runtime files(weblogicJsonpJaxrsJar)
+}
+
+// Enviroments
+apply plugin: 'mxenvironment';
+
+configurations {
+   liquibase
+   database {
+      transitive = false;
+      extendsFrom liquibase
+   }
+   buildinfoproperties
+}
+
+dependencies {
+   database project(path: ":assetmanagement-database", configuration: 'database');
+   liquibaseDeployer "com.mxi.idk:database-deployer-cli:${idkVersion}";
+   liquibase "com.mxi.idk:dbtools-db:${idkVersion}";
+
+   // used when packaging test results zips
+   buildinfoproperties project( path: ':installers:buildinfo', configuration: 'buildinfoproperties' )
+}
+
+
+environments {
+   query {
+      database {
+         if (useDocker.toBoolean()){
+            // The following properties must be configured to use the database in the Docker container.
+            // Set user and password to mx_user if you want this environment to use the pre-created database user in the Docker image.
+            // Assign unique ports to prevent collisions with other Docker containers.
+            // The recommended port for the DB Control utility is the 11xx version of the database port to make it easy to find.
+            host="localhost";
+            password="mx_user";
+            username="mx_user";
+            port=1524;
+            def dbControlPort=1124;
+            service="or11g";
+            recreateDatabaseUser=false;
+
+            docker {
+               cleanup = "docker container rm -f ${productLabelPrefix}${productLabelCodeName}_${name}_db";
+               pull = "docker image pull ${dockerBaseImage}";
+               run = "docker container run --detach --name ${productLabelPrefix}${productLabelCodeName}_${name}_db --publish ${port}:1521 --publish ${dbControlPort}:1158 --tmpfs /dev/shm:rw,exec,suid ${dockerBaseImage}";
+            }
+         }
+         install {
+            if (useDocker.toBoolean()){
+               liquibase {
+                  configuration = configurations.database;
+               }
+               assertComponentVersion {
+                  componentCd = 'assetmanagement-database';
+                  major = Integer.valueOf(projectMajorVersion);
+                  minor = Integer.valueOf(projectMinorVersion);
+                  servicepack = Integer.valueOf(projectServicepackVersion);
+                  update = Integer.valueOf(projectUpdateVersion);
+               }
+            }
+            else {
+               plsqlExec {
+                  workingDirectory = file("${rootProject.projectDir}\\assetmanagement-database\\src\\base\\plsql");
+                  controlFile = file("${workingDirectory}\\control.sql");
+               }
+               setupMaintenixAudit {
+               }
+               version {
+                  componentName = "Maintenix";
+                  moduleName = "Maintenix.Schema";
+                  major = Integer.valueOf(productMajorVersion);
+                  minor = Integer.valueOf(productMinorVersion);
+                  servicepack = Integer.valueOf(productServicepackVersion);
+                  update = Integer.valueOf(productUpdateVersion);
+               }
+               liquibase {
+                  configuration = configurations.database;
+               }
+            }
+         }
+
+         upgrade {
+            componentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(previousMajorVersion);
+               minor = Integer.valueOf(previousMinorVersion);
+               servicepack = Integer.valueOf(previousServicepackVersion);
+               update = Integer.valueOf(previousUpdateVersion);
+            }
+            liquibase {
+               configuration = configurations.database;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+            disableValidation {
+            }
+            plsqlExec {
+               workingDirectory = file("src\\test\\plsql");
+               controlFile = file("${workingDirectory}\\tranform_materialized_views.sql");
+            }
+        }
+      }
+   }
+}
+
+createQueryDb.dependsOn configurations.database;
+upgradeQueryDb.dependsOn configurations.database;
+
+
+// Put database.properties into source
+task updateDatabaseProperties {
+   ext.propertiesFile = file("src/main/resources/database.properties");
+
+   inputs.property 'host', environments.query.database.host;
+   inputs.property 'port', environments.query.database.port;
+   inputs.property 'service', environments.query.database.service;
+   inputs.property 'username', environments.query.database.username;
+   inputs.property 'password', environments.query.database.password;
+   outputs.file ext.propertiesFile;
+
+   doFirst {
+      Properties lProperties = new Properties();
+      lProperties.setProperty("database.host", environments.query.database.host);
+      lProperties.setProperty("database.port", String.valueOf(environments.query.database.port));
+      lProperties.setProperty("database.service", environments.query.database.service);
+      lProperties.setProperty("database.username", environments.query.database.username);
+      lProperties.setProperty("database.password", environments.query.database.password);
+
+      lProperties.store(ext.propertiesFile.newWriter(), null);
+   }
+}
+
+processResources {
+   dependsOn updateDatabaseProperties;
+}
+
+
+// Running Tests
+task envTest(type: Test) {
+   finalizedBy zipEnvTestResults, deployTestResults
+
+   // setup test memory requirements
+   minHeapSize = "512m"
+   maxHeapSize = "1536m"
+
+   include '**/*Test.class';
+
+   testClassesDirs = sourceSets.main.output.classesDirs;
+
+   def jacocoTestExec = file("$buildDir/jacoco/jacocoTest.exec")
+   outputs.file( jacocoTestExec )
+
+   jacoco {
+      destinationFile = jacocoTestExec
+      classDumpDir = file("$buildDir/jacoco/classpathdumps")
+   }
+
+   doFirst {
+      // jacoco.append = false has been deprecated, this accomplishes the same
+      delete jacocoTestExec
+   }
+}
+
+task smokeSetUp (){
+   dependsOn envSetUp;
+}
+
+task smokeTest (){
+   dependsOn envTest;
+}
+
+envTest.mustRunAfter(smokeSetUp);
+
+task smokeTearDown (){
+   dependsOn envTearDown;
+}
+
+task envTestCodeCoverage(type: JacocoReport) {
+   dependsOn envTest;
+   executionData envTest;
+   sourceSets sourceSets.main;
+}
+
+zipEnvTestResults {
+   dependsOn configurations.buildinfoproperties
+   from( configurations.buildinfoproperties )
+}
+
+deployTestResults {
+   organisation = "${projectGroup}.envtest"
+   deploy( zipEnvTestResults, project.name, 'envtest', 'envtest' )
+}
+
+javadoc.enabled = false;

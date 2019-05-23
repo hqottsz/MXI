@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetVersion</name>
+   <description>Retrieves the version for a module</description>
+   <sql>
+     SELECT
+         module_name,
+         version_no_sdesc
+     FROM
+        utl_version
+     WHERE
+        utl_version.module_name = :aModuleName
+   </sql>
+   <arguments>
+      <argument name="aModuleName" type="STRING" />
+   </arguments>
+</sql-statement>

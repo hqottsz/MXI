@@ -1,0 +1,274 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="5138F200-58AD-4978-AFC3-3E5583A2D53B" name="PUBSUB_SUBSCRIBER">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 17:34:03 UTC</createdTime>
+<comment>Stores subscriptions to channels</comment>
+<commentInRDBMS>Stores subscriptions to channels</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_790</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PUBSUB_SUBSCRIBER_ID" id="E8D230F3-8E68-6C12-E193-ADC3E67BA233">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-20 19:40:12 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PUBSUB_CHANNEL_ID" id="5CB86A24-7051-C9F6-1579-A83A3750947B">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 19:55:04 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="08C702F8-7F30-77AB-B122-BAF339186929" referredColumn="35B02BCF-BCDC-A3DD-DD2E-24811230BFE6"/>
+</associations>
+</Column>
+<Column name="APP_ID" id="7883E169-F05F-3F1B-915A-3E165C2A3B99">
+<createdBy>kaspca</createdBy>
+<createdTime>2017-12-13 20:18:39 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="A7F4E0B0-2E10-2AB4-1B26-5A94ED200053">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIRCUIT_STATUS" id="83E3A165-7BA2-EB06-6269-8B56AFE8B37B">
+<createdBy>rbluth</createdBy>
+<createdTime>2017-01-26 19:43:53 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EC3B5B3F-6A34-8405-2855-C85E56C8EEFE</domain>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>OPEN</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIRCUIT_CLOSE_DT" id="D70D86A2-ABB6-E10A-C19F-38CBCC4F3A25">
+<createdBy>rbluth</createdBy>
+<createdTime>2017-01-26 19:43:53 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>CF39B19C-6F7B-5266-FFB7-2A1CCA8D145E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FAILED_ATTEMPTS" id="B28931F1-5F81-715F-6767-7E252BC553D8">
+<createdBy>rbluth</createdBy>
+<createdTime>2017-01-26 19:43:53 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8F9378DE-3B36-158C-9C4F-DED41043181B</domain>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="8282B59C-055F-5697-B9FA-69F7D43BE0A1">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+<valueDef value="2" description=""/>
+<valueDef value="3" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF023379-B7E6-DF14-8DEB-1BACB2539FCE" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="4B739E72-98C9-8179-C549-88158945F6ED">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="A690119A-35A1-65CB-8AAC-F132220B4A1B">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="CREATION_DB_ID" id="7B2F3B47-B59C-B5B9-1561-7E052BC3FA0F">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="F90EBA55-5C5F-A85A-74AB-72F19AAD61F3" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_DT" id="8E00CFCE-5C3A-768F-9E6E-94E50B905C92">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="A8F1672D-45BE-BFB4-F188-7C0293A76DB7">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="3FE57D1C-6942-1BA2-606B-710B3C325041" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="0CB990BF-2801-39A9-67A6-2C0750D9D904">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:53:06 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="18FF0FB6-83B6-F428-5126-BBBF451BAB5E" name="PK_PUBSUB_SUBSCRIBER">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 17:35:16 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8D230F3-8E68-6C12-E193-ADC3E67BA233"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="864431A0-B8D9-6340-56D5-CD320B61B94D" name="IX_PUBSUB_SUBSCRIBER_UNQ">
+<createdBy>cmcgee</createdBy>
+<createdTime>2018-01-25 21:29:08 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CB86A24-7051-C9F6-1579-A83A3750947B"/>
+<colUsage columnID="7883E169-F05F-3F1B-915A-3E165C2A3B99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EC6F3643-08DD-57CF-54DF-3811168BC4C4" name="IX_PUBSUB_SUBSCRIBER">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 18:21:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CB86A24-7051-C9F6-1579-A83A3750947B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7510014A-4005-621D-D40B-C1A0DE59DCED" name="FK_PUBSUB_SUB_CHANNEL">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-17 19:55:04 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CB86A24-7051-C9F6-1579-A83A3750947B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8DCE0D19-6865-3CC2-54A2-D706DF9DB305" name="FK_PUBSUB_SUB_MIM_DB_CR">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:57:53 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B2F3B47-B59C-B5B9-1561-7E052BC3FA0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C54A74F1-05E4-7741-D89C-844A4A4A9E65" name="FK_PUBSUB_SUB_RSTAT">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:57:53 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8282B59C-055F-5697-B9FA-69F7D43BE0A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="66618CF2-2038-B695-3C36-78C0F61D7BA0" name="FK_PUBSUB_SUB_MIM_DB_RE">
+<createdBy>rbluth</createdBy>
+<createdTime>2016-10-24 17:57:53 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8F1672D-45BE-BFB4-F188-7C0293A76DB7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

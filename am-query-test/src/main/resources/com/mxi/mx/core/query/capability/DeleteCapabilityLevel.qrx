@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>DeleteCapabilityLevel</name>
+   <description> This query sets the current and configured capability levels to null for the corresponding "aCapability"
+   </description>
+   <sql>
+	UPDATE	acft_cap_levels
+	SET		config_level_cd = NULL, 
+			   level_cd = NULL,
+            custom_level = NULL
+	WHERE 	acft_no_db_id = :aAcftNoDbId   AND
+			acft_no_id    = :aAcftNoId     AND
+			cap_cd = :aCapability
+   </sql>
+   <arguments>
+      <argument name="aAcftNoDbId" type="INTEGER" />
+      <argument name="aAcftNoId"   type="INTEGER" />
+	  <argument name="aCapability" type="STRING" />
+   </arguments>
+</sql-statement>
+

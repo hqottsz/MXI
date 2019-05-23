@@ -1,0 +1,56 @@
+<dataset>
+
+   <!-- Defines two work packages for two inventories. Both inventories have owners. One inventory's owner has
+        organization, the other one does not.
+        Owner with organization has organization of type DEPT and the company of that Department is MRO company.
+        ADMIN organization is already entered into database, since it is 0 level data.
+    -->
+    <inv_inv
+         inv_no_db_id      = "4650"
+         inv_no_id         = "10000"
+         owner_db_id       = "4650"
+         owner_id          = "20001"
+         />
+   <inv_inv
+         inv_no_db_id      = "4650"
+         inv_no_id         = "10001"
+         owner_db_id       = "4650"
+         owner_id          = "20000"
+         />
+    <inv_owner
+         owner_db_id       = "4650"
+         owner_id          = "20000"
+         org_db_id         = "4650"
+         org_id            = "20003"
+         />
+    <inv_owner
+         owner_db_id       = "4650"
+         owner_id          = "20001"
+         />
+   <sched_stask
+         sched_db_id       = "4650"
+         sched_id          = "30000"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id    = "10000"
+         />
+    <sched_stask
+         sched_db_id       = "4650"
+         sched_id          = "30001"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id    = "10001"
+         />
+    <org_org
+         org_type_cd       = "DEPT"
+         org_db_id         = "4650"
+         org_id            = "20003"
+         company_org_db_id = "4650"
+         company_org_id    = "20004"
+         />
+   <org_org
+         org_type_cd       = "MRO"
+         org_db_id         = "4650"
+         org_id            = "20004"
+         company_org_db_id = "4650"
+         company_org_id    = "20004"
+         />
+</dataset>

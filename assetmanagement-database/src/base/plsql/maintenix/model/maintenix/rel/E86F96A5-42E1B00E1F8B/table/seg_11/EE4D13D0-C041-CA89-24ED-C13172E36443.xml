@@ -1,0 +1,270 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="EE4D13D0-C041-CA89-24ED-C13172E36443" name="EQP_ASSMBL_SENS">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:09:44 UTC</createdTime>
+<commentInRDBMS>This is a relationship table between EQP_ASSMBL and REF_SENSITIVITY.&lt;br/&gt;A record in this table means that a sensitivity is assigned to an assembly.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_825</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ASSMBL_DB_ID" id="15953642-35BC-32DA-A3C2-5D7995B79C7F">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>FK to  EQP_ASSMBL PK&apos;s table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="42293D03-79A6-3C11-D39C-C58A1F603B09" referredColumn="39B9234B-7830-4EC8-DE12-B899009ECA46"/>
+</associations>
+</Column>
+<Column name="ASSMBL_CD" id="18859458-A0CD-4EC1-1C31-B54E0C1E770C">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>FK to  EQP_ASSMBL&apos;s PK table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="42293D03-79A6-3C11-D39C-C58A1F603B09" referredColumn="C4A7783A-2D3F-220A-7630-21D49175BAD0"/>
+</associations>
+</Column>
+<Column name="SENSITIVITY_CD" id="47D706F0-5403-00AC-810E-CC6855EF4BE8">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>FK to REF_SENSITIVITY&apos;s PK table</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="84421858-3BFA-F045-3D17-27EE76AFC9C1" referredColumn="1E947E79-C686-1D5B-3425-2F74DEB7E76E"/>
+</associations>
+</Column>
+<Column name="CTRL_DB_ID" id="470D1A94-3BCF-A318-C2D6-49C623A443A7">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="E869D262-5E00-B65F-F3EA-8215CFFFB55B" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="3D0B2DEC-BBDF-66AE-88C9-BABD86D6FC31">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<listOfValues>
+<valueDef value="0" description=""/>
+<valueDef value="1" description=""/>
+<valueDef value="2" description=""/>
+<valueDef value="3" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD0176A3-67FE-FD4F-D519-046400010EE1" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="FBD57444-F579-C03A-C392-1985F166C592">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="0D7D9B7C-2E21-8B97-A68D-9026F1E82462">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="8996BDD2-F9EA-C10E-3FCD-FFBC6BDDF907" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="ED3B64CF-A5B6-0BDC-548F-118B5EB18AB3">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="86327D9D-F1DB-D941-7423-7D16FC3A9AE6">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="9E824F50-3485-83F5-FDA2-ADD1914A5CD9">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>4294967295</endValue>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="ADA7C11B-AF02-52A4-F425-394EED208A6C" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="E60B7E12-716F-A501-8F61-72A741D44DF3">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:15:16 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="56CF4116-5B59-FFD3-5934-7B0E46EFFD13" name="PK_EQP_ASSMBL_SENS">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:50:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15953642-35BC-32DA-A3C2-5D7995B79C7F"/>
+<colUsage columnID="18859458-A0CD-4EC1-1C31-B54E0C1E770C"/>
+<colUsage columnID="47D706F0-5403-00AC-810E-CC6855EF4BE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DA3C26F-8C33-0102-41E4-44057E330372" name="FK_EQPASSMBL_ASSMBLSENS">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:50:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15953642-35BC-32DA-A3C2-5D7995B79C7F"/>
+<colUsage columnID="18859458-A0CD-4EC1-1C31-B54E0C1E770C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1B8CFF7E-CC71-DFEA-4330-57618CE1CAE7" name="FK_MIMDB_EQPASSMBLSENS_REV">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:50:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E824F50-3485-83F5-FDA2-ADD1914A5CD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="29A2C023-EC16-BAE4-9D87-6F7F7E75B4FB" name="FK_MIMDB_EQPASSMBLSENS_CRE">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:50:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0D7D9B7C-2E21-8B97-A68D-9026F1E82462"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F29DC80D-31DE-206F-A577-05E05E53BDAF" name="FK_MIMDB_EQPASSMBLSENS_CTRL">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:50:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="470D1A94-3BCF-A318-C2D6-49C623A443A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="872BF893-12F2-9579-6DAC-0A67D0D6DE3A" name="FK_MIMRSTAT_EQPASSMBLSENS">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:50:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D0B2DEC-BBDF-66AE-88C9-BABD86D6FC31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="135B37AA-3079-C5F9-CB78-CD1B3D687FBB" name="FK_REFSENS_EQPASSMBLSENS">
+<createdBy>gupica</createdBy>
+<createdTime>2017-10-26 13:50:25 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47D706F0-5403-00AC-810E-CC6855EF4BE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

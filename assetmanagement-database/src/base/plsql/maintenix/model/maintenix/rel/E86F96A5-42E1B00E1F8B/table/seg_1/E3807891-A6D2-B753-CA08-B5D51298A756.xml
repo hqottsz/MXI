@@ -1,0 +1,317 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_1" id="E3807891-A6D2-B753-CA08-B5D51298A756" name="EQP_OIL_THRESHOLD_PART">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Table contains the part number specific oil consumption status threshold values.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9C6CDFFC-4231-507D-AB7E-03201C6C3BCA</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ASSMBL_DB_ID" id="DF860B11-5FD2-4D32-BCCC-DF5930040D12">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_BOM_OIL.  The assembly for which the oil consumption status threshold values are defined.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>ECBB48F5-B8CE-B686-28B2-543C76FCB930</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ASSMBL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="34157C03-B6BE-16EB-0631-BFCB1A501F69" referredColumn="D93209DD-079B-4A74-3830-84A1E17368B7"/>
+</associations>
+</Column>
+<Column name="ASSMBL_CD" id="2877F05F-0444-8532-2724-274ED4D15F42">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL_BOM_OIL.  The assembly for which the oil consumption status threshold values are defined.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF945D43-DC06-0973-3D63-704CDF5DD5D1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="34157C03-B6BE-16EB-0631-BFCB1A501F69" referredColumn="8DD8814E-ED0D-9DB1-4EEE-2A98F3A4A6AB"/>
+</associations>
+</Column>
+<Column name="THRESHOLD_ID" id="E5FA431B-1735-FA21-0D97-7C3F5CAC2BE6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Unique identifier assigned from Sequence EQP_OIL_THRESHOLD_ID_SEQ</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>14F69C0A-91DE-C7BF-739A-BCD6BF2536CD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="THRESHOLD_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PART_NO_DB_ID" id="6939DE24-BF6E-953A-51C4-307B40446034">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_NO. The specific part number which the threshold values apply.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C6025B3B-4C7D-ABC7-C527-87565B7BB162</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB50691E-8BF9-ABDB-A668-89E1C401DCF8" referredColumn="68F06646-5424-0BC1-75C1-E36907D2896A"/>
+</associations>
+</Column>
+<Column name="PART_NO_ID" id="0283EB41-2322-8F19-2536-6BB8E393C5A1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to EQP_PART_NO. The specific part number which the threshold values apply.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8BEC84E9-903F-B931-E3B5-95923A1698A2</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PART_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB50691E-8BF9-ABDB-A668-89E1C401DCF8" referredColumn="42CF6CC5-F43F-2A82-5AD8-C3C2E11E194C"/>
+</associations>
+</Column>
+<Column name="THRESHOLD_QT" id="F41826D0-CE93-6FFF-50DE-86E46570C1D5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Threshold value.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0834B046-EABE-9B03-0272-287E9260A514</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OIL_STATUS_DB_ID" id="68E9C57C-E3D1-3589-71C3-29D6EABA6DB7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_OIL_STATUS.  The oil consumption status code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0DA68E40-A63C-86DC-9AEA-FB56C4E59A24</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OIL_STATUS_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F391724-C43E-6830-AA03-610B55903EDF" referredColumn="AA32EEE7-A7A7-B648-8663-E8D671E0BA0A"/>
+</associations>
+</Column>
+<Column name="OIL_STATUS_CD" id="68207393-EEC0-F8F8-AACA-FACA598EF121">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_OIL_STATUS.  The oil consumption status code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>96507AB5-AD53-B002-2F05-D365792C3F7E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F391724-C43E-6830-AA03-610B55903EDF" referredColumn="FA7791BE-93F5-A0C4-81F6-7DB65205A22C"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="6191A967-42B9-52E2-2D39-CCB14D154170">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EE381383-D166-CAC2-3DCD-515DB0EEC310</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75C4DEDB-BA0A-5F27-40FA-78ECDC53A8F0" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="C2642556-0CC8-5F98-88A3-8DF22AFD834B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>03AA83F1-1A33-6DB1-C47A-1D52641B8113</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="9A0755AA-BD7E-7E7F-A094-A0D16F5384D2">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>34414D77-5662-9C2A-3731-E4C67E821983</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="CD6623EC-CFFE-D934-9F51-E1ECCFC88F51">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>30DDEE73-290A-5499-8333-B318E5706751</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="718282EF-7562-3405-D86A-F3D896FF8921">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>75E0B540-1EBD-83C5-735B-8B89CF8CAB26</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC3FAF39-5098-899A-25F4-0936FA3D6FC8" name="PK_EQP_OIL_THRESHOLD_PART">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>827A0420-B62F-8864-68F5-B6011B6BEFF9</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF860B11-5FD2-4D32-BCCC-DF5930040D12"/>
+<colUsage columnID="2877F05F-0444-8532-2724-274ED4D15F42"/>
+<colUsage columnID="E5FA431B-1735-FA21-0D97-7C3F5CAC2BE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="88D06125-6286-C5D5-50FB-670E6DADF17E" name="IX_EQPPRTNO_EQPOILTHRESHPART">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7747E8D4-D685-3C31-DF5C-BDBA6A8169C8</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6939DE24-BF6E-953A-51C4-307B40446034"/>
+<colUsage columnID="0283EB41-2322-8F19-2536-6BB8E393C5A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="487EF3A4-7725-3609-3186-15606862146D" name="IX_EQPASSBOMOIL_EQPOILTHPART">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A9AEBFA9-6069-5BA9-6B8D-A1F6EE303AC8</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF860B11-5FD2-4D32-BCCC-DF5930040D12"/>
+<colUsage columnID="2877F05F-0444-8532-2724-274ED4D15F42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D2E7254F-B95E-D27D-97E7-5216E77A09CB" name="FK_EQPASSBOMOIL_EQPOILTHPART">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF860B11-5FD2-4D32-BCCC-DF5930040D12"/>
+<colUsage columnID="2877F05F-0444-8532-2724-274ED4D15F42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="126983D0-BC1B-AC69-A238-AEBB800B6E7A" name="FK_EQPPRTNO_EQPOILTHRESHPART">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6939DE24-BF6E-953A-51C4-307B40446034"/>
+<colUsage columnID="0283EB41-2322-8F19-2536-6BB8E393C5A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15E8A082-8D51-90F6-BC87-134B0EF0CB35" name="FK_MIMRSTAT_EQPOILTHRESHPART">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6191A967-42B9-52E2-2D39-CCB14D154170"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55B59DAA-18B5-2EA9-5932-10236D635EAB" name="FK_REFOILSTATUS_EQPOILTHPART">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68E9C57C-E3D1-3589-71C3-29D6EABA6DB7"/>
+<colUsage columnID="68207393-EEC0-F8F8-AACA-FACA598EF121"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

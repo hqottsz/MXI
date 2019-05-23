@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="1A791F8D-FA10-884E-47BE-7CE35D923916" name="MT_INV_AC_AUTHORITY">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>Materialization table of mappings between user&apos;s authorities on Aircraft inventory. Updated via triggers on org_hr_authority, inv_inv, org_hr.&lt;br&gt;  This is a direct replacement for the vw_inv_ac_authority and can be directly joined instead of using the view.&lt;br&gt;  Transactionally consistent with source tables.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9BC8E34F-9362-C9B8-570C-CED97B825D3A</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_NO_DB_ID" id="6D0420C8-E318-17C7-51CB-6263F1AC29E4">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DAE8ACC0-DD7D-7FDA-70E7-458F132A9ACB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INV_NO_ID" id="B032BE09-8A97-8535-2F42-DCE0599A4ED3">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AF289563-06BB-688C-A24B-757E15ABFBC1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HR_DB_ID" id="29BF8772-6821-6B17-4BFB-5B34F9DFF784">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to org_hr</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>ACD8AE6C-55B1-3691-9B21-8BE59C6F807E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HR_ID" id="E7584291-5986-47F8-9080-1198A9D83F10">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to org_hr</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>755ED133-DF2B-8C51-C54B-A18ED089B12F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTHORITY_DB_ID" id="39C2D4CA-FC53-A02F-0E48-F6CDFF422FC3">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to org_hr_authority</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0D974FC3-F8DD-DBDC-28DA-8709AE5C25CA</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTHORITY_ID" id="4F1A6991-44F7-113E-BF3E-CA05EAACC5A5">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to org_hr_authority</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0A06A7A6-0067-6577-042B-AD330F526E72</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5CB6F0E1-F247-A30C-AADB-D99650DD6463" name="IX_MT_INVAUTHHR">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BFCBAF65-53DA-E999-258E-F6081A8BAD62</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29BF8772-6821-6B17-4BFB-5B34F9DFF784"/>
+<colUsage columnID="E7584291-5986-47F8-9080-1198A9D83F10"/>
+<colUsage columnID="6D0420C8-E318-17C7-51CB-6263F1AC29E4"/>
+<colUsage columnID="B032BE09-8A97-8535-2F42-DCE0599A4ED3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

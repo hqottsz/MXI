@@ -1,0 +1,494 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="B636F801-D6B6-5877-72B2-700F0ECCDB11" name="INV_REMOVE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>Inventory Remove: This entity is used to record that an inventory item is removed from a parent inventory item during configuration change. It is the foundation for retrieving historic configuration information about inventory items at any time.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INV_REMOVE_ID" id="9244C421-2C42-2A80-1C49-F0AE1ACA17AB">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>PK to INV_REMOVE_ID</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<defaultValue>sys_guid()</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVENT_DB_ID" id="46B93EF3-25BF-6552-501F-56710E84531E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to EVT_EVENT.  The event that log card should be filed against.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_EVENT_DB_ID</constraintName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB23E66B-5D0B-2FA3-139E-5B89A22673CB" referredColumn="BB51EFD6-96FB-FF96-132E-5A74E3F6C505"/>
+</associations>
+</Column>
+<Column name="EVENT_ID" id="41867134-3D45-1103-215F-1A5A37996C77">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to EVT_EVENT.  The event that log card should be filed against.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_EVENT_ID</constraintName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB23E66B-5D0B-2FA3-139E-5B89A22673CB" referredColumn="6C14E8B2-CC00-491B-7320-18CE425097B6"/>
+</associations>
+</Column>
+<Column name="INV_NO_DB_ID" id="D113CAB8-6408-5FA7-B731-B11733900CED">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item that the event is assigned to.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_INV_NO_DB_ID</constraintName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CC5A6FC-6653-FB9F-09CD-5784A54ECF08" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="INV_NO_ID" id="46800D95-FF95-394A-101D-A7DC97C083D4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item that the event is assigned to.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_INV_NO_ID</constraintName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CC5A6FC-6653-FB9F-09CD-5784A54ECF08" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="NH_INV_NO_DB_ID" id="A51C73FC-4B4E-4530-97EA-378F00D3DF09">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item&apos;s immediate parent at the time of the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_NH_INV_NO_DB_ID</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="39AA1667-1AD4-C082-B9B1-4F3ADC31EA15" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="NH_INV_NO_ID" id="20841B00-6016-D859-36E4-D63491F72D4E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item&apos;s immediate parent at the time of the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_NH_INV_NO_ID</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="39AA1667-1AD4-C082-B9B1-4F3ADC31EA15" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="ASSMBL_INV_NO_DB_ID" id="83D7172C-D991-FF0D-AD7C-A8FBD563F29D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item&apos;s immediate parent assembly at the time of the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_ASSMBL_INV_NO_DB_ID</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A4700D5-7209-A34D-C15A-A842765261BC" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="ASSMBL_INV_NO_ID" id="55E6EB06-9B1D-EFB8-80FA-49E01642A70B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item&apos;s immediate parent assembly at the time of the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_ASSMBL_INV_NO_ID</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A4700D5-7209-A34D-C15A-A842765261BC" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="H_INV_NO_DB_ID" id="D4751E11-47A3-E53D-AD1C-350611AF50DF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item&apos;s highest parent at the time of the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_H_INV_NO_DB_ID</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="123B3F9E-532E-825F-2B35-01E47AAF1408" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="H_INV_NO_ID" id="046FC70E-285B-FC7A-A27C-C1DF576AAD91">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>FK to INV_INV. The immediate item&apos;s highest parent at the time of the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_H_INV_NO_ID</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="123B3F9E-532E-825F-2B35-01E47AAF1408" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="EVENT_DT" id="13D26E06-F05D-E3D6-0A27-E69094A00126">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>The local time at the time that the inventory item is actually removed. This is the same time as the time of the configuration change event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAIN_INV_BOOL" id="4D508DE6-2B8E-1434-57A5-C71DBB3ABEE0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>Indicates that this item is THE immediate item which always carries the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_EVT_INVv1_MAIN_INV_BOOL</constraintName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="283E430C-C26C-46E2-B61D-A5DC9B995D63">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access for the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_INV_RMVL_RSTAT_CD</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="275F3B6D-AE3F-7C06-D948-1131FC43EDEB" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CTRL_DB_ID" id="57BC16CF-E510-B4EC-9CD2-348104945688">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_INV_RMVL_CTRL_DB_ID</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CTRL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_NO" id="D808EAEA-0D08-31FF-414C-7F4C69826291">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="6D08746B-8559-6394-66F5-51C8433E2268">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_INV_RMVL_CREATION_DB_ID</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CREATION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DT" id="67FCC93F-A9E6-71B9-B77F-EF2266DA5242">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>The data and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="D4753CFB-1DC2-76BC-5B47-3E64CC6C91FD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>The data and time at which the record was updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="93F92A1C-A54D-3F14-67F0-28D44E650E59">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<constraintName>CK_INV_RMVL_REVISION_DB_ID</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="565E0653-137A-FE45-D42A-FCE709EB3229">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5B377932-E05B-970C-C9F9-C12FB2F51F40" name="PK_INV_REMOVE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9244C421-2C42-2A80-1C49-F0AE1ACA17AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2AB286A5-DFB9-317F-AE38-7EAF15202A2C" name="IX_INVRMVL_HINV_EVTDT">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<commentInRDBMS>Main index for configuration query search.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4751E11-47A3-E53D-AD1C-350611AF50DF"/>
+<colUsage columnID="046FC70E-285B-FC7A-A27C-C1DF576AAD91"/>
+<colUsage columnID="13D26E06-F05D-E3D6-0A27-E69094A00126"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="461645D8-7B46-374A-5CFE-6288305A8F0F" name="IX_INVRMVL_EVENT_ID">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46B93EF3-25BF-6552-501F-56710E84531E"/>
+<colUsage columnID="41867134-3D45-1103-215F-1A5A37996C77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="57329E96-5B50-8375-FFF4-7830DACFB72F" name="IX_INVRMVL_INV_ID">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D113CAB8-6408-5FA7-B731-B11733900CED"/>
+<colUsage columnID="46800D95-FF95-394A-101D-A7DC97C083D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D7B056B8-3FAD-08D0-FBDC-36D4CB435D3F" name="IX_INVRMVL_H_INV_ID">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4751E11-47A3-E53D-AD1C-350611AF50DF"/>
+<colUsage columnID="046FC70E-285B-FC7A-A27C-C1DF576AAD91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="543E1BCA-0CC1-2848-20F8-2801506D87F8" name="IX_INVRMVL_ASSMBL_INV_ID">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83D7172C-D991-FF0D-AD7C-A8FBD563F29D"/>
+<colUsage columnID="55E6EB06-9B1D-EFB8-80FA-49E01642A70B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B08B8C5F-DE50-4391-5932-0E94A54A3815" name="IX_INVRMVL_NH_INV_ID">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A51C73FC-4B4E-4530-97EA-378F00D3DF09"/>
+<colUsage columnID="20841B00-6016-D859-36E4-D63491F72D4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8B783DC-DC36-C32F-FD57-193DEAEA41D2" name="IX_INVRMVL_INV_EVTDT">
+<createdBy>robeca</createdBy>
+<createdTime>2018-10-22 13:43:08 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46800D95-FF95-394A-101D-A7DC97C083D4"/>
+<colUsage columnID="D113CAB8-6408-5FA7-B731-B11733900CED"/>
+<colUsage columnID="13D26E06-F05D-E3D6-0A27-E69094A00126"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF3318CE-6FB0-C453-826D-53B37243EB0C" name="FK_INVREMOVE_INVINV_v1">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83D7172C-D991-FF0D-AD7C-A8FBD563F29D"/>
+<colUsage columnID="55E6EB06-9B1D-EFB8-80FA-49E01642A70B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="87723BE4-23FF-3A5E-AC08-7CD4119F3801" name="FK_INVREMOVE_INVINV_v4">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D113CAB8-6408-5FA7-B731-B11733900CED"/>
+<colUsage columnID="46800D95-FF95-394A-101D-A7DC97C083D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EBE45880-FB95-0660-D64E-8B150D6E5281" name="FK_INVREMOVE_MIMRSTAT">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="283E430C-C26C-46E2-B61D-A5DC9B995D63"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A1F98ED-D1BF-DE06-9AED-49ABEE905CE5" name="FK_INVREMOVE_INVINV_v2">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4751E11-47A3-E53D-AD1C-350611AF50DF"/>
+<colUsage columnID="046FC70E-285B-FC7A-A27C-C1DF576AAD91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EDF5D9B5-7871-61FD-467B-454A76095295" name="FK_INVREMOVE_EVTEVENT">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46B93EF3-25BF-6552-501F-56710E84531E"/>
+<colUsage columnID="41867134-3D45-1103-215F-1A5A37996C77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B97ECFA2-7DF7-0E40-6E51-ED17606F32C5" name="FK_INVREMOVE_INVINV_v3">
+<createdBy>jliu</createdBy>
+<createdTime>2017-02-01 21:54:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A51C73FC-4B4E-4530-97EA-378F00D3DF09"/>
+<colUsage columnID="20841B00-6016-D859-36E4-D63491F72D4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

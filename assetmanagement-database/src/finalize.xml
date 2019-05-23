@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+Component Finalize Script ([module]/finalize.xml)
+
+This logic is executed once after the component install/upgrade after all
+version upgrade stages.
+-->
+<databaseChangeLog
+	  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+	  http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+   <changeSet author="update_utl_version" id="1" runAlways="true" runOnChange="true">
+      <comment></comment>
+      <createProcedure>
+
+         BEGIN
+
+            INSERT ALL
+               -- For base database, Maintenix.Schema and Maintenix.Update modules will be created.
+               -- For upgrade, only Maintenix.Update module will be created.
+               -- 
+               WHEN module_name = 'Maintenix.Schema' THEN
+                  INTO
+                     utl_version (
+                        module_name,
+                        version_no_sdesc,
+                        install_dt,
+                        install_sdesc
+                     )
+                  VALUES
+                     (
+                        module_name,
+                        '@full.version.desc@',
+                        SYSDATE,
+                        'Base Database Install and Data Transfer'
+                     )     
+               --       
+               WHEN module_name = 'Maintenix.Update' THEN
+                  INTO
+                     utl_version (
+                        module_name,
+                        version_no_sdesc,
+                        install_dt,
+                        install_sdesc
+                     )
+                  VALUES
+                     (
+                        module_name,
+                        '@full.version.desc@',
+                        SYSDATE,
+                        'Maintenix Update'
+                     )
+            -- Will RETURN a row only when the UTL_VERSION table is EMPTY.
+            SELECT
+               'Maintenix.Schema' module_name
+            FROM 
+               dual
+            WHERE              
+              (SELECT COUNT(1) FROM utl_version) = 0
+            --        
+            UNION ALL
+            -- Will RETURN a row only when the specified version DOES NOT EXISTS in UTL_VERSION table.
+            SELECT
+               'Maintenix.Update' module_name
+            FROM 
+               dual
+            WHERE
+               NOT EXISTS (
+                              SELECT
+                                 1
+                              FROM 
+                                 utl_version
+                              WHERE
+                                 module_name = 'Maintenix.Update'
+                                 AND
+                                 version_no_sdesc = '@full.version.desc@'
+                          );
+
+
+         END;
+
+      </createProcedure>
+   </changeSet>
+
+   <changeSet author="sync_sequences" id="1" runAlways="true" runOnChange="true">
+      <comment>Synchronize the sequences from the utl_sequences table</comment>
+      <createProcedure>
+
+         BEGIN
+
+            utl_sequence_pkg.sync_sequences;
+
+         END;
+
+      </createProcedure>
+   </changeSet>
+
+   <include file="dbtools-db/tools/component/finalize.xml"/>
+
+</databaseChangeLog>

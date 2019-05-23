@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetLrpLoc</name>
+   <description>This query retrieves an LRP Locations by Plan key</description>
+   <sql>
+      SELECT
+         *
+      FROM
+         lrp_loc
+      WHERE
+         lrp_loc.lrp_db_id = :aLrpDbId AND
+         lrp_loc.lrp_id    = :aLrpId
+   </sql>
+    <arguments>
+      <argument name="aLrpDbId" type="INTEGER" />
+      <argument name="aLrpId" type="INTEGER" />
+   </arguments>
+</sql-statement>

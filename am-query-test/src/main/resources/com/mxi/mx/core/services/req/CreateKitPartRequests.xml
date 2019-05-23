@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<dataset>
+   <!-- barcode generator -->
+   <utl_trigger
+      trigger_id="1"
+      trigger_cd="MX_PR_ID"
+      exec_order="1"
+      type_cd="COMPONENT"
+      class_name="com.mxi.mx.core.unittest.resources.trigger.req.TestGeneratePartRequestID"
+      active_bool="1"
+      utl_id="4650" />
+
+   <!-- non-historic event -->
+   <evt_event
+      event_db_id="4650"
+      event_id="1000"
+      hist_bool="0"
+      h_event_db_id="4650"
+      h_event_id="1001"
+      nh_event_db_id="4650"
+      nh_event_id="1001" />
+
+   <!-- deadline must come after root start date -->
+   <evt_sched_dead
+      event_db_id="4650"
+      event_id="1000"
+      data_type_db_id="0"
+      data_type_id="21"
+      sched_driver_bool="1"
+      sched_dead_dt="27-NOV-2009 00:00"
+      sched_dead_qt="1" />
+
+   <!-- root task -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="1001" />
+
+   <!-- root event -->
+   <evt_event
+      event_db_id="4650"
+      event_id="1001"
+      event_status_cd="COMMIT"
+      sched_start_dt="26-NOV-2009 00:00" />
+
+   <!-- driving event relationship -->
+   <evt_event_rel
+      event_db_id="4650"
+      event_id="1000"
+      event_rel_id="1"
+      rel_event_db_id="4650"
+      rel_event_id="1000"
+      rel_type_cd="DRVTASK" />
+
+   <!-- baselined task -->
+   <sched_stask
+      sched_db_id="4650"
+      sched_id="1000"
+      task_db_id="4650"
+      task_id="2000"
+      issue_account_db_id="4650"
+      issue_account_id="6000" />
+
+   <!-- part requirement with REQ action for kit part group 4650:3000 -->
+   <sched_part
+      sched_db_id="4650"
+      sched_id="1000"
+      sched_part_id="1"
+      sched_part_status_cd="ACTV"
+      req_action_db_id="0"
+      req_action_cd="REQ"
+      sched_bom_part_db_id="4650"
+      sched_bom_part_id="3000" />
+
+   <!-- baseline part requirement -->
+   <task_part_list
+      task_db_id="4650"
+      task_id="2000"
+      task_part_id="1"
+      bom_part_db_id="4650"
+      bom_part_id="3000"
+      req_action_db_id="0"
+      req_action_cd="REQ" />
+
+   <!-- kit part group -->
+   <eqp_bom_part
+      bom_part_db_id="4650"
+      bom_part_id="3000"
+      inv_class_db_id="0"
+      inv_class_cd="KIT" />
+
+   <!-- kit part -->
+   <eqp_part_no
+      part_no_db_id="4650"
+      part_no_id="5000"
+      part_no_oem="TEST PART" />
+
+   <!-- part to part group mapping -->
+   <eqp_part_baseline
+      bom_part_db_id="4650"
+      bom_part_id="3000"
+      part_no_db_id="4650"
+      part_no_id="5000" />
+
+   <!-- main inventory -->
+   <inv_inv
+      inv_no_db_id="4650"
+      inv_no_id="4000"
+      h_inv_no_db_id="4650"
+      h_inv_no_id="4000" />
+
+   <evt_inv
+      event_db_id="4650"
+      event_id="1000"
+      event_inv_id="1"
+      inv_no_db_id="4650"
+      inv_no_id="4000"
+      main_inv_bool="1" />
+</dataset>

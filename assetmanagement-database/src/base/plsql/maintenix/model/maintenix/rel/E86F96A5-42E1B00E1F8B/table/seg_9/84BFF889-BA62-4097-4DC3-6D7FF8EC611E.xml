@@ -1,0 +1,193 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="84BFF889-BA62-4097-4DC3-6D7FF8EC611E" name="USER_SHIFT_PATTERN_DAY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table represents a day in a user shift pattern.  A user shift pattern can have n number of days.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>550DB9F1-71A6-085D-B2E9-3A360A9FB822</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USER_SHIFT_PATTERN_DB_ID" id="DFAEED13-B91E-11D4-5F89-D394329E22B7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to USER_SHIFT_PATTERN.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C58F801E-CED8-B394-3CC8-4813AB1294DE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="USER_SHIFT_PATTERN_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70AAE410-6A31-B420-C5F5-73E19EA78EFD" referredColumn="CACFC90A-A66F-2A47-1755-228B6E66B119"/>
+</associations>
+</Column>
+<Column name="USER_SHIFT_PATTERN_ID" id="FB960AB3-08DA-442A-FC8C-531AE40A7C2D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to USER_SHIFT_PATTERN</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C8902205-7A8D-1069-DC3A-2FD05A5FEEC2</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="USER_SHIFT_PATTERN_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70AAE410-6A31-B420-C5F5-73E19EA78EFD" referredColumn="0600F6E7-81C9-2493-1381-9F27FB89E008"/>
+</associations>
+</Column>
+<Column name="USER_SHIFT_PATTERN_DAY_ORD" id="0A18EB1B-D49F-BFB8-EEAC-566BAC83184E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Primary key that indicates the day number within the user shift pattern.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9FE3C678-0FB3-CC16-A966-DCE11764FBFB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>098F23FF-4DC2-8BAC-FBD8-20234B78AA9A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="89807A3F-0CF9-FF3C-00ED-C8FDB3B96615">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>82F500D7-8733-1492-7BC7-0524055997CC</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="735FFF4C-62D2-8D6A-D8BC-E4C6DF0760BA" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="184E761F-6246-6CB7-C228-8C855ED4C21E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>41705B27-4388-95CD-995C-9D4823A245FF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="FEF0F39A-C890-2355-E011-31C7BC75D68F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6C6E0976-42DC-7677-43CE-CD8E30497230</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="6702EB92-B672-4F35-A162-E4ABC39F54EA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DB5CEDCC-DCF2-72D4-58D5-ABEC6DBD42F6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="10AC9688-A872-6433-8ABF-3CCA7DCB661E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EA96F9A8-AD8C-AF8D-D7FF-A4281ECB120C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7DE2D56-2B73-E0D1-1650-6D2BF50E067E" name="PK_USER_SHIFT_PATTERN_DAY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FBB71405-D203-B2A8-C4DC-6C9100B00CF3</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DFAEED13-B91E-11D4-5F89-D394329E22B7"/>
+<colUsage columnID="FB960AB3-08DA-442A-FC8C-531AE40A7C2D"/>
+<colUsage columnID="0A18EB1B-D49F-BFB8-EEAC-566BAC83184E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1F733C06-6619-481E-5340-97DAC62ACD38" name="IX_USPATTERN_USPATTERNDAY">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>40CE40AD-55F5-4DD5-6D15-D2184B6DBD54</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DFAEED13-B91E-11D4-5F89-D394329E22B7"/>
+<colUsage columnID="FB960AB3-08DA-442A-FC8C-531AE40A7C2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0172A5A4-CBCF-5301-3243-F39DCBF4DEFD" name="FK_MIMRSTAT_USPDAY">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:36 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="89807A3F-0CF9-FF3C-00ED-C8FDB3B96615"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFE8200F-18DA-60AA-C85B-97CDDB05DDC1" name="FK_USPATTERN_USPATTERNDAY">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:44 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DFAEED13-B91E-11D4-5F89-D394329E22B7"/>
+<colUsage columnID="FB960AB3-08DA-442A-FC8C-531AE40A7C2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

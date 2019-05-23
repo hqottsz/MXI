@@ -1,0 +1,62 @@
+--liquibase formatted sql
+
+
+--changeSet MX-18003:1 stripComments:false
+INSERT INTO
+   UTL_CONFIG_PARM
+   (
+      PARM_VALUE, PARM_NAME, PARM_TYPE, PARM_DESC, CONFIG_TYPE, ALLOW_VALUE_DESC, DEFAULT_VALUE, MAND_CONFIG_BOOL, CATEGORY, MODIFIED_IN, UTL_ID
+   )
+   SELECT 'false', 'ACTION_ADD_HISTORIC_PART_REQUIREMENT', 'SECURED_RESOURCE','Permission to remove historic task part requirements in WebMaintenix','USER', 'TRUE/FALSE', 'FALSE', 1,'Maint - Historic Editing', '7.5',0
+   FROM
+      dual
+   WHERE
+      NOT EXISTS ( SELECT 1 FROM utl_config_parm WHERE parm_name = 'ACTION_ADD_HISTORIC_PART_REQUIREMENT' );    
+
+--changeSet MX-18003:2 stripComments:false
+UPDATE UTL_CONFIG_PARM SET MODIFIED_IN = '7.5' WHERE PARM_NAME = 'ACTION_ADD_HISTORIC_PART_REQUIREMENT';      
+
+--changeSet MX-18003:3 stripComments:false
+INSERT INTO
+   UTL_CONFIG_PARM
+   (
+      PARM_VALUE, PARM_NAME, PARM_TYPE, PARM_DESC, CONFIG_TYPE, ALLOW_VALUE_DESC, DEFAULT_VALUE, MAND_CONFIG_BOOL, CATEGORY, MODIFIED_IN, UTL_ID
+   )
+   SELECT 'false', 'ACTION_REMOVE_HISTORIC_PART_REQUIREMENT', 'SECURED_RESOURCE','Permission to edit historic task part requirements in WebMaintenix','USER', 'TRUE/FALSE', 'FALSE', 1,'Maint - Historic Editing', '7.5',0
+   FROM
+      dual
+   WHERE
+      NOT EXISTS ( SELECT 1 FROM utl_config_parm WHERE parm_name = 'ACTION_REMOVE_HISTORIC_PART_REQUIREMENT' );   
+
+--changeSet MX-18003:4 stripComments:false
+UPDATE UTL_CONFIG_PARM SET MODIFIED_IN = '7.5' WHERE PARM_NAME = 'ACTION_REMOVE_HISTORIC_PART_REQUIREMENT';
+
+--changeSet MX-18003:5 stripComments:false
+INSERT INTO
+   UTL_CONFIG_PARM
+   (
+      PARM_VALUE, PARM_NAME, PARM_TYPE, PARM_DESC, CONFIG_TYPE, ALLOW_VALUE_DESC, DEFAULT_VALUE, MAND_CONFIG_BOOL, CATEGORY, MODIFIED_IN, UTL_ID
+   )
+   SELECT 'false', 'ACTION_REMOVE_HISTORIC_TASK_TOOL_REQUIREMENT', 'SECURED_RESOURCE', 'Permission to remove a tool requirement from a historic task or signed tool.', 'USER', 'TRUE/FALSE', 'FALSE', 1,'Maint - Tasks', '7.5',0
+   FROM
+      dual
+   WHERE
+      NOT EXISTS ( SELECT 1 FROM utl_config_parm WHERE parm_name = 'ACTION_REMOVE_HISTORIC_TASK_TOOL_REQUIREMENT' );   
+
+--changeSet MX-18003:6 stripComments:false
+UPDATE UTL_CONFIG_PARM SET MODIFIED_IN = '7.5' WHERE PARM_NAME = 'ACTION_REMOVE_HISTORIC_TASK_TOOL_REQUIREMENT';      
+
+--changeSet MX-18003:7 stripComments:false
+INSERT INTO
+   UTL_CONFIG_PARM
+   (
+      PARM_VALUE, PARM_NAME, PARM_TYPE, PARM_DESC, CONFIG_TYPE, ALLOW_VALUE_DESC, DEFAULT_VALUE, MAND_CONFIG_BOOL, CATEGORY, MODIFIED_IN, UTL_ID
+   )
+   SELECT 'false', 'ACTION_REMOVE_HISTORIC_TASK_STEP', 'SECURED_RESOURCE', 'Permission to remove steps from a historic task or a signed step.', 'USER', 'TRUE/FALSE', 'FALSE', 1, 'Maint - Tasks', '7.5', 0
+   FROM
+      dual
+   WHERE
+      NOT EXISTS ( SELECT 1 FROM utl_config_parm WHERE parm_name = 'ACTION_REMOVE_HISTORIC_TASK_STEP' );         
+
+--changeSet MX-18003:8 stripComments:false
+UPDATE UTL_CONFIG_PARM SET MODIFIED_IN = '7.5' WHERE PARM_NAME = 'ACTION_REMOVE_HISTORIC_TASK_STEP';      

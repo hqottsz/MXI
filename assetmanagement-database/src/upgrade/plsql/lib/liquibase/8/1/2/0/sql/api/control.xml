@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+
+	<!--  mview -->
+	<include file="mview/acor_acft_wp_parts_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/acor_non_routine_fault_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/acor_adsb_ref_doc_defn_mv1.sql" relativeToChangelogFile="true"/>
+
+	<!--  view -->
+	<include file="view/acor_acft_wp_labor_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_assy_wp_labor_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_comp_wp_labor_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_acft_wp_parts_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_financial_trx_accounts_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_financial_trx_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_inventory_value_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_inv_batch_tool_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_inv_batch_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_order_invoice_lines_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_part_number_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_rbl_eng_measure_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_vendors_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_rbl_acft_part_qty_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_shipments_routing_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_order_lines_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_shipments_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_orders_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_repair_orders_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_rbl_subassy_type_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_fnc_trx_wp_info_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_fnc_trx_wp_ac_info_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_req_defn_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_rbl_comp_removal_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_assigned_tasks_to_wp_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_workpackages_v2.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_assy_wp_workscope_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_comp_wp_workscope_v1.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

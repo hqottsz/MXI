@@ -1,0 +1,279 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="EB898A36-8619-9D09-7072-E346AC584153" name="MT_DRV_SCHED_INFO">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>This is a materialization table that stores the relevant scheduling data for each driving event in the EVT_SCHED_DEAD table. It is kept consistant via trigger on EVT_SCHED_DEAD that uses logic in the mt_rep_int_evt_scded_pkg to then insert and or delete rows in this table.&lt;br/&gt;&lt;br/&gt;Data is stored to remove the need to call functions to calculate date values at runtime. getExtendedDeadlineDt and getDueDate_PlanByDate do not need to be called and instead queries can directly use values stored in the table. &lt;br/&gt;&lt;br/&gt;The table itself stores a reference to the base task and the driving task. It then uses the driving tasks information (if driving task is different) for all columns with DRV_ prefix. For example drv_deviation_qt is determined by this logic: nvl(drv_tasks.deviation_qt   , base_task.deviation_qt). </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4B26CDAA-0D53-C478-3683-B033D4954F64</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EVENT_DB_ID" id="99498D21-7522-D36C-45AB-8B5269D478A9">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to evt_sched_dead.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVENT_ID" id="D62CEFBB-FD56-F173-887F-E47271DB5EC5">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>FK to evt_sched_dead.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_EVENT_DB_ID" id="59F49B61-0304-E1CD-3A3A-C1992B8AD83A">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>Reference to evt_event_rel rel_event_db_id.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_EVENT_ID" id="C95A7B51-DAFD-CA1E-2A30-6CAEAC9CAD53">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<commentInRDBMS>Reference to evt_event_rel rel_event_id.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVT_EXT_DEAD_DT" id="9C3903B2-6419-B84D-6E9A-26C3C1F03908">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:17:17 UTC</createdTime>
+<commentInRDBMS>Calculated value of extended deadline date for this event if it exists. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_EXT_DEAD_DT" id="5F382618-BBBF-08DD-4A4C-98A216A9D635">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:17:17 UTC</createdTime>
+<commentInRDBMS>Calculated value of the driving tasks extended deadline date for this event if it exists. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVT_SCHED_DEAD_DT" id="5E5D34AF-1B28-CB86-4CDA-097EB7B0A059">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:17:17 UTC</createdTime>
+<commentInRDBMS>Tasks scheduled deadline date. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_SCHED_DEAD_DT" id="71E7B50D-B088-BEF5-137C-B7821210C9CF">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:17:17 UTC</createdTime>
+<commentInRDBMS>Driving tasks scheduled deadline date</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVT_PLAN_BY_DT" id="461512B8-E605-7F59-2BDC-6DE221D193C8">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:17:17 UTC</createdTime>
+<commentInRDBMS>Tasks plan by date. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_PLAN_BY_DT" id="DB005393-92CE-C457-1530-E1C9B20D5B19">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:17:17 UTC</createdTime>
+<commentInRDBMS>Driving tasks plan by date. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_DEVIATION_QT" id="BFB96552-7903-4DA5-9907-DB1E28B92BF6">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:17:17 UTC</createdTime>
+<commentInRDBMS>Driving tasks  amount by which the deadline can &quot;slip&quot; past its due date before being considered overdue.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_USAGE_REM_QT" id="02747CB4-EE66-C837-6B53-A888FC8F3ED8">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Driving tasks difference between the current usage count (DATA_TYPE_ID) and SCHED_DEAD_QT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_DOMAIN_TYPE_CD" id="D6805259-3333-328F-083C-C33DF93395EE">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Driving tasks FK to REF_DOMAIN_TYPE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_ENG_UNIT_CD" id="B4E3FE3A-B412-5754-C5CE-A48E8DACEF59">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Driving tasks FK to REF_ENG_UNIT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_PRECISION_QT" id="98BC7602-D584-6648-2E29-4AAF95AC9E7E">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Driving tasks Entry Precision Quantity in mim_data_type.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_DATA_TYPE_CD" id="6040F9FD-66C6-E3A6-FA4B-92A2FC45BD65">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Driving tasks user assigned code that helps identify the parameter referenced in mim_data_type. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_DATA_TYPE_DB_ID" id="E1E57562-C45B-06E2-F792-09ECFDD0CA6F">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record and forms part of the record&apos;s primary key. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DRV_DATA_TYPE_ID" id="9824B061-7104-6E8F-78D8-C73FBEABE961">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Unique identifier assigned from Sequence DATA_TYPE_ID_SEQ. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SORT_DUE_DT" id="5DF09429-E1B6-CB52-6933-98F0EAF78E66">
+<createdBy>getaca</createdBy>
+<createdTime>2018-09-05 18:24:32 UTC</createdTime>
+<commentInRDBMS>Calculated value that looks at base task plan by date, driving tasks plan by date, and finally extended deadline dates of both. The first non-null value is stored.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F25A591A-A5E1-D4C6-78FD-947EC04E9678" name="IX_MT_REPINT_DED">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59F49B61-0304-E1CD-3A3A-C1992B8AD83A"/>
+<colUsage columnID="C95A7B51-DAFD-CA1E-2A30-6CAEAC9CAD53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9EE4D9E8-263A-578C-A50C-AC5ECFAEC817" name="IX_MT_REPINT_EVT">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-06 19:44:41 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99498D21-7522-D36C-45AB-8B5269D478A9"/>
+<colUsage columnID="D62CEFBB-FD56-F173-887F-E47271DB5EC5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26DA90D3-B47D-3CC6-EC94-48D1E0296395" name="IX_MTDRVSCH_DRVDT">
+<createdBy>getaca</createdBy>
+<createdTime>2018-10-02 19:22:05 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="71E7B50D-B088-BEF5-137C-B7821210C9CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

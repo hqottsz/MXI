@@ -1,0 +1,470 @@
+<dataset>
+
+   <!-- Configuration Slot Structure
+      A [A_PG1: P1]
+         -> A_1 [A_1_PG1: P2]
+            -> A_1_1_P0 [A_1_1_PG1: P3]
+            -> A_1_1_P1 [A_1_1_PG1: P3]
+            -> A_1_2 [A_1_2_PG1: P3]
+            -> A_1_3 [A_1_3_PG1: P3]
+   -->
+
+   <!-- Configuration Slot Position: A -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      assmbl_bom_cd = "A"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: A_PG1 => P1 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      bom_part_cd = "A_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "1"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "1"
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      />
+
+   <!-- Configuration Slot Position: A_1 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "2"
+      assmbl_bom_cd = "A_1"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "2"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST"
+      nh_assmbl_bom_id = "1"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: A_1_PG1 => P2 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "2"
+      bom_part_cd = "A_1_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "2"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "2"
+      part_no_db_id = "4650"
+      part_no_id = "2"
+      />
+
+
+   <!-- Configuration Slot Position: A_1_1 [3] -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      assmbl_bom_cd = "A_1_1"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST"
+      nh_assmbl_bom_id = "2"
+      nh_assmbl_pos_id = "0"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      assmbl_pos_id = "1"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST"
+      nh_assmbl_bom_id = "2"
+      nh_assmbl_pos_id = "0"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      assmbl_pos_id = "2"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST"
+      nh_assmbl_bom_id = "2"
+      nh_assmbl_pos_id = "0"
+      />
+
+
+   <!-- Part Group: A_1_1_PG1 => P3, A_1_1_PG2 => P4 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "3"
+      bom_part_cd = "A_1_1_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "3"
+      part_no_db_id = "4650"
+      part_no_id = "3"
+      />
+
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "4"
+      bom_part_cd = "A_1_1_PG2"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "3"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "4"
+      part_no_db_id = "4650"
+      part_no_id = "4"
+      />
+
+
+   <!-- Configuration Slot Position: A_1_3. Simulates order of creation being out of order -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "4"
+      assmbl_bom_cd = "A_1_3"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "4"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST"
+      nh_assmbl_bom_id = "2"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: A_1_3_PG1 => P6 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "6"
+      bom_part_cd = "A_1_3_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "4"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "6"
+      part_no_db_id = "4650"
+      part_no_id = "6"
+      />
+
+   <!-- Configuration Slot Position: A_1_2 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "5"
+      assmbl_bom_cd = "A_1_2"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "5"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST"
+      nh_assmbl_bom_id = "2"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: A_1_2_PG1 => P5 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "5"
+      bom_part_cd = "A_1_2_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST"
+      assmbl_bom_id = "5"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "5"
+      part_no_db_id = "4650"
+      part_no_id = "5"
+      />
+
+
+   <!-- Configuration Slot Structure
+      B [B_PG1: P1]
+         -> B_3 [B_3_PG1: P2]
+            -> B_2 [B_2_PG1: P3]
+         -> B_1 [B_1_PG1: P4]
+         -> B_0 [B_0_PG1: P5, P8]
+            -> B_5 (B_5_PG1: P6]
+            -> B_4 [B_4_PG1: P7]
+   -->
+
+   <!-- Configuration Slot Position: B -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "1"
+      assmbl_bom_cd = "B"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "1"
+      assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: B_PG1 => P1 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "11"
+      bom_part_cd = "B_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "1"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "11"
+      part_no_db_id = "4650"
+      part_no_id = "1"
+      />
+
+   <!-- Configuration Slot Position: B_3 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "2"
+      assmbl_bom_cd = "B_3"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "2"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST_B"
+      nh_assmbl_bom_id = "1"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: B_3_PG1 => P2 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "12"
+      bom_part_cd = "B_3_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "2"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "12"
+      part_no_db_id = "4650"
+      part_no_id = "2"
+      />
+
+
+   <!-- Configuration Slot Position: B_2 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "3"
+      assmbl_bom_cd = "B_2"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "3"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST_B"
+      nh_assmbl_bom_id = "2"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: B_2_PG1 => P3 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "13"
+      bom_part_cd = "B_2_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "3"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "13"
+      part_no_db_id = "4650"
+      part_no_id = "3"
+      />
+
+   <!-- Configuration Slot Position: B_1 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "4"
+      assmbl_bom_cd = "B_1"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "4"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST_B"
+      nh_assmbl_bom_id = "1"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: B_1_PG1 => P4 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "14"
+      bom_part_cd = "B_1_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "4"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "14"
+      part_no_db_id = "4650"
+      part_no_id = "4"
+      />
+
+
+   <!-- Configuration Slot Position: B_0 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "5"
+      assmbl_bom_cd = "B_0"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "5"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST_B"
+      nh_assmbl_bom_id = "1"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: B_0_PG1 => P5 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "15"
+      bom_part_cd = "B_0_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "5"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "15"
+      part_no_db_id = "4650"
+      part_no_id = "5"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "15"
+      part_no_db_id = "4650"
+      part_no_id = "8"
+      />
+
+   <!-- Configuration Slot Position: B_5 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "6"
+      assmbl_bom_cd = "B_5"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "6"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST_B"
+      nh_assmbl_bom_id = "5"
+      nh_assmbl_pos_id = "0"
+      />
+
+
+   <!-- Part Group: B_5_PG1 => P6 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "16"
+      bom_part_cd = "B_5_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "6"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "16"
+      part_no_db_id = "4650"
+      part_no_id = "6"
+      />
+
+   <!-- Configuration Slot Position: B_4 -->
+   <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "7"
+      assmbl_bom_cd = "B_4"
+      />
+   <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "7"
+      assmbl_pos_id = "0"
+      nh_assmbl_db_id = "4650"
+      nh_assmbl_cd = "TEST_B"
+      nh_assmbl_bom_id = "5"
+      nh_assmbl_pos_id = "0"
+      />
+
+   <!-- Part Group: B_4_PG1 => P7 -->
+   <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "17"
+      bom_part_cd = "B_4_PG1"
+      assmbl_db_id = "4650"
+      assmbl_cd = "TEST_B"
+      assmbl_bom_id = "7"
+      />
+   <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "17"
+      part_no_db_id = "4650"
+      part_no_id = "7"
+      />
+
+</dataset>

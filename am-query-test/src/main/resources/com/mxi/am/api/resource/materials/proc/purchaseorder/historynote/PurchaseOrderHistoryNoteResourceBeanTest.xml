@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+<!--ORGANIZATION -->
+   <org_org
+      org_db_id = "4650"
+      org_id = "100006"
+      alt_id = "317E87556F1911E6A7B99167A0CBBCCF"
+      org_type_cd = "OPERATOR"
+   />
+
+   <!--UNAUTHORIZED USER -->
+   <org_hr
+      alt_id = "4AF698E4E6E6455C88AFE97B391DC58D"
+      hr_db_id = "4650"
+      hr_id = "100"
+      user_id = "1"
+   />
+
+   <org_org_hr
+      org_db_id = "4650"
+      org_id = "100006"
+      hr_db_id = "4650"
+      hr_id = "100"
+   />
+
+   <utl_user
+      user_id = "1"
+      username = "unauthorized"
+      first_name = "unauthorized"
+      alt_id = "A054FC32D41C4DDBBC37D76B3E6412F1"
+   />
+
+   <utl_role
+      role_id = "101"
+   />
+
+   <utl_user_role
+      role_id = "101"
+      user_id = "1"
+   />
+
+   <utl_action_role_parm
+      parm_name = "API_PURCHASE_ORDER_PARM"
+      parm_value = "FALSE"
+      role_id="101"
+   />
+
+   <!--AUTHORIZED USER-->
+   <org_hr
+      alt_id = "76881FF71A5D4C58B873A75D2F23EB32"
+      hr_db_id = "4650"
+      hr_id = "101"
+      user_id = "2"
+   />
+
+    <org_org_hr
+      org_db_id = "4650"
+      org_id = "100006"
+      hr_db_id = "4650"
+      hr_id = "101"
+   />
+
+   <utl_user
+      user_id = "2"
+      username = "authorized"
+      first_name = "authorized"
+      alt_id = "A054FC32D41C4DDBBC37D76B3E6412F2"
+   />
+
+   <utl_role
+      role_id = "102"
+   />
+
+   <utl_user_role
+      role_id = "102"
+      user_id = "2"
+    />
+
+   <utl_action_role_parm
+      parm_name = "API_PURCHASE_ORDER_PARM"
+      parm_value = "TRUE"
+      role_id="102"
+   />
+
+   <utl_action_role_parm
+      parm_name = "API_PURCHASE_ORDER_HISTORY_NOTE"
+      parm_value = "TRUE"
+      role_id="102"
+   />
+
+   <!--authorized user with po auth level-->
+   <org_hr
+   	  alt_id="76881FF71A5D4C58B873A75D2F23EB50"
+	  hr_db_id="4650"
+	  hr_id="200"
+      user_id="20"
+	/>
+
+	<org_org_hr
+	  hr_db_id="4650"
+	  hr_id="200"
+	  org_db_id="4650"
+	  org_id="100006"
+	/>
+
+	<utl_user
+	  user_id="20"
+	  username="purchaseagent"
+	  first_name="purchaseagent"
+	  alt_id="A054FC32D41C4DDBBC37D76B3E6412F9"
+	/>
+
+	<utl_user_role
+	  role_id="102"
+	  user_id="20"
+	/>
+
+	<ref_po_auth_lvl
+	  po_auth_lvl_db_id="4650"
+	  po_auth_lvl_cd="purchaser"
+	  po_auth_flow_db_id="4650"
+	  po_auth_flow_cd="PURCHASE"
+	  limit_price="999999"
+	/>
+
+	<org_hr_po_auth_lvl
+	  hr_db_id="4650"
+	  hr_id="200"
+	  po_auth_lvl_db_id="4650"
+	  po_auth_lvl_cd="purchaser"
+	/>
+
+	<fnc_account
+	  account_db_id="4650"
+	  account_id="100"
+	  account_type_cd="EXPENSE"
+	  account_cd="EXPENSE"
+	/>
+
+
+   <!--  REF TERMS -->
+   <ref_qty_unit
+      qty_unit_db_id = "4650"
+      qty_unit_cd = "BOX"
+   />
+
+   <ref_qty_unit
+      qty_unit_db_id = "4650"
+      qty_unit_cd = "ROLL"
+   />
+
+    <ref_currency
+       currency_db_id = " 4650"
+       currency_cd = "USD"
+       exchg_qt = "1.0"
+    />
+
+   <ref_spec2k_cust
+      spec2k_cust_db_id = "4650"
+      spec2k_cust_cd = "CTIRE"
+   />
+
+   <ref_terms_conditions
+	  terms_conditions_db_id = "10"
+      terms_conditions_cd = "NET90"
+   />
+
+    <!--  PURCHASE LOCATIONS -->
+   <inv_loc
+        loc_db_id = "4650"
+        loc_id = "2000"
+        alt_id = "E1E7509A31464F729C9B765E532F451A"
+        loc_cd = "INV_LOC_1"
+        loc_type_db_id = "0"
+        loc_type_cd = "DOCK"
+        supply_loc_db_id = "4650"
+        supply_loc_id = "2000"
+        timezone_cd = "UTC"
+    />
+
+    <inv_loc
+       loc_db_id = "4650"
+       loc_id = "2001"
+       loc_cd = "VENDOR_LOC"
+       alt_id = "2A48AC5CF58B40D88790D7EA04010F27"
+	/>
+
+    <inv_loc_contact
+      loc_db_id ="4650"
+      loc_id = "2001"
+      contact_id = "1"
+      default_bool = "1"
+    />
+
+   <!--  VENDOR OWNER -->
+    <inv_owner
+      owner_db_id = "4650"
+      owner_id = "4000"
+      owner_cd = "MXI"
+      org_db_id = "4650"
+      org_id = "100006"
+    />
+
+    <!-- PART -->
+   <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "1000"
+      alt_id = "650F832E574311E7BB0189BEFD1F23D3"
+      part_no_oem = "TEST_PART_1"
+      inv_class_cd = "TRK"
+      inv_class_db_id = "0"
+      qty_unit_db_id = "0"
+      qty_unit_cd = "EA"
+      manufact_db_id = "4650"
+      manufact_cd = "MAN"
+      asset_account_db_id="4650"
+      asset_account_id="100"
+   />
+
+   <eqp_part_alt_unit
+      part_no_db_id = "4650"
+      part_no_id = "1000"
+      qty_unit_db_id = "4650"
+      qty_unit_cd = "BOX"
+      qty_convert_qt = "5"
+   />
+
+   <eqp_manufact
+      manufact_db_id = "4650"
+      manufact_cd = "MAN"
+      alt_id = "40467BF978994EDAA610887F18F7DE2B"
+   />
+
+   <!-- NON-SPEC2K VENDOR -->
+   <org_vendor
+      vendor_db_id = "4650"
+      vendor_id = "1000"
+      vendor_cd = "DEFAULT_VENDOR"
+      no_print_req_bool = "0"
+      vendor_loc_db_id = "4650"
+      vendor_loc_id = "2001"
+      owner_db_id = "4650"
+	  owner_id = "4000"
+      alt_id = "D674CEC634764C5DBED594086FD461E8"
+   />
+
+   <org_vendor_po_type
+      org_db_id = "4650"
+      org_id = "100006"
+      vendor_db_id = "4650"
+      vendor_id = "1000"
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      vendor_status_db_id = "0"
+      vendor_status_cd = "APPROVED"
+   />
+
+  <org_vendor_account
+	  vendor_db_id = "4650"
+      vendor_id = "1000"
+      account_cd = "TEST"
+   />
+
+  <!-- SPEC2K VENDOR WITH VENDOR-PART-PRICE -->
+   <org_vendor
+      vendor_db_id = "4650"
+      vendor_id = "1001"
+      vendor_cd = "SPEC2K_VENDOR_1"
+      no_print_req_bool = "1"
+      vendor_loc_db_id = "4650"
+      vendor_loc_id = "2001"
+      owner_db_id = "4650"
+	  owner_id = "4000"
+      alt_id = "F572CEC634764C5DBED594086FD461E9"
+   />
+
+   <org_vendor_po_type
+      org_db_id = "4650"
+      org_id = "100006"
+      vendor_db_id = "4650"
+      vendor_id = "1001"
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      vendor_status_db_id = "0"
+      vendor_status_cd = "APPROVED"
+   />
+
+   <eqp_part_vendor
+     vendor_db_id = "4650"
+     vendor_id = "1001"
+     part_no_db_id = "4650"
+     part_no_id = "1000"
+     pref_bool = "1"
+     vendor_status_cd = "APPROVED"
+   />
+
+   <eqp_part_vendor_price
+     part_vendor_price_db_id = "4650"
+     part_vendor_price_id = "3001"
+     vendor_db_id = "4650"
+     vendor_id = "1001"
+     part_no_db_id = "4650"
+     part_no_id = "1000"
+     hist_bool = "0"
+     unit_price = "59.99"
+     currency_db_id = "4650"
+     currency_cd = "USD"
+     qty_unit_db_id = "0"
+     qty_unit_cd = "EA"
+     lead_time = "3"
+     min_order_qt = "2"
+     effective_from_dt="2018-01-01 00:00:00"
+   />
+
+   <org_vendor_spec2k_cmnd
+     vendor_db_id = "4650"
+     vendor_id = "1001"
+     vendor_cmnd_id = "1"
+     spec2k_cmnd_db_id = "0"
+     spec2k_cmnd_cd = "S1BOOKED"
+   />
+
+
+  <!-- SPEC2K VENDOR -->
+   <org_vendor
+     vendor_db_id = "4650"
+     vendor_id = "1002"
+     vendor_cd = "SPEC2K_VENDOR_2"
+     no_print_req_bool = "1"
+     vendor_loc_db_id = "4650"
+     vendor_loc_id = "2001"
+     owner_db_id = "4650"
+	 owner_id = "4000"
+     alt_id = "A60694FEA9F54DE4B83DB48046EFF57C"
+   />
+
+   <org_vendor_po_type
+      org_db_id = "4650"
+      org_id = "100006"
+      vendor_db_id = "4650"
+      vendor_id = "1002"
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      vendor_status_db_id = "0"
+      vendor_status_cd = "APPROVED"
+   />
+
+   <org_vendor_spec2k_cmnd
+     vendor_db_id = "4650"
+     vendor_id = "1002"
+     vendor_cmnd_id = "1"
+     spec2k_cmnd_db_id = "0"
+     spec2k_cmnd_cd = "S1BOOKED"
+   />
+
+    <ref_po_auth_flow
+       po_auth_flow_db_id = "4650"
+       po_auth_flow_cd = "PURCHASE"
+       po_type_db_id="4650" po_type_cd="PURCHASE"
+    />
+
+  <!-- UNAPPROVED VENDOR-->
+   <org_vendor
+     vendor_db_id = "4650"
+     vendor_id = "1003"
+     vendor_cd = "UNKNOWN_VENDOR_1"
+     no_print_req_bool = "1"
+     vendor_loc_db_id = "4650"
+     vendor_loc_id = "2001"
+     owner_db_id = "4650"
+	 owner_id = "4000"
+     alt_id = "5C6FB7F4DBF243F6BA47858CC9F7EEFE"
+   />
+
+    <org_vendor_po_type
+      org_db_id = "4650"
+      org_id = "100006"
+      vendor_db_id = "4650"
+      vendor_id = "1003"
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      vendor_status_db_id = "0"
+      vendor_status_cd = "UNAPPRVD"
+   />
+
+
+  <!-- VENDOR NOT ON ORGANIZATION VENDOR LIST-->
+   <org_vendor
+     vendor_db_id = "4650"
+     vendor_id = "1004"
+     vendor_cd = "UNKNOWN_VENDOR_2"
+     no_print_req_bool = "1"
+     vendor_loc_db_id = "4650"
+     vendor_loc_id = "2001"
+     owner_db_id = "4650"
+	 owner_id = "4000"
+     alt_id = "259E31234A594B35B5EF4F632C57D0E9"
+   />
+
+
+ <!-- INVALID SPEC2K VENDOR (does not have S1BOOKED command)-->
+   <org_vendor
+     vendor_db_id = "4650"
+     vendor_id = "1005"
+     vendor_cd = "SPEC2K_VENDOR_3"
+     no_print_req_bool = "1"
+     vendor_loc_db_id = "4650"
+     vendor_loc_id = "2001"
+     owner_db_id = "4650"
+	 owner_id = "4000"
+     alt_id = "0A1D6D2DE05C4F8EB32E3B09C3486EB0"
+   />
+
+   <org_vendor_po_type
+      org_db_id = "4650"
+      org_id = "100006"
+      vendor_db_id = "4650"
+      vendor_id = "1005"
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      vendor_status_db_id = "0"
+      vendor_status_cd = "APPROVED"
+   />
+
+  <!-- NON-SPEC2K VENDOR WITH VENDOR-PART-PRICE -->
+   <org_vendor
+      vendor_db_id = "4650"
+      vendor_id = "1006"
+      vendor_cd = "NONSPEC2K_VENDOR"
+      no_print_req_bool = "0"
+      vendor_loc_db_id = "4650"
+      vendor_loc_id = "2001"
+      owner_db_id = "4650"
+	  owner_id = "4000"
+      alt_id = "8C2E8BF443844A0B8C814C09CEE0DA4C"
+   />
+
+  <org_vendor_account
+	  vendor_db_id = "4650"
+      vendor_id = "1006"
+      account_cd = "TEST"
+   />
+
+   <org_vendor_po_type
+      org_db_id = "4650"
+      org_id = "100006"
+      vendor_db_id = "4650"
+      vendor_id = "1006"
+      po_type_db_id = "0"
+      po_type_cd = "PURCHASE"
+      vendor_status_db_id = "0"
+      vendor_status_cd = "APPROVED"
+   />
+
+   <eqp_part_vendor
+     vendor_db_id = "4650"
+     vendor_id = "1006"
+     part_no_db_id = "4650"
+     part_no_id = "1000"
+     pref_bool = "1"
+     vendor_status_cd = "APPROVED"
+   />
+
+   <eqp_part_vendor_price
+     part_vendor_price_db_id = "4650"
+     part_vendor_price_id = "3002"
+     vendor_db_id = "4650"
+     vendor_id = "1006"
+     part_no_db_id = "4650"
+     part_no_id = "1000"
+     hist_bool = "0"
+     unit_price = "59.99"
+     currency_db_id = "4650"
+     currency_cd = "USD"
+     qty_unit_db_id = "0"
+     qty_unit_cd = "EA"
+     lead_time = "3"
+     min_order_qt = "2"
+     effective_from_dt="2018-01-01 00:00:00"
+   />
+
+   <!--  EXISTING PURCHASE ORDER -->
+   <evt_event
+      event_db_id = "4650"
+      event_id = "100"
+      event_sdesc = "P0100012"
+      event_type_cd = "PO"
+      ext_key_sdesc = "Test Ext Reference 01"
+   />
+
+   <po_header
+      po_db_id = "4650"
+      po_id = "100"
+      alt_id = "ABCD1FF71A5D4C58B873A75D2F23EB99"
+      currency_cd = "USD"
+      req_priority_cd  = "NORMAL"
+      exchg_qt = "2.5"
+      ship_to_loc_db_id = "4650"
+      ship_to_loc_id = "2000"
+      vendor_db_id = "4650"
+      vendor_id = "1000"
+      vendor_account_cd = "TEST"
+      contact_hr_db_id = "4650"
+      contact_hr_id = "101"
+      org_db_id = "4650"
+      org_id = "100006"
+      spec2k_cust_db_id = "4650"
+      spec2k_cust_cd = "CTIRE"
+      po_type_cd  = "PURCHASE"
+      receive_note = "Test Receiver Note"
+      vendor_note = "Test Vendor Note"
+      ship_to_code = "12345"
+      terms_conditions_db_id = "10"
+      terms_conditions_cd = "NET90"
+   />
+
+   <po_line
+      po_db_id = "4650"
+      po_id = "100"
+      po_line_id = "1"
+      alt_id = "CDAF832E574311E7BB0189BEFD1F2951"
+      line_no_ord = "1"
+      order_qt = "1.0"
+      qty_unit_cd = "EA"
+      unit_price = "100.4"
+      promise_by_dt = "2017-08-23 18:00:00"
+      deleted_bool = "0"
+      part_no_db_id = "4650"
+      part_no_id = "1000"
+      po_line_type_cd = "PURCHASE"
+      price_type_cd = "CNFRMD"
+   />
+
+   <evt_stage
+      alt_id="4FEA5D917FCD11E4A0EC71C5C65E2E92"
+      stage_note="Purchase Order History Note Database Test"
+      stage_id="12139"
+      stage_gdt="11-jan-2007 00:00:00"
+      event_status_cd="POOPEN"
+      event_db_id="4650"
+      event_id="100"
+      stage_reason_cd="NEW"
+      stage_reason_db_id="1"
+      hr_db_id="4650"
+      hr_id="101"
+	/>
+
+
+</dataset>

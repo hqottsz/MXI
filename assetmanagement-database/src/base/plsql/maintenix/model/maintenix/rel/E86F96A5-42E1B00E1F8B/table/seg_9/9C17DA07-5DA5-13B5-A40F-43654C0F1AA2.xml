@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="9C17DA07-5DA5-13B5-A40F-43654C0F1AA2" name="UTL_HA_SINGLETON_SERVICE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>73129606-0355-49F8-9C06-81C64FE85D71</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PROCESS_NAME" id="55750CCE-6B60-2795-28CD-2655C58A8B62">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the name of the HA singleton service.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>667D8783-4416-25AA-435F-87156C5F9DE2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERVER_ID" id="0D69DAFE-32F5-776D-240B-732855F99E8A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the unique ID of the server that currently is running the HA Singleton Service.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2280A1F6-EA96-2EE9-8625-847043B1CAC8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>06D9BA35-CE10-EE63-8752-6E97559E5832</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIMEOUT" id="1A9CCF4E-28FE-BFCA-D72A-0D3936A037BF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the amount of time (in seconds) that has to elapse since the last heartbeat date before the other servers consider the currently running service &quot;dead&quot; (possibly due to server crash).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>08F84911-ACDD-7F54-6E1C-87BAFAF567EB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>23BF44B5-3695-80E7-CC85-74E51E946488</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HEARTBEAT_DATE" id="430AA14F-AA25-6588-9788-E1DE2EC933E5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>This is the last time that the Singleton Service has communicated that it is alive and running.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>28057264-98AE-74EF-8C4F-1167881E0D34</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>103596BA-5012-01AD-E60F-379439CB7C46</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="D85E64CD-32A2-B557-0CDE-E36F0A3B757E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>22F988A1-D807-71EF-810F-417ED6660E38</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4E6D62B2-4277-874E-12A8-E1E6222A4BC7" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B9396D44-481F-FAA8-5B16-6E8B9CEA2256" name="PK_UTL_HA_SINGLETON_SERVICE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DBA10B3E-8875-6B73-38ED-20A15875EAF8</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="55750CCE-6B60-2795-28CD-2655C58A8B62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B89CAB89-4971-40FD-0A14-9C1B35797B29" name="FK_UTLHASINGLSERV_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D85E64CD-32A2-B557-0CDE-E36F0A3B757E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

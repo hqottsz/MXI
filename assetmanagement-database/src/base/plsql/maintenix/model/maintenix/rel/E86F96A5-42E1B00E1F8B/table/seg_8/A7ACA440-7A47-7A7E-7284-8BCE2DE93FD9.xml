@@ -1,0 +1,477 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_8" id="A7ACA440-7A47-7A7E-7284-8BCE2DE93FD9" name="SCHED_KIT_MAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table maps kits to the tasks and inventory for a kit work package</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F410C1D5-3BE0-7268-6DDA-F6F7B9A0DCC9</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SCHED_DB_ID" id="7CC1DDA9-D5B5-9161-3944-B7F12D7AE0A8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>47A9C7F8-255A-D957-1F4E-EDED0FF01157</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="39C8CC96-273C-BC9A-1C08-1FD526894EBE" referredColumn="3CE58C05-954B-BC92-B4C2-886A85D7EE7D"/>
+</associations>
+</Column>
+<Column name="SCHED_ID" id="9D79A237-807D-B75D-5E6E-D162808816A3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>200EF3FA-71F3-1C27-B31A-6D0E73CD8214</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SCHED_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="39C8CC96-273C-BC9A-1C08-1FD526894EBE" referredColumn="9583F48B-ACAC-467C-F22F-F2F672CB100C"/>
+</associations>
+</Column>
+<Column name="KIT_INV_NO_DB_ID" id="306A301B-F539-5826-4E48-FF8D8F841558">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7AF3CD2B-4236-FAE5-2FD8-A6ACB79199F9</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="KIT_INV_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A462ED0F-F435-B6BE-86D8-0430ED277F85" referredColumn="FA459740-97B1-8B04-10FE-07609B9B4AE7"/>
+</associations>
+</Column>
+<Column name="KIT_INV_NO_ID" id="B183CA58-B31E-3DE6-1D8E-4BBFD72F18FB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6B5C153B-445C-663B-DCA9-25521147E55C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="KIT_INV_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A462ED0F-F435-B6BE-86D8-0430ED277F85" referredColumn="1846A423-CF94-046C-C366-522AE7232C5E"/>
+</associations>
+</Column>
+<Column name="INV_NO_DB_ID" id="199C88C2-EE0B-1209-55D2-9369E35B5F71">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1B3751B8-61AC-7F23-7249-0A4DB4C47691</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="10C14FA1-E1BF-BAFB-BD83-1718D62BA824" referredColumn="CA26E857-C250-F6FE-D4E8-2058D9E82432"/>
+</associations>
+</Column>
+<Column name="INV_NO_ID" id="27DA1A99-89F9-B96D-DA54-D66277234DC0">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F5829638-04E8-A92C-B0C0-EE1CB0346D02</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="10C14FA1-E1BF-BAFB-BD83-1718D62BA824" referredColumn="48A3025B-58CD-83E7-27F7-B25563CDA9AC"/>
+</associations>
+</Column>
+<Column name="INV_COND_DB_ID" id="EE60F5C1-1638-AFB6-2A5B-6C04A1962E51">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to REF_INV_COND.  Represents owner of inventory in kit.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C5B3C44E-6D0D-07C5-3972-0CDADDE4D4F3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_COND_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="727F99CF-43D0-B5E3-09A5-7DB136A74659" referredColumn="933CE589-FC9D-C806-3D40-256A607FA853"/>
+</associations>
+</Column>
+<Column name="INV_COND_CD" id="4CB6B5AC-A612-ABBB-7098-6CB98D7216CD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to REF_INV_COND.  Represents owner of inventory in kit.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1B7BB036-1E62-20CA-684F-00F48C799215</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="727F99CF-43D0-B5E3-09A5-7DB136A74659" referredColumn="2A6E27A9-E0E4-035A-DB43-E072F5630006"/>
+</associations>
+</Column>
+<Column name="OWNER_DB_ID" id="EFC96794-5268-80B8-5D77-535879D51CBE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to REF_INV_COND.  Represents inventory condition of inventory in kit.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DC422FCC-AC7D-479D-D094-DFA0F55D269B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OWNER_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AD90FD8F-EADA-629E-CB3A-1AF2BFB14169" referredColumn="0F1D012C-395E-C5E3-7659-21C857B0C9FA"/>
+</associations>
+</Column>
+<Column name="OWNER_ID" id="B793CE1D-F06A-85EC-86CF-6A4D325921A5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to REF_INV_COND.  Represents inventory condition of inventory in kit.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>328B78AE-98F9-88BF-2DAE-2A51CB96631A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OWNER_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AD90FD8F-EADA-629E-CB3A-1AF2BFB14169" referredColumn="2E913FFF-3194-6001-FECD-D9DFD4721CE0"/>
+</associations>
+</Column>
+<Column name="LOC_DB_ID" id="956B47C8-42A1-D9E6-F7ED-10EBD6B9B77D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to INV_LOC.  Represents the location of inventory in kit.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B4003B96-C6D4-F078-6536-8FF4E1AF19DE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LOC_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A8771A8-D1F2-D493-7F34-863AC064842B" referredColumn="C3496C77-33EB-F40A-B8DE-691CD0D63D76"/>
+</associations>
+</Column>
+<Column name="LOC_ID" id="1EDACC35-CAC8-44B1-2FD6-AFCC3BC90611">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>FK to INV_LOC.  Represents the location of inventory in kit.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6D54D14D-5F23-C763-DBF8-44F9A804A84C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LOC_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A8771A8-D1F2-D493-7F34-863AC064842B" referredColumn="F9059C24-7BD8-276B-84DA-AAE2F9C3FF0F"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="0F997ACE-2BA6-055C-3BAE-C97CF619B3FB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>633AE238-A0E8-0F8C-4817-02320E3FA188</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E1D985AB-B580-D33C-3C4D-C1FCD8AF82B5" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="B94888E5-F1A3-1143-BC2E-70FAF405C1B8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>03AA3C33-2C65-C995-A550-D5E5CEB6556F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="A4864992-C300-4CB3-BCAC-F2B75B0CFDD7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>13036903-D64C-E204-FC20-7CEA547A6228</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="3E5D83A9-199A-561F-D83F-411DF0F3DAB7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3661195A-CBFD-C52C-EAA6-1F1CB472867E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="F8CDF5CF-D313-9D15-F9E2-18631B3A12EA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E082933A-37B9-2A88-2C27-E162170E1C2A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="854BF4A3-DF39-2624-C82C-C5369E4FFC89" name="PK_SCHED_KIT_MAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>46DDAACA-64B4-A915-8926-00A3E6A0A53F</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7CC1DDA9-D5B5-9161-3944-B7F12D7AE0A8"/>
+<colUsage columnID="9D79A237-807D-B75D-5E6E-D162808816A3"/>
+<colUsage columnID="306A301B-F539-5826-4E48-FF8D8F841558"/>
+<colUsage columnID="B183CA58-B31E-3DE6-1D8E-4BBFD72F18FB"/>
+<colUsage columnID="199C88C2-EE0B-1209-55D2-9369E35B5F71"/>
+<colUsage columnID="27DA1A99-89F9-B96D-DA54-D66277234DC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AAD45A28-D990-2BA0-380B-7985164A8E11" name="IX_INVINV_SCHEDKITMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>39776B3F-97AE-180E-FD09-A1BEE6305C87</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="199C88C2-EE0B-1209-55D2-9369E35B5F71"/>
+<colUsage columnID="27DA1A99-89F9-B96D-DA54-D66277234DC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1E5E3AE-7AAE-B3A4-E513-0D618713AB77" name="IX_INVLOC_SCHEDKITMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2F6621C5-5CD8-CC28-4A1B-F20B0A3DC97B</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="956B47C8-42A1-D9E6-F7ED-10EBD6B9B77D"/>
+<colUsage columnID="1EDACC35-CAC8-44B1-2FD6-AFCC3BC90611"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CB3FA031-2822-F1AB-FFF2-196848F262C6" name="IX_INVOWNER_SCHEDKITMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0DA78EA6-E49F-4017-E028-A789FBEBC397</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EFC96794-5268-80B8-5D77-535879D51CBE"/>
+<colUsage columnID="B793CE1D-F06A-85EC-86CF-6A4D325921A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6620EF99-6C90-BB0D-EF17-8E8899DA4B94" name="IX_SCHEDSTASK_SCHEDKITMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9C74B72F-B0DC-7C28-0407-F8C83B2DAD8F</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7CC1DDA9-D5B5-9161-3944-B7F12D7AE0A8"/>
+<colUsage columnID="9D79A237-807D-B75D-5E6E-D162808816A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0B462911-28B6-3583-6F2D-5371EE860835" name="IX_INVKIT_SCHEDKITMAP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7543062A-12A8-07F2-3487-392C1602EBE9</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="306A301B-F539-5826-4E48-FF8D8F841558"/>
+<colUsage columnID="B183CA58-B31E-3DE6-1D8E-4BBFD72F18FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="98CDB7EE-0E0C-E465-EF0B-F2737094086D" name="FK_INVINV_SCHEDKITMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="199C88C2-EE0B-1209-55D2-9369E35B5F71"/>
+<colUsage columnID="27DA1A99-89F9-B96D-DA54-D66277234DC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07708542-30E2-9E54-6D13-E97F6C16A3BB" name="FK_INVKIT_SCHEDKITMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="306A301B-F539-5826-4E48-FF8D8F841558"/>
+<colUsage columnID="B183CA58-B31E-3DE6-1D8E-4BBFD72F18FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DDE7B4E5-2C00-B003-BE0F-52F23D909AA4" name="FK_INVLOC_SCHEDKITMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="956B47C8-42A1-D9E6-F7ED-10EBD6B9B77D"/>
+<colUsage columnID="1EDACC35-CAC8-44B1-2FD6-AFCC3BC90611"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77C05479-337B-DCD9-4E75-1C5ED9AC53AF" name="FK_INVOWNER_SCHEDKITMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EFC96794-5268-80B8-5D77-535879D51CBE"/>
+<colUsage columnID="B793CE1D-F06A-85EC-86CF-6A4D325921A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6106F15B-C7F8-EB34-6E8B-527878A67D81" name="FK_MIMRSTAT_SCHEDKITMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:35 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F997ACE-2BA6-055C-3BAE-C97CF619B3FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E9A4BE1-8B9B-7146-E30B-0978BE1D48E4" name="FK_REFINVCOND_SCHEDKITMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE60F5C1-1638-AFB6-2A5B-6C04A1962E51"/>
+<colUsage columnID="4CB6B5AC-A612-ABBB-7098-6CB98D7216CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="680CF858-9438-0D9A-2301-319D9CF61C9C" name="FK_SCHEDSTASK_SCHEDKITMAP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7CC1DDA9-D5B5-9161-3944-B7F12D7AE0A8"/>
+<colUsage columnID="9D79A237-807D-B75D-5E6E-D162808816A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

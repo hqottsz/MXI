@@ -1,0 +1,229 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_9" id="F73B4449-362A-BC7B-0340-E380B57601AE" name="UTL_ACTION_CONFIG_PARM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table allows storage of action configuration parameters.  These are similar to those stored in UTL_CONFIG_PARM, however, these describe gui workflows within Mx (parm_type=&apos;SECURED_RESOURCE&apos; and config_type=&quot;USER&apos; and parm_name like &apos;ACTION_%&apos; or &apos;APP_%&apos;).  Similar to UTL_CONFIG_PARM, some parameters may be configured for different users and roles through the referentially linked UTL_ACTION_USER_PARM and UTL_ACTION_ROLE_PARM tables.  This table contains a SESSION_AUTH_BOOL which, when set to true, enables the feature that requires a user to authenticate an action only once per session.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>302305CB-E919-F3F9-6058-8B9072AA9A79</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PARM_NAME" id="F4BCECE8-3103-12F1-E1FB-4703FB96EF99">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Action config parameter name.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>427395E0-D4C0-4CBC-2892-372867D0E420</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARM_VALUE" id="DEC5D72B-BF04-AB9D-3D8F-9B79655CE82C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Action config parameter value.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>67B90A80-B340-B4CA-F953-719CE1B816F9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENCRYPT_BOOL" id="3C735216-C89A-7F64-908E-4DC4D02CF913">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Specified whether the parameter value is stored in an encrypted format.  Encrypted values take the form &quot;{3DES}kja//adfj&quot; where the value to the right of the {3DES} tag is Base64 encoded.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0E0395DC-F4E0-929F-6446-A758D9021B00</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ENCRYPT_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARM_DESC" id="B300761F-1752-0F30-48DD-D087CCB84EB3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Configuration parameter long description.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>855DFDBB-CDA4-27F3-077C-7579F187C514</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEFAULT_VALUE" id="BBFB64B8-24C8-91C8-0DF2-897FCAACAA9B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>The default value for mandatory Parameters.  PARM_VALUE will be set to this value by default.  If no default exists &quot;&lt;none&gt;&quot; will appear in this field.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C1BE2EF5-4BED-0D19-B3F9-DEE3A273149F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALLOW_VALUE_DESC" id="2315D8BB-30B7-BB8F-6055-7F11439CA552">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>A description of the allowable values (including format) that may be set in PARM_VALUE.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>72BD7B3A-8882-5596-319C-3FC33FBFD9A8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7AA1993A-3A0A-A5BD-59A8-2C033461B05E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAND_CONFIG_BOOL" id="9FF0824F-E862-B94D-65EF-F78A74F255C3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>If the Configuration Parameter must be defined in the system (I.e. a PARM_VALUE specified). Note that if a DEFAULT_VALUE exists, it will be set in the PARM_VALUE field.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8B810408-2220-1F50-ED16-E2CA5F893120</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MAND_CONFIG_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGORY" id="8094CD42-99DE-515B-011A-6EB7A478E433">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Free form field, that allows to categorize config parms. Used by Role Security pages.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D3CA08E5-B176-1F51-7060-AF2378D59343</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MODIFIED_IN" id="09B09EB4-C9E7-B80C-2278-693EE49C34E5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Field indicating the external version number in which this parameter was introduced.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F85D225B-CC75-8DEE-D061-A4F0D6A52291</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPL_APPROVED" id="0012ECB1-6A53-07A8-0F7F-F0EE73E5A18F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>32F392A3-22AD-5BFA-78AF-45A72524A0E8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REPL_APPROVED IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SESSION_AUTH_BOOL" id="A989D2E3-160F-E629-D50F-ED9871B42163">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>If this flag is set to TRUE, the Authentication Frequency Reduction feature is enabled. For each user action that requires authentication, users have to authenticate themselves only for the first time that they perform the action within a Maintenix session. Subsequent attempts of the same action in the same session do not require authentication.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>02BE69A4-E743-6B8E-FDF6-819C750CD3F3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SESSION_AUTH_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="83688E3B-B8CB-A60A-8532-88D365D1868F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database (MIM_LOCAL_DB) of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7E59BF0C-C0D0-D51A-EDE2-9EF3C3EFB96B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F98F5372-623B-F283-A727-B7BA888878B1" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6014BD8-2473-176E-4C3A-2D201B44BB55" name="PK_UTL_ACTION_CONFIG_PARM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6077C977-B737-CF30-CFFA-8BA7B6FA8528</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4BCECE8-3103-12F1-E1FB-4703FB96EF99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFC03C07-0804-24E0-446C-285086BF4665" name="FK_UTLACTCFGPRM_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:44 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83688E3B-B8CB-A60A-8532-88D365D1868F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

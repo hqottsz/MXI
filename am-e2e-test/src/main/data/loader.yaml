@@ -1,0 +1,15 @@
+- loader: sql
+  files: "**/control.pre.sql"
+
+- loader: csv
+  files: "**/*.csv"
+
+- loader: dataloader-baseline
+
+- loader: sql
+  files: "**/control.after.baseline.sql"
+
+- loader: dataloader-actuals
+
+- loader: sql
+  files: "**/control.post.sql"

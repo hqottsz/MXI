@@ -1,0 +1,302 @@
+--liquibase formatted sql
+
+
+--changeSet SWA-2539:1 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.table_create ('
+ CREATE TABLE PUBSUB_CHANNEL
+  (
+    PUBSUB_CHANNEL_ID RAW (16) NOT NULL ,
+    CHANNEL_NAME   VARCHAR2 (128) NOT NULL ,
+    CREATION_DT    DATE NOT NULL ,
+    RSTAT_CD       NUMBER (3) NOT NULL ,
+    REVISION_NO    NUMBER (10) NOT NULL ,
+    CTRL_DB_ID     NUMBER (10) NOT NULL ,
+    CREATION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_DT    DATE NOT NULL ,
+    REVISION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_USER  VARCHAR2 (30) NOT NULL,
+    CHECK ( RSTAT_CD IN (0, 1, 2, 3)),
+    CHECK ( CTRL_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( CREATION_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( REVISION_DB_ID BETWEEN 0 AND 4294967295),
+    CONSTRAINT PK_PUBSUB_CHANNEL PRIMARY KEY ( PUBSUB_CHANNEL_ID ),
+    CONSTRAINT FK_PUB_CHANNEL_MIM_DB_CR FOREIGN KEY ( CREATION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUB_CHANNEL_MIM_DB_RE FOREIGN KEY ( REVISION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUB_CHANNEL_MIM_RSTAK FOREIGN KEY ( RSTAT_CD ) REFERENCES MIM_RSTAT ( RSTAT_CD ) NOT DEFERRABLE
+  )');
+END;
+/
+
+--changeSet SWA-2539:2 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.table_create ('
+CREATE TABLE PUBSUB_EVENT
+  (
+    PUBSUB_EVENT_ID RAW (16) NOT NULL ,
+    PUBSUB_CHANNEL_ID RAW (16) NOT NULL ,
+    PAYLOAD BLOB NOT NULL ,
+    ORIGIN         VARCHAR2 (2048) NOT NULL ,
+    PROPERTIES     BLOB ,
+    CREATION_DT    DATE NOT NULL ,
+    RSTAT_CD       NUMBER (3) NOT NULL ,
+    REVISION_NO    NUMBER (10) NOT NULL ,
+    CTRL_DB_ID     NUMBER (10) NOT NULL ,
+    CREATION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_DT    DATE NOT NULL ,
+    REVISION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_USER  VARCHAR2 (30) NOT NULL,
+    CHECK ( RSTAT_CD IN (0, 1, 2, 3)),
+    CHECK ( CTRL_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( CREATION_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( REVISION_DB_ID BETWEEN 0 AND 4294967295),
+    CONSTRAINT PK_PUBSUB_EVENT PRIMARY KEY ( PUBSUB_EVENT_ID ),
+    CONSTRAINT FK_PUBSUB_EVENT_MIM_DB_CR FOREIGN KEY ( CREATION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_EVENT_MIM_DB_RE FOREIGN KEY ( REVISION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_EVENT_PUBSUB_CHANNEL FOREIGN KEY ( PUBSUB_CHANNEL_ID ) REFERENCES PUBSUB_CHANNEL ( PUBSUB_CHANNEL_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_EVENT_RSTAT FOREIGN KEY ( RSTAT_CD ) REFERENCES MIM_RSTAT ( RSTAT_CD ) NOT DEFERRABLE
+  )');
+END;
+/
+
+--changeSet SWA-2539:3 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.index_create('
+ CREATE INDEX IX_PUBSUB_EVENT ON PUBSUB_EVENT
+    (
+      PUBSUB_CHANNEL_ID ASC
+    )');
+END;
+/
+
+--changeSet SWA-2539:4 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.table_create ('
+CREATE TABLE PUBSUB_SUBSCRIBER
+  (
+    PUBSUB_SUBSCRIBER_ID RAW (16) NOT NULL ,
+    PUBSUB_CHANNEL_ID RAW (16) NOT NULL ,
+    URL            VARCHAR2 (2048) CONSTRAINT NNC_PUBSUB_SUBSCRIBER_URL NOT NULL ,
+    CONFIG         BLOB ,
+    CREATION_DT    DATE NOT NULL ,
+    RSTAT_CD       NUMBER (3) NOT NULL ,
+    REVISION_NO    NUMBER (10) NOT NULL ,
+    CTRL_DB_ID     NUMBER (10) NOT NULL ,
+    CREATION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_DT    DATE NOT NULL ,
+    REVISION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_USER  VARCHAR2 (30) NOT NULL,
+    CHECK ( RSTAT_CD IN (0, 1, 2, 3)),
+    CHECK ( CTRL_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( CREATION_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( REVISION_DB_ID BETWEEN 0 AND 4294967295),
+    CONSTRAINT PK_PUBSUB_SUBSCRIBER PRIMARY KEY ( PUBSUB_SUBSCRIBER_ID ),
+    CONSTRAINT FK_PUBSUB_SUB_CHANNEL FOREIGN KEY ( PUBSUB_CHANNEL_ID ) REFERENCES PUBSUB_CHANNEL ( PUBSUB_CHANNEL_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_SUB_MIM_DB_CR FOREIGN KEY ( CREATION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_SUB_MIM_DB_RE FOREIGN KEY ( REVISION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_SUB_RSTAT FOREIGN KEY ( RSTAT_CD ) REFERENCES MIM_RSTAT ( RSTAT_CD ) NOT DEFERRABLE
+  )');
+END;
+/
+
+--changeSet SWA-2539:5 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.index_create('
+  CREATE INDEX IX_PUBSUB_SUBSCRIBER ON PUBSUB_SUBSCRIBER
+    (
+      PUBSUB_CHANNEL_ID ASC
+    )');
+END;
+/
+
+--changeSet SWA-2539:6 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.table_create ('
+CREATE TABLE PUBSUB_TRANSACTION
+  (
+    PUBSUB_TRANSACTION_ID RAW (16) NOT NULL ,
+    PUBSUB_SUBSCRIBER_ID RAW (16) NOT NULL ,
+    PUBSUB_EVENT_ID RAW (16) NOT NULL ,
+    LOCKED_BOOL    NUMBER (1) ,
+    PROCESSED_BOOL NUMBER (1) ,
+    FAILED_BOOL    NUMBER (1) ,
+    ATTEMPTS       NUMBER ,
+    LOCKED_DT      TIMESTAMP ,
+    VERSION        NUMBER ,
+    CREATION_DT    DATE NOT NULL ,
+    RSTAT_CD       NUMBER (3) NOT NULL ,
+    REVISION_NO    NUMBER (10) NOT NULL ,
+    CTRL_DB_ID     NUMBER (10) NOT NULL ,
+    CREATION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_DT    DATE NOT NULL ,
+    REVISION_DB_ID NUMBER (10) NOT NULL ,
+    REVISION_USER  VARCHAR2 (30) NOT NULL,
+    CHECK ( RSTAT_CD IN (0, 1, 2, 3)),
+    CHECK ( CTRL_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( CREATION_DB_ID BETWEEN 0 AND 4294967295),
+    CHECK ( REVISION_DB_ID BETWEEN 0 AND 4294967295),
+    CONSTRAINT PK_PUBSUB_TRANSACTION PRIMARY KEY ( PUBSUB_TRANSACTION_ID ),
+    CONSTRAINT FK_PUBSUB_TRANSSUB FOREIGN KEY ( PUBSUB_SUBSCRIBER_ID ) REFERENCES PUBSUB_SUBSCRIBER ( PUBSUB_SUBSCRIBER_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_TRANS_EVENT FOREIGN KEY ( PUBSUB_EVENT_ID ) REFERENCES PUBSUB_EVENT ( PUBSUB_EVENT_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_TRANS_MIM_DB_CR FOREIGN KEY ( CREATION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_TRANS_MIM_DB_RE FOREIGN KEY ( REVISION_DB_ID ) REFERENCES MIM_DB ( DB_ID ) NOT DEFERRABLE,
+    CONSTRAINT FK_PUBSUB_TRANS_RSTAT FOREIGN KEY ( RSTAT_CD ) REFERENCES MIM_RSTAT ( RSTAT_CD ) NOT DEFERRABLE
+  )');
+END;
+/
+
+--changeSet SWA-2539:7 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.index_create('
+ CREATE INDEX IX_PUBSUB_TRANSACTION_SUB ON PUBSUB_TRANSACTION
+  (
+    PUBSUB_SUBSCRIBER_ID ASC
+  )');
+END;
+/
+
+--changeSet SWA-2539:8 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+UTL_MIGR_SCHEMA_PKG.index_create('
+  CREATE INDEX IX_PUBSUB_TRANSACTION_EVT ON PUBSUB_TRANSACTION
+  (
+    PUBSUB_EVENT_ID ASC
+  )');
+END;
+/
+
+--changeSet SWA-2539:9 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TUBR_PUBSUB_CHANNEL" BEFORE UPDATE
+   ON "PUBSUB_CHANNEL" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_update(
+    :old.rstat_cd,
+    :new.rstat_cd,
+    :old.revision_no,
+    :new.revision_no,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user );
+end;
+/
+
+--changeSet SWA-2539:10 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TIBR_PUBSUB_CHANNEL" BEFORE INSERT
+   ON "PUBSUB_CHANNEL" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_insert(
+    :new.rstat_cd,
+    :new.revision_no,
+    :new.ctrl_db_id,
+    :new.creation_dt,
+    :new.creation_db_id,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user
+    );
+end;
+/
+
+--changeSet SWA-2539:11 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TUBR_PUBSUB_EVENT" BEFORE UPDATE
+   ON "PUBSUB_EVENT" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_update(
+    :old.rstat_cd,
+    :new.rstat_cd,
+    :old.revision_no,
+    :new.revision_no,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user );
+end;
+/
+
+--changeSet SWA-2539:12 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TIBR_PUBSUB_EVENT" BEFORE INSERT
+   ON "PUBSUB_EVENT" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_insert(
+    :new.rstat_cd,
+    :new.revision_no,
+    :new.ctrl_db_id,
+    :new.creation_dt,
+    :new.creation_db_id,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user
+    );
+end;
+/
+
+--changeSet SWA-2539:13 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TUBR_PUBSUB_SUBSCRIBER" BEFORE UPDATE
+   ON "PUBSUB_SUBSCRIBER" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_update(
+    :old.rstat_cd,
+    :new.rstat_cd,
+    :old.revision_no,
+    :new.revision_no,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user );
+end;
+/
+
+--changeSet SWA-2539:14 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TIBR_PUBSUB_SUBSCRIBER" BEFORE INSERT
+   ON "PUBSUB_SUBSCRIBER" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_insert(
+    :new.rstat_cd,
+    :new.revision_no,
+    :new.ctrl_db_id,
+    :new.creation_dt,
+    :new.creation_db_id,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user
+    );
+end;
+/
+
+--changeSet SWA-2539:15 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TUBR_PUBSUB_TRANSACTION" BEFORE UPDATE
+   ON "PUBSUB_TRANSACTION" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_update(
+    :old.rstat_cd,
+    :new.rstat_cd,
+    :old.revision_no,
+    :new.revision_no,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user );
+end;
+/
+
+--changeSet SWA-2539:16 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+CREATE OR REPLACE TRIGGER "TIBR_PUBSUB_TRANSACTION" BEFORE INSERT
+   ON "PUBSUB_TRANSACTION" REFERENCING NEW AS NEW OLD AS OLD FOR EACH ROW
+begin
+
+  MX_TRIGGER_PKG.before_insert(
+    :new.rstat_cd,
+    :new.revision_no,
+    :new.ctrl_db_id,
+    :new.creation_dt,
+    :new.creation_db_id,
+    :new.revision_dt,
+    :new.revision_db_id,
+    :new.revision_user
+    );
+end;
+/

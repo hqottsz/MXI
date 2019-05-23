@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+ 
+	<!--  view -->
+	<include file="view/acor_acft_wp_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_inv_info_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_order_receipts_v2.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_shipments_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_stocks_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/acor_order_returns_v1.sql" relativeToChangelogFile="true"/>
+
+
+</databaseChangeLog>

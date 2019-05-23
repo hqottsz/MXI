@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="27C7F471-F321-DA12-2F7D-CC8A9C0D3C60" name="UTL_PERM">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B0A0CCE9-FCCC-48D2-AE78-09FEE43E3618</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLASS_NAME" id="713B42DD-DA75-F3AE-148C-ACD03AD0B612">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>525D5C50-D773-5E2E-04EC-CEA9B07195B7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MATRIX_ID" id="DBEA34DA-9310-F934-9DAE-8119149366B8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>69829607-E774-650D-FE3D-934276DCFCD2</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MATRIX_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<delegate>11016182-DD4C-04BE-562C-E223788D1A82</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="41C8FFEE-F3D8-24C2-C797-20F65F0541A2" referredColumn="11016182-DD4C-04BE-562C-E223788D1A82"/>
+</associations>
+</Column>
+<Column name="UTL_ID" id="F09F2E95-B6E9-554C-62EE-E2EF8059D391">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>09D3D404-6E75-DB33-13B9-D38CBF6511E0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<delegate>4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C9126578-0B46-9E05-C401-D4373CFBEDFF" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1100FF7D-69EB-3889-CC3A-5960AFEEC23A" name="FK_MIMDB_UTLPERM">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F09F2E95-B6E9-554C-62EE-E2EF8059D391"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F715E5EC-B495-155C-B0C7-9250FA090A8B" name="FK_PMATRIXHEADER_UTLPERM">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DBEA34DA-9310-F934-9DAE-8119149366B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

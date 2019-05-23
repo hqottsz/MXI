@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+	<include file="OPER-1877.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2096_1.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2096_2.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2096_3.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2170.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2175.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2417.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2374.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-1243.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2381.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2492.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2201.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2387.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-496.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2393.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-2088.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2444.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2570.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2443.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-1029.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-1737.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-1623.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2618.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2342.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2591-1.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2591-2.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2668.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2701.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2848.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2947.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2966.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2962.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2914.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2909.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3042.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3052.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3047.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3062.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2868_1.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2868_2.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3153.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-2943.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3181.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3152.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3239.sql" relativeToChangelogFile="true"/>
+	<include file="PPC-131.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3192.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3341-1.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3341-2.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3341-3.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3352.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-3355.sql" relativeToChangelogFile="true"/>
+
+
+	<!--  CORE UPGRADES SCRIPTS MUST BE RAN ABOVE -->
+	<!--  The following component upgrades will be executed  -->
+	<!--  after the core upgrade scripts have been applied. -->
+	<include file="api/control.xml" relativeToChangelogFile="true"/>
+	<include file="opr/control.xml" relativeToChangelogFile="true"/>
+	<include file="rbl/control.xml" relativeToChangelogFile="true"/>
+	<include file="lrp/control.xml" relativeToChangelogFile="true"/>
+	<include file="mxcom/control.xml" relativeToChangelogFile="true"/>
+	<include file="ppc/control.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

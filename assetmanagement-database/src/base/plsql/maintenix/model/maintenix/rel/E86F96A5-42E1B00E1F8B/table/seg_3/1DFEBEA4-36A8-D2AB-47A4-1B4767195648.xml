@@ -1,0 +1,488 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_3" id="1DFEBEA4-36A8-D2AB-47A4-1B4767195648" name="LPA_RUN_ISSUE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>Records the issues raised against each run of line planning automation.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>66C7695D-B097-8669-68FB-D2E4AAFA92BD</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RUN_ID" id="146119C2-6022-6C9F-FE88-93C2EBEF1E55">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to LPA_RUN</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2A86F19D-EE0B-9A2E-2170-1DE4E65640FA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RUN_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="351226BA-DC0B-4F4F-BF9C-3935F6A1928D" referredColumn="76BC84D8-1E72-E92E-5495-2DBD2A80EEED"/>
+<colAssociation fkAssociation="6B53F532-6029-8B4F-B3D9-C8072583B7AF" referredColumn="52888400-61A5-1FF8-1747-858DDC177B66"/>
+</associations>
+</Column>
+<Column name="RUN_ISSUE_ID" id="FC5C0B94-B7C1-2C0D-D837-B46447641899">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Starts from 1 for each run.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7EFF1220-8E82-F189-092D-496CB425ACCE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RUN_ISSUE_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LPA_ISSUE_TYPE_DB_ID" id="6BCBBDBA-CB02-AF53-9E53-92C6759B9908">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The type of issue encountered&lt;br&gt;FK to REF_LPA_ISSUE_TYPE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>17536F85-77EB-F30E-F8F4-7968876ED997</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LPA_ISSUE_TYPE_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="074FF0EA-A2F8-D2CC-B768-CB4E07B88763" referredColumn="A43E823F-D8F3-5DD8-5B24-8E3308A0E588"/>
+</associations>
+</Column>
+<Column name="LPA_ISSUE_TYPE_CD" id="80DF0E09-5229-009A-42E7-A1DC1196F6ED">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The type of issue encountered&lt;br&gt;FK to REF_LPA_ISSUE_TYPE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D5893FCB-5992-3723-B8EB-C57BD492A6A6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>30FBAEA6-07E3-0874-CB6D-9F1F2A6F3676</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="074FF0EA-A2F8-D2CC-B768-CB4E07B88763" referredColumn="54FDFCF1-6AF4-8733-E478-DCFB7ABFFA50"/>
+</associations>
+</Column>
+<Column name="LPA_ISSUE_NOTE" id="47BFC3D6-7CBE-75C6-2EB8-00F524C1EA7D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>An optional message providing additional context about the issue.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B0E53068-5BE1-DA3C-CE11-76900C551022</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INV_NO_DB_ID" id="D0779BE2-A597-61BE-690B-A3C53C36177F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The specific aircraft (if any) against which the issue was logged. &lt;br&gt;If the issue raised is not specific to a particular aircraft, the value will be the blank.&lt;br&gt;FK to LPA_RUN_INV</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0C51D5D6-0C3F-9C7B-FE80-578E840BB0A1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="351226BA-DC0B-4F4F-BF9C-3935F6A1928D" referredColumn="5533EB9B-B22F-EB88-6DB9-8263179CCEB4"/>
+</associations>
+</Column>
+<Column name="INV_NO_ID" id="360154C0-C4C1-A097-07A3-9967D63ADD07">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The specific aircraft (if any) against which the issue was logged. &lt;br&gt;If the issue raised is not specific to a particular aircraft, the value will be the blank.&lt;br&gt;FK to LPA_RUN_INV&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8F6F284D-5C8C-62D9-0895-4F0906F76B90</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="INV_NO_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="351226BA-DC0B-4F4F-BF9C-3935F6A1928D" referredColumn="DC2C8FA2-DD38-BD55-E988-5E4F9C53851A"/>
+</associations>
+</Column>
+<Column name="INV_NO_LDESC" id="F55E6398-29DB-5CBB-9645-696541BF8315">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The description of the aircraft (if any) at the time the issue was raised. &lt;br&gt;Copied from INV_INV.INV_NO_SDESC</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F8B6743B-2001-3CC8-13E6-BF49D8CE1233</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC023511-CD55-4984-D0DD-EE3195144492</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BLOCK_DB_ID" id="B0ADE7A1-8DC6-943D-1EA0-3145CBCD6AAA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The specific block task (if any) against which the issue was logged.&lt;br&gt;If the issue raised is not specific to a particular block, the value will be the blank.&lt;br&gt;FK to SCHED_STASK</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CAB09097-111D-414E-E42F-C1E9E17B9C71</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="BLOCK_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A0B4191-CB96-4726-9F62-C0DA37BD7540" referredColumn="3CE58C05-954B-BC92-B4C2-886A85D7EE7D"/>
+</associations>
+</Column>
+<Column name="BLOCK_ID" id="6863D1BF-DC69-3EE3-7755-B0D7D8458ACC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The specific block task (if any) against which the issue was logged.&lt;br&gt;If the issue raised is not specific to a particular block, the value will be the blank.&lt;br&gt;FK to SCHED_STASK</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>83DDD9A8-E373-DB70-4B78-314B85C2ED40</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="BLOCK_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A0B4191-CB96-4726-9F62-C0DA37BD7540" referredColumn="9583F48B-ACAC-467C-F22F-F2F672CB100C"/>
+</associations>
+</Column>
+<Column name="BLOCK_LDESC" id="2B07CDAB-1327-88DB-86B1-335B85BCB336">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The description of the block task (if any) at the time the issue was raised.&lt;br&gt;Copied from EVT_EVENT.EVENT_LDESC&lt;br&gt;</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BBABFC8F-5EC7-AA4B-119E-FA708EAD8B99</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WP_DB_ID" id="EE856D61-B0B4-1C98-1201-8C9557FED1AD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The work package (if any) against which the issue was logged.&lt;br&gt;If the issue raised is not specific to a particular work package, the value will be the blank.&lt;br&gt;FK to SCHED_STASK</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9DBBFFA1-37E5-4D67-A856-58C7F05F5E5F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="WP_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FBD1197D-4900-4562-20C5-31E1BCEB690F" referredColumn="3CE58C05-954B-BC92-B4C2-886A85D7EE7D"/>
+</associations>
+</Column>
+<Column name="WP_ID" id="8B4042F9-9C55-C8E4-8ACF-81189D536583">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The work package (if any) against which the issue was logged.&lt;br&gt;If the issue raised is not specific to a particular work package, the value will be the blank.&lt;br&gt;FK to SCHED_STASK</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>729A36F2-5FE1-AB9A-E1A0-5F5B1949560F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="WP_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FBD1197D-4900-4562-20C5-31E1BCEB690F" referredColumn="9583F48B-ACAC-467C-F22F-F2F672CB100C"/>
+</associations>
+</Column>
+<Column name="WP_LDESC" id="F16B2A4F-CA1A-9D2F-4910-CEBF21CD7B10">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The description of the work package (if any) at the time the issue was raised. &lt;br&gt;Copied from EVT_EVENT.EVENT_LDESC</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9CD056C3-2E3F-68A2-103E-8B15E8BC8244</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="16D87525-084A-31B0-1FC0-4D577BD952D4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Status of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F1541805-352B-B086-E470-DA806776ABF1</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C029307F-5A7D-4AEF-057D-B3FAA2F52CEC" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="F24AF7ED-336A-40DF-6C65-2F3191103C49">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>81F80884-9EEF-151B-9A03-5D64E76FFDFF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="61C29F1A-F481-28A1-AE34-022DFCCDB02C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>358195D8-059C-0E0A-E7FD-A28487CB16D4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="E1F08800-D565-008E-E099-BE123EF8A570">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4ABDDBCF-AF2A-0FE8-1981-7EAD7AB12A97</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D899906E-8D84-8B6A-5D99-39688AD267A3" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="D4E4D373-05A0-61DE-95B8-5B64BA1EA22E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>259D637B-29D0-0F0B-ACF5-9F115D532531</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="53D11AF1-9436-52F6-1D78-4AFAB9FA4345" name="PK_LPA_RUN_ISSUE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EA088E80-2DD2-1229-BE48-32031323B90A</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="146119C2-6022-6C9F-FE88-93C2EBEF1E55"/>
+<colUsage columnID="FC5C0B94-B7C1-2C0D-D837-B46447641899"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6A43FE78-A8F5-E521-37F2-C14FD78FB30E" name="IX_SCHEDSTASK_LPARUINISSUE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>74B2BAFA-9512-3A84-0E66-08F79B948BF1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0ADE7A1-8DC6-943D-1EA0-3145CBCD6AAA"/>
+<colUsage columnID="6863D1BF-DC69-3EE3-7755-B0D7D8458ACC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F95FA92D-67C5-78C2-B044-A208D3AB0C12" name="IX_WPSCHEDSTASK_LPARUNISSUE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>A531F301-9ADA-2176-C646-1091707E0BCB</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE856D61-B0B4-1C98-1201-8C9557FED1AD"/>
+<colUsage columnID="8B4042F9-9C55-C8E4-8ACF-81189D536583"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4D768ABA-EF91-0946-8D0D-C64D64C61827" name="IX_LPARUN_LPARUNISSUE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>97D6307C-3D3B-2D90-4536-D9E60C3B89CB</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="146119C2-6022-6C9F-FE88-93C2EBEF1E55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9FC70EAC-368E-ED0B-7B7F-F408666ED0A7" name="IX_LPARUNINV_LPARUNISSUE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FA4DEF9D-E14D-D1EF-63D0-2EFF06CA82EA</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="146119C2-6022-6C9F-FE88-93C2EBEF1E55"/>
+<colUsage columnID="D0779BE2-A597-61BE-690B-A3C53C36177F"/>
+<colUsage columnID="360154C0-C4C1-A097-07A3-9967D63ADD07"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B4469418-0AD9-4C39-AEA9-30E839E98D06" name="FK_LPARUNINV_LPARUNISSUE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="146119C2-6022-6C9F-FE88-93C2EBEF1E55"/>
+<colUsage columnID="D0779BE2-A597-61BE-690B-A3C53C36177F"/>
+<colUsage columnID="360154C0-C4C1-A097-07A3-9967D63ADD07"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3824A7EB-EB12-A2FA-8CCA-5C135E9C137A" name="FK_LPARUN_LPARUNISSUE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="146119C2-6022-6C9F-FE88-93C2EBEF1E55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E2EAE127-6EB2-5234-1310-D76EF0C06D55" name="FK_MIMDB_LPARUNISSUE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:32 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1F08800-D565-008E-E099-BE123EF8A570"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93E4173A-E424-57A0-4F6C-70CD8074A65F" name="FK_MIMRSTAT_LPARUNISSUE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:34 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16D87525-084A-31B0-1FC0-4D577BD952D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0F69128A-033B-D834-5233-DF41C8CD2DEE" name="FK_REFLPAISSUETYPE_LPARUNISSUE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BCBBDBA-CB02-AF53-9E53-92C6759B9908"/>
+<colUsage columnID="80DF0E09-5229-009A-42E7-A1DC1196F6ED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ACBBFA6B-B4CD-8438-54F8-FAFB161BC4F8" name="FK_SCHEDSTASK_LPARUINISSUE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:43 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0ADE7A1-8DC6-943D-1EA0-3145CBCD6AAA"/>
+<colUsage columnID="6863D1BF-DC69-3EE3-7755-B0D7D8458ACC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5AED9CEE-5591-C648-3CA2-ED0538B87ABB" name="FK_WPSCHEDSTASK_LPARUNISSUE">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:46 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE856D61-B0B4-1C98-1201-8C9557FED1AD"/>
+<colUsage columnID="8B4042F9-9C55-C8E4-8ACF-81189D536583"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

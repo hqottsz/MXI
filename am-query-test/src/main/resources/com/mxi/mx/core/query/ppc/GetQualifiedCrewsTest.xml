@@ -1,0 +1,182 @@
+<dataset>
+
+   <!--********************-->
+   <!-- PPC PLAN SETUP		-->
+   <!--********************-->
+   <ppc_plan
+      plan_id = "F8FF46559D5F11E3965CA4BADBECD042"/>
+
+   <!--  Crew 1 with PILOT skill -->
+   <ppc_crew
+      crew_id = "100"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "PILOT" />
+
+   <!--  Crew 2 with ALL skills -->
+   <ppc_crew
+      crew_id = "101" />
+
+   <!--  Crew 3 with ENG skill -->
+   <ppc_crew
+      crew_id = "102"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "ENG" />
+
+   <!--  Crew 4 with LBR skill -->
+   <ppc_crew
+      crew_id = "103"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR" />
+
+   <!--  Crew 5 with AVIONICS skill -->
+   <ppc_crew
+      crew_id = "104"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "AVIONICS" />
+
+   <!--  Crew 6 with AVIONICS skill -->
+   <ppc_crew
+      crew_id = "105"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "AVIONICS" />
+
+
+   <!--************************-->
+   <!--  Create Work Package 1 -->
+   <!--************************-->
+   <ppc_wp
+      work_package_id = "1"
+      plan_id = "F8FF46559D5F11E3965CA4BADBECD042" />
+
+   <ppc_work_area
+      work_area_id = "1" />
+
+   <!-- Assign Crew 1 with PILOT skill work area -->
+   <ppc_work_area_crew
+      work_area_id = "1"
+      crew_id = "100" />
+
+   <!--  Assign Crew 2 with ALL skills work area -->
+   <ppc_work_area_crew
+      work_area_id = "1"
+      crew_id = "101" />
+
+   <!--  Assign Crew 3 with ENG skill to work area -->
+   <ppc_work_area_crew
+      work_area_id = "1"
+      crew_id = "102" />
+
+   <!-- Assign Crew 4 with LBR skill to work area -->
+   <ppc_work_area_crew
+      work_area_id = "1"
+      crew_id = "103" />
+
+   <!--  Create Task 1 with multiple labour skills  -->
+   <ppc_activity
+      activity_id = "10"
+      work_package_id = "1" />
+
+   <ppc_task
+      task_id = "10"
+      work_area_id = "1" />
+
+   <ppc_labour
+      labour_id = "10"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "PILOT"
+      task_id = "10" />
+
+   <ppc_labour
+      labour_id = "11"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "ENG"
+      task_id = "10" />
+
+   <!--  Create Task 2 with labour skill LBR  -->
+   <ppc_activity
+      activity_id = "20"
+      work_package_id = "1" />
+
+   <ppc_task
+      task_id = "20"
+      work_area_id = "1" />
+
+   <ppc_labour
+      labour_id = "20"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "LBR"
+      task_id = "20" />
+
+   <!--  Create Task 3 with labour AVIONICS  -->
+   <ppc_activity
+      activity_id = "30"
+      work_package_id = "1" />
+
+   <ppc_task
+      task_id = "30"
+      work_area_id = "1" />
+
+   <ppc_labour
+      labour_id = "30"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "AVIONICS"
+      task_id = "30" />
+
+   <!--************************-->
+   <!--  Create Work Package 2 -->
+   <!--************************-->
+    <ppc_wp
+      work_package_id = "2"
+      plan_id = "F8FF46559D5F11E3965CA4BADBECD042" />
+
+   <ppc_work_area
+      work_area_id = "2" />
+
+   <!-- Assign two crews with the same labour skill the work area -->
+   <!-- Assign Crew 5 with AVIONICS skill work area -->
+   <ppc_work_area_crew
+      work_area_id = "2"
+      crew_id = "104" />
+
+   <!-- Assign Crew 6 with AVIONICS skill work area -->
+   <ppc_work_area_crew
+      work_area_id = "2"
+      crew_id = "105" />
+
+   <!--  Create Task 4 with two labour skills, AVIONICS and ENG  -->
+   <ppc_activity
+      activity_id = "40"
+      work_package_id = "2" />
+
+   <ppc_task
+      task_id = "40"
+      work_area_id = "2" />
+
+   <ppc_labour
+      labour_id = "40"
+      labour_skill_db_id = "10"
+      labour_skill_cd = "AVIONICS"
+      task_id = "40" />
+
+   <ppc_labour
+      labour_id = "50"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "ENG"
+      task_id = "40" />
+
+   <!--  Create Task 5 with labour skill AVIONICS  -->
+   <ppc_activity
+      activity_id = "50"
+      work_package_id = "2" />
+
+   <ppc_task
+      task_id = "50"
+      work_area_id = "2" />
+
+   <ppc_labour
+      labour_id = "60"
+      labour_skill_db_id = "0"
+      labour_skill_cd = "AVIONICS"
+      task_id = "50" />
+
+</dataset>

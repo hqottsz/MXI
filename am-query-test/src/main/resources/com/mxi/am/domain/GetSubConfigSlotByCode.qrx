@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetSubConfigSlotByCode</name>
+   <description />
+   <sql>
+      SELECT
+         eqp_assmbl_bom.assmbl_db_id,
+         eqp_assmbl_bom.assmbl_cd,
+         eqp_assmbl_bom.assmbl_bom_id,
+         eqp_assmbl_bom.assmbl_bom_cd,
+         eqp_assmbl_bom.nh_assmbl_bom_id
+      FROM
+         eqp_assmbl_bom
+      WHERE
+         eqp_assmbl_bom.assmbl_bom_cd = :aSubConfigSlotCode
+      START WITH
+         eqp_assmbl_bom.assmbl_db_id 	= :aAssmblDbId 	AND
+         eqp_assmbl_bom.assmbl_cd 		= :aAssmblCd 		AND
+         eqp_assmbl_bom.assmbl_bom_id 	= :aAssmblBomId
+      CONNECT BY
+         eqp_assmbl_bom.nh_assmbl_db_id 	= prior eqp_assmbl_bom.assmbl_db_id 	AND
+         eqp_assmbl_bom.nh_assmbl_cd 		= prior eqp_assmbl_bom.assmbl_cd 		AND
+         eqp_assmbl_bom.nh_assmbl_bom_id 	= prior eqp_assmbl_bom.assmbl_bom_id
+
+   </sql>
+   <arguments>
+      <argument name="aAssmblDbId" type="INTEGER"/>
+      <argument name="aAssmblCd" type="STRING" />
+      <argument name="aAssmblBomId" type="INTEGER" />
+      <argument name="aSubConfigSlotCode" type="STRING" />
+   </arguments>
+</sql-statement>

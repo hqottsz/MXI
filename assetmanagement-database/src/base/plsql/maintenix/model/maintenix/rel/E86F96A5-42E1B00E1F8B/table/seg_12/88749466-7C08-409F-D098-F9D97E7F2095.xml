@@ -1,0 +1,416 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="88749466-7C08-409F-D098-F9D97E7F2095" name="MT_CORE_FLEET_LIST">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Topical aggregation table for materialized data related to Fleet Due List tab. Updated via trigger on MT_DRV_SCHED_INFO. The trigger excutes logic in MT_CORE_FLEET_LIST_PKG and will update rows as needed.&lt;br&gt;&lt;br&gt;This table is transactional with changes in evt_sched_dead. A consequence is that it will always be in sync. However, before using for other pages or reports, please examine the logic found in the MT_CORE_FLEET_LIST_PKG and verify that the data conforms to your business needs.&lt;br&gt;&lt;br&gt;For performance reasons, there are no defined constraints. This table relies on source table constraint enforcement.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>26371D60-7DC3-3004-FD2D-E87676B36E57</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EVENT_DB_ID" id="934E7227-CEBF-3CB3-46A3-76028FD8F7DC">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>FK to mt_drv_sched_info. The event in evt_sched_dead that is applicable to Fleet Due List.  </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4D2DDA01-7D6B-1C3B-843A-FA0DEF57ABD0</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVENT_ID" id="C58C2867-FFCF-81FB-892E-F937AD7EAF0F">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>FK to mt_drv_sched_info. The event in evt_sched_dead that is applicable to Fleet Due List.  </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>032C0D72-30F4-7429-17D7-A1860A554450</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TASK_INV_NO_DB_ID" id="80077795-8862-C606-779F-3767C1D6DFE7">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-28 13:54:26 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv. The inventory that is the main inventory on this task.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>572A34C9-A97F-40B7-6647-41CFE97F6F04</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TASK_INV_NO_ID" id="5CF3C5BD-37D0-CF71-4192-0CE76B5493B6">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-28 13:54:26 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv. The inventory that is the main inventory on this task.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AB76B8D8-82DE-381C-85D6-57973C82569B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPL_SCHED_ID" id="AF7DAA95-86BF-BF43-FD6A-5E7AB3744B3F">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-28 13:54:26 UTC</createdTime>
+<commentInRDBMS>A reference to the replacement part requirement for replacement tasks and their sub-tasks.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DD9D5A7E-4E99-33A1-5F32-742D507EC17F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BARCODE_SDESC" id="F39F0C80-EE90-5889-4945-29D9AB40B683">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Barcode defined for this task</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6B44EEBE-0283-BC4F-BEAD-13F6019200CB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEVIATION_QT" id="8CF288AA-571B-89EB-E96B-1F1E31E41186">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to EVT_SCHED_DEAD. The amount by which the deadline can &quot;slip&quot; past its due date before being considered overdue.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EA582C45-E74C-64FC-AADB-5A180ED35B97</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USAGE_REM_QT" id="5A7CDB95-2717-FC4B-590A-CCC641941749">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to EVT_SCHED_DEAD. The difference between the current usage count (DATA_TYPE_ID) and SCHED_DEAD_QT.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7EC97C28-04C7-EAF4-C943-192E59A757D1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SCHED_DEAD_DT" id="F243BBC1-36EC-CF8D-5701-2E629F467687">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to EVT_SCHED_DEAD. The scheduled deadline for the event.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4930EABA-64BB-39FA-13DA-853ABB0D8AD8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INVENTORY_KEY" id="3C56F8FB-64EB-702E-6C3C-C6970B38AB01">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Concatenated FK to aircraft inv_no_db_id and inv_no_id. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7F435A6B-B443-D1B8-6C63-F10662A8D927</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC023511-CD55-4984-D0DD-EE3195144492</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INV_NO_SDESC" id="AA939DCD-6F5F-255D-AC8A-7E6D33E768C6">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Description of the aircraft</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>78CCD1F2-2B61-E5C9-F007-0A64C2EB571F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC023511-CD55-4984-D0DD-EE3195144492</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ASSMBL_CD" id="E15B3841-FFEC-B51A-9F93-3315D45EE4E7">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Assembly code of the aircraft</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>201A2BC7-5137-163E-B315-DE29A5A86EC6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTHORITY_DB_ID" id="585CF518-F62D-5634-3CD3-BF4107716ECD">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>FK to authority assigned to aircraft in ORG_AUTHORITY.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3F73B225-E602-7B4C-F1F4-2EA18B4CF93B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AUTHORITY_ID" id="05DE2621-134D-2687-A8E2-F86799CA4D48">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>FK to authority assigned to aircraft in ORG_AUTHORITY.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0F34FDB8-2512-D410-A5CB-D8FE676463C7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DOMAIN_TYPE_CD" id="F2190F05-550B-9B51-5793-D79E6EB0F89D">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to the drv_domain_type_cd in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E03D9939-A929-EC2E-2305-5E97EEF3E91D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENG_UNIT_CD" id="384DF28E-C6F9-3E57-F447-0F85A1A7FE12">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to the drv_eng_unit_cd in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>12DDB398-73E0-04A7-D14B-0490536478E6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENG_UNIT_MULT_QT" id="7FC628E1-28F3-51C0-8BB5-AC5A7BFC0374">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to the drv_eng_unit_cd in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EF30ECFD-A262-D857-B083-4401F6F44047</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECISION_QT" id="53B46309-5E35-0D49-3791-ECD135EE5BE0">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to the drv_precision_qt in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EEE1E421-2B5E-D811-273A-275370FA3308</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SOFT_DEADLINE" id="1807164D-7D62-BA55-5C0D-0702ED1E0CF4">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to soft_deadline_bool in sched_stask.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>1C76C05B-9B13-6384-8698-F9E188B5638E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PLAN_BY_DATE" id="95BD02B0-3235-A700-EF5A-850D98F89162">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to plan_by_dtl in sched_stask.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B968B8FB-8E8F-9E9E-65BE-CF6EEC21948F</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AC_INV_NO_DB_ID" id="429739A3-96CC-AF23-75C3-6BB4D91E0680">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv of aircraft</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>584036E8-E977-8BC3-4DB5-7382D12CCC12</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AC_INV_NO_ID" id="D8B86E5A-D0AE-8DE1-504D-04802AA037B1">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>FK to inv_inv of aircraft. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F8D37DCA-82D4-42BF-CCE2-28A6D9C097B2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEADLINE_EVENT_DB_ID" id="16238DDC-675C-DC59-01AD-62DCE8996705">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to the driving event in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>297B1C35-2C22-0B00-6D98-3E958D958E13</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEADLINE_EVENT_ID" id="CD0D9A15-0445-1177-0CF4-AC7A61D938EB">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to the driving event in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>78DF387C-57D6-9A59-D2C5-2F9CB82AA2BE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SORT_DUE_DT" id="4AEC89FF-94B6-FB79-BD21-788B4F6C93DE">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to sort_due_dt  in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5A30E43A-9FAF-5E55-4685-CB3B10DBE193</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EXT_SCHED_DEAD_DT" id="3EE07C0C-1A58-331D-B9F3-7F8BAFDF31A4">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Reference to the driving ext_dead_dt  in mt_drv_sched_info. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BB251937-0126-209C-BA22-AD644139EB76</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONFIG_POS_SDESC" id="B2F0D469-A389-ABE8-D18C-E6CB5C1D1C1B">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<commentInRDBMS>Calculated via call to get_inv_repl_sdesc global function.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FFF293CC-303A-8872-A45C-2BFD35517A91</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="79DE0C09-C658-3C5B-5559-7C740D4801B4" name="IX_MT_CORE_FLEET_SORT">
+<sourceDDLFile>createTables.sql</sourceDDLFile>
+<createdBy>getaca</createdBy>
+<createdTime>2018-06-13 17:32:16 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5A0A0269-D938-8A6C-59D6-B7ABF353AF05</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4AEC89FF-94B6-FB79-BD21-788B4F6C93DE"/>
+<colUsage columnID="F39F0C80-EE90-5889-4945-29D9AB40B683"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BC2F7F0-0FA7-60C7-58BF-1F4D4C966369" name="IX_MT_CORE_FLEET_EVTEVENTID">
+<createdBy>getaca</createdBy>
+<createdTime>2018-07-13 13:52:58 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="934E7227-CEBF-3CB3-46A3-76028FD8F7DC"/>
+<colUsage columnID="C58C2867-FFCF-81FB-892E-F937AD7EAF0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>UpdateHighestInventoryOfSubInventory</name>
+   <description>
+      Updates the highest inventory value for all the sub-inventory under the provided root inventory.
+   </description>
+   <sql>
+      UPDATE
+         inv_inv
+      SET
+         inv_inv.h_inv_no_db_id = :aHighestInvNoDbId,
+         inv_inv.h_inv_no_id    = :aHighestInvNoId
+      WHERE
+         (inv_inv.inv_no_db_id, inv_inv.inv_no_id) IN
+         (
+            SELECT
+               inv_inv.inv_no_db_id,
+               inv_inv.inv_no_id
+            FROM
+               inv_inv
+            WHERE
+               NOT
+               (
+                  inv_inv.inv_no_db_id = :aRootInvNoDbId AND
+                  inv_inv.inv_no_id    = :aRootInvNoId
+               )
+            START WITH
+               inv_inv.inv_no_db_id = :aRootInvNoDbId AND
+               inv_inv.inv_no_id    = :aRootInvNoId
+            CONNECT BY
+               PRIOR inv_inv.inv_no_db_id = inv_inv.nh_inv_no_db_id AND
+               PRIOR inv_inv.inv_no_id    = inv_inv.nh_inv_no_id
+         )
+   </sql>
+   <arguments>
+      <argument name="aRootInvNoDbId" type="INTEGER" />
+      <argument name="aRootInvNoId" type="INTEGER" />
+      <argument name="aHighestInvNoDbId" type="INTEGER" />
+      <argument name="aHighestInvNoId" type="INTEGER" />
+   </arguments>
+</sql-statement>

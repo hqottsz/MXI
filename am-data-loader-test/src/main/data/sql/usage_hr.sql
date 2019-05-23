@@ -1,0 +1,12 @@
+CREATE OR REPLACE PACKAGE AUTO_USAGE_HR IS
+
+/*This is the function used to calculate the parameter*/
+FUNCTION AUTO_HR_C (factor NUMBER,
+		AT_HR_M NUMBER,
+		AT_HR NUMBER,
+		AT_HR_AT_HR_M NUMBER)
+
+RETURN NUMBER;
+
+END AUTO_USAGE_HR;
+/

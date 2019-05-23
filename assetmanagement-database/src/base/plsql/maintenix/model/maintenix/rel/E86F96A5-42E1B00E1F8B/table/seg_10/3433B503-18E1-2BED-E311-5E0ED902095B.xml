@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="3433B503-18E1-2BED-E311-5E0ED902095B" name="UTL_PB_ITEM_DOC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table is used to list all of the &quot;report contexts&quot; for a particular PowerBuilder application. This allows the user to launch reports in context of a selected datawindow row, etc. Examples of report-launching contexts are:   Inventory Reports = &quot;INV&quot;   Event Reports = &quot;EVT&quot;   Task Reports = &quot;STASK&quot; PowerBuilder reports are implemented using the MxFC?s w_r_report window.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>BC11ACC4-726F-C27C-8C1C-DC5133FC9DA6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="APP_CD" id="98D4CC9C-D97F-3257-6CE8-DC0080CE6DAF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D4957AC3-E427-E3FD-0448-2229B607DDBB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C65BE2FC-5505-27F0-B88B-BFD174D36521" referredColumn="6615514C-20A2-E7BC-01C3-5B1B5A74A522"/>
+</associations>
+</Column>
+<Column name="ITEM_TYPE_CD" id="A00A5B1F-7AF9-0656-2BF1-A91109A49ADC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DDD34E5D-3F37-C281-BB99-6E8DC2EDA13C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_NAME" id="BEF44684-9ABE-F402-B836-20FD1CB8538A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C64E6851-8048-13ED-14A5-79FE5889389A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VIEW_FORMS_BOOL" id="1EBA767E-A9AB-5C28-83AD-E10DC5AC6368">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>DCA7D508-4CB3-1D05-F3AF-E931B0FF1F17</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="VIEW_FORMS_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="EBF3727E-6D33-3E2D-AB1A-8221A3ED953A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7B917529-2A52-056E-69C5-C4C632102F49</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="79C0C5F2-74E4-52B5-FA86-FEB92231AAA0" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9502129E-0E08-7455-2640-528510A052FC" name="PK_UTL_PB_ITEM_DOC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C41D6EE4-E5AF-A3B9-6BCE-28F5D7497E48</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98D4CC9C-D97F-3257-6CE8-DC0080CE6DAF"/>
+<colUsage columnID="A00A5B1F-7AF9-0656-2BF1-A91109A49ADC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="065A09B1-4E2C-D271-A078-14DEA354A7DA" name="FK_UTLPBAPP_UTLPBITEMDOC">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98D4CC9C-D97F-3257-6CE8-DC0080CE6DAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F760D76E-CADC-3E7A-35AB-DA063920DC7B" name="FK_UTLPBIDOC_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EBF3727E-6D33-3E2D-AB1A-8221A3ED953A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

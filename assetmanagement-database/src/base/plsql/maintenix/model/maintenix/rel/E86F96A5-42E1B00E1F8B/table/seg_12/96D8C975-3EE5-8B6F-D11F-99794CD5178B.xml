@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_12" id="96D8C975-3EE5-8B6F-D11F-99794CD5178B" name="REF_STOCK_DIST_REQ_STATUS">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 16:02:59 UTC</createdTime>
+<comment>[NOT EXTENDABLE] New Ref table to store the 0-level status codes for Stock Distribution Request such as OPEN/INPROGRESS/PICKED/COMPLETED/CANCELLED.</comment>
+<commentInRDBMS>[NOT EXTENDABLE] New Ref table to store the 0-level status codes for Stock Distribution Request such as OPEN/INPROGRESS/PICKED/COMPLETED/CANCELLED.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_855</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="STATUS_CD" id="EAFE0A12-0713-C7EB-DDCA-B73EA5440FE9">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>A unique value to indicate the status code for stock distribution request. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS_DB_ID" id="44A9759E-E190-7994-65ED-C3BAA09F91E1">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 20:40:25 UTC</createdTime>
+<commentInRDBMS>Identifies the creation database for the status record and forms part of primary key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESC_SDESC" id="83A3A060-6E1B-3478-3E33-3FBD9E6D76B8">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>This is the short description of possible statuses for the stock distribution request.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESC_LDESC" id="26BB5141-4FD8-AF5F-7B8B-C08081937A85">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>This is the long  description of possible statuses for the stock distribution request.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="41277DD1-9DBB-82C1-3682-DECC7C6F4064">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AB82479D-0CB5-0573-2C24-229F028B183C" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="REVISION_NO" id="74EC9005-AFC6-873E-04C6-B8919C7D59F1">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTRL_DB_ID" id="34974589-E81C-D6FC-1B83-95121EE7976B">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record. The meaning of this column may be specific to the entity.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3123C3D-2C4D-5BF1-123E-0D014F1AB8F4" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="E7E218A2-1FD1-E90B-7C8D-D5D9B2C62502">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="EA4CFCA3-3A2A-4DCA-41B9-CA27B910E0F7">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>The date and time at which the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="B5A45E04-228C-FFDA-884D-8AEE01DD3EB1">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that last updated the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0ACBB274-FC69-9615-C689-8D65350251C9" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+<Column name="REVISION_USER" id="EB20DD03-9DD2-B408-3D41-78BA39454075">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 18:51:15 UTC</createdTime>
+<commentInRDBMS>The name of the user that last updated the record</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8DBD5F2C-118C-73F6-059A-1D39B8596581" name="PK_REF_STOCK_DIST_REQ_STATUS">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 20:38:51 UTC</createdTime>
+<commentInRDBMS>Primary key for the table.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAFE0A12-0713-C7EB-DDCA-B73EA5440FE9"/>
+<colUsage columnID="44A9759E-E190-7994-65ED-C3BAA09F91E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A6C257FA-6C43-8E6A-3FB7-FC63FBF3F70C" name="FK_MIMRSTAT_STKDISTREQSTATUS">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 20:38:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41277DD1-9DBB-82C1-3682-DECC7C6F4064"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C344520-B580-D722-F8C8-308436EA5EF1" name="FK_MIMDB_STKDISTREQSTATUS_CTR">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 20:38:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="34974589-E81C-D6FC-1B83-95121EE7976B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A4E8B728-7E75-2D31-46FB-47FAA19472EF" name="FK_MIMDB_STKDISTREQSTATUS_REV">
+<createdBy>suupca</createdBy>
+<createdTime>2018-08-27 20:38:51 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5A45E04-228C-FFDA-884D-8AEE01DD3EB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

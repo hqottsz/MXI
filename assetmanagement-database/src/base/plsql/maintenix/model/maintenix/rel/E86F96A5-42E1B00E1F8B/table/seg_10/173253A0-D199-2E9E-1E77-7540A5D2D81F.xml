@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_10" id="173253A0-D199-2E9E-1E77-7540A5D2D81F" name="UTL_PB_HELP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>This table is used to tie context sensitive help to a PowerBuilder application. All help &quot;launch points&quot; are listed in this table along with the HTML references associated with these launch points. PowerBuilder help is launched using the F1 key. PowerBuilder help is implemented using the MxFC?s n_cst_help service.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6EEF3A9F-26B2-05DE-6D6D-88DFEE8B4145</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="APP_CD" id="1B861714-098E-86B6-B1EC-BB503DAB0034">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8697E0BF-735F-62A4-291F-D77AD324A380</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD44F84D-A027-4526-F85B-F45A0E7DAEA1" referredColumn="6615514C-20A2-E7BC-01C3-5B1B5A74A522"/>
+</associations>
+</Column>
+<Column name="HELP_CONTROL" id="741E02CB-2768-A4C4-9087-47885BBC242D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C41E10CA-07FE-BD40-CB8D-E4165C578F08</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HELP_TOPIC" id="648D5DB0-B6BF-3C15-92C1-BBA0FBF2DF53">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>32E80AA1-F50C-33B0-68CA-A809F9DE9D0B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E0DB3C2A-9AFB-C0CF-5B39-91A2F45ED6F7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTL_ID" id="75966005-B2CA-41DB-A6FD-E51164C5E073">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7084959F-9521-D7F8-8501-E68F0CF468E1</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UTL_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B2E1B0C-684F-3D30-8733-40EBCA005631" referredColumn="4FC1EF9E-9145-1BB8-8C99-244B4E9DCB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="07ABB0CE-513D-ED09-9BBC-15283A4E86A9" name="PK_UTL_PB_HELP">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C1E442F4-9CA8-5036-7B37-BE3E84236208</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B861714-098E-86B6-B1EC-BB503DAB0034"/>
+<colUsage columnID="741E02CB-2768-A4C4-9087-47885BBC242D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5080C51C-97CD-8AF4-F7DE-9572AC5A3896" name="FK_UTLPBAPP_UTLPBHELP">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B861714-098E-86B6-B1EC-BB503DAB0034"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EC98D784-AA01-0BC6-A923-AF1C90DCBED5" name="FK_UTLPBHLP_MIMDB">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:45 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75966005-B2CA-41DB-A6FD-E51164C5E073"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

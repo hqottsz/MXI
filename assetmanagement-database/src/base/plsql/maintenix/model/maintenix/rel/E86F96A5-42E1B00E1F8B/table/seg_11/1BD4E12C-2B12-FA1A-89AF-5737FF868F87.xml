@@ -1,0 +1,190 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="1BD4E12C-2B12-FA1A-89AF-5737FF868F87" name="FAIL_DEFER_REF_REL_DEF">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:42:15 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FAIL_DEFER_REF_ID" id="A0DD4EF2-E4FC-A3C9-E07A-4EF6E3918D22">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:48:51 UTC</createdTime>
+<commentInRDBMS>FK in FAIL_DEFER_REF referring to the deferral reference under configuration.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27F0D30F-00ED-34E5-7F44-54EDD6E11D29" referredColumn="68DD8E74-06EF-7C52-A4D4-FC1089BEC66D"/>
+</associations>
+</Column>
+<Column name="REL_FAIL_DEFER_REF_ID" id="131F341D-ABF0-9604-EC91-D295552B3BED">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:49:36 UTC</createdTime>
+<commentInRDBMS>FK in FAIL_DEFER_REF referring to the deferral reference that relates to the deferral reference under configuration.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91325721-68CE-9072-FDC0-56875C2504A0" referredColumn="68DD8E74-06EF-7C52-A4D4-FC1089BEC66D"/>
+</associations>
+</Column>
+<Column name="CTRL_DB_ID" id="F0340832-43A3-A3A6-8814-0304CCD676A4">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-11-04 13:05:06 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that owns the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CTRL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_NO" id="81241B41-30F7-9D86-4249-60FCC6C1E4B7">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:54:59 UTC</createdTime>
+<commentInRDBMS>A number incremented each time the record is modified.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATION_DB_ID" id="0FA7710D-3E3B-2523-2EBF-689CEC65027F">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:54:59 UTC</createdTime>
+<commentInRDBMS>The identifier of the database that inserted the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CREATION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="3784CD18-781E-290B-30F0-408A8F8ECF93">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:54:59 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6C8C816F-D7C1-2225-5ADB-C77AA47BB398" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="576312F0-ABB1-B7B7-555C-6788A4B9971A">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:54:59 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="E0AF0206-514B-0A7B-8F11-E550D9C7C2AA">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:54:59 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="4186CB47-A6CE-D679-F1C0-331526BBC298">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:54:59 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="38FD039B-C29F-BAC8-A852-FF341FCE5FE5">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:54:59 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="41E9CE43-DCA5-EB53-8A98-F0E189C428F2" name="PK_FAIL_DEFER_REF_REL_DEF">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:42:15 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0DD4EF2-E4FC-A3C9-E07A-4EF6E3918D22"/>
+<colUsage columnID="131F341D-ABF0-9604-EC91-D295552B3BED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E06583F8-5C28-3414-F89A-595DAA681CBB" name="FK_REL_FAILDEFERREF_ORIGIN">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:42:15 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0DD4EF2-E4FC-A3C9-E07A-4EF6E3918D22"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="031A4BFC-AEA5-536F-5A0B-B856DACF6B5F" name="FK_REL_FAILDEFERREF">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:42:15 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="131F341D-ABF0-9604-EC91-D295552B3BED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30AEAE9C-64F8-56A6-39CD-B8DC9ECDB748" name="FK_REL_MIMRSTAT">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-12 19:37:48 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3784CD18-781E-290B-30F0-408A8F8ECF93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

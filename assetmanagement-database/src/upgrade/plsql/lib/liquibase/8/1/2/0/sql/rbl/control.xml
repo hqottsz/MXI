@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+	<!--  -->
+	<!--  schema -->
+	<include file="schema/opr_rbl_flight_disruption.sql" relativeToChangelogFile="true"/>
+	<include file="schema/opr_rbl_flight.sql" relativeToChangelogFile="true"/>
+
+
+	<!--  plsql -->
+	<include file="plsql/opr_rbl_utility_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_utility_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_rbl_eng_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_eng_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_report_period_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_report_period_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_fleet_summary_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_fleet_summary_pkg_body.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="plsql/opr_rbl_pirepmarep_pkg_spec.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_pirepmarep_pkg_body.sql" relativeToChangelogFile="true"/>
+	<include file="plsql/opr_rbl_comp_rmvl_pkg_body.sql" relativeToChangelogFile="true"/>
+
+	<!--  view -->
+	<include file="view/aopr_hist_logfaults_basic_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_ata_delay_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_station_delay_v1.sql" relativeToChangelogFile="true"/>
+	<include file="view/aopr_aircraft_delay_v1.sql" relativeToChangelogFile="true"/>
+
+
+	<!--  mview -->
+	<include file="mview/01-opr_rbl_delay_mv.sql" relativeToChangelogFile="true"/>
+	<include file="mview/02-opr_rbl_monthly_usage_mv.sql" relativeToChangelogFile="true"/>
+	<include file="mview/03-opr_rbl_monthly_incident_mv.sql" relativeToChangelogFile="true"/>
+	<include file="mview/04-opr_rbl_monthly_delay_mv.sql" relativeToChangelogFile="true"/>
+	<include file="mview/05-opr_rbl_monthly_dispatch_mv.sql" relativeToChangelogFile="true"/>
+	<include file="mview/06-aopr_reliability_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/07-aopr_tdrl_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/08-aopr_service_difficulty_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/09-aopr_station_delay_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/10-aopr_technical_delay_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/11-aopr_aircraft_delay_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/12-aopr_ata_delay_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/13-aopr_dispatch_metric_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/14-aopr_dispatch_reliability_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/15-aopr_monthly_operator_usage_v1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.acor_rbl_comp_ata_lower_fh_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_12mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_24mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_6mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_curr_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_q1_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_q2_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_q3_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_flt_q4_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_comp_rmvl_fleet_ucl_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_comp_rmvl_fleet_mv1.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="mview/50.0.aopr_rbl_eng_usage_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_delay_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_delay_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_indicator_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_indicator_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_qty_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_qty_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_shopvisit_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_shopvisit_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_urmvl_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_urmvl_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_eng_usage_mv1.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+	<include file="mview/50.0.aopr_rbl_fault_fleet_ucl_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.0.aopr_rbl_fault_tail_ucl_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_fault_fleet_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_fault_fleet_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_fault_mon_mv1.sql" relativeToChangelogFile="true"/>
+	<include file="mview/50.1.aopr_rbl_fault_mv1.sql" relativeToChangelogFile="true"/>
+	<!--  -->
+
+
+	<!--  data -->
+	<include file="data/opr_report_mview.sql" relativeToChangelogFile="true"/>
+	<include file="data/opr_rbl_delay_category.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

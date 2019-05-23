@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+   <!--root inventory-->
+    <inv_inv
+		inv_no_db_id = "4650"
+		inv_no_id = "123456"
+		alt_id = "9CFBA066DA9011E587B1FB2D7B2472DF"
+        part_no_db_id = "4650"
+        part_no_id = "1234"
+		inv_class_db_id = "0"
+        h_inv_no_db_id = "4650"
+        h_inv_no_id = "123456"
+	/>
+
+    <!--work package against the root inventory-->
+    <sched_stask
+      sched_db_id = "4650"
+      sched_id = "1234567"
+      alt_id = "E8BA890ED5F89F718BE39F34F40AA511"
+      barcode_sdesc = "WORKPACKAGE"
+	  task_class_db_id = '0'
+      task_class_cd = "RO"
+	  main_inv_no_db_id = "4650"
+	  main_inv_no_id = "123456"
+    />
+
+    <evt_event
+       event_db_id = "4650"
+       event_id  = "1234567"
+       event_status_db_id = "0"
+       event_status_cd ="ACTV"
+       h_event_db_id = "4650"
+       h_event_id = "1234567"
+	   rstat_cd = "0"
+    />
+
+	<!--task against the root inventory-->
+	<sched_stask
+      sched_db_id = "4650"
+      sched_id = "12345678"
+      alt_id = "1E8BA890ED5F89FE39F34F40AA51718B"
+      barcode_sdesc = "TASKONEBARCODE"
+	  task_class_db_id = '0'
+      task_class_cd = "INSP"
+      task_priority_cd = "HIGH"
+	  main_inv_no_db_id = "4650"
+	  main_inv_no_id = "123456"
+    />
+
+    <evt_event
+       event_db_id = "4650"
+       event_id  = "12345678"
+       event_status_db_id = "0"
+       event_status_cd ="ACTV"
+       h_event_db_id = "4650"
+       h_event_id = "1234567"
+	   rstat_cd = "0"
+    />
+
+    <!--part requirement-->
+    <sched_part
+      sched_db_id = "4650"
+      sched_id = "139570"
+      sched_part_id = "1"
+      alt_id = "24F5DD0D311F11E899102104BC642F5F"
+      sched_bom_part_db_id = "4650"
+      sched_bom_part_id = "33221"
+      assmbl_db_id = "4650"
+      assmbl_cd = "A320"
+      assmbl_bom_id = "1234"
+      assmbl_pos_id = "1"
+    />
+
+    <eqp_bom_part
+      bom_part_db_id = "4650"
+      bom_part_id = "33221"
+      assmbl_db_id = "4650"
+      assmbl_cd = "A320"
+      assmbl_bom_id = "1234"
+    />
+
+    <eqp_assmbl_bom
+      assmbl_db_id = "4650"
+      assmbl_cd = "A320"
+      assmbl_bom_id = "1234"
+      alt_id = "8312D3CE1ABA4FF396E629AA4FA83037"
+      assmbl_bom_cd = "72-00-00"
+    />
+
+    <eqp_assmbl_pos
+      assmbl_db_id = "4650"
+      assmbl_cd = "A320"
+      assmbl_bom_id = "1234"
+      assmbl_pos_id = "1"
+      alt_id = "D213CA80B16A4F6EB1CB21933AD7304B"
+      eqp_pos_cd = "1.1"
+    />
+
+    <!--installed part 1 of the part requirement-->
+    <sched_inst_part
+      sched_db_id = "4650"
+      sched_id = "139570"
+      sched_inst_part_id = "1"
+      sched_part_id = "1"
+      serial_no_oem = "100"
+      inst_qt = "1"
+      part_no_db_id = "4650"
+      part_no_id = "21360"
+    />
+
+    <!--installed part 2 of the part requirement-->
+    <sched_inst_part
+      sched_db_id = "4650"
+      sched_id = "139570"
+      sched_inst_part_id = "2"
+      sched_part_id = "1"
+      serial_no_oem = "200"
+      inst_qt = "1"
+      part_no_db_id = "4650"
+      part_no_id = "21399"
+    />
+
+    <!--old installed part 1-->
+    <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "21360"
+      alt_id = "31191D90095A41628E7B6C0AF98A9BF2"
+    />
+
+    <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "33221"
+      part_no_db_id = "4650"
+      part_no_id = "21360"
+    />
+
+    <!--old installed part 2-->
+    <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "21399"
+      alt_id = "99191D90095A41628E7B6C0AF98A9BF9"
+    />
+
+    <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "33221"
+      part_no_db_id = "4650"
+      part_no_id = "21399"
+    />
+
+    <!--new installed part-->
+    <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "21361"
+      alt_id = "41191D90095A41628E7B6C0AF98A9BF3"
+    />
+
+    <eqp_part_baseline
+      bom_part_db_id = "4650"
+      bom_part_id = "33221"
+      part_no_db_id = "4650"
+      part_no_id = "21361"
+    />
+
+    <!--incompatible part-->
+    <eqp_part_no
+      part_no_db_id = "4650"
+      part_no_id = "21362"
+      alt_id = "51191D90095A41628E7B6C0AF98A9BF4"
+    />
+
+	<!--organization-->
+	<org_org
+		ORG_DB_ID = "4650"
+		ORG_ID = "100006"
+		ALT_ID = "F49D9445729911E7B349CF53298AE07C"
+		ORG_CD = "MXI"
+		CODE_MDESC = "MXI"
+		ORG_SDESC = "Mxi Technologies"
+		ORG_TYPE_CD = "ADMIN"
+	/>
+
+	<!--unauthorized user-->
+	<org_hr
+		ALT_ID = "4AF698E4E6E6455C88AFE97B391DC58D"
+		HR_DB_ID = "4650"
+		HR_ID = "100"
+		USER_ID = "1"
+	/>
+
+	<org_org_hr
+		ORG_DB_ID = "4650"
+		ORG_ID = "100006"
+		HR_DB_ID = "4650"
+		HR_ID = "100"
+	/>
+
+	<utl_user
+		USER_ID = "1"
+		USERNAME = "unauthorized"
+		FIRST_NAME = "unauthorized"
+		ALT_ID = "A054FC32D41C4DDBBC37D76B3E6412F1"
+	/>
+
+	<utl_role
+		ROLE_ID = "101"
+	/>
+
+	<utl_user_role
+		ROLE_ID = "101"
+		USER_ID = "1"
+	/>
+
+	<utl_action_role_parm
+		PARM_NAME = "API_TASK_PARM"
+		PARM_VALUE = "FALSE"
+		ROLE_ID="101"
+	/>
+
+	<!--authorized user-->
+	<org_hr
+		ALT_ID = "4AF698E4E6E6455C88AFE97B391DC58F"
+		HR_DB_ID = "4650"
+		HR_ID = "101"
+		USER_ID = "2"
+	/>
+
+    <org_org_hr
+		ORG_DB_ID = "4650"
+		ORG_ID = "100006"
+		HR_DB_ID = "4650"
+		HR_ID = "101"
+	/>
+
+	<utl_user
+		USER_ID = "2"
+		USERNAME = "authorized"
+		FIRST_NAME = "authorized"
+		ALT_ID = "A054FC32D41C4DDBBC37D76B3E6412F2"
+	/>
+
+	<utl_role
+		ROLE_ID = "102"
+	/>
+
+	<utl_user_role
+		ROLE_ID = "102"
+		USER_ID = "2"
+	/>
+
+	<utl_action_role_parm
+		PARM_NAME = "API_TASK_PARM"
+		PARM_VALUE = "TRUE"
+		ROLE_ID="102"
+	/>
+
+</dataset>

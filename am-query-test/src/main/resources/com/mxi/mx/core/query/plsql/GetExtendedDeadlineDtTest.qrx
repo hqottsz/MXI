@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>GetExtendedDeadlineDtTest</name>
+   <description>
+   </description>
+   <sql><![CDATA[
+select
+   data_type,
+   deadline_dt,
+   delta_qt,
+   to_char(
+      getextendeddeadlinedt(
+         delta_qt, --delta
+         to_date(deadline_dt,'yyyy-mm-dd HH24:MI:SS'), --date
+         'CA', --domain type
+         data_type, --data type
+         multiplier --multiplier
+      ),
+      'yyyy-mm-dd HH24:MI:SS'
+   ) as actual_dt,
+   expected_dt,
+   DECODE( to_char(
+         getextendeddeadlinedt(
+            delta_qt, --delta
+            to_date(deadline_dt,'yyyy-mm-dd HH24:MI:SS'), --date
+            'CA', --domain type
+            data_type, --data type
+            multiplier --multiplier
+         ),
+         'yyyy-mm-dd HH24:MI:SS'
+      ),
+      expected_dt,
+      'PASS',
+      to_date(deadline_dt,'yyyy-mm-dd HH24:MI:SS') || ' + ' || delta_qt || ' data_type; ' ||
+         'Expected: ' || expected_dt || ', but was: ' ||
+         to_char(
+            getextendeddeadlinedt(
+               delta_qt, --delta
+               to_date(deadline_dt,'yyyy-mm-dd HH24:MI:SS'), --date
+               'CA', --domain type
+               data_type, --data type
+               multiplier --multiplier
+            ),
+            'yyyy-mm-dd HH24:MI:SS'
+         )
+   ) as result
+from
+   (
+   --CHR
+   select
+      'CHR' as data_type,
+      '2012-01-01 01:00:00' as deadline_dt,
+      5 as delta_qt,
+      0.041667 as multiplier,
+      '2012-01-01 06:00:00' as expected_dt
+   from dual
+   union
+   select
+      'CHR' as data_type,
+      '2012-01-01 01:00:00' as deadline_dt,
+      5.25 as delta_qt,
+      0.041667 as multiplier,
+      '2012-01-01 06:15:00' as expected_dt
+   from dual
+   -- CDY
+   union
+   select
+      'CDY' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1 as delta_qt,
+      1 as multiplier,
+      '2012-01-02 23:59:59' as expected_dt
+   from dual
+   union
+   select
+      'CDY' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1.7 as delta_qt,
+      1 as multiplier,
+      '2012-01-02 23:59:59' as expected_dt
+   from dual
+   -- CWK
+   union
+   select
+      'CWK' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1 as delta_qt,
+      7 as multiplier,
+      '2012-01-08 23:59:59' as expected_dt
+   from dual
+   union
+   select
+      'CWK' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1.29 as delta_qt,
+      7 as multiplier,
+      '2012-01-10 23:59:59' as expected_dt
+   from dual
+   -- CMON
+   union
+   select
+      'CMON' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1 as delta_qt,
+      30 as multiplier,
+      '2012-02-01 23:59:59' as expected_dt
+   from dual
+   union
+   select
+      'CMON' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1.07 as delta_qt,
+      30 as multiplier,
+      '2012-02-03 23:59:59' as expected_dt
+   from dual
+   -- CLMON
+   union
+   select
+      'CLMON' as data_type,
+      '2012-01-31 23:59:59' as deadline_dt,
+      1 as delta_qt,
+      30 as multiplier,
+      '2012-02-29 23:59:59' as expected_dt
+   from dual
+   union
+   select
+      'CLMON' as data_type,
+      '2012-01-31 23:59:59' as deadline_dt,
+      1.07 as delta_qt,
+      30 as multiplier,
+      '2012-03-02 23:59:59' as expected_dt
+   from dual
+   -- CYR
+   union
+   select
+      'CYR' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1 as delta_qt,
+      365 as multiplier,
+      '2013-01-01 23:59:59' as expected_dt
+   from dual
+   union
+   select
+      'CYR' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1.006 as delta_qt,
+      365 as multiplier,
+      '2013-01-03 23:59:59' as expected_dt
+   from dual
+   union
+   select
+      'CYR' as data_type,
+      '2012-01-01 23:59:59' as deadline_dt,
+      1.506 as delta_qt,
+      365 as multiplier,
+      '2013-07-03 23:59:59' as expected_dt
+   from dual
+   )
+]]></sql>
+</sql-statement>

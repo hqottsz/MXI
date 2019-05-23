@@ -1,0 +1,125 @@
+import com.mxi.gradle.plugins.db.Environment;
+import com.mxi.gradle.plugins.db.task.ExportDatabase;
+
+apply plugin: 'mxenvironment'
+
+configurations {
+   liquibase
+   database {
+      transitive = false;
+      extendsFrom liquibase
+   }
+   buildinfoproperties
+}
+
+dependencies {
+   liquibaseDeployer "com.mxi.idk:database-deployer-cli:${idkVersion}"
+   liquibase "com.mxi.idk:dbtools-db:${idkVersion}"
+
+   database project(path: ':assetmanagement-database', configuration: 'database')
+   buildinfoproperties project( path: ':installers:buildinfo', configuration: 'buildinfoproperties' )
+}
+
+environments {
+   sas {
+      database {
+         install {
+            datapump {
+               sourceNetworkLinkHost='RDSRVSOLDB.OLYMPUS.MXI.COM'
+               sourceNetworkLinkPort='1521'
+               sourceNetworkLinkService='OR01'
+               sourceNetworkLinkUsername = "mx${sasPrevProductLabelCodeName}_sas_master".toString()
+               sourceNetworkLinkPassword = "sas${sasPrevProductLabelCodeName}_master".toString()
+            }
+
+            // Pre-upgrade hook - Run the pre-upgrade script (in the dev-master-database component) to
+            // clean up data issues that were imported that would cause the upgrade scripts to fail.
+            plsqlExec {
+               workingDirectory = file("${projectDir}\\..\\dev-master-database\\src\\master\\plsql\\preUpgrade");
+               controlFile = file("${workingDirectory}\\preUpgradeCleanUp.sql");
+            }
+
+            liquibase {
+               configuration = configurations.database;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+         }
+      }
+   }
+}
+
+// by default, exportSasDb doesn't depend on createSasDb; however, we don't neccesarily want to explicitly
+// depend on it either, as it's plausible a user might want to export manually, or following other changes.
+tasks.exportSasDb {
+   mustRunAfter createSasDb
+   onlyIf { isReleaseBuild }
+   exportFileName = 'SAS.DMPX'
+   logFileName = 'SAS-EXPORT-DP.LOG'
+}
+
+// On account of above, create a task which will implicitly create and export the SAS DB
+task createSasDbDmpx {
+   dependsOn createSasDb, exportSasDb
+   finalizedBy dropSasDb
+   onlyIf { isReleaseBuild }
+
+   ext.datapumpFile = exportSasDb.getDatapumpFile()
+   ext.datapumpLog = exportSasDb.getLogFile()
+
+   // Use inputs from exportSasDb, as well as the DMPX file as an output; copied log file is already an output
+   inputs.files( exportSasDb.inputs.files )
+   outputs.file( datapumpFile )
+   outputs.file( datapumpLog )
+}
+
+tasks.createSasDb {
+   onlyIf { isReleaseBuild }
+   outputs.upToDateWhen { project.gradle.taskGraph.hasTask( createSasDbDmpx ) && exportSasDb.outputs.upToDateSpec.isSatisfiedBy( exportSasDb ) }
+}
+
+task zipSasDb(type: Zip) {
+   dependsOn createSasDbDmpx, configurations.buildinfoproperties
+   onlyIf { isReleaseBuild }
+   from( createSasDbDmpx.datapumpFile )
+   from( configurations.buildinfoproperties )
+}
+
+tasks.dropSasDb {
+   shouldRunAfter zipSasDb
+   onlyIf { isReleaseBuild }
+}
+
+artifacts {
+   // The artifact below is used only when publishing deliverables - developer builds don't need to trigger this.
+   if ( isDeliverablesBuild ) {
+      'default'( zipSasDb ) { builtBy zipSasDb }
+   }
+}
+
+task exportSasBackup( type: ExportDatabase ) {
+   databaseUsername = "mx${sasPrevProductLabelCodeName}_sas_master".toString()
+   databasePassword = "sas${sasPrevProductLabelCodeName}_master".toString()
+   host = 'RDSRVSOLDB.OLYMPUS.MXI.COM'
+   port = 1521
+   service = 'OR01'
+   systemUsername = 'system'
+   systemPassword = project.hasProperty( 'sasbackSystemPassword' ) ? sasbackSystemPassword : 'password'
+   datapumpDirectory = String.format( "%s_%s_%s", Environment.getHostname(), Environment.getUsername(), 'sasback' )
+   datapumpLocalPath = Environment.getDatapumpLocalPath( project, 'sasback' )
+   datapumpRemotePath = Environment.getDatapumpRemotePath( project, 'sasback' )
+   datapumpBuildDirectory = file( "${buildDir}/datapump" )
+   exportFileName = "SAS-${sasPrevProductLabelCodeName.toUpperCase()}.DMPX"
+   logFileName = "SAS-${sasPrevProductLabelCodeName.toUpperCase()}-EXPORT-DP.LOG"
+}
+
+task zipSasBackup(type: Zip) {
+   dependsOn exportSasBackup
+   appendix = "${sasPrevProductLabelCodeName}"
+   from( exportSasBackup.datapumpFile )
+}

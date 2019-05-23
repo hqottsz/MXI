@@ -1,0 +1,152 @@
+<dataset>
+
+   <!-- ==================== -->
+
+   <!-- NSV Off-Parent Task Defn -->
+   <!-- (TIAF_TASK_TASK_FLAG_INSRT trigger adds row to task_task_flag) -->
+   <task_task
+      task_db_id = "4650"
+      task_id = "1"
+      task_must_remove_db_id = "0"
+      task_must_remove_cd    = "OFFPARENT"
+      />
+      
+   <!-- Inventory of CA_OVERDUE_OFFPARENT_NSV_TASK -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+      rstat_cd = "0"
+      />
+
+   <!-- NSV Task - CA_OVERDUE_OFFPARENT_NSV_TASK -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "11"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+      rstat_cd = "0"
+      />
+   <!-- NSV Task driving deadline view (vw_drv_deadline) -->
+   <!--  (data_type = CDY) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "11"
+      data_type_db_id = "0"
+      data_type_id = "21"
+      deviation_qt = "0"
+      usage_rem_qt = "0"
+      sched_dead_dt = "01-JAN-2012 12:00"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      />
+
+   <!-- Inventory of US_OVERDUE_OFFPARENT_NSV_TASK -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "2"
+      rstat_cd = "0"
+      />
+
+   <!-- NSV Task - US_OVERDUE_OFFPARENT_NSV_TASK -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "12"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "2"
+      task_db_id = "4650"
+      task_id = "1"
+      rstat_cd = "0"
+      />
+   <!-- NSV Task driving deadline view (vw_drv_deadline) -->
+   <!--  (data_type = CYCLES) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "12"
+      data_type_db_id = "0"
+      data_type_id = "10"
+      deviation_qt = "0"
+      usage_rem_qt = "-20"
+      sched_dead_dt = "21-DEC-2012 11:11"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      />
+
+   <!-- ==================== -->
+
+   <!-- NSV Off-Wing Task Defn -->
+   <!-- (TIAF_TASK_TASK_FLAG_INSRT trigger adds row to task_task_flag) -->
+   <task_task
+      task_db_id = "4650"
+      task_id = "3"
+      task_must_remove_db_id = "0"
+      task_must_remove_cd    = "OFFWING"
+      />
+      
+   <!-- Inventory tree of CA_OVERDUE_OFFWING_NSV_TASK -->
+   <!-- target inv -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "3"
+      rstat_cd = "0"
+      />
+   <!-- child inv -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "4"
+      nh_inv_no_db_id = "4650"
+      nh_inv_no_id = "3"
+      rstat_cd = "0"
+      />
+
+   <!-- NSV Task - INVS_CA_OVERDUE_OFFWING_NSV_TASK -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "31"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "3"
+      task_db_id = "4650"
+      task_id = "3"
+      rstat_cd = "0"
+      />
+   <!-- NSV Task driving deadline view (vw_drv_deadline) -->
+   <!--  (data_type = CDY) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "31"
+      data_type_db_id = "0"
+      data_type_id = "21"
+      deviation_qt = "0"
+      usage_rem_qt = "0"
+      sched_dead_dt = "01-JAN-2012 12:00"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      />
+
+   <!-- NSV Task - CHILD_INVS_CA_OVERDUE_OFFWING_NSV_TASK -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "32"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "4"
+      task_db_id = "4650"
+      task_id = "3"
+      rstat_cd = "0"
+      />
+   <!-- NSV Task driving deadline view (vw_drv_deadline) -->
+   <!--  (data_type = CDY) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "32"
+      data_type_db_id = "0"
+      data_type_id = "21"
+      deviation_qt = "0"
+      usage_rem_qt = "0"
+      sched_dead_dt = "01-JAN-2012 12:00"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      />
+
+
+</dataset>

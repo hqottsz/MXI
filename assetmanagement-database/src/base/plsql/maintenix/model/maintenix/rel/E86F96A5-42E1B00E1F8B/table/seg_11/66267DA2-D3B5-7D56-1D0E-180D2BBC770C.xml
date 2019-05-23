@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="66267DA2-D3B5-7D56-1D0E-180D2BBC770C" name="UTL_CACHE">
+<createdBy>madeca</createdBy>
+<createdTime>2017-12-15 21:35:30 UTC</createdTime>
+<commentInRDBMS>defines revision time against tables which are cached on the application server</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_827</ordsAlias>
+<abbreviation>UTL_CACHE</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ROOT_NODE_NAME" id="4FA0796E-9186-9FD1-6C74-04317EF11ADA">
+<createdBy>madeca</createdBy>
+<createdTime>2017-12-15 21:37:31 UTC</createdTime>
+<commentInRDBMS>the root cache node name as defined in CacheFactory</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NODE_NAME" id="3CB3B31C-CE48-E468-35A2-DE898FFA444D">
+<createdBy>madeca</createdBy>
+<createdTime>2017-12-15 21:37:51 UTC</createdTime>
+<commentInRDBMS>the cache node name as defined in CacheFactory</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28737A0C-76BA-1B96-9E4B-8D84E50BA08C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAST_MODIFIED_DT" id="7B9E5A03-8208-0581-9B3D-A48C7BBEAC54">
+<createdBy>madeca</createdBy>
+<createdTime>2017-12-15 21:38:05 UTC</createdTime>
+<commentInRDBMS>the last modification date for the data</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>103596BA-5012-01AD-E60F-379439CB7C46</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4879CABC-BBA3-40D8-06E2-87B51493A789" name="IX_UTLCACHE_NODE">
+<createdBy>madeca</createdBy>
+<createdTime>2017-12-16 20:25:20 UTC</createdTime>
+<commentInRDBMS>Unique Constraint and index for root node name and node name combinations</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FA0796E-9186-9FD1-6C74-04317EF11ADA"/>
+<colUsage columnID="3CB3B31C-CE48-E468-35A2-DE898FFA444D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

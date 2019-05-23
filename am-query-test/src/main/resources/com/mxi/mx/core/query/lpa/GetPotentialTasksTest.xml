@@ -1,0 +1,244 @@
+ <dataset>
+
+  <!--****************-->
+   <!-- AIRCRAFT SETUP -->
+   <!--****************-->
+
+ <inv_inv
+         inv_no_db_id = "4650"
+         inv_no_id = "100"
+         inv_no_sdesc = "Aircraft"
+         inv_class_cd = "ACFT"
+         inv_class_db_id = "0"
+         authority_db_id = "4650"
+         authority_id = "1"
+         h_inv_no_db_id = "4650"
+         h_inv_no_id = "100"
+         locked_bool = "0"
+         assmbl_db_id = "4650"
+         assmbl_cd = "ASCD" />
+   <inv_ac_reg
+         inv_no_db_id = "4650"
+         inv_no_id = "100"
+         prevent_lpa_bool = "0" />
+
+   <!--*******************-->
+   <!-- CHECK SETUP 		  -->
+   <!--*******************-->
+   <evt_event
+         event_db_id = "4650"
+         event_id = "100"
+         h_event_db_id = "4650"
+         h_event_id = "100"
+         event_status_db_id = "0"
+         event_status_cd = "ACTV"
+         sched_priority_db_id = "0"
+         sched_priority_cd = "NONE"
+         hist_bool = "0"
+         sched_start_gdt = "15-MAY-2007 01:00" />
+   <sched_stask
+         sched_db_id = "4650"
+         sched_id = "100"
+         task_class_db_id = "0"
+         task_class_cd = "CHECK"
+         heavy_bool = "0"
+         barcode_sdesc = "CHECK"
+         task_priority_db_id = "0"
+         task_priority_cd = "LOW"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "100" />
+
+
+   <!--*************************-->
+   <!-- TASK SETUP				  -->
+   <!--*************************-->
+
+   <!-- Task with no deadline -->
+
+   <evt_event
+         event_db_id = "4650"
+         event_id = "101"
+         h_event_db_id = "4650"
+         h_event_id = "100"
+         nh_event_db_id = "4650"
+         nh_event_id = "100"
+         event_status_db_id = "0"
+         event_status_cd = "ACTV"
+         event_sdesc = "Task 2 - no deadline"
+         sched_priority_db_id = "0"
+         sched_priority_cd = "NONE"
+         hist_bool = "0" />
+   <sched_stask
+         sched_db_id = "4650"
+         sched_id = "101"
+         heavy_bool = "0"
+         task_class_db_id = "0"
+         task_class_cd = "REQ"
+         task_priority_db_id = "4650"
+         task_priority_cd = "LOW"
+         barcode_sdesc = "ASSIGNEDTASK101"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "100"/>
+
+   <!-- Task due date is greater than the Scheduling Window	-->
+
+   <evt_event
+         event_db_id = "4650"
+         event_id = "102"
+         h_event_db_id = "4650"
+         h_event_id = "100"
+         nh_event_db_id = "4650"
+         nh_event_id = "100"
+         event_status_db_id = "0"
+         event_status_cd = "ACTV"
+         event_sdesc = "Task 3 - due date is greater than the Scheduling Window"
+         sched_priority_db_id = "0"
+         sched_priority_cd = "NONE"
+         hist_bool = "0"/>
+   <sched_stask
+         sched_db_id = "4650"
+         sched_id = "102"
+         heavy_bool = "0"
+         task_class_db_id = "0"
+         task_class_cd = "REQ"
+         task_priority_db_id = "4650"
+         task_priority_cd = "LOW"
+         barcode_sdesc = "ASSIGNEDTASK102"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "100" />
+   <evt_sched_dead
+         event_db_id = "4650"
+         event_id = "102"
+         sched_driver_bool = "1"
+         sched_dead_dt = "25-MAY-2007 21:30"
+         data_type_db_id = "0"
+         data_type_id = "21" />
+
+   <!-- Loose task has no deadline -->
+
+   <evt_event
+         event_db_id = "4650"
+         event_id = "400"
+         h_event_db_id = "4650"
+         h_event_id = "400"
+         event_status_db_id = "0"
+         event_status_cd = "ACTV"
+         event_sdesc = "Task 4 - Loose task has no deadline"
+         sched_priority_db_id = "0"
+         sched_priority_cd = "NONE"
+         hist_bool = "0" />
+   <sched_stask
+         sched_db_id = "4650"
+         sched_id = "400"
+         heavy_bool = "0"
+         task_class_db_id = "0"
+         task_class_cd = "REQ"
+         task_priority_db_id = "4650"
+         task_priority_cd = "LOW"
+         barcode_sdesc = "LOOSETASK"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "100" />
+
+   <!-- Loose task with Start Date / Current Usage falls within a task yield -->
+
+   <evt_event
+         event_db_id = "4650"
+         event_id = "500"
+         h_event_db_id = "4650"
+         h_event_id = "500"
+         event_status_db_id = "0"
+         event_status_cd = "ACTV"
+         event_sdesc = "Task 5 - Loose task with Start Date / Current Usage falls within a task yield"
+         sched_priority_db_id = "0"
+         sched_priority_cd = "NONE"
+         hist_bool = "0" />
+   <sched_stask
+         sched_db_id = "4650"
+         sched_id = "500"
+         heavy_bool = "0"
+         task_class_db_id = "0"
+         task_class_cd = "REQ"
+         task_priority_db_id = "4650"
+         task_priority_cd = "LOW"
+         barcode_sdesc = "LOOSETASK"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "100"/>
+
+   <evt_sched_dead
+         event_db_id = "4650"
+         event_id = "500"
+         sched_driver_bool = "1"
+         sched_dead_dt = "26-MAY-2007 19:45"
+         data_type_db_id = "0"
+         data_type_id = "23"
+         interval_qt = "15000" />
+
+   <!-- The following two tasks (sched_id = 600, 700) should not be returned by query -->
+
+   <evt_event
+         event_db_id = "4650"
+         event_id = "600"
+         h_event_db_id = "4650"
+         h_event_id = "600"
+         event_status_db_id = "0"
+         event_status_cd = "IN WORK"
+         event_sdesc = "Task 6 - Loose task has no deadline"
+         sched_priority_db_id = "0"
+         sched_priority_cd = "NONE"
+         hist_bool = "0" />
+   <sched_stask
+         sched_db_id = "4650"
+         sched_id = "600"
+         heavy_bool = "0"
+         task_class_db_id = "0"
+         task_class_cd = "ADHOC"
+         task_priority_db_id = "4650"
+         task_priority_cd = "LOW"
+         barcode_sdesc = "LOOSETASK3"
+         prevent_lpa_bool = "0"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "100" />
+
+   <sched_labour
+         labour_db_id = "4650" labour_id = "1000"
+         sched_db_id = "4650" sched_id = "600"
+         labour_stage_db_id = "0" labour_stage_cd = "IN WORK"
+         />
+
+   <evt_event
+         event_db_id = "4650"
+         event_id = "700"
+         h_event_db_id = "4650"
+         h_event_id = "700"
+         event_status_db_id = "0"
+         event_status_cd = "ACTV"
+         event_sdesc = "Task 7 - Loose task has no deadline"
+         sched_priority_db_id = "0"
+         sched_priority_cd = "NONE"
+         hist_bool = "0" />
+   <sched_stask
+         sched_db_id = "4650"
+         sched_id = "700"
+         heavy_bool = "0"
+         task_class_db_id = "0"
+         task_class_cd = "ADHOC"
+         task_priority_db_id = "4650"
+         task_priority_cd = "LOW"
+         barcode_sdesc = "LOOSETASK4"
+         prevent_lpa_bool = "0"
+         lrp_bool = "1"
+         main_inv_no_db_id = "4650"
+         main_inv_no_id = "100" />
+
+   <ref_task_priority
+         task_priority_db_id = "4650" task_priority_cd = "LOW"
+         task_priority_ord = "0" />
+   <ref_task_priority
+         task_priority_db_id = "4650" task_priority_cd = "HIGH"
+         task_priority_ord = "1" />
+</dataset>

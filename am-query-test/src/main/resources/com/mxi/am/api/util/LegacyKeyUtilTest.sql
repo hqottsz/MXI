@@ -1,0 +1,1 @@
+INSERT INTO sd_fault(fault_db_id, fault_id, alt_id) VALUES (1, 4651, '59720662DDEF479DAA9038BB9B10B879');

@@ -1,0 +1,177 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="DD5E5C1C-E0B1-0BB1-FDBA-A2A2F0F080B3" name="AEROBUY_INVOICE_CHARGES">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:45:34 UTC</createdTime>
+<comment>Integration specific information relating to invoice charges</comment>
+<commentInRDBMS>Integration specific information relating to invoice charges</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_818</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_INVOICE_ALT_ID" id="B5E935B9-608A-88A0-23AB-411CEB7D4C31">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:46:21 UTC</createdTime>
+<commentInRDBMS>Primary key is the ALT_ID of the PO_INVOICE</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFC8984E-836E-9B14-8298-06787BADCDFE" referredColumn="9403E75F-9E3F-226E-74E8-87AEB08F2D68"/>
+</associations>
+</Column>
+<Column name="PACKING" id="BAC962D2-4F9B-7B65-955A-E066C848738B">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:46:34 UTC</createdTime>
+<commentInRDBMS>The Packing Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SETUP" id="E7C32788-4F10-C838-8BCB-0A2E4A784A40">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:46:46 UTC</createdTime>
+<commentInRDBMS>The Setup/Cutting Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIE_CHARGE" id="613EE352-47C6-38BA-50EC-5C497E3B6687">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:47:10 UTC</createdTime>
+<commentInRDBMS>The Die Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DOCUMENTATION" id="1F4FB1B7-7DDF-59D6-B31B-16B0751B24BA">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:47:10 UTC</createdTime>
+<commentInRDBMS>The Documentation Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RETURN_CONTAINER" id="E171CF36-B57A-4767-A171-227EDEEE0373">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:47:54 UTC</createdTime>
+<commentInRDBMS>The Returnable Container Charge (refundable) of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSPORTATION" id="93BA6F0B-151C-A35A-2CF6-81E17247ABF2">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:47:54 UTC</createdTime>
+<commentInRDBMS>The Transportation Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MISCELLANEOUS" id="B9F47B38-D58A-07C5-E119-2F574229E695">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:47:54 UTC</createdTime>
+<commentInRDBMS>The Miscellaneous Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FEDERAL_EXCISE" id="F23D3E3B-EAED-0461-0B27-903CC4DF7B58">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:47:54 UTC</createdTime>
+<commentInRDBMS>The Federal Excise Tax Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FEES_MARKUP" id="593C5447-9CE9-3DBF-06F3-2540C18C5D53">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:47:54 UTC</createdTime>
+<commentInRDBMS>The Fees/Markup Charge of the invoice</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C8306839-90EC-F6BC-4D34-C63143D336BE" name="PK_AEROBUY_INVOICE_CHARGES">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:46:21 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5E935B9-608A-88A0-23AB-411CEB7D4C31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A04C943-21CB-1CD4-6140-B9B0CB4ECD31" name="FK_AEB_INV_CHARGE_AEB_INV_INFO">
+<createdBy>ksprung</createdBy>
+<createdTime>2017-08-28 20:48:26 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5E935B9-608A-88A0-23AB-411CEB7D4C31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

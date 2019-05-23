@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B1A5340C-CAFC-52E5-154C-47DB54D0BD51" name="ASB_TRANSACTION_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>70A1CBCF-1B96-7156-408F-94634DC6D0B2</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRANSACTION_ID" id="753C6D5D-19B1-36B3-F564-1DAC4F905B3A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The unique identifier for the transaction</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D96482A6-B4B1-928F-193A-43F1D643FAC7</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONVERSATION_ID" id="D1A81FA0-9995-605E-7CFB-053A6CCCFBC8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The unique identification for the conversation.  The conversation is used to link multiple transactions together.  If inbound messages are sent within the same EJB transaction, or are logically connected, the conversation is used to give a larger view of how transactions interact with each other.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>840CFA72-195A-EB60-B0E7-142268AEA30D</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MODULE" id="2D4FBC0E-2AF4-3DB5-7A27-EA4CC55E95A6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The module that the transaction belongs to.  This is linked to the specific ASB Connector the messages were being processed for.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>70B63F96-48E0-A565-0100-CA472E639CCF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>06D9BA35-CE10-EE63-8752-6E97559E5832</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MSG_TYPE" id="60716CA7-0367-BBFF-1BDE-293E8161BC11">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The message type is the specific message within a Connector that the transaction applies to.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8980D064-CF9C-4853-79E2-7BCCC62D1ECB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>8E337B97-618D-5F7F-5EE6-E815F39F39A1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERVER" id="C080A730-9625-50ED-F97D-86A03D045865">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The Server links to the instance of the ASB that processed the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>87E96D56-7444-B7B4-5F74-F2208581B80B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>06D9BA35-CE10-EE63-8752-6E97559E5832</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYNC_BOOL" id="7D925BF0-380D-6942-BFF8-E15B88B5791D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The Sync_bool indicates if the message to the ASB was sent synchronously (1) or asynchronously (0).</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F5992D8C-FCA9-5E53-9D17-E52D25FB136B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SYNC_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="CED17D89-32DE-FC26-CA4D-CB1F6DEA556E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>24B1B664-DDC9-E7D0-12F8-3A44D8203704</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD  IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="50C7CDCA-A24E-9EB7-1CB9-6E0370BD3C00" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1B637BB7-A3DC-4E04-E93F-1C4CF35E7D4C" name="PK_ASB_TRANSACTION_LOG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F6C4963C-DD90-A4BC-8ADD-ED60859AD60E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="753C6D5D-19B1-36B3-F564-1DAC4F905B3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F6A7D8BA-AD18-45CF-AE04-F61A0B2E447A" name="IX_FK_MIMRSTAT_ASBTRANSACTION">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>10EC2B62-729E-7AA2-C61F-DDF8A572E865</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CED17D89-32DE-FC26-CA4D-CB1F6DEA556E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E2CF0C74-EACC-0FDD-71D3-762EBC85BE8F" name="FK_MIMRSTAT_ASBTRANSACTION">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CED17D89-32DE-FC26-CA4D-CB1F6DEA556E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

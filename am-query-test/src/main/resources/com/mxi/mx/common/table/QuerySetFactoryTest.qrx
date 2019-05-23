@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-statement xmlns="http://xml.mxi.com/xsd/common/dataset/sql/1.0">
+   <name>QuerySetFactoryTest</name>
+   <description>
+     Sample Sortable Data
+   </description>
+   <sql>
+     select * from (
+       select a.lvl as A, b.lvl as B, a.lvl+b.lvl as C, LPAD(a.lvl,2,0) || LPAD(b.lvl,2,0) as D
+       from (select level as lvl from dual connect by level &lt; 21) a
+       join (select level as lvl from dual connect by level &lt; 21) b on a.lvl &lt;= b.lvl
+     )
+     WHERE 1=1 [WHERE_CLAUSE]
+     [ORDER_CLAUSE]
+   </sql>
+   <columns>
+      <column name="A" type="INTEGER"/>
+      <column name="B" type="INTEGER"/>
+      <column name="C" type="INTEGER"/>
+      <column name="D" type="STRING" key="true"/>
+   </columns>
+</sql-statement>

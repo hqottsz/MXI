@@ -1,0 +1,13 @@
+CREATE OR REPLACE PACKAGE AUTO_USAGE_CYC IS
+
+
+/*This is the function used to calculate the parameter*/
+FUNCTION CYC_C (factor NUMBER,
+		AT_CYC_M NUMBER,
+		AT_CYC NUMBER,
+		AT_CYC_AT_CYC_M NUMBER)
+
+RETURN NUMBER;
+
+END AUTO_USAGE_CYC;
+/

@@ -1,0 +1,182 @@
+--liquibase formatted sql
+
+
+--changeSet DM2-DMD-MIGR:1 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+/**
+* Description: This script will do the following:
+*    - drop system generated unique constraints and the corresping indexes
+*    - recreate unique constraints with the defined constraint name
+*    
+*    This is being done to replace CaseStudio with the Oracle SQL Developer Data Modeler 
+**/
+DECLARE
+   
+   CURSOR lcur_constraints IS
+   SELECT
+      src_data.table_name,
+      src_data.column_list,
+      src_data.constraint_name,
+      index_name
+   FROM 
+      (
+         SELECT 
+            'CAPACITY_PATTERN' table_name,
+            'ALT_ID' column_list,
+            'IX_CAPPATERNALTID_UNQ' constraint_name
+         FROM 
+            dual 
+         UNION ALL
+         SELECT 'CAPACITY_PATTERN','CAPACITY_PATTERN_CD','IX_CAPPATERNCD_UNQ' FROM dual UNION ALL
+         SELECT 'CHARGE','CHARGE_CODE','IX_CHARGECODE_UNQ' FROM dual UNION ALL
+         SELECT 'CLAIM','ALT_ID','IX_CLAIMALTID_UNQ' FROM dual UNION ALL
+         SELECT 'COR_BLOB_INFO','ALT_ID','IX_CORBLOBINFOALTID_UNQ' FROM dual UNION ALL
+         SELECT 'DPO_XFER_EXPORT_FILE','BARCODE_SDESC','IX_DPOXFEREXPBCD_UNQ' FROM dual UNION ALL
+         SELECT 'DPO_XFER_EXPORT_FILE','FILE_NAME','IX_DPOXFEREXPFN_UNQ' FROM dual UNION ALL
+         SELECT 'DPO_XFER_IMPORT_FILE','BARCODE_SDESC','IX_DPOXFERIMPBCD_UNQ' FROM dual UNION ALL
+         SELECT 'DPO_XFER_IMPORT_FILE','FILE_NAME','IX_DPOXFERIMPFN_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_ADVSRY','ALT_ID','IX_EQPADVSSRYALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_ASSMBL','ALT_ID','IX_EQPASSMBLALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_ASSMBL','ASSMBL_CD','IX_EQPASSMBLASSMBLCD_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_ASSMBL_BOM','ALT_ID','IX_EQPASSMBLBOMALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_ASSMBL_POS','ALT_ID','IX_EQPASSMBLPOSALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_BOM_PART','ALT_ID','IX_EQPBOMPARTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_FINDING','ALT_ID','IX_EQPFINDINGALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_KIT_PART_GROUPS','ALT_ID','IX_EQPKITPARTGRPSALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_MANUFACT','ALT_ID','IX_EQPMANUFACTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_MANUFACT','MANUFACT_CD','IX_EQPMANUFACTMANUCD_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_PART_NO','ALT_ID','IX_EQPPARTNOALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_PLANNING_TYPE','ALT_ID','IX_EQPPLANTYPEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_STOCK_NO','ALT_ID','IX_EQPSTOCKNOALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_TASK_PANEL','ALT_ID','IX_EQPTASKPANELALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EQP_TASK_ZONE','ALT_ID','IX_EQPTASKZONEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EVT_BAND','ALT_ID','IX_EVTBANDALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EVT_EVENT','ALT_ID','IX_EVTEVENTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'EVT_STAGE','ALT_ID','IX_EVTSTAGEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'FAIL_DEFER_REF','ALT_ID','IX_FAILDEFERREFALTID_UNQ' FROM dual UNION ALL
+         SELECT 'FAIL_EFFECT','ALT_ID','IX_FAILEFFECTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'FAIL_MODE','ALT_ID','IX_FAILMODEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'FC_MODEL','ALT_ID','IX_FCMODELALTID_UNQ' FROM dual UNION ALL
+         SELECT 'FNC_ACCOUNT','ALT_ID','IX_FNCACCOUNTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'FNC_TCODE','ALT_ID','IX_FNCTCODEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'FNC_XACTION_LOG','ALT_ID','IX_FNCXACTIONLOGALTID_UNQ' FROM dual UNION ALL
+         SELECT 'GRP_DEFN','ALT_ID','IX_GRPDEFNALTID_UNQ' FROM dual UNION ALL
+         SELECT 'IETM_IETM','ALT_ID','IX_IETMIETMALTID_UNQ' FROM dual UNION ALL
+         SELECT 'INV_INV','ALT_ID','IX_INVINVALTID_UNQ' FROM dual UNION ALL
+         SELECT 'INV_LOC','ALT_ID','IX_INVLOCALTID_UNQ' FROM dual UNION ALL
+         SELECT 'INV_LOC_STOCK','ALT_ID','IX_INVLOCSTOCKALTID_UNQ' FROM dual UNION ALL
+         SELECT 'INV_OIL_STATUS_LOG','ALT_ID','IX_INVOILSTATLOGALTID_UNQ' FROM dual UNION ALL
+         SELECT 'INV_OWNER','ALT_ID','IX_INVOWNERALTID_UNQ' FROM dual UNION ALL
+         SELECT 'INV_XFER','ALT_ID','IX_INVXFERALTID_UNQ' FROM dual UNION ALL
+         SELECT 'LIC_DEFN','ALT_ID','IX_LICDEFNALTID_UNQ' FROM dual UNION ALL
+         SELECT 'MAINT_PRGM','ALT_ID','IX_MAINTPRGMALTID_UNQ' FROM dual UNION ALL
+         SELECT 'MAINT_PRGM_LOG','MAINT_LOG_ID','IX_MAINTPRGLOGMLOGID_UNQ' FROM dual UNION ALL
+         SELECT 'MIM_DATA_TYPE','ALT_ID','IX_MIMDATATYPEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'ORG_AUTHORITY','ALT_ID','IX_ORGAUTHORITYALTID_UNQ' FROM dual UNION ALL
+         SELECT 'ORG_CARRIER','ALT_ID','IX_ORGCARRIERALTID_UNQ' FROM dual UNION ALL
+         SELECT 'ORG_HR','ALT_ID','IX_ORGHRALTID_UNQ' FROM dual UNION ALL
+         SELECT 'ORG_HR_SHIFT_PLAN','ALT_ID','IX_ORGHRSHIFTPLANALTID_UNQ' FROM dual UNION ALL
+         SELECT 'ORG_ORG','ALT_ID','IX_ORGORGALTID_UNQ' FROM dual UNION ALL
+         SELECT 'ORG_VENDOR','ALT_ID','IX_ORGVENDORALTID_UNQ' FROM dual UNION ALL
+         SELECT 'ORG_WORK_DEPT','ALT_ID','IX_ORGWORKDEPTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'PO_HEADER','ALT_ID','IX_POHEADERALTID_UNQ' FROM dual UNION ALL
+         SELECT 'PO_INVOICE','ALT_ID','IX_POINVOICEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'PO_INVOICE_LINE','ALT_ID','IX_POINVOICELINEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'PO_LINE','ALT_ID','IX_POLINEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'QUAR_QUAR','ALT_ID','IX_QUARQUARALTID_UNQ' FROM dual UNION ALL
+         SELECT 'REF_DELAY_CODE','DELAY_CODE_CD','IX_REFDELAYCODECD_UNQ' FROM dual UNION ALL
+         SELECT 'REF_DISRUPT_TYPE','DISRUPT_TYPE_CD','IX_REFDISRUPTTYPECD_UNQ' FROM dual UNION ALL
+         SELECT 'REF_LPA_ISSUE_TYPE','DISPLAY_CODE','IX_REFLPAISSTYPEDISCD_UNQ' FROM dual UNION ALL
+         SELECT 'REF_LPA_RUN_STATUS','DISPLAY_CODE','IX_REFLPARUNSTATDCODE_UNQ' FROM dual UNION ALL
+         SELECT 'REF_RESULT_EVENT','RESULT_EVENT_CD','IX_REFRESEVENTCD_UNQ' FROM dual UNION ALL
+         SELECT 'REF_RESULT_EVENT','USER_CD','IX_REFRESEVENTUSERCD_UNQ' FROM dual UNION ALL
+         SELECT 'REF_SUPPLY_CHAIN','SUPPLY_CHAIN_CD','IX_REFSUPPCHAINCD_UNQ' FROM dual UNION ALL
+         SELECT 'REF_VENDOR_TYPE','VENDOR_TYPE_CD','IX_REFVENDORTYPECD_UNQ' FROM dual UNION ALL
+         SELECT 'REQ_PART','ALT_ID','IX_REQPARTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'RFQ_HEADER','ALT_ID','IX_RFQHEADERALTID_UNQ' FROM dual UNION ALL
+         SELECT 'RFQ_LINE','ALT_ID','IX_RFQLINEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'SB_STATUS_BOARD','STATUS_BOARD_CD','IX_SBSTATBOARDCD_UNQ' FROM dual UNION ALL
+         SELECT 'SCHED_EXT_PART','SCHED_EXT_PART_ID','IX_SCHEDEXTPARTID_UNQ' FROM dual UNION ALL
+         SELECT 'SCHED_LABOUR','ALT_ID','IX_SCHEDLABOURALTID_UNQ' FROM dual UNION ALL
+         SELECT 'SCHED_LABOUR_ROLE','ALT_ID','IX_SCHEDLABOUROLEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'SCHED_PART','ALT_ID','IX_SCHEDPARTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'SCHED_STASK','ALT_ID','IX_SCHEDSTASKALTID_UNQ' FROM dual UNION ALL
+         SELECT 'SD_FAULT','ALT_ID','IX_SDFAULTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'SHIFT_SHIFT','ALT_ID','IX_SHIFTSHIFTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'SHIFT_SHIFT','SHIFT_CD','IX_SHIFTSHIFTCD_UNQ' FROM dual UNION ALL
+         SELECT 'SHIP_SHIPMENT','ALT_ID','IX_SHIFSHIPMENTALTID_UNQ' FROM dual UNION ALL
+         SELECT 'TAG_TAG','ALT_ID','IX_TAGTAGALTID_UNQ' FROM dual UNION ALL
+         SELECT 'TAG_TAG','TAG_CD','IX_TAGTAGCD_UNQ' FROM dual UNION ALL
+         SELECT 'TASK_DEFN','ALT_ID','IX_TASKDEFNALTID_UNQ' FROM dual UNION ALL
+         SELECT 'TASK_FAIL_MODE','ALT_ID','IX_TASKFAILMODEALTID_UNQ' FROM dual UNION ALL
+         SELECT 'TASK_TASK','ALT_ID','IX_TASKTASKALTID_UNQ' FROM dual UNION ALL
+         SELECT 'TAX','TAX_CODE','IX_TAXCODE_UNQ' FROM dual UNION ALL
+         SELECT 'USER_SHIFT_PATTERN','ALT_ID','IX_USERSHIFTPATTRNALTID_UNQ' FROM dual UNION ALL
+         SELECT 'USER_SHIFT_PATTERN','USER_SHIFT_PATTERN_CD','IX_USERSHIFTPATTRNCD_UNQ' FROM dual UNION ALL
+         SELECT 'UTL_NOTIF_EVENT_TYPE','NOTIF_EVENT_CD','IX_UTLNOTIFEVENTTYPEEVTCD_UNQ' FROM dual UNION ALL
+         SELECT 'UTL_NOTIF_TYPE','NOTIF_TYPE_CD','IX_UTLNOTIFTYPECD_UNQ' FROM dual UNION ALL
+         SELECT 'UTL_ROLE','ROLE_CD','IX_UTLROLEROLECD_UNQ' FROM dual UNION ALL
+         SELECT 'WARRANTY_DEFN','ALT_ID','IX_WARRANTYDEFNALTID_UNQ' FROM dual UNION ALL
+         SELECT 'WARRANTY_INIT','ALT_ID','IX_WARRANTYINITALTID_UNQ' FROM dual UNION ALL
+         SELECT 'WF_DEFN','ALT_ID','IX_WFDEFNALTID_UNQ' FROM dual UNION ALL
+         SELECT 'WF_LEVEL','ALT_ID','IX_WFLEVELALTID_UNQ' FROM dual UNION ALL
+         SELECT 'WF_LEVEL_DEFN','WF_LEVEL_DEFN_CD','IX_WFLEVELDEFNCD_UNQ' FROM dual UNION ALL
+         SELECT 'WF_WF','ALT_ID','IX_WFWFALTID_UNQ' FROM dual
+      ) src_data 
+      LEFT JOIN user_ind_columns ON 
+         src_data.table_name  = user_ind_columns.table_name AND
+         src_data.column_list = user_ind_columns.column_name
+         AND
+         user_ind_columns.column_position = 1;
+   
+   TYPE lrow_constraint IS TABLE OF lcur_constraints%ROWTYPE;
+   lrec_constraint lrow_constraint;
+   
+   exc_constraint_exist EXCEPTION;
+   PRAGMA EXCEPTION_INIT(exc_constraint_exist, -02261);   
+   
+BEGIN 
+  
+   OPEN lcur_constraints;
+   FETCH lcur_constraints
+      BULK COLLECT INTO lrec_constraint;
+   CLOSE lcur_constraints;
+   
+   FOR i IN 1..lrec_constraint.COUNT LOOP
+   
+      BEGIN
+        
+        -- drop existing unique constraints
+        BEGIN
+           -- drop 
+           utl_migr_schema_pkg.table_column_cons_unq_drop(p_table_name => lrec_constraint(i).table_name, p_column_name => lrec_constraint(i).column_list);
+           -- drop index if exist - this condition is based on dbdiff tool comparison result
+           
+           IF lrec_constraint(i).index_name IS NOT NULL AND lrec_constraint(i).index_name <> lrec_constraint(i).constraint_name THEN 
+              utl_migr_schema_pkg.index_drop(p_index_name => lrec_constraint(i).index_name);
+           END IF;
+           
+        EXCEPTION 
+           WHEN OTHERS THEN 
+              NULL;
+        END;
+        
+        -- create constraints
+        EXECUTE IMMEDIATE 'ALTER TABLE ' || lrec_constraint(i).table_name ||  ' ADD CONSTRAINTS ' || lrec_constraint(i).constraint_name || ' UNIQUE (' || lrec_constraint(i).column_list || ')';
+        dbms_output.put_line ('INFO: The ' || lrec_constraint(i).constraint_name  || ' constraint of the ' || lrec_constraint(i).table_name || ' table, ' || lrec_constraint(i).column_list || ' column has been created. ');
+        
+      EXCEPTION 
+         WHEN exc_constraint_exist THEN 
+            dbms_output.put_line( 'INFO: A unique constraint for ' || lrec_constraint(i).column_list || ' column in table ' ||  lrec_constraint(i).table_name || ' already exist');
+         WHEN OTHERS THEN 
+            RAISE;           
+      END;
+      
+   END LOOP;
+   
+EXCEPTION 
+   WHEN OTHERS THEN 
+      dbms_output.put_line('Check DM2-DMD-MIGR.SQL upgrade file');
+      RAISE;
+
+END;
+/

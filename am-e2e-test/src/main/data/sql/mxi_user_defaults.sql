@@ -1,0 +1,1 @@
+INSERT INTO utl_user_parm (user_id, parm_name, parm_type, parm_value, utl_id, rstat_cd) VALUES ((SELECT user_id FROM utl_user WHERE username = 'mxi'), 'sDayCount', 'SESSION', 9999, 4650, 0);

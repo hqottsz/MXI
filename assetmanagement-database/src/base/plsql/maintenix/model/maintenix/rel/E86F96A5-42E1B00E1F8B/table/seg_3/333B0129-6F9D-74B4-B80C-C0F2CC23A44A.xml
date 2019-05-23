@@ -1,0 +1,872 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_3" id="333B0129-6F9D-74B4-B80C-C0F2CC23A44A" name="LRP_PLAN_CONFIG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This table stores the configurable UI options of a plan.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>27E02549-A85D-32FD-DB22-019B46E8000E</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LRP_DB_ID" id="6DA8693A-D148-093D-400B-BBECF731E27E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Foreign key to the Long Range Plan.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C4A2BEFC-CF05-1DD5-671A-F8C6F6E8607D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LRP_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="04B2E698-DF81-1EAC-0759-B93E2EAF7F95" referredColumn="1F09BB63-17BC-53FB-8A2A-E0A4C4786DA7"/>
+</associations>
+</Column>
+<Column name="LRP_ID" id="0DACE3A2-F9D4-019F-961E-07C9658E6AA5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Foreign key to the Long Range Plan.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4C0D39D0-81B9-1CD9-9544-2C075B3BC12A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LRP_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="04B2E698-DF81-1EAC-0759-B93E2EAF7F95" referredColumn="D4C814B2-2C34-3557-ACB3-0A324A49B917"/>
+</associations>
+</Column>
+<Column name="ADHOC_SEV_DB_ID" id="47178F75-73D5-50EC-D9D1-723C4DB94324">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Adhoc Work Packages severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>237E7F99-FFD7-2005-36C4-28E21CB530DD</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ADHOC_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1333F097-7C91-D411-95C8-F120A9D2C596" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="ADHOC_SEV_CD" id="B3F34FE8-4F39-71E8-6E33-1D1E133AFF2A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Adhoc Work Packages severity code. </commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5F211646-B93E-2C18-F32E-19B9C6F3DA4B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1333F097-7C91-D411-95C8-F120A9D2C596" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="OVERFLOW_SEV_DB_ID" id="F0E495D6-78E9-4985-24F5-C95221FC644D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Overflow severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>265D4FB1-5663-5B3E-9500-73AD30175F1B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OVERFLOW_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="94F61D31-A829-FBA9-45FD-DA2F366D39D0" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="OVERFLOW_SEV_CD" id="55BA8C73-5151-F617-2A9D-B6CC4F619050">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Overflow severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E235BF53-8B7C-D9AC-13AF-7377C6E6717D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="94F61D31-A829-FBA9-45FD-DA2F366D39D0" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="OVERLAP_SEV_DB_ID" id="694CE847-156E-0391-4CE1-05F7C80EA0C8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Overlap severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EA71BCFE-7E4E-9F1A-D697-59494D64852F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OVERLAP_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A1D28995-4DDA-0579-5878-5E0BAC6094B7" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="OVERLAP_SEV_CD" id="00734AEE-2B16-DD2B-FF6B-F171DF5B2347">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Overlap severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>50E9B1BC-8E1B-1FC8-6ECD-2557CB7C2BC2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A1D28995-4DDA-0579-5878-5E0BAC6094B7" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="DURLESSMIN_SEV_DB_ID" id="F3761D88-DE2D-C35F-9A94-B24F84F1E218">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Duration less than minimum severity  database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5E8E1E34-66E0-5260-2C0F-514F18D531A5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DURLESSMIN_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F09F3668-F7AD-DB98-64A1-DACAFA823747" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="DURLESSMIN_SEV_CD" id="6E0E63A0-F558-EFB8-70EB-6AD648BF71AD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Duration less than minimum severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>16B770CB-088E-3719-A7FB-8F83510D0CE0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F09F3668-F7AD-DB98-64A1-DACAFA823747" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="DURGRTMAX_SEV_DB_ID" id="26F57689-0047-A526-44AA-A217234E3199">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Duration greater than maximum severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C1BEFEB4-5D96-A539-6D94-6030B8B32ACA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="DURGRTMAX_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78BE907B-21C9-655E-A197-419E53D8B75D" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="DURGRTMAX_SEV_CD" id="24B4E530-EAB8-7395-5746-AEAF00F626CB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Duration greater than maximum severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>5C1AECA5-F582-563D-7B18-C9338166A1C0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78BE907B-21C9-655E-A197-419E53D8B75D" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="OVERDUE_SEV_DB_ID" id="862C53D4-39C6-03D9-F0C0-453B875701DB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Overdue severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>271ACA9A-3861-C788-8F56-4EC32D6B3B9F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OVERDUE_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD0EE80C-1515-5BB8-7253-582C21A6DA87" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="OVERDUE_SEV_CD" id="93A5B362-C8A2-F767-90AD-6DFC65C899BE">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Overdue severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3741B264-19E6-4573-E1A1-6252F87ACBF0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD0EE80C-1515-5BB8-7253-582C21A6DA87" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="EXTDEAD_SEV_DB_ID" id="2F163186-2EBF-ECE7-3DA5-313A372D6F85">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Extended Deadline severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FB63C261-30BD-BD12-98B2-FA8422CC5653</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EXTDEAD_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="03A43A1F-F59F-2E29-1445-61615287A587" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="EXTDEAD_SEV_CD" id="5FAFDFD3-FB4F-2932-390F-560161F2EC56">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Extended Deadline severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F4C0D1AA-A0CF-282E-B318-BDE1C6A85EA7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="03A43A1F-F59F-2E29-1445-61615287A587" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="PLANBFOREMINYD_SEV_DB_ID" id="642FBC56-7516-6C20-23C6-AE3349D86378">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Planned before minimum yield severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2A737C48-CAB9-B1E2-6647-99B9341628F8</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PLANBFOREMINYD_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C4ABDBC-CFEC-76E1-2EAD-6931EA69D7C7" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="PLANBFOREMINYD_SEV_CD" id="216F2EE5-4064-00A4-6254-E678147414A9">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Planned before minimum yield severity database code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9C5FF226-48E0-B5A7-4C04-CA958A392B39</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C4ABDBC-CFEC-76E1-2EAD-6931EA69D7C7" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="PLANAFTMAXYD_SEV_DB_ID" id="992A91C9-F8F1-0B1C-1854-8F712D2E9E41">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Planned after maximum yield severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3BE9C8EF-2004-4616-5FC8-D1D6EBA5CB01</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PLANAFTMAXYD_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB5C6A50-C505-9173-3B73-2235A3F9EAB9" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="PLANAFTMAXYD_SEV_CD" id="295494EA-E2FD-0052-C42A-66236A5EEFD5">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Planned after maximum yield severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3B2F3CCE-47F8-3CF5-7892-5571AD7490A0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB5C6A50-C505-9173-3B73-2235A3F9EAB9" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="OUTOFSEQ_SEV_DB_ID" id="8F18B5AF-75B3-35C2-2FF3-80D93AA0EF7B">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Out of sequence severity db id</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>15B1B051-A0D8-B275-3139-C6A42B79A2EA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OUTOFSEQ_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A49EBFA3-A6C9-449A-521A-C2BB0B3275ED" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="OUTOFSEQ_SEV_CD" id="CDA4B968-E2D3-A28A-6EFE-194412830D55">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Out of sequence severity code</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>669CCC6B-7BB6-5B85-6CCC-3B0FD03ECDC9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A49EBFA3-A6C9-449A-521A-C2BB0B3275ED" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="UPDATEACTUAL_SEV_DB_ID" id="10E77D7D-3BAB-4724-AB53-8346F8468588">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Update to Actuals severity db id</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D025CED4-AD73-D7EE-339E-88A93273731D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="UPDATEACTUAL_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="71C7D297-DCD4-81EC-8755-86F309AC2BBC" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="UPDATEACTUAL_SEV_CD" id="9C824C11-023D-E38A-99BB-4A9F233CA6D4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Update to Actuals severity code</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7DDAAE76-DCB5-52BE-6788-342153B693DA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="71C7D297-DCD4-81EC-8755-86F309AC2BBC" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="EXTRACTEXC_SEV_DB_ID" id="5A7F783F-5E43-D5D4-67B5-95B440640C18">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Extraction limit exceeded severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AFB8D36C-8E4A-5305-D7D3-4AF8526958C6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="EXTRACTEXC_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D557FB16-53E7-02AD-830F-DE313B9C68D2" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="EXTRACTEXC_SEV_CD" id="88D051EF-F6D6-FB4B-A733-26E090C23CD1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Extraction limit exceeded severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>07568D20-20D9-33B2-F9B2-B3C64C5E145A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D557FB16-53E7-02AD-830F-DE313B9C68D2" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="PRIOREFFECTIVEDT_SEV_DB_ID" id="8996D2F9-2FFD-8314-17C8-00F8FAAB84BF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Prior to effective date severity db id</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>01E0282F-A8DE-8042-9A7D-8628F31B30E7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="PRIOREFFECTIVEDT_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B1CA625-C292-BF1B-FE2E-38050F1ACF35" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="PRIOREFFECTIVEDT_SEV_CD" id="7489C4EB-5E5E-7D51-3B1D-F815A95D0256">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Prior to effective date severity code</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3EAC295F-4076-0FD5-2861-FC084781C451</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B1CA625-C292-BF1B-FE2E-38050F1ACF35" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="READONLY_SEV_DB_ID" id="0E15C7C2-7A84-E5B6-77B6-A62BF9349F88">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Read only severity database identifier.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>9D72820B-0C9B-2DD9-96E6-B1FE8DECDA6A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="READONLY_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B05E7152-0640-ADAF-5585-4DEEB38F6974" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="READONLY_SEV_CD" id="7E4B4438-FE81-E0E5-EE28-9701A007F033">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Read only severity code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B208F716-4A03-8C80-176C-E303DB34F64A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B05E7152-0640-ADAF-5585-4DEEB38F6974" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="OVERRUNBKTS_SEV_DB_ID" id="BD30BB22-F8AF-B3BE-2716-CB6A2305B855">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>DbId for severity of Overrun Buckets option in Gantt Configuration.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C01AB1A7-D06F-2624-1373-017C48D74FE2</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="OVERRUNBKTS_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3E21536B-6A33-4D32-054A-DA1559AF0BA8" referredColumn="D50F4D52-53E4-1DC5-CB51-6AF60362E1A5"/>
+</associations>
+</Column>
+<Column name="OVERRUNBKTS_SEV_CD" id="55476C55-EA43-55AC-9D8A-09DD64F284A1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>Severity Code of the severity for Overrun Buckets option in Gantt Configuration.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8EC4841A-F15A-9E6B-0E3C-E554EB67782F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3E21536B-6A33-4D32-054A-DA1559AF0BA8" referredColumn="0F87DB44-51FE-FBB3-58F6-327559B17F49"/>
+</associations>
+</Column>
+<Column name="RSTAT_CD" id="993E9F00-524F-9C8D-B93A-4276AFF87CC3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>51A3B2F3-4FF8-5B6C-A6D3-E83E3BB13E26</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86230FF6-0E16-A511-7557-AC2CD5A5CC2A" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="C2AA45A1-569A-8FD7-DB82-E04F2F8DF4ED">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F1E172AB-C108-5480-ACA4-7E7E752DC86F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="DAC05D73-A4AE-AD04-D060-A94FC7ED4DC7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>53BD6360-BFBB-967F-E4DC-FEDA6C8A17AA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="DF4838E2-CBC5-400F-4DF5-075E0EB869F4">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifier (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AE7CA60D-D9D9-52B4-6544-C0E2C8730786</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="2E17731D-0366-5257-B452-C3D790CDDDC8">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6E44C965-FF0E-FF90-1D37-122EAC3F6A6C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6AF38251-071E-7451-8DAA-81190ED897F6" name="PK_LRP_PLAN_CONFIG">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6526996F-B1E8-4CC4-0106-69FD8D6ABB94</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DA8693A-D148-093D-400B-BBECF731E27E"/>
+<colUsage columnID="0DACE3A2-F9D4-019F-961E-07C9658E6AA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="46A25A81-A96C-7B84-7F68-38B1F6C85F7B" name="FK_ADHOCSEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:29 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47178F75-73D5-50EC-D9D1-723C4DB94324"/>
+<colUsage columnID="B3F34FE8-4F39-71E8-6E33-1D1E133AFF2A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="64AB7C8E-948A-E35D-8B07-22EDA189B54C" name="FK_DURGRTMAXSEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="26F57689-0047-A526-44AA-A217234E3199"/>
+<colUsage columnID="24B4E530-EAB8-7395-5746-AEAF00F626CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E34A2EC5-5B6C-5F4C-729D-306C23D99319" name="FK_DURLESSMINSEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3761D88-DE2D-C35F-9A94-B24F84F1E218"/>
+<colUsage columnID="6E0E63A0-F558-EFB8-70EB-6AD648BF71AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C9B6C39-60DC-9E4E-30EE-8804C8BE4103" name="FK_EXTDEADSEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F163186-2EBF-ECE7-3DA5-313A372D6F85"/>
+<colUsage columnID="5FAFDFD3-FB4F-2932-390F-560161F2EC56"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="40D554EB-455A-CDE4-5971-14D837EEE493" name="FK_EXTRACTEXCSEV_LRPPLANCONF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A7F783F-5E43-D5D4-67B5-95B440640C18"/>
+<colUsage columnID="88D051EF-F6D6-FB4B-A733-26E090C23CD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="28573A82-BA9D-EC13-9624-40878CC8E474" name="FK_LRPPLAN_LRPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:31 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DA8693A-D148-093D-400B-BBECF731E27E"/>
+<colUsage columnID="0DACE3A2-F9D4-019F-961E-07C9658E6AA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C92DACE1-304D-CDE9-98A2-CBDFE1B5C56A" name="FK_MIMRSTAT_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:34 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="993E9F00-524F-9C8D-B93A-4276AFF87CC3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27FD91C1-F369-AAAB-2CA7-C8936EF17214" name="FK_OUTOFSEQSEV_LRPPLANCONF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F18B5AF-75B3-35C2-2FF3-80D93AA0EF7B"/>
+<colUsage columnID="CDA4B968-E2D3-A28A-6EFE-194412830D55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E89D0D9C-8FF4-3154-8425-B7CEAD82E90B" name="FK_OVERDUESEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="862C53D4-39C6-03D9-F0C0-453B875701DB"/>
+<colUsage columnID="93A5B362-C8A2-F767-90AD-6DFC65C899BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B10C751B-4558-E87F-BB93-D1133EE3AC6C" name="FK_OVERFLOWSEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0E495D6-78E9-4985-24F5-C95221FC644D"/>
+<colUsage columnID="55BA8C73-5151-F617-2A9D-B6CC4F619050"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D2679CD-602D-4234-F95C-A0B56B639B2D" name="FK_OVERLAPSEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="694CE847-156E-0391-4CE1-05F7C80EA0C8"/>
+<colUsage columnID="00734AEE-2B16-DD2B-FF6B-F171DF5B2347"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A73048FB-72A3-74A5-1755-82DBD0099760" name="FK_OVERRUNBKTS_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:37 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD30BB22-F8AF-B3BE-2716-CB6A2305B855"/>
+<colUsage columnID="55476C55-EA43-55AC-9D8A-09DD64F284A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="419D2AE1-13C9-8B4C-1C0A-6A6863FE5B05" name="FK_PLANAFTMAXYDSEV_LRPPLANCONF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="992A91C9-F8F1-0B1C-1854-8F712D2E9E41"/>
+<colUsage columnID="295494EA-E2FD-0052-C42A-66236A5EEFD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="62D12E20-33A4-0F75-7694-20C52C471B40" name="FK_PLANBFOREMINYDSEV_LRPPLANCO">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="642FBC56-7516-6C20-23C6-AE3349D86378"/>
+<colUsage columnID="216F2EE5-4064-00A4-6254-E678147414A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0913D8B-6158-DDEF-C526-ADD2CA6C4637" name="FK_PREFFECTDTSEV_LRPPLANCONF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8996D2F9-2FFD-8314-17C8-00F8FAAB84BF"/>
+<colUsage columnID="7489C4EB-5E5E-7D51-3B1D-F815A95D0256"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C41A5FA8-B864-56E3-2741-9FBE77D782ED" name="FK_READONLYSEV_LRPPLANCONFIG">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:38 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0E15C7C2-7A84-E5B6-77B6-A62BF9349F88"/>
+<colUsage columnID="7E4B4438-FE81-E0E5-EE28-9701A007F033"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E09D91F4-D75A-0945-D167-012C47BAB046" name="FK_UPDATEACTSEV_LRPPLANCONF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:44 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10E77D7D-3BAB-4724-AB53-8346F8468588"/>
+<colUsage columnID="9C824C11-023D-E38A-99BB-4A9F233CA6D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

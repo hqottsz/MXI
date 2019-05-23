@@ -1,0 +1,215 @@
+<rules>
+  <!-- Configuration -->
+  <table name="DB_TYPE_CONFIG_PARM"><exclude type="DATA_ROW_REMOVED"/><exclude type="DATA_ROW_ADDED" /></table>
+  <table name="UTL_CONFIG_PARM"><column name="PARM_VALUE"><exclude type="DATA_ROW_MODIFIED" /></column></table>
+  <table name="UTL_ACTION_CONFIG_PARM"><column name="PARM_VALUE"><exclude type="DATA_ROW_MODIFIED"/></column></table>
+  <table name="UTL_ACTION_ROLE_PARM"><exclude type="DATA_ROW_REMOVED" /></table>
+  <table name="UTL_ROLE_PARM"><exclude type="DATA_ROW_REMOVED" /></table>
+  <table name="UTL_CACHE">
+     <exclude type="DATA_ROW_ADDED" />
+     <exclude type="DATA_ROW_REMOVED" />
+     <exclude type="DATA_ROW_MODIFIED" />
+  </table>
+
+  <!-- Versioning -->
+  <table name="UTL_VERSION">
+     <exclude type="DATA_ROW_ADDED" />
+     <exclude type="DATA_ROW_REMOVED" />
+     <column name="INSTALL_SDESC"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="INSTALL_DT"><exclude type="DATA_ROW_MODIFIED" /></column>
+  </table>
+
+  <table name="UTL_CURRENT_VERSION">
+   <column name="BUILD_REVISION"><exclude type="DATA_ROW_MODIFIED" /></column>
+   <column name="BUILD_LOCATION"><exclude type="DATA_ROW_MODIFIED" /></column>
+   <column name="INSTALL_DT"><exclude type="DATA_ROW_MODIFIED" /></column>
+   <column name="INSTALL_SDESC"><exclude type="DATA_ROW_MODIFIED" /></column>
+   <column name="BUILD_LABEL"><exclude type="DATA_ROW_MODIFIED" /></column>
+  </table>
+
+  <table name="UPG_VERSION">
+     <column name="INSTALL_DT"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="INSTALL_SDESC"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="BUILD_REVISION"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="BUILD_LABEL"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="BUILD_LOCATION"><exclude type="DATA_ROW_MODIFIED" /></column>
+  </table>
+
+  <table name="UPG_VERSION_HIST">
+     <exclude type="DATA_ROW_ADDED" />
+     <exclude type="DATA_ROW_REMOVED" />
+     <column name="INSTALL_DT"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="INSTALL_SDESC"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="BUILD_REVISION"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="BUILD_LABEL"><exclude type="DATA_ROW_MODIFIED" /></column>
+     <column name="BUILD_LOCATION"><exclude type="DATA_ROW_MODIFIED" /></column>
+  </table>
+
+  <table name="MIM_DB">
+     <exclude type="DATA_ROW_ADDED" />
+  </table>
+
+  <table name="MIM_LOCAL_DB">
+     <exclude type="DATA_ROW_ADDED" />
+  </table>
+
+  <!-- Jobs / Timers -->
+  <table name="OPR_REPORT_JOB">
+     <column name="SCHEDULE_DATE"><exclude type="DATA_ROW_MODIFIED" /></column>
+  </table>
+  <table name="UTL_OC_SVR_JOB_CFG">
+     <column name="CONFIG_VALUE"><exclude type="DATA_ROW_MODIFIED" /></column>
+  </table>
+  <table name="UTL_JOB">
+     <column name="SCHEDULE_DATE"><exclude type="DATA_ROW_MODIFIED"/></column>
+  </table>
+
+  <table name="OPR_CALENDAR_MONTH">
+     <exclude type="DATA_ROW_REMOVED" />
+     <exclude type="DATA_ROW_ADDED" />
+  </table>
+
+  <column name="ALT_ID">
+     <exclude type="DATA_ROW_MODIFIED" />
+  </column>
+
+  <!-- Demo -->
+  <table name="AOPR_AIRCRAFT_DELAY_V1">
+     <column name="DELAY_TIME_MIN">
+        <exclude type="COLUMN_REMOVED" />
+     </column>
+  </table>
+
+  <!-- CaseStudio to Oracle Modeler migration -->
+  <table name="DPO_GEN_OBJECTS">
+     <constraint name="OBJECT_TYPE IN ('EXPORT_TABLE', 'PROPAGATION', 'CAPTURE_QUEUE','APPLY_QUEUE','APPLY','PROCEDURE','DML_HANDLER','CAPTURE','SEQUENCE','SUPPLEMENTAL_LOGGING','CAPTURE_RULES', 'APPLY_RULES', 'CONFLICT_HANDLER')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="OBJECT_TYPE in ('EXPORT_TABLE', 'PROPAGATION', 'CAPTURE_QUEUE','APPLY_QUEUE','APPLY','PROCEDURE','DML_HANDLER','CAPTURE','SEQUENCE','SUPPLEMENTAL_LOGGING','CAPTURE_RULES', 'APPLY_RULES', 'CONFLICT_HANDLER')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+  </table>
+
+  <table name="DPO_REP_PATH">
+     <constraint name="CONFIG_STATUS IN ('PENDING', 'RUNNING', 'ERROR','SUCCESS')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="CONFIG_STATUS in ('PENDING', 'RUNNING', 'ERROR','SUCCESS')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+     <constraint name="TRANSPORT_TYPE IN ('QUEUE', 'FILE', 'EXPORT')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="TRANSPORT_TYPE in ('QUEUE', 'FILE', 'EXPORT')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+  </table>
+
+  <table name="DPO_RLM_FUNCTION">
+     <constraint name="FUNC_TYPE IN ('PACKAGE', 'FUNCTION')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="FUNC_TYPE in ('PACKAGE', 'FUNCTION')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+  </table>
+
+  <table name="DPO_RLM_OBJ_TYPE">
+     <constraint name="CONSUMPTION IN ('EXCLUSIVE', 'SHARED')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="CONSUMPTION in ('EXCLUSIVE', 'SHARED')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+  </table>
+
+  <table name="DPO_RLM_RULE">
+     <constraint name="RULE_TYPE IN ('PRIMARY_KEY', 'FOREIGN_KEY', 'NOT_NULL', 'CHECK_BOOL', 'CHECK_RSTAT_CD')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="RULE_TYPE in ('PRIMARY_KEY', 'FOREIGN_KEY', 'NOT_NULL', 'CHECK_BOOL', 'CHECK_RSTAT_CD')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+  </table>
+
+  <table name="DPO_RLM_RULE_CLASS">
+     <constraint name="DURATION IN ('TRANSACTION')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="DURATION in ('TRANSACTION')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+  </table>
+
+  <table name="DPO_RLM_VERSION_LOG">
+     <constraint name="RLM_TABLE_NAME IN ('DPO_RLM_RULE_CLASS', 'DPO_RLM_RULE', 'DPO_RLM_EVT_STRUCT', 'DPO_RLM_OBJ_TYPE', 'DPO_RLM_TYPE_ATTR', 'DPO_RLM_FUNCTION')">
+        <exclude type="CHECK_REMOVED" />
+     </constraint>
+     <constraint name="RLM_TABLE_NAME in ('DPO_RLM_RULE_CLASS', 'DPO_RLM_RULE', 'DPO_RLM_EVT_STRUCT', 'DPO_RLM_OBJ_TYPE', 'DPO_RLM_TYPE_ATTR', 'DPO_RLM_FUNCTION')">
+        <exclude type="CHECK_ADDED" />
+     </constraint>
+  </table>
+
+  <!-- liquibase object-->
+  <table name="DATABASECHANGELOG">
+    <exclude type="DATA_ROW_ADDED" />
+    <exclude type="DATA_ROW_REMOVED" />
+    <exclude type="DATA_ROW_MODIFIED" />
+  </table>
+
+  <!-- Skip materialized view column data length increases due to AL32UTF8-->
+  <table name="ACOR_RBL_COMP_ATA_LOWER_FH_MV1">
+     <column name="CONFIG_SLOT"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_AIRCRAFT_DELAY_V1">
+     <column name="DELAY_TIME"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="MAINTENANCE_DELAY_TIME"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_ATA_DELAY_V1">
+     <column name="DELAY_TIME"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_COMP_RMVL_MV1">
+     <column name="ATA_SECTION"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="ATA_CHAPTER"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_DISPATCH_METRIC_V1">
+     <column name="COLUMN_NAME"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="COLUMN_ORDER"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_DISPATCH_RELIABILITY_V1">
+     <column name="COLUMN_NAME"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_LOGBOOK_FAULT_MV1">
+     <column name="ATA_SECTION"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="ATA_CHAPTER"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_MONTHLY_OPERATOR_USAGE_V1">
+     <column name="MONTH_NAME"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_RBL_COMP_RMVL_FLEET_MV1">
+     <column name="YEAR_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="MONTH_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_RBL_FAULT_FLEET_MV1">
+     <column name="YEAR_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="MONTH_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_RBL_FAULT_FLEET_UCL_MV1">
+     <column name="YEAR_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_RBL_FAULT_MV1">
+     <column name="YEAR_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="MONTH_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_RBL_FAULT_TAIL_UCL_MV1">
+     <column name="YEAR_CODE"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_SERVICE_DIFFICULTY_V1">
+     <column name="COLUMN_NAME"><exclude type="COLUMN_MODIFIED" /></column>
+     <column name="COLUMN_ORDER"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+  <table name="AOPR_STATION_DELAY_V1">
+     <column name="DELAY_TIME"><exclude type="COLUMN_MODIFIED" /></column>
+  </table>
+
+</rules>

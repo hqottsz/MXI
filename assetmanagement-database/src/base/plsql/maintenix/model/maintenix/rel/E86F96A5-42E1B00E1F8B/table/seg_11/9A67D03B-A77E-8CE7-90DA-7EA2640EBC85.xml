@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_11" id="9A67D03B-A77E-8CE7-90DA-7EA2640EBC85" name="PPC_TASK_PANEL">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:22:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<ordsAlias>table_814</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TASK_ID" id="DEDC0855-1C50-A868-7BFD-80A5BD9E1050">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:22:55 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="99F719CD-09E8-BE29-D6AF-B3CDC06A5613" referredColumn="8B3EF2FC-E8E8-C893-E6B7-498FDC5903A1"/>
+</associations>
+</Column>
+<Column name="PANEL_DB_ID" id="DCEFA249-F242-D472-60A8-1787A658F3ED">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:25:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PANEL_ID" id="8588EFB2-F251-B27B-24B5-9A92E97A6E4A">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:25:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="8563E253-1DD9-F4C5-F87E-6873BC031CE1">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:27:10 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ACC259D7-B020-47DA-1369-90DF1367BB6F" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="40E7221E-3886-894E-1996-BA1C6559690A">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:27:05 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="429FFDA7-9882-B518-9BED-8C4952C8FF98">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:30:13 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="4147541F-EC86-EA34-3932-327FFD9A8840">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:30:13 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="B504683A-711C-3451-34E9-9650C6A3022F">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:30:13 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3276C9F5-7801-7DCE-FEC7-072A76B677C6" name="PK_PPC_TASK_PANEL">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:25:57 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DEDC0855-1C50-A868-7BFD-80A5BD9E1050"/>
+<colUsage columnID="DCEFA249-F242-D472-60A8-1787A658F3ED"/>
+<colUsage columnID="8588EFB2-F251-B27B-24B5-9A92E97A6E4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02920B77-A5D0-B7F1-CB3E-6358BEF7BB99" name="FK_PPC_TASK_PPC_TASK_PANEL">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:22:55 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DEDC0855-1C50-A868-7BFD-80A5BD9E1050"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="65372CFD-5C5C-062C-39BF-3362B20D9787" name="FK_MIM_RSTAT_PPC_TASK_PANEL">
+<createdBy>yvakulenko</createdBy>
+<createdTime>2017-03-30 14:27:10 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8563E253-1DD9-F4C5-F87E-6873BC031CE1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

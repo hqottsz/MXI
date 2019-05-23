@@ -1,0 +1,157 @@
+<dataset>
+   <!-- Accounts -->
+   <fnc_account
+      account_db_id = "4650"
+      account_id = "101"
+      account_cd = "TEST_INVOICE"
+      ext_key_sdesc = ""
+      account_type_cd = "INVOICE"
+      tcode_db_id = "4650"
+      tcode_id = "100000" />
+
+   <fnc_account
+      account_db_id = "4650"
+      account_id = "102"
+      account_cd = "TEST_EXPENSE"
+      ext_key_sdesc = ""
+      account_type_cd = "EXPENSE"
+      tcode_db_id = "4650"
+      tcode_id = "100000" />
+
+   <fnc_account
+      account_db_id = "4650"
+      account_id = "103"
+      account_cd = "TEST_INVASSET"
+      ext_key_sdesc = ""
+      account_type_cd = "INVASSET"
+      tcode_db_id = "4650"
+      tcode_id = "100000" />
+
+   <fnc_account
+      account_db_id = "4650"
+      account_id = "104"
+      account_cd = "TEST_FIXASSET"
+      ext_key_sdesc = ""
+      account_type_cd = "FIXASSET"
+      tcode_db_id = "4650"
+      tcode_id = "100000" />
+
+  <fnc_account
+      account_db_id = "4650"
+      account_id = "105"
+      account_cd = "TEST_AP"
+      ext_key_sdesc = ""
+      account_type_cd = "AP"
+      tcode_db_id = "4650"
+      tcode_id = "100000" />
+
+   <!-- TCodes -->
+
+   <fnc_tcode
+       tcode_db_id = "4650"
+       tcode_id = "100000"
+       tcode_cd = "TCODE-01" />
+
+   <!-- First Transaction -->
+   <fnc_xaction_log
+      xaction_db_id = "4650"
+      xaction_id = "100000"
+      xaction_type_db_id = "0"
+      xaction_type_cd = "CRTINV"
+      xaction_dt = "26-MAY-2007 10:00:00"
+      xaction_ldesc = "Created 15 EA of part number BN 100113." />
+
+   <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100000"
+      xaction_account_id = "1"
+      account_db_id = "4650"
+      account_id = "103"
+      credit_cost = "27.00"
+      debit_cost = "0.00"/>
+
+    <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100000"
+      xaction_account_id = "2"
+      account_db_id = "4650"
+      account_id = "102"
+      credit_cost = "0.00"
+      debit_cost = "27.00"/>
+
+   <!-- Third Transaction -->
+   <fnc_xaction_log
+      xaction_db_id = "4650"
+      xaction_id = "100002"
+      xaction_type_db_id = "0"
+      xaction_type_cd = "INSP"
+      xaction_dt = "28-MAY-2007 10:00:00"
+      xaction_ldesc = "Inspected shipment" />
+  <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100002"
+      xaction_account_id = "1"
+      account_db_id = "4650"
+      account_id = "104"
+      credit_cost = "325.00"
+      debit_cost = "0.00"/>
+  <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100002"
+      xaction_account_id = "2"
+      account_db_id = "4650"
+      account_id = "101"
+      credit_cost = "0.00"
+      debit_cost = "325.00"/>
+
+   <!-- Fourth Transaction -->
+   <fnc_xaction_log
+      xaction_db_id = "4650"
+      xaction_id = "100003"
+      xaction_type_db_id = "0"
+      xaction_type_cd = "PAYINVC"
+      xaction_dt = "29-MAY-2007 10:00:00"
+      xaction_ldesc = "Payed invoice" />
+  <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100003"
+      xaction_account_id = "1"
+      account_db_id = "4650"
+      account_id = "101"
+      credit_cost = "425.00"
+      debit_cost = "0.00"/>
+  <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100003"
+      xaction_account_id = "2"
+      account_db_id = "4650"
+      account_id = "105"
+      credit_cost = "0.00"
+      debit_cost = "425.00"/>
+
+   <!-- Fifth Transaction -->
+   <fnc_xaction_log
+      xaction_db_id = "4650"
+      xaction_id = "100004"
+      xaction_type_db_id = "0"
+      xaction_type_cd = "RTNVEN"
+      xaction_dt = "30-MAY-2007 10:00:00"
+      xaction_ldesc = "Returned to vendor" />
+  <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100004"
+      xaction_account_id = "1"
+      account_db_id = "4650"
+      account_id = "101"
+      credit_cost = "525.00"
+      debit_cost = "0.00"/>
+  <fnc_xaction_account
+      xaction_db_id = "4650"
+      xaction_id = "100004"
+      xaction_account_id = "2"
+      account_db_id = "4650"
+      account_id = "104"
+      credit_cost = "0.00"
+      debit_cost = "525.00"/>
+
+</dataset>

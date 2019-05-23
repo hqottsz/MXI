@@ -1,0 +1,23 @@
+--liquibase formatted sql
+
+
+--changeSet MX-24766:1 stripComments:false endDelimiter:\n\s*/\s*\n|\n\s*/\s*$
+BEGIN
+utl_migr_schema_pkg.table_create('
+Create table "UTL_CURRENT_VERSION" (
+	"COMPONENT_NAME" Varchar2 (40) NOT NULL DEFERRABLE ,
+	"VERSION" Varchar2 (20) Default ''1.0.0.0'' NOT NULL DEFERRABLE  Check ((REPLACE(REPLACE(TRANSLATE(VERSION, ''123456789'', ''000000000''), ''00'', ''0''), ''00'', ''0'') = ''0.0.0.0'') ) DEFERRABLE ,
+	"SERVICEPACK_VER" Number(10,0) Default 0 NOT NULL DEFERRABLE  Check (SERVICEPACK_VER BETWEEN 0 AND 4294967295 ) DEFERRABLE ,
+	"UPDATE_VER" Number(10,0) Default 0 NOT NULL DEFERRABLE  Check (UPDATE_VER BETWEEN 0 AND 4294967295 ) DEFERRABLE ,
+	"SHORT_VERSION_NAME" Varchar2 (40),
+	"FULL_VERSION_NAME" Varchar2 (40) NOT NULL DEFERRABLE ,
+	"BUILD_LABEL" Varchar2 (40),
+	"BUILD_LOCATION" Varchar2 (80),
+	"BUILD_REVISION" Number(10,0) Check (BUILD_REVISION BETWEEN 0 AND 4294967295 ) DEFERRABLE ,
+	"INSTALL_DT" Date,
+	"INSTALL_SDESC" Varchar2 (80),
+ Constraint "PK_UTL_CURRENT_VERSION" primary key ("COMPONENT_NAME") 
+) 
+');
+END;
+/

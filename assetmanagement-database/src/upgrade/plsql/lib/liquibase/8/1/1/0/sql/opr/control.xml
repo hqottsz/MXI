@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+
+ Control File
+
+ This file manages the order of execution for the upgrades in this stream.
+ The upgrades get executed in order from top to bottom.
+ New entries should be inserted at the bottom of this file by default.
+
+ Example:
+
+  <include file="EXAMPLE-001.sql" relativeToChangelogFile="true"/>
+
+-->
+
+<databaseChangeLog
+      xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+	<include file="MTX-1088.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-1047.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-529.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-469.sql" relativeToChangelogFile="true"/>
+	<include file="DEV-2470.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-641.sql" relativeToChangelogFile="true"/>
+	<include file="OPER-642.sql" relativeToChangelogFile="true"/>
+	<include file="MTX-1774.sql" relativeToChangelogFile="true"/>
+
+	<!--  mview -->
+	<include file="mview/control.xml" relativeToChangelogFile="true"/>
+
+	<!--  view -->
+	<include file="view/control.xml" relativeToChangelogFile="true"/>
+
+
+
+</databaseChangeLog>

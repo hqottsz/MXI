@@ -1,0 +1,515 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_2" id="0C05A93E-3BC6-D68F-39AC-22C5822EFA01" name="FAIL_DEFER_REF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4B7043FD-0867-CAAA-518F-A24ED50D8C25</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FAIL_DEFER_REF_DB_ID" id="7A38C5A8-5ECE-49C5-EB5A-83CFF3C5B0DB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK. Identifies the creation database (MIM_LOCAL_DB) of the record and forms part of the record&apos;s primary key.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>04FBD27B-19A1-1DF2-1170-AE2B1EDB5F0D</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FAIL_DEFER_REF_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FAIL_DEFER_REF_ID" id="00BCB427-B6A4-6D2C-2D27-44A71F1C3CF3">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>PK.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>457D9B2D-A123-6A7B-5CA3-C4F44981FC16</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FAIL_DEFER_REF_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ASSMBL_DB_ID" id="8F171C8A-2367-B9F9-260A-D7DA5B3F78D1">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL.This is the assembly that the deferral reference applies to.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7C25FC9A-30B7-8B93-4614-C2E337D0CD98</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="ASSMBL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6CA537B0-30D8-4B39-A4DB-85E8D6E3D69E" referredColumn="39B9234B-7830-4EC8-DE12-B899009ECA46"/>
+</associations>
+</Column>
+<Column name="ASSMBL_CD" id="5D33F108-B11C-13EE-B667-A57D992179CD">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to EQP_ASSMBL.This is the assembly that the deferral reference applies to.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4B98CD52-275D-7F24-B878-458237FBF45D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6CA537B0-30D8-4B39-A4DB-85E8D6E3D69E" referredColumn="C4A7783A-2D3F-220A-7630-21D49175BAD0"/>
+</associations>
+</Column>
+<Column name="DEFER_REF_SDESC" id="E58FA910-CD21-E18E-94C3-4722E7644FA6">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>This is the deferral reference code.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AD6ADA1F-6FCE-FD59-AFEC-232C31C9F42B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CC2CA76B-05DF-94CA-FD57-7E55DBB9E628</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FAIL_SEV_DB_ID" id="88DF2B66-00B0-97E4-B04D-21A0184D6D09">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_SEV. This is the fault severity associated with the deferral reference.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4963A532-F559-F68A-BA21-C8E725C1435B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FAIL_SEV_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C1B17AB-0244-D086-8CE4-A441DDB75BFD" referredColumn="C79DF6D4-C92D-3E92-A8E1-5CB931F40B59"/>
+</associations>
+</Column>
+<Column name="FAIL_SEV_CD" id="E11C4FBB-FEB9-B27D-3746-9EC5BE69C34C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_SEV. This is the fault severity associated with the deferral reference.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>D65D1608-CC6F-9486-AD48-263AC82EED57</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C1B17AB-0244-D086-8CE4-A441DDB75BFD" referredColumn="D1800540-4B11-02A9-D8C4-733143014DFC"/>
+</associations>
+</Column>
+<Column name="FAIL_DEFER_DB_ID" id="257D4A91-2E59-F7C0-248A-D1492241DF00">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_DEFER. This is the deferral class associated with the deferral reference.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>2AB98B05-BA10-F1CC-45C8-EDEAE24F3D9B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="FAIL_DEFER_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E1A6DBDE-BE66-1CAA-F088-AD56E385BC65" referredColumn="A80FE3D9-CD12-F922-C6E8-A0E653B587C6"/>
+</associations>
+</Column>
+<Column name="FAIL_DEFER_CD" id="E0D1C144-94E7-B0CB-B2D2-6EAD4724402D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_DEFER. This is the deferral class associated with the deferral reference.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4FC02604-FE16-90AF-4E5A-06015DC8FCA5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E1A6DBDE-BE66-1CAA-F088-AD56E385BC65" referredColumn="A43F8F99-E08B-CA26-657B-7D658304E3E6"/>
+</associations>
+</Column>
+<Column name="DEFER_REF_LDESC" id="4AF4C07C-4F46-FECA-D14F-B4A30D6D8B10">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The deferral reference for a fault.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>0BD1BFE6-40E6-6DBE-B20A-46B23D6808FD</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MOC_APPROVAL_BOOL" id="AE8A210E-F4F6-34B8-DA55-3CAFE7F139A7">
+<createdBy>bfreitas</createdBy>
+<createdTime>2018-07-31 14:44:12 UTC</createdTime>
+<comment>True if the MOC needs to approve this deferral reference.</comment>
+<commentInRDBMS>True if the MOC needs to approve this deferral reference.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>91807096-9272-5328-D130-6F48566A6BDD</domain>
+<usesDefaultValue>true</usesDefaultValue>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="MOC_APPROVAL_BOOL IN (0, 1)"/>
+</checkConstraint>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEFER_REF_STATUS_CD" id="DB0D39BD-A95E-46FF-78FC-64AC9711ED7F">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 14:54:09 UTC</createdTime>
+<commentInRDBMS>FK to REF_FAIL_DEFER_REF_STATUS</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 CHAR</dataTypeSize>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>ACTV</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B9CB0E27-8169-99C5-6818-13C4AF49D38D" referredColumn="7231CF4B-A030-C4C1-0C48-71A79BFBE20A"/>
+</associations>
+</Column>
+<Column name="ASSMBL_BOM_ID" id="8C488991-54EC-AA7C-2603-5A9F9C2006B5">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 18:09:21 UTC</createdTime>
+<commentInRDBMS>FK in EQP_ASSMBL_BOM</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2AF99D75-8D08-564F-5E2E-A4B69855A6D9" referredColumn="350311C8-8E4C-4558-AC18-B48589845658"/>
+</associations>
+</Column>
+<Column name="INST_SYSTEMS_QT" id="D82929F2-A57A-84A5-1A91-54B8574B9E7C">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:08:46 UTC</createdTime>
+<commentInRDBMS>The number of installed systems. A value of -1 represents a variable number of installed systems.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OP_SYSTEMS_QT" id="037E5C32-3472-8FC6-67EE-60DD7D9B517F">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 18:09:58 UTC</createdTime>
+<commentInRDBMS>The number of operational systems for dispatch. A value of -1 represents a variable number of systems required for dispatch.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APPL_LDESC" id="F41BB79A-F3C8-74A8-2E5D-2A6CDF3D5B1B">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:24:07 UTC</createdTime>
+<commentInRDBMS>The applicability range for the deferral reference.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPER_RESTRICTIONS_LDESC" id="ADB84230-FAF8-E219-6C76-5406CACDFFE2">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-12 15:26:39 UTC</createdTime>
+<commentInRDBMS>Description of operational restrictions.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAINT_ACTIONS_LDESC" id="99A6377B-ECFF-D91D-434E-D83BCD7E2D18">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-12 15:26:49 UTC</createdTime>
+<commentInRDBMS>List of maintenance actions.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PERF_PENALTIES_LDESC" id="808B9CDB-70F0-1760-D643-F4959CB9747E">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-12 15:27:07 UTC</createdTime>
+<commentInRDBMS>List of performance penalties.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B773C7F1-9A0C-7412-695B-08BA8D8762DC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALT_ID" id="68DD8E74-06EF-7C52-A4D4-FC1089BEC66D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>199DBE00-F86A-CE72-DD13-5789FFE76E3D</importedID>
+<use>0</use>
+<logicalDatatype>LogDes-4BABEC65-108B-2A3C-F7C4-84AC47D292B0@LOGDT10040</logicalDatatype>
+<domain>322C6394-3B2A-B36A-3202-B3658B7CD192</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="8E64BB67-FAD2-12AE-3990-B5671ED3408C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>FK to MIM_RSTAT. A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>087F9E6D-5584-F0E5-0ABF-8775462D7090</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="76DF9080-CB16-FF64-EAE3-CF2EE5216FE4" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="8BF728D7-4DBF-2139-DD9C-061C7D93F733">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>478081C6-E42B-3E92-ED79-FDB002F3AF8A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="6FBF7046-E48F-33B0-323B-78240F6EAE7F">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>8C8C5506-589A-B835-C146-C8C9DFAAA025</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="61BDC14F-8EFD-1113-798E-0A5ED2866E8C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>CEC17D5D-4731-0FC2-4CF5-8A1BD4B8CAA0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="AF7B7433-2A6E-AE9C-ED43-71BA3CED5C3A">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>AFBF8F61-CC17-FD92-0120-0AF9AF8613F8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2FFED970-271F-38F3-E74E-401BCA98843B" name="PK_FAIL_DEFER_REF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>C62EC877-EBF1-C9C5-840E-7EC8F073D19C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A38C5A8-5ECE-49C5-EB5A-83CFF3C5B0DB"/>
+<colUsage columnID="00BCB427-B6A4-6D2C-2D27-44A71F1C3CF3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6B1FBC2E-3013-5A1E-9B4A-BC3FD96C9CC0" name="IX_FAILDEFERREFALTID_UNQ">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4B8C6EB4-321D-46B4-2D36-540361846EB8</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68DD8E74-06EF-7C52-A4D4-FC1089BEC66D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F86E9F57-A8BD-231B-B204-0826C9E15039" name="IX_EQPASSMBL_FAILDEFERREF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:28 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F9F7BF8A-2937-53EC-5FF6-F68D412A91D1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F171C8A-2367-B9F9-260A-D7DA5B3F78D1"/>
+<colUsage columnID="5D33F108-B11C-13EE-B667-A57D992179CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C20C2F44-C93A-75B4-D016-FC7934CFA9ED" name="IX_DEFER_REF_STATUS_CD">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2017-05-19 13:26:58 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB0D39BD-A95E-46FF-78FC-64AC9711ED7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C3C727F-1B09-07F9-61AA-DAAD734E0E2E" name="IX_DEFER_REF_SDESC_LOWER">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2017-09-28 12:52:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexExpression>LOWER(defer_ref_sdesc)</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="C87FBD3A-2B88-9CFB-217B-A0E254F2E6F0" name="FK_EQPASSMBL_FAILDEFERREF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F171C8A-2367-B9F9-260A-D7DA5B3F78D1"/>
+<colUsage columnID="5D33F108-B11C-13EE-B667-A57D992179CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F23A8CEB-97B8-786D-E796-34073C0CF687" name="FK_MIMRSTAT_FAILDEFERREF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8E64BB67-FAD2-12AE-3990-B5671ED3408C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FC28FDAA-459D-78F2-2544-816881D2B122" name="FK_REFFAILDEFER_FAILDEFERREF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:39 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="257D4A91-2E59-F7C0-248A-D1492241DF00"/>
+<colUsage columnID="E0D1C144-94E7-B0CB-B2D2-6EAD4724402D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8F97DAA-DFAC-4F33-4A93-2532239D457F" name="FK_REFFAILSEV_FAILDEFERREF">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88DF2B66-00B0-97E4-B04D-21A0184D6D09"/>
+<colUsage columnID="E11C4FBB-FEB9-B27D-3746-9EC5BE69C34C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1703BA35-E751-D31B-A71C-09C49050BC6C" name="FK_REFFAILDEFER_REFSTATUS">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 14:55:22 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB0D39BD-A95E-46FF-78FC-64AC9711ED7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7B78574E-E30A-0CA4-A47A-43984736F4C9" name="FK_EQPASSMBLBOM">
+<createdBy>tdomitrovits</createdBy>
+<createdTime>2016-10-11 17:24:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C488991-54EC-AA7C-2603-5A9F9C2006B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

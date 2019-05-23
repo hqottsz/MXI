@@ -1,0 +1,321 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EFA4860E-E127-BA7E-AAC7-078DBC95FF38" name="CAPACITY_PATTERN_DAY_SKILL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:26 UTC</createdTime>
+<commentInRDBMS>This entity models the labor skills associated with each shift of a day in a capacity pattern.  The labor skills defined in CAPACITY_PATTERN_SKILL entity are applied for each shift of a day.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>7407EA84-0B4D-3A26-1680-E791A7DED8B6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CAPACITY_PATTERN_DB_ID" id="CE214DBE-3541-96AD-E9DA-1DA4629F86F7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to CAPACITY_PATTERN_DAY_SHIFT table.  Represent the Capacity pattern - Day - Shift combination for which the labor skill is applied.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B4099008-BBDF-9171-777A-1A47F16FCAF7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CAPACITY_PATTERN_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8778D466-DC5D-EDF8-5835-052C2EBDD182" referredColumn="1D7F9338-4DCC-2C24-A5BC-0423FF66DB0D"/>
+</associations>
+</Column>
+<Column name="CAPACITY_PATTERN_ID" id="4D9D5932-7A1D-98E1-BE18-C7B12A8F9AE7">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to CAPACITY_PATTERN_DAY_SHIFT table.  Represent the Capacity pattern - Day - Shift combination for which the labor skill is applied.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>4CD0F139-E9CC-8587-BFF4-8EE0801EE7F0</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="CAPACITY_PATTERN_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8778D466-DC5D-EDF8-5835-052C2EBDD182" referredColumn="30C7C7A3-8BF8-DC91-267E-9D0D813BEEE5"/>
+</associations>
+</Column>
+<Column name="CAPACITY_PATTERN_DAY_ORD" id="2763DD75-3E6D-D463-F455-8BB053672501">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to CAPACITY_PATTERN_DAY_SHIFT table.  Represent the Capacity pattern - Day - Shift combination for which the labor skill is applied.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B7177BE5-EADD-67E7-781C-D58E7C5BD915</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>098F23FF-4DC2-8BAC-FBD8-20234B78AA9A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8778D466-DC5D-EDF8-5835-052C2EBDD182" referredColumn="287874C9-63C3-AAA3-4858-5D1ECD51BACA"/>
+</associations>
+</Column>
+<Column name="SHIFT_DB_ID" id="7E4B8C2D-9B3F-F1F5-0907-CD17774FD6FB">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to CAPACITY_PATTERN_DAY_SHIFT table.  Represent the Capacity pattern - Day - Shift combination for which the labor skill is applied.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B7BF558B-12E4-7BA6-FB74-C3A229E2D9C3</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SHIFT_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8778D466-DC5D-EDF8-5835-052C2EBDD182" referredColumn="036227EB-1B4D-FC3E-3906-85A2FBF51AA7"/>
+</associations>
+</Column>
+<Column name="SHIFT_ID" id="8D36778C-647C-CB97-C869-35E3487F4FFC">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to CAPACITY_PATTERN_DAY_SHIFT table.  Represent the Capacity pattern - Day - Shift combination for which the labor skill is applied.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>24E46691-BE09-397F-3830-DBDF20A6A771</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="SHIFT_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8778D466-DC5D-EDF8-5835-052C2EBDD182" referredColumn="02E31178-331A-4B27-99C7-C35ED6E02939"/>
+</associations>
+</Column>
+<Column name="LABOUR_SKILL_DB_ID" id="3E1814C1-B29D-5CB4-16CC-97F6AEDA739D">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_LABOUR_SKILL table.  Represents the labor skill applied to the capacity pattern - day - shift combination.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B187EAAB-C1BF-073C-39F7-81132E15A0F1</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="LABOUR_SKILL_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F97260AB-B596-C057-67C3-0D08F36A5379" referredColumn="FCC98F6C-F4B6-E147-4DC1-001D9E7E9C05"/>
+</associations>
+</Column>
+<Column name="LABOUR_SKILL_CD" id="223145F7-CF4F-2FC3-A638-AD802BCDEA8C">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>FK to REF_LABOUR_SKILL table.  Represents the labor skill applied to the capacity pattern - day - shift combination.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FEB4C89F-BEF6-FCAB-206D-65199D8970FE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4B698370-A407-2C1E-603E-A4DFB7D51D93</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F97260AB-B596-C057-67C3-0D08F36A5379" referredColumn="E5384F59-2483-76F0-624D-A71E378356F5"/>
+</associations>
+</Column>
+<Column name="LIC_RESOURCE_QT" id="BEAF29E0-438A-3CCB-3F65-2C1747B8FD28">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Represents number of licensed resources in a shift.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FEA5F148-71FA-9859-2A16-6C1FB400DA5F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UNLIC_RESOURCE_QT" id="173577C9-37ED-BDE4-F62F-9B2230F389FF">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>Represents number of unicensed resources in a shift.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>E6AF223E-9AC0-09FE-B339-06BF2F148987</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<domain>654A588D-FD29-4758-A310-567FE95D1096</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTAT_CD" id="F5C054BB-04F6-6FAB-CF0E-32964F0B0468">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>A physical attribute that defines the read/write access of the record.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>FCE7A572-49E6-0FE3-43BB-DBF8E65B2AA5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CCCBF1B2-DC0D-004E-B842-71544CC36C45</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="RSTAT_CD IN (0, 1, 2, 3)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="55DC2EBF-43BB-6ED6-0398-0097A2F0B1D9" referredColumn="F2BCD552-E6B5-EEEE-C285-3806DE2E5B44"/>
+</associations>
+</Column>
+<Column name="CREATION_DT" id="E871521A-8489-CFC5-544E-2578D209AB2E">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was inserted.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B8787E93-DD9F-0E33-A09E-86BF5B0B7D01</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DT" id="B6CA4EF5-D7A8-DAB3-4E0B-4325DFDB4978">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database server&apos;s timestamp captured at the time the record was last updated.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>EC997700-93A9-465A-45D6-D6ABE378D9EA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>53AD2B5D-8EA2-3196-4B7E-0DB8FB78183B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_DB_ID" id="D260C286-2E06-DBE1-2FFD-8A983AE69490">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The database identifer (MIM_LOCAL_DB) captured at the time the record was last updated. Identifies where modifications are being made in distributed Maintenix.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>3DDAA5F1-89BD-1919-C41E-5C9384075C4E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>342BA5FD-0B63-D805-2FC8-997A8421EA55</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="REVISION_DB_ID BETWEEN 0 AND 4294967295"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVISION_USER" id="EEFAFC20-8F1C-EAA3-957D-22FE166AFDEA">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<commentInRDBMS>The user that last modified the record. The user is either a) the user that logged into Maintenix - pushed into the database from the client or b) if the record update is not via a Maintenix application, the user is the Oracle user name that is processing the transaction.</commentInRDBMS>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>F17E72ED-E49E-8520-15CF-4DE82C397CC1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BA12B84A-C4E1-6C0C-627F-DE0A270AED37</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D56C06D9-7510-65A4-C368-6AA790BE64E4" name="PK_CAPACITY_PATTERN_DAY_SKILL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>6BBC4451-E0EF-1194-0AA9-E8F0769D1C69</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE214DBE-3541-96AD-E9DA-1DA4629F86F7"/>
+<colUsage columnID="4D9D5932-7A1D-98E1-BE18-C7B12A8F9AE7"/>
+<colUsage columnID="2763DD75-3E6D-D463-F455-8BB053672501"/>
+<colUsage columnID="7E4B8C2D-9B3F-F1F5-0907-CD17774FD6FB"/>
+<colUsage columnID="8D36778C-647C-CB97-C869-35E3487F4FFC"/>
+<colUsage columnID="3E1814C1-B29D-5CB4-16CC-97F6AEDA739D"/>
+<colUsage columnID="223145F7-CF4F-2FC3-A638-AD802BCDEA8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="225825A2-8741-3055-15B5-015D9C996496" name="IX_CPDAYSHIFT_CPDAYSKILL">
+<sourceDDLFile>maintenix.sql</sourceDDLFile>
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:27 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<importedID>B44CD28D-DE08-5F5F-5CAF-CDA6B65A87C3</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE214DBE-3541-96AD-E9DA-1DA4629F86F7"/>
+<colUsage columnID="4D9D5932-7A1D-98E1-BE18-C7B12A8F9AE7"/>
+<colUsage columnID="2763DD75-3E6D-D463-F455-8BB053672501"/>
+<colUsage columnID="7E4B8C2D-9B3F-F1F5-0907-CD17774FD6FB"/>
+<colUsage columnID="8D36778C-647C-CB97-C869-35E3487F4FFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="29C6D0A8-4170-73E5-B3D8-1B5959205D6D" name="FK_CPDAYSHIFT_CPDAYSKILL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:30 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE214DBE-3541-96AD-E9DA-1DA4629F86F7"/>
+<colUsage columnID="4D9D5932-7A1D-98E1-BE18-C7B12A8F9AE7"/>
+<colUsage columnID="2763DD75-3E6D-D463-F455-8BB053672501"/>
+<colUsage columnID="7E4B8C2D-9B3F-F1F5-0907-CD17774FD6FB"/>
+<colUsage columnID="8D36778C-647C-CB97-C869-35E3487F4FFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="00EBFC0C-51A5-25EE-D6F9-1DA7B965D98E" name="FK_MIMRSTAT_CPDAYSKILL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:33 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5C054BB-04F6-6FAB-CF0E-32964F0B0468"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA2A6213-E710-80CB-AC5B-3DAAB88BE085" name="FK_REFLABOURSKILL_CPDAYSKILL">
+<createdBy>mgabua</createdBy>
+<createdTime>2016-02-01 17:31:40 UTC</createdTime>
+<ownerDesignName>maintenix</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3E1814C1-B29D-5CB4-16CC-97F6AEDA739D"/>
+<colUsage columnID="223145F7-CF4F-2FC3-A638-AD802BCDEA8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

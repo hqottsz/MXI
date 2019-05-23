@@ -1,0 +1,358 @@
+<dataset>
+
+   <!-- main inventory -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "1"
+      rstat_cd = "0"
+   />
+   <!--  sub inventory -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "2"
+      nh_inv_no_db_id = "4650"
+      nh_inv_no_id = "1"
+      rstat_cd = "0"
+   />
+   <!-- another inventory -->
+   <inv_inv
+      inv_no_db_id = "4650"
+      inv_no_id = "999"
+      nh_inv_no_db_id = "4650"
+      nh_inv_no_id = "999"
+      rstat_cd = "0"
+   />
+
+   <!-- NSV task defn marked off-parent  
+        note: the TIAF_TASK_TASK_FLAG_INSRT trigger inserts a record into task_task_flags
+   -->
+   <task_task
+      task_db_id = "4650"
+      task_id = "1"
+      task_must_remove_db_id = "0"
+      task_must_remove_cd = "OFFPARENT"
+   />
+
+   <!-- NSV task defn marked off-wing 
+        note: the TIAF_TASK_TASK_FLAG_INSRT trigger inserts a record into task_task_flags
+   -->
+   <task_task
+      task_db_id = "4650"
+      task_id = "2"
+      task_must_remove_db_id = "0"
+      task_must_remove_cd = "OFFWING"
+   />
+
+   <!-- NSV task defn marked n/a 
+        note: the TIAF_TASK_TASK_FLAG_INSRT trigger inserts a record into task_task_flags
+   -->
+   <task_task
+      task_db_id = "4650"
+      task_id = "3"
+      task_must_remove_db_id = "0"
+      task_must_remove_cd = "NA"
+   />
+
+
+   <!-- work package with assignable next shop visit tasks against its main inv and sub inv -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "1"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "1"
+   />
+
+   <!-- another work package against another inventory -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "999"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "999"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "999"
+   />
+
+   <!-- main inventory tasks -->
+
+   <!-- NSV task against main inventory;
+        marked off-parent, NSV, unassigned, non-historic, with no related tasks, and with no deadline
+        note: no evt_event_rel record to indicate no related tasks
+              and no evt_sched_dead record to indicate no deadline
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "211"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "211"
+      h_event_db_id = "4650"
+      h_event_id = "211"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+
+   <!-- NSV task against main inventory;
+        marked off-parent, NSV, unassigned, non-historic, with no related tasks, and with overdue CA based deadline
+        note: no evt_event_rel record to indicate no related tasks
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "212"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "212"
+      h_event_db_id = "4650"
+      h_event_id = "212"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+   <!-- tables for vw_drv_deadline (data_type key 0:21 = CDY) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "212"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      data_type_db_id = "0"
+      data_type_id = "21"
+      deviation_qt = "0"
+      usage_rem_qt = "0"
+      sched_dead_dt = "17-MAR-2012 11:00"
+   />
+
+   <!-- NSV task against main inventory;
+        marked off-parent, NSV, unassigned, non-historic, with no related tasks, and with overdue US based deadline
+        note: no evt_event_rel record to indicate no related tasks
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "213"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "213"
+      h_event_db_id = "4650"
+      h_event_id = "213"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+   <!-- tables for vw_drv_deadline (data_type key 0:10 = CYCLES) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "213"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      data_type_db_id = "0"
+      data_type_id = "10"
+      deviation_qt = "100"
+      usage_rem_qt = "-200"
+      sched_dead_dt = "17-MAR-2012 11:00"
+   />
+
+   <!-- NSV task against main inventory;
+        marked off-parent, NSV, unassigned, non-historic, with related task against another WP, and with no deadline
+        note: no evt_sched_dead record to indicate no deadline
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "214"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_db_id = "4650"
+      task_id = "1"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "214"
+      h_event_db_id = "4650"
+      h_event_id = "214"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+   <evt_event_rel
+      event_db_id = "4650"
+      event_id = "2141"
+      event_rel_id = "1"
+      rel_event_db_id = "4650"
+      rel_event_id = "214"
+      rel_type_db_id = "0"
+      rel_type_cd = "DEPT"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "2141"
+      h_event_db_id = "4650"
+      h_event_id = "999"
+   />
+
+   <!-- NSV task against main inventory;
+        marked off-wing, NSV, unassigned, non-historic, with no related tasks, and with no deadline
+        note: no evt_event_rel record to indicate no related tasks
+              and no evt_sched_dead record to indicate no deadline
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "215"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "1"
+      task_db_id = "4650"
+      task_id = "2"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "215"
+      h_event_db_id = "4650"
+      h_event_id = "215"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+
+
+   <!-- sub inventory tasks -->
+
+
+   <!-- NSV task against sub inventory;
+        marked off-wing, NSV, unassigned, non-historic, with no related tasks, and with no deadline
+        note: no evt_event_rel record to indicate no related tasks
+              and no evt_sched_dead record to indicate no deadline
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "221"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "2"
+      task_db_id = "4650"
+      task_id = "2"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "221"
+      h_event_db_id = "4650"
+      h_event_id = "221"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+
+   <!-- NSV task against sub inventory;
+        marked off-wing, NSV, unassigned, non-historic, with no related tasks, and with overdue CA based deadline
+        note: no evt_event_rel record to indicate no related tasks
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "222"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "2"
+      task_db_id = "4650"
+      task_id = "2"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "222"
+      h_event_db_id = "4650"
+      h_event_id = "222"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+   <!-- tables for vw_drv_deadline (data_type key 0:21 = CDY) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "222"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      data_type_db_id = "0"
+      data_type_id = "21"
+      deviation_qt = "0"
+      usage_rem_qt = "0"
+      sched_dead_dt = "17-MAR-2012 11:00"
+   />
+
+   <!-- NSV task against sub inventory;
+        marked off-wing, NSV, unassigned, non-historic, with no related tasks, and with overdue US based deadline
+        note: no evt_event_rel record to indicate no related tasks
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "223"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "2"
+      task_db_id = "4650"
+      task_id = "2"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "223"
+      h_event_db_id = "4650"
+      h_event_id = "223"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+   <!-- tables for vw_drv_deadline (data_type key 0:10 = CYCLES) -->
+   <evt_sched_dead
+      event_db_id = "4650"
+      event_id = "223"
+      hist_bool_ro = "0"
+      sched_driver_bool = "1"
+      data_type_db_id = "0"
+      data_type_id = "10"
+      deviation_qt = "100"
+      usage_rem_qt = "-200"
+      sched_dead_dt = "17-MAR-2012 11:00"
+   />
+
+   <!-- NSV task against sub inventory;
+        marked off-wing, NSV, unassigned, non-historic, with related task against another WP, and with no deadline
+        note: no evt_sched_dead record to indicate no deadline
+   -->
+   <sched_stask
+      sched_db_id = "4650"
+      sched_id = "224"
+      main_inv_no_db_id = "4650"
+      main_inv_no_id = "2"
+      task_db_id = "4650"
+      task_id = "2"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "224"
+      h_event_db_id = "4650"
+      h_event_id = "224"
+      hist_bool = "0"
+      rstat_cd = "0"
+   />
+   <evt_event_rel
+      event_db_id = "4650"
+      event_id = "2241"
+      event_rel_id = "1"
+      rel_event_db_id = "4650"
+      rel_event_id = "224"
+      rel_type_db_id = "0"
+      rel_type_cd = "DEPT"
+   />
+   <evt_event
+      event_db_id = "4650"
+      event_id = "2241"
+      h_event_db_id = "4650"
+      h_event_id = "999"
+   />
+
+
+</dataset>

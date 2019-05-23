@@ -1,0 +1,741 @@
+apply plugin: 'mxjava'
+
+configurations {
+   buildinfoproperties
+   distLoader
+}
+
+dependencies {
+   distLoader project(":am-data-loader")
+
+   // Test Dependencies
+   testCompile "junit:junit:${junitVersion}"
+   testCompile files( weblogicOjdbcJar )
+   testCompile "org.apache.commons:commons-csv:${commonsCsvVersion}"
+   testCompile "org.apache.commons:commons-lang3:${commonsLang3Version}"
+
+   // used when packaging test results zips
+   buildinfoproperties project( path: ':installers:buildinfo', configuration: 'buildinfoproperties' )
+}
+
+mxjava {
+   ignoreFailures = true
+}
+
+// Skip the default core:test
+test.enabled = false
+
+
+// -------------------------------------------------------------------------------------------
+// Database tasks
+// -------------------------------------------------------------------------------------------
+
+apply plugin: 'mxenvironment'
+
+configurations {
+   loader
+   liquibase
+   database {
+      transitive = false;
+      extendsFrom liquibase
+   }
+}
+
+dependencies {
+   loader "com.mxi.dataloader:dataloader:${dataloaderVersion}";
+   loader "com.mxi.dataloader:csvloader:${dataloaderVersion}";
+   loader "com.mxi.dataloader:sqlloader:${dataloaderVersion}";
+   loader project(":assetmanagement-data-loader");
+
+   database project(path: ":assetmanagement-database", configuration: 'database');
+   liquibaseDeployer "com.mxi.idk:database-deployer-cli:${idkVersion}";
+   liquibase "com.mxi.idk:dbtools-db:${idkVersion}";
+}
+
+processResources {
+   dependsOn configurations.database;
+}
+
+envSetUp.dependsOn(processResources);
+
+environments {
+   aloader {
+      database {
+         if (useDocker.toBoolean()){
+            // The following properties must be configured to use the database in the Docker container.
+            // Set user and password to mx_user if you want this environment to use the pre-created database user in the Docker image.
+            // Assign unique ports to prevent collisions with other Docker containers.
+            // The recommended port for the DB Control utility is the 11xx version of the database port to make it easy to find.
+            host="localhost";
+            password="mx_user";
+            username="mx_user";
+            port=1530;
+            def dbControlPort=1130;
+            service="or11g";
+            recreateDatabaseUser=false;
+
+            docker {
+               cleanup = "docker container rm -f ${productLabelPrefix}${productLabelCodeName}_${name}_db";
+               pull = "docker image pull ${dockerBaseImage}";
+               run = "docker container run --detach --name ${productLabelPrefix}${productLabelCodeName}_${name}_db --publish ${port}:1521 --publish ${dbControlPort}:1158 --tmpfs /dev/shm:rw,exec,suid ${dockerBaseImage}";
+             }
+         }
+         install {
+            if (useDocker.toBoolean()){
+               liquibase {
+                  configuration = configurations.database;
+               }
+               assertComponentVersion {
+                 componentCd = 'assetmanagement-database';
+                 major = Integer.valueOf(projectMajorVersion);
+                 minor = Integer.valueOf(projectMinorVersion);
+                 servicepack = Integer.valueOf(projectServicepackVersion);
+                 update = Integer.valueOf(projectUpdateVersion);
+               }
+            }
+            else {
+               plsqlExec {
+                  workingDirectory = file("${rootProject.projectDir}\\assetmanagement-database\\src\\base\\plsql");
+                  controlFile = file("${workingDirectory}\\control.sql");
+               }
+               setupMaintenixAudit {
+               }
+               version {
+                  componentName = "Maintenix";
+                  moduleName = "Maintenix.Schema";
+                  major = Integer.valueOf(productMajorVersion);
+                  minor = Integer.valueOf(productMinorVersion);
+                  servicepack = Integer.valueOf(productServicepackVersion);
+                  update = Integer.valueOf(productUpdateVersion);
+               }
+               liquibase {
+                         configuration = configurations.database;
+               }
+               componentVersion {
+                  componentCd = 'assetmanagement-database';
+                  major = Integer.valueOf(projectMajorVersion);
+                  minor = Integer.valueOf(projectMinorVersion);
+                  servicepack = Integer.valueOf(projectServicepackVersion);
+                  update = Integer.valueOf(projectUpdateVersion);
+               }
+            }
+            plsqlExec {
+               workingDirectory = file("${rootProject.projectDir}\\assetmanagement-database\\src\\solution\\plsql");
+               controlFile = file("${workingDirectory}\\control.sql");
+            }
+
+            load {
+               loaderConfiguration = configurations.loader;
+               dataDir = file("src\\main\\data");
+            }
+
+         }
+
+         upgrade {
+            componentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(previousMajorVersion);
+               minor = Integer.valueOf(previousMinorVersion);
+               servicepack = Integer.valueOf(previousServicepackVersion);
+               update = Integer.valueOf(previousUpdateVersion);
+            }
+            liquibase {
+               configuration = configurations.database;
+            }
+            assertComponentVersion {
+               componentCd = 'assetmanagement-database';
+               major = Integer.valueOf(projectMajorVersion);
+               minor = Integer.valueOf(projectMinorVersion);
+               servicepack = Integer.valueOf(projectServicepackVersion);
+               update = Integer.valueOf(projectUpdateVersion);
+            }
+         }
+      }
+   }
+}
+
+createAloaderDb.dependsOn configurations.database;
+upgradeAloaderDb.dependsOn configurations.database;
+
+// -------------------------------------------------------------------------------------------
+// (in,un,reIn)stalling Tasks
+// -------------------------------------------------------------------------------------------
+
+task stageAloader (type: Copy) {
+
+   dependsOn configurations.distLoader;
+
+   def loaderMainDir = "${project.buildDir}/resources/main"
+   outputs.dir loaderMainDir
+
+   from zipTree(configurations.distLoader.singleFile)
+   into loaderMainDir;
+
+   def resourcesDir = "${project.buildDir}/resources";
+   def runTimePropFile = "${resourcesDir}/main/runtime.properties";
+
+   inputs.property 'host', environments.aloader.database.host;
+   inputs.property 'port', environments.aloader.database.port;
+   inputs.property 'service', environments.aloader.database.service;
+   inputs.property 'username', environments.aloader.database.username;
+   inputs.property 'password', environments.aloader.database.password;
+   outputs.file runTimePropFile;
+
+   outputs.upToDateWhen {false}
+
+   doLast {
+      def connectString = environments.aloader.database.host + ":" + environments.aloader.database.port + "/" + environments.aloader.database.service;
+
+      ant.propertyfile( file: runTimePropFile ) {
+         entry( key: "oracle.connect.string", value: connectString)
+         entry( key: "maintenix.username",    value: environments.aloader.database.username )
+         entry( key: "maintenix.password",    value: environments.aloader.database.password )
+         entry( key: "pause.batch.file",      value: "false" )
+         entry( key: "generate.report",       value: "false" )
+      }
+   }
+}
+
+task uninstallCore (type: Exec){  // runs batch file to uninstall Actuals Loader core on test database
+                                dependsOn stageAloader
+
+                                workingDir "${project.buildDir}/resources/main/deinstall"
+                                commandLine 'cmd', '/c', 'remove-all.bat'
+}
+uninstallCore.mustRunAfter( stageAloader );
+
+task installCore (type: Exec){
+
+   dependsOn uninstallCore
+
+   workingDir "${project.buildDir}/resources/main/install"
+   commandLine 'cmd', '/c', 'install-all.bat'
+}
+installCore.mustRunAfter( uninstallCore );
+
+
+task refreshDatabase {
+   dependsOn envSetUp, installCore
+}
+
+
+// -------------------------------------------------------------------------------------------
+// Junit test tasks
+// -------------------------------------------------------------------------------------------
+
+processTestResources {
+   def resourcesDir = "${project.buildDir}/resources";
+   def testPropFile = "${resourcesDir}/test/test.data.loader.config.properties";
+
+   inputs.property 'host', environments.aloader.database.host;
+   inputs.property 'port', environments.aloader.database.port;
+   inputs.property 'service', environments.aloader.database.service;
+   inputs.property 'username', environments.aloader.database.username;
+   inputs.property 'password', environments.aloader.database.password;
+   outputs.file testPropFile;
+
+   doLast {
+      ant.propertyfile( file: testPropFile ) {
+         entry( key: "db.server", value: environments.aloader.database.host)
+         entry( key: "db.sid", value: environments.aloader.database.service)
+         entry( key: "db.port", value: environments.aloader.database.port)
+         entry( key: "db.user", value: environments.aloader.database.username )
+         entry( key: "db.password", value: environments.aloader.database.password )
+      }
+   }
+}
+
+
+task smokeSetUp (){
+   dependsOn envSetUp;
+}
+
+
+task envTest (type: Test) {
+   dependsOn installCore, processTestResources
+   finalizedBy zipEnvTestResults, deployTestResults
+}
+
+// after the build plan move we'll remove this task and rename envTest to smokeTest
+task smokeTest () {
+   dependsOn envTest;
+}
+
+task smokeTearDown (){
+   dependsOn envTearDown;
+}
+
+zipEnvTestResults {
+   dependsOn configurations.buildinfoproperties
+   from( configurations.buildinfoproperties )
+}
+
+deployTestResults {
+   organisation = "${projectGroup}.envtest"
+   deploy( zipEnvTestResults, project.name, 'envtest', 'envtest' )
+}
+
+
+def downloadHttp(String aRemoteUrl, String aLocalUrl)
+{
+   def downloadFile = new BufferedOutputStream(new FileOutputStream(aLocalUrl))
+   downloadFile << new URL(aRemoteUrl).openStream()
+   downloadFile.close()
+}
+
+def isLogContainsBuildFailed( String logPath ) {
+
+   File logFile = new File(logPath)
+   def isBuildFailed = false
+
+   if (logFile.exists()) {
+      logFile.eachLine{ line ->
+
+         if( line ==~ "^BUILD  FAILED\$") isBuildFailed = true
+      }
+   }
+   return isBuildFailed
+}
+
+def checkDlUninstallLeftovers () {
+
+   String lDmpxName = "dltest_${username}"
+   String lSchemaUsername = "${oracleMaintenixUsername}".isEmpty() ? "${lDmpxName}" : "${oracleMaintenixUsername}"
+   String lSchemaPassword = "${oracleMaintenixUsername}".isEmpty() ? "${lDmpxName}" : (
+      "${oracleMaintenixPassword}".isEmpty() ? "${oracleMaintenixUsername}" : "${oracleMaintenixPassword}")
+   String lSqlScriptPath = "sqlplus.exe -S ${lSchemaUsername}/${lSchemaPassword}@${oracleConnectHost}:${oracleConnectPort}/${oracleConnectService} " +
+      "@${project.projectDir}/src/main/plsql/check-dl-uninstall-leftovers".replaceAll("\\\\", "/")
+   String lLogPath = "${project.buildDir}/logs/check-dl-uninstall-leftovers.log"
+   String lLocalInstallerZip = "${project.buildDir}/downloads/" + new File("${dbInstallerRelativeUrl}").name
+
+   println "- Removing old temp folders and files"
+   new File("${project.buildDir}/stageDbInstaller").delete()
+   new File("${project.buildDir}/stageDb").delete()
+   new File(lLocalInstallerZip).delete()
+
+   println "- Downloading the DB Installer zip file ${dbInstallerRelativeUrl} from Artifactory"
+   new File("${project.buildDir}").mkdirs()
+   new File("${project.buildDir}\\downloads").mkdirs()
+   downloadHttp("${artifactoryRepoUrl}/mx-deliverables/maintenix/${dbInstallerRelativeUrl}", lLocalInstallerZip)
+
+   println "- Unzipping the DB Scripts installer"
+   ant.unzip(   src:lLocalInstallerZip,
+             dest:"${project.buildDir}/stageDbInstaller",
+             overwrite:"true" )
+
+   // Create properties file for silent installation of DB Scripts
+   new File("${project.buildDir}/stageDbInstaller/silent-dbinstall.properties").write (
+      "USER_INSTALL_DIR=${project.buildDir}\\stageDb".replaceAll("\\\\", "\\\\\\\\") + "\n" +
+         "USER_SHORTCUTS=Do_Not_Install\n"
+   );
+
+   println "- Installing DB Scripts"
+   exec {
+
+      workingDir  "${project.buildDir}\\stageDbInstaller"
+      commandLine 'cmd', '/c', "install.cmd -i silent -f ${project.buildDir}\\stageDbInstaller\\silent-dbinstall.properties"
+   }
+   
+   println "- Waiting for silent installation to complete"
+   int lWaitCount = 600
+   while (lWaitCount > 0) {
+      if ( (new File("${project.buildDir}/stageDb/install/build.properties").exists()) &&
+           (new File("${project.buildDir}/stageDb/export/MAINTENIX.DMPX").exists())  ) {
+         break;
+      }
+      sleep(1000)
+      print "."
+      
+      lWaitCount--
+   }
+   if (lWaitCount == 0) {
+      println "\nERROR: Timeout reached while waiting for silent DB Scripts installation to complete"
+      return
+   }
+
+   println "\n- Copying the DMPX file to DataPump shared folder"
+   new File("${oracleImportPathShared}/${lDmpxName}.DMPX-log").delete()
+   copy {
+
+      from "${project.buildDir}/stageDb/export"
+      into "${oracleImportPathShared}"
+      rename { String fileName ->
+         fileName.replace('MAINTENIX', lDmpxName)
+      }
+   }
+
+   println "- Modifying build.properties file"
+   ant.propertyfile( file: "${project.buildDir}/stageDb/install/build.properties" ) {
+      entry( key: "oracle.connect.host", value: "${oracleConnectHost}");
+      entry( key: "oracle.connect.port", value: "${oracleConnectPort}");
+      entry( key: "oracle.connect.service", value: "${oracleConnectService}");
+      entry( key: "oracle.datafile.location", value: "${oracleDatafileLocation}");
+      entry( key: "system.username", value: "${oracleSystemUsername}");
+      entry( key: "system.password", value: "${oracleSystemPassword}");
+      entry( key: "maintenix.username", value: lSchemaUsername);
+      entry( key: "maintenix.password", value: lSchemaPassword);
+      entry( key: "oracle.datafile.size", value: "1000");
+      entry( key: "maintenix.import.filename", value: "${lDmpxName}.DMPX");
+      entry( key: "maintenix.import.path", value: "${oracleImportPathLocal}");
+      entry( key: "maintenix.import.directory", value: "${oracleImportDirectory}");
+      entry( key: "maintenix.database.id", value: "4650");
+   }
+
+   // Overwrite pause
+   new File("${project.buildDir}/stageDb/install/checkPause.cmd").write ("exit /B 0")
+
+   println "- Run datapump-create-user.bat to create Maintenix schema"
+   exec {
+
+      workingDir  "${project.buildDir}\\stageDb\\install"
+      commandLine 'cmd', '/c', "datapump-create-user.bat"
+   }
+
+   if (isLogContainsBuildFailed("${project.buildDir}\\stageDb\\install\\log\\maintenix.log")) return
+
+   println "- Create list of database objects before DataLoader installation"
+   new File("${project.buildDir}/logs").mkdirs()
+
+   def lBeforeDlInstall = exec {
+
+      workingDir "${project.buildDir}/logs"
+      ignoreExitValue = true
+      commandLine 'cmd', '/c', "${lSqlScriptPath}/before_DL_install.sql"
+   }
+
+   def lRetCode1 = lBeforeDlInstall.exitValue
+
+   // Upon success expect exit code 1, upon failure expect exit code 3
+   if ( 0 != lRetCode1 && 1 != lRetCode1 ) {
+
+      File lLogFile = new File(lLogPath)
+      if(lLogFile.exists()) {
+         println lLogFile.getText('UTF-8')
+      }
+      else {
+         println "ERROR occurred while creating db objects list before DL install"
+      }
+      return
+   }
+
+   println "- Install DataLoader"
+   ant.propertyfile( file: "${project.buildDir}/stageDb/dataload/runtime.properties" ) {
+      entry( key: "oracle.connect.string", value: "${oracleConnectHost}:${oracleConnectPort}/${oracleConnectService}");
+      entry( key: "maintenix.username", value: lSchemaUsername);
+      entry( key: "maintenix.password", value: lSchemaPassword);
+      entry( key: "pause.batch.file", value: "false");
+   }
+
+   def lRunDlInstall = exec {
+      workingDir  "${project.buildDir}\\stageDb\\dataload\\install"
+      ignoreExitValue = true
+      commandLine 'cmd', '/c', "install-all.bat"
+   }
+
+   if ( 1 == lRunDlInstall.exitValue ) {
+
+      println "ERROR occurred while installing DataLoader"
+      return
+   }
+
+   println "- Uninstall DataLoader"
+   exec {
+      workingDir  "${project.buildDir}\\stageDb\\dataload\\deinstall"
+      commandLine 'cmd', '/c', "remove-all.bat"
+   }
+
+   if (isLogContainsBuildFailed("${project.buildDir}\\stageDb\\dataload\\lib\\xml\\logs\\remove-all.log")) return
+
+   println "\n- Compare database objects before and after DL install/uninstall"
+   def lAfterDlUninstall = exec {
+
+      workingDir "${project.buildDir}/logs"
+      ignoreExitValue = true
+      commandLine 'cmd', '/c', "${lSqlScriptPath}/after_DL_uninstall.sql"
+   }
+
+   def lRetCode2 = lAfterDlUninstall.exitValue
+   if (!new File(lLogPath).exists()) {
+      if ( 0 != lRetCode2 && 1 != lRetCode2 ) {
+         println "ERROR occurred while comparing db objects before and after DL install/uninstall"
+      }
+      else {
+         println "SUCCESS: No difference found while comparing db objects before and after DL install/uninstall"
+      }
+   }
+
+   println "- Done"
+}
+
+def checkDlModelSpecCharInComments () {
+
+   File lModelDir = new File(new File("${projectDir}").getParentFile().getAbsolutePath() + "/am-data-loader/src/main/resources/lib/model")
+      
+   lModelDir .eachFileMatch(~/.+\.dmd/) { dmdFile ->
+      
+      String lModelName = dmdFile.name.replaceAll("\\.dmd", "")
+      println "\n*** Model \"${lModelName}\":\n"
+      int issueCount = 0
+         
+      File lRelDir = new File(new File(lModelDir, lModelName), "rel")
+         
+      lRelDir.eachDir() { relDirId ->
+         
+         File lTableDir = new File(relDirId, "table")
+            
+         lTableDir.eachDir() { segDir ->
+            
+            segDir.eachFileMatch(~/.*\.xml/) { xmlFile ->
+               
+               String lTableName = ""
+               String lColumnName = ""
+                  
+               xmlFile.eachLine() { line ->
+                     
+                  ( line =~ "^<Table class.*\\sname=\"(\\S+)\">\$" ).each { match, v_table_name ->
+                     lTableName = v_table_name
+		  }
+
+                  ( line =~ "^<Column name=\"(\\S+)\".*>\$" ).each { match, v_column_name ->
+		     lColumnName = v_column_name
+		  }
+
+                  ( line =~ "^<commentInRDBMS>(.*)</commentInRDBMS>\$" ).each { match, v_comment ->
+                     
+                     boolean lFound = false
+
+		     v_comment.getBytes().each() { v_byte ->
+		         if ( v_byte.intValue() < 0 ) lFound = true
+		     }
+
+		     if ( lFound ) {
+		        if ( lColumnName.equals("")) {
+		           println "-   Table  " + lTableName           
+		        }
+		        else {
+		           println "-   Column " + lTableName + "." + lColumnName           
+		        }
+		        issueCount++
+		     }
+		  } 
+               } 
+            }
+         }
+      }
+      if (0 == issueCount) println "-   No issues found"
+   }
+   println "\n- Done" 
+}
+
+def checkDlInvalidObjects () {
+
+   String lDmpxName = "dltest_${username}"
+   String lSchemaUsername = "${oracleMaintenixUsername}".isEmpty() ? "${lDmpxName}" : "${oracleMaintenixUsername}"
+   String lSchemaPassword = "${oracleMaintenixUsername}".isEmpty() ? "${lDmpxName}" : (
+      "${oracleMaintenixPassword}".isEmpty() ? "${oracleMaintenixUsername}" : "${oracleMaintenixPassword}")
+   String lSqlScriptPath = "sqlplus.exe -S ${lSchemaUsername}/${lSchemaPassword}@${oracleConnectHost}:${oracleConnectPort}/${oracleConnectService} " +
+      "@${project.projectDir}/src/main/plsql/check-dl-invalid-objects".replaceAll("\\\\", "/")
+   String lLogPath = "${project.buildDir}/logs/check-dl-invalid-objects.log"
+   String lLocalInstallerZip = "${project.buildDir}/downloads/" + new File("${dbPreviousReleaseUrl}").name
+
+   println "\n-   Removing old temp folders and files"
+   new File("${project.buildDir}/stageDbInstaller").deleteDir()
+   new File("${project.buildDir}/stageDb").deleteDir()
+   new File("${project.buildDir}/current").deleteDir()
+   new File(lLocalInstallerZip).delete()
+
+   println "\n-   Downloading the DB Installer zip file ${dbPreviousReleaseUrl} from Artifactory"
+   new File("${project.buildDir}").mkdirs()
+   new File("${project.buildDir}\\downloads").mkdirs()
+   downloadHttp("${artifactoryRepoUrl}/mx-deliverables/maintenix/${dbPreviousReleaseUrl}", lLocalInstallerZip)
+
+   println "\n-   Unzipping the DB Scripts installer for previous release"
+   ant.unzip(   src:lLocalInstallerZip,
+             dest:"${project.buildDir}/stageDbInstaller",
+             overwrite:"true" )
+
+   // Create properties file for silent installation of DB Scripts
+   new File("${project.buildDir}/stageDbInstaller/silent-dbinstall.properties").write (
+      "USER_INSTALL_DIR=${project.buildDir}\\stageDb".replaceAll("\\\\", "\\\\\\\\") + "\n" +
+         "USER_SHORTCUTS=Do_Not_Install\n"
+   );
+
+   println "\n-   Installing DB Scripts for previous release"
+   exec {
+
+      workingDir  "${project.buildDir}\\stageDbInstaller"
+      commandLine 'cmd', '/c', "install.cmd -i silent -f ${project.buildDir}\\stageDbInstaller\\silent-dbinstall.properties"
+   }
+
+   println "\n-   Waiting for silent installation to complete"
+   int lWaitCount = 600
+   while (lWaitCount > 0) {
+      if ( (new File("${project.buildDir}/stageDb/install/build.properties").exists()) &&
+           (new File("${project.buildDir}/stageDb/export/MAINTENIX.DMPX").exists())  ) {
+         break;
+      }
+      sleep(1000)
+      print "."
+      
+      lWaitCount--
+   }
+   if (lWaitCount == 0) {
+      println "\nERROR: Timeout reached while waiting for silent DB Scripts installation to complete"
+      return
+   }
+
+   println "\n-   Copying the DMPX file to DataPump shared folder"
+   new File("${oracleImportPathShared}/${lDmpxName}.DMPX-log").delete()
+   copy {
+
+      from "${project.buildDir}/stageDb/export"
+      into "${oracleImportPathShared}"
+      rename { String fileName ->
+         fileName.replace('MAINTENIX', lDmpxName)
+      }
+   }
+
+   println "\n-   Modifying build.properties file"
+   ant.propertyfile( file: "${project.buildDir}/stageDb/install/build.properties" ) {
+      entry( key: "oracle.connect.host", value: "${oracleConnectHost}");
+      entry( key: "oracle.connect.port", value: "${oracleConnectPort}");
+      entry( key: "oracle.connect.service", value: "${oracleConnectService}");
+      entry( key: "oracle.datafile.location", value: "${oracleDatafileLocation}");
+      entry( key: "system.username", value: "${oracleSystemUsername}");
+      entry( key: "system.password", value: "${oracleSystemPassword}");
+      entry( key: "maintenix.username", value: lSchemaUsername);
+      entry( key: "maintenix.password", value: lSchemaPassword);
+      entry( key: "oracle.datafile.size", value: "1000");
+      entry( key: "maintenix.import.filename", value: "${lDmpxName}.DMPX");
+      entry( key: "maintenix.import.path", value: "${oracleImportPathLocal}");
+      entry( key: "maintenix.import.directory", value: "${oracleImportDirectory}");
+      entry( key: "maintenix.database.id", value: "4650");
+   }
+
+   // Overwrite pause
+   new File("${project.buildDir}/stageDb/install/checkPause.cmd").write ("exit /B 0")
+
+   println "\n-   Run datapump-create-user.bat to create Maintenix schema"
+   exec {
+
+      workingDir  "${project.buildDir}\\stageDb\\install"
+      commandLine 'cmd', '/c', "datapump-create-user.bat"
+   }
+
+   if (isLogContainsBuildFailed("${project.buildDir}\\stageDb\\install\\log\\maintenix.log")) return
+
+   new File("${project.buildDir}/logs").mkdirs()
+   new File("${project.buildDir}/current").mkdirs()
+   
+   println "\n-   Unzipping the DB Upgrade Scripts to current version"
+   ant.unzip(   src:"${rootProject.projectDir}\\assetmanagement-database-installer\\build\\distributions\\liquibase-database-upgrade.zip",
+             dest:"${project.buildDir}/current/upgrade",
+             overwrite:"true" )
+
+   ant.copy (   file:"${project.buildDir}\\stageDb\\install\\build.properties",
+              tofile:"${project.buildDir}\\current\\build.properties"
+   )
+
+   println "\n-   Perform upgrade of core database to current version"
+   exec {
+
+      workingDir  "${project.buildDir}\\current\\upgrade"
+      commandLine 'cmd', '/c', "upgrade.bat"
+   }
+
+   println "-   Create list of invalid database objects before DataLoader installation"
+
+   def lBeforeDlInstall = exec {
+
+      workingDir "${project.buildDir}/logs"
+      ignoreExitValue = true
+      commandLine 'cmd', '/c', "${lSqlScriptPath}/before_DL_install.sql"
+   }
+
+   def lRetCode1 = lBeforeDlInstall.exitValue
+
+   // Upon success expect exit code 1, upon failure expect exit code 3
+   if ( 0 != lRetCode1 && 1 != lRetCode1 ) {
+
+      File lLogFile = new File(lLogPath)
+      if(lLogFile.exists()) {
+         println lLogFile.getText('UTF-8')
+      }
+      else {
+         println "ERROR occurred while creating list of invalid db objects before DL install"
+      }
+      return
+   }
+
+   println "\n-   Unzipping the Data Loader installer for current version"
+   ant.unzip(   src:"${rootProject.projectDir}\\am-data-loader\\build\\distributions\\am-data-loader.zip",
+             dest:"${project.buildDir}/current/am-data-loader",
+             overwrite:"true" )
+             
+   println "\n-   Install DataLoader  for current version"
+   ant.propertyfile( file: "${project.buildDir}/current/am-data-loader/runtime.properties" ) {
+      entry( key: "oracle.connect.string", value: "${oracleConnectHost}:${oracleConnectPort}/${oracleConnectService}");
+      entry( key: "maintenix.username", value: lSchemaUsername);
+      entry( key: "maintenix.password", value: lSchemaPassword);
+      entry( key: "pause.batch.file", value: "false");
+   }
+
+   def lRunDlInstall = exec {
+      workingDir  "${project.buildDir}\\current\\am-data-loader\\install"
+      ignoreExitValue = true
+      commandLine 'cmd', '/c', "install-all.bat"
+   }
+
+   if ( 1 == lRunDlInstall.exitValue ) {
+
+      println "ERROR occurred while installing DataLoader"
+      return
+   }             
+
+   println "\n-   Create list of invalid database objects after DL install"
+   def lAfterDlInstall = exec {
+
+      workingDir "${project.buildDir}/logs"
+      ignoreExitValue = true
+      commandLine 'cmd', '/c', "${lSqlScriptPath}/after_DL_install.sql"
+   }
+
+   lRetCode1 = lAfterDlInstall.exitValue
+   
+   // Upon success expect exit code 1, upon failure expect exit code 3
+   if ( 0 != lRetCode1 && 1 != lRetCode1 ) {
+
+      File lLogFile = new File(lLogPath)
+      if(lLogFile.exists()) {
+         println lLogFile.getText('UTF-8')
+      }
+      else {
+         println "ERROR occurred while creating list of invalid db objects after DL install"
+      }
+      return
+   }
+
+   println "\n-   Done"
+}
+
+task testDlUninstallLeftovers () {
+   doLast {
+      println "*** Test that DataLoader Install/Uninstall doesn't leave any objects in the database"
+      checkDlUninstallLeftovers ()
+   }
+}
+
+
+task testDlModelSpecCharInComments () {
+   doLast {
+      println "*** Scan across XML files of all Data Loader models to find non-printable characters in the Comments"
+      checkDlModelSpecCharInComments ()
+   }
+}
+
+task testDlInvalidObjects () {
+   doLast {
+      println "*** Prepare to install DL in Oracle using source code from the local branch, and then check for invalid objects"
+      checkDlInvalidObjects ()
+   }
+}
